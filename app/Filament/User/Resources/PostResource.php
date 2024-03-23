@@ -40,6 +40,9 @@ class PostResource extends Resource
             $form->getRecord()->setAttribute('approved', false);
         }
 
+//        $form->getRecord()->setAttribute('user_id', auth()->id());
+        // when the form is saved, then the author id should be set to the auth()->id() should be set to false
+
 
         return $form
             ->schema([
@@ -103,6 +106,7 @@ class PostResource extends Resource
                                 ->hidden(true),
 
 
+
                             // if approved is true, then disable the reason for rejection field
 
 
@@ -127,9 +131,15 @@ class PostResource extends Resource
                                 ->default(auth()->id())
                                 //TODO: find a way to disable this field without any errors
 //                                ->disabled()
-                                ->hidden()
+                                //only get the auth user id, so that the user can't change the author of the post
+//                                ->hidden(true)
                                 ->required()
                                 ->searchable(),
+
+//                            Select::make('category_id')
+
+                        //by default set the user_id value to the authenticated user id, dont let the user type anything
+
 
 
 //                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
@@ -138,10 +148,8 @@ class PostResource extends Resource
 //                                }
 //                            }),
 
-                            Select::make('categories')
-                                ->relationship('categories', 'title')
-                                ->searchable()
-                                ->multiple()
+                            TextInput::make('custom_categories')
+                                ->name('categories - (comma seperated)')
                                 ->required()
                                 ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
                                     if ($operation === 'edit') {
@@ -153,6 +161,7 @@ class PostResource extends Resource
                 ]
             );
 
+
     }
 
     public static function table(Table $table): Table
@@ -160,15 +169,15 @@ class PostResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('image'),
-                TextColumn::make('title')->sortable()->searchable(),
-                TextColumn::make('slug')->sortable()->searchable(),
+                TextColumn::make('title')->sortable()->searchable()->limit(40),
+//                TextColumn::make('slug')->sortable()->searchable(),
 //                TextColumn::make('author.name')->sortable()->searchable(),
                 TextColumn::make('published_at')->date('Y-m-d')->sortable()->searchable(),
 //                CheckboxColumn::make('featured')->sortable()->disabled(fn ($state) => Post::where('featured', true)->count() >= 5),
-                CheckboxColumn::make('approved')->sortable()->disabled(),
+//                CheckboxColumn::make('approved')->sortable()->disabled(),
                 IconColumn::make('approved')->boolean(),
                 TextColumn::make('categories.title')->sortable()->searchable(),
-                TextColumn::make('reading_time')->sortable(),
+//                TextColumn::make('reading_time')->sortable(),
 //                TextColumn::make('reason_for_rejection')->sortable(),
             ])
             ->filters([

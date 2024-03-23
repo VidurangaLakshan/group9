@@ -35,6 +35,11 @@ class Post extends Model
         $query->where('featured', true);
     }
 
+    public function scopeLatest($query)
+    {
+        $query->orderBy('published_at', 'desc');
+    }
+
     public function categories()
     {
         return $this->belongsToMany(Category::class);

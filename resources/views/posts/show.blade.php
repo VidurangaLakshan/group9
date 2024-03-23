@@ -951,7 +951,7 @@
                                         </h5>
 
 
-                                        <h5 style="padding-top: 18px; color:gray">Student</h5>
+                                        <h5 style="padding-top: 18px; color:gray">{{$post->author->role->name}}</h5>
 
                                     </div>
 
@@ -969,29 +969,57 @@
 
                     <div class="sidebar-inner">
                         <!-- Start Single Widget  -->
-                        <div class="axil-single-widget widget widget_categories mb--30">
-                            <ul>
-                                {{-- @foreach ($post->categories as $category)
-                                    <li class="cat-item">
-                                        <a href="#" class="inner" style="width: fit-content; background-color: #4CAC; padding-left: 15px; padding-right: 15px;">
-                                            <div class="content">
-                                                <h5 class="title">{{$category->title}}</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                @endforeach --}}
-                                @foreach ($post->categories as $category)
-                                    <li class="cat-item">
-                                        <a class="inner" style="justify-content: center; padding: 10px 0">
-                                            <div class="content">
-                                                <h5 class="title">{{$category->title}}</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
+{{--                        <div class="axil-single-widget widget widget_categories mb--30">--}}
+{{--                            <ul>--}}
+{{--                                --}}{{-- @foreach ($post->categories as $category)--}}
+{{--                                    <li class="cat-item">--}}
+{{--                                        <a href="#" class="inner" style="width: fit-content; background-color: #4CAC; padding-left: 15px; padding-right: 15px;">--}}
+{{--                                            <div class="content">--}}
+{{--                                                <h5 class="title">{{$category->title}}</h5>--}}
+{{--                                            </div>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                @endforeach --}}
+{{--                                @foreach ($post->categories as $category)--}}
+{{--                                    <li class="cat-item">--}}
+{{--                                        <a class="inner" style="justify-content: center; padding: 10px 0">--}}
+{{--                                            <div class="content">--}}
+{{--                                                <h5 class="title">{{$category->title}}</h5>--}}
+{{--                                            </div>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                @endforeach--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
                         <!-- End Single Widget  -->
+
+
+                        @if(count($post->categories) > 0)
+                            <div class="axil-single-widget widget widget_tag_cloud mb--30">
+                                <h5 class="widget-title">Categories</h5>
+                                <!-- Start Post List  -->
+                                <div class="tagcloud">
+                                    @foreach ($post->categories as $category)
+                                        <a href="{{ route('post.index', ['category' => $category->slug]) }}" style="font-weight: bold">{{$category->title}}</a>
+                                    @endforeach
+                                </div>
+                                <!-- End Post List  -->
+                            </div>
+                        @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                         @php
                             $authorPosts = DB::table('posts')

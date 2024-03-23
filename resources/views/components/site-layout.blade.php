@@ -726,6 +726,7 @@
                                 <input type="text" class="form-control" placeholder="Search">
                             </div>
                         </form>
+
                         <div class="mobile-search-wrapper d-sm-none d-block">
                             <button class="search-button-toggle"><i class="fal fa-search"></i></button>
                             <form class="header-search-form">
@@ -736,11 +737,18 @@
                                 </div>
                             </form>
                         </div>
+
+
                         <ul class="metabar-block">
                             @if (Route::has('login'))
                                 @auth
-                                    <li class="icon"><a href="{{ url('/user/profile') }}"><i class="fas fa-cog"></i></a>
-                                    </li>
+                                    @if (auth()->user()->email == 'admin@admin.com')
+                                        <li class="icon"><a href="{{ url('/admin') }}"><i class="fas fa-cog"></i></a>
+                                        </li>
+                                    @else
+                                        <li class="icon"><a href="{{ url('/user') }}"><i class="fas fa-cog"></i></a>
+                                        </li>
+                                    @endif
                                     <li class="icon"><a>
 
                                             <form method="post" action="{{ route('logout') }}" x-data>
@@ -762,8 +770,10 @@
                                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                                         @auth
                                             @if (Auth::check())
+                                                <a href="{{ url('/user/profile') }}">
                                                 <img src="{{ Auth::user()->profile_photo_url }}"
                                                      alt="{{ Auth::user()->name }}">
+                                                </a>
                                             @endif
                                         @else
                                             {{-- <a href="{{ route('login') }}"

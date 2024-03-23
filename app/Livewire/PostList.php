@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Url;
@@ -14,6 +15,8 @@ class PostList extends Component
 {
     use WithPagination;
 
+
+
     #[Url()]
     public $sort = 'desc';
 
@@ -23,9 +26,17 @@ class PostList extends Component
     #[Url()]
     public $category = '';
 
+    #[Url()]
+    public $role = '';
+
     public function setSort($sort)
     {
         $this->sort = ($sort === 'desc') ? 'desc' : 'asc';
+    }
+
+    public function setRole($role)
+    {
+        $this->role = $role;
     }
 
     #[On('search')]
@@ -39,24 +50,41 @@ class PostList extends Component
     public function clearFilters() {
         $this->search = '';
         $this->category = '';
+        $this->role = '';
         $this->resetPage();
     }
 
     #[Computed()]
     public function posts()
     {
+
+
         return Post::orderBy('published_at',$this->sort)
             ->when($this->activeCategory(), function($query) {
                 $query->withCategory($this->category);
             })
+
             ->where('title', 'like', "%{$this->search}%")
-            ->paginate(1);
+
+            ->when($this->activeRole(), function($query) {
+                $query->whereHas('author', function($q) {
+                    $q->where('role', $this->role);
+                });
+            })
+
+            ->paginate(5);
     }
 
     #[Computed()]
     public function activeCategory()
     {
         return Category::where('slug', $this->category)->first();
+    }
+
+    #[Computed()]
+    public function activeRole()
+    {
+        return User::where('role', $this->role)->first();
     }
 
     public function render()

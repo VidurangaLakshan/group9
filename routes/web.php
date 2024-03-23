@@ -24,7 +24,14 @@ Route::get('/blog', [\App\Http\Controllers\PostController::class, 'index'])->nam
 
 Route::get('/blog/{post:slug}', [\App\Http\Controllers\PostController::class, 'show'])->name('post.show');
 
-Route::get('/blog2', [\App\Http\Controllers\PostController::class, 'index2']);
+Route::get('/student', [\App\Http\Controllers\HomeController::class, 'student'])->name('student');
+
+Route::get('/alumni', [\App\Http\Controllers\HomeController::class, 'alumni'])->name('alumni');
+
+Route::get('/staff', [\App\Http\Controllers\HomeController::class, 'staff'])->name('staff');
+
+
+
 
 
 Route::middleware([
@@ -33,6 +40,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+//        return view('dashboard');
+        return redirect('/');
     })->name('dashboard');
 });

@@ -11,11 +11,12 @@ class PostController extends Controller
     public function index()
     {
         return view('posts.index', [
-            'categories' => Category::
-            whereHas('posts', function($query){
-                $query->where('published_at', '<=', now());
+            'categories' => Category::whereHas('posts', function($query){
+                $query->where('published_at', '<=', now())
+                ->where('approved', true);
             })->get(),
         ]);
+
     }
 
     public function show(Post $post)
@@ -25,13 +26,5 @@ class PostController extends Controller
         ]);
     }
 
-    public function index2()
-    {
-        return view('posts.index2', [
-            'categories' => Category::
-            whereHas('posts', function($query){
-                $query->where('published_at', '<=', now());
-            })->get(),
-        ]);
-    }
+
 }

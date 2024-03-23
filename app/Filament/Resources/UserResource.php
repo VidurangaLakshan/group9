@@ -6,6 +6,7 @@ use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -31,6 +32,23 @@ class UserResource extends Resource
                     TextInput::make('name')->required()->minLength(1)->maxLength(150),
 //                    TextInput::make('password')->required()->minLength(8)->password(bcrypt('aaAA12!@'))->placeholder('aaAA12!@'),
                     TextInput::make('email')->required()->email()->unique(ignoreRecord: true),
+                    TextInput::make('nic')->minLength(1)->maxLength(12),
+                    // create a select field for the role
+                    Select::make('role')
+//                        ->relationship('role', 'name')
+//                        ->required()
+                        // dont allow the user to change the role of the admin
+                        ->placeholder('Select a role')
+                    ->options([
+                        1 => 'Administrator',
+                        2 => 'Editor',
+                        3 => 'Student Support Services',
+                        4 => 'Staff',
+                        5 => 'Student',
+                        6 => 'Alumni',
+                    ]),
+                    Forms\Components\Toggle::make('approved')->label('Approved')->default(true),
+
                 ]);
         }
 
@@ -49,6 +67,21 @@ class UserResource extends Resource
                 ->schema([
                     TextInput::make('name')->required()->minLength(1)->maxLength(150),
                     TextInput::make('email')->required()->email()->unique(ignoreRecord: true),
+                    TextInput::make('nic')->minLength(1)->maxLength(12)->disabled(),
+                    // create a select field for the role
+                    Select::make('role')
+                        ->required()
+                        // dont allow the user to change the role of the admin
+                        ->placeholder('Select a role')
+                        ->options([
+                            1 => 'Administrator',
+                            2 => 'Editor',
+                            3 => 'Student Support Services',
+                            4 => 'Staff',
+                            5 => 'Student',
+                            6 => 'Alumni',
+                        ]),
+                    Forms\Components\Toggle::make('approved')->label('Approved')->default(true),
                 ]);
         }
     }
@@ -60,10 +93,17 @@ class UserResource extends Resource
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('email')->sortable()->searchable(),
                 TextColumn::make('role')->sortable()->searchable(),
+                Tables\Columns\IconColumn::make('approved')->boolean(),
+
+                //get the role name of the user
+
+
+
                 // if the email of the user is "admin@admin.com", set the role to admin
 
+                // make a column for the post count of the user
+//                TextColumn::make('post_count')->label('Post Count')->sortable(),
 
-                //TODO: Add a column for the role
             ])
             ->filters([
                 //

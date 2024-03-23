@@ -1,11 +1,6 @@
 <x-site-layout>
 
 
-    <!doctype html>
-    <html class="no-js" lang="en">
-
-
-    <body>
     <div class="main-wrapper">
         <div class="mouse-cursor cursor-outer"></div>
         <div class="mouse-cursor cursor-inner"></div>
@@ -214,6 +209,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="slider-activation axil-slick-arrow">
+
                                 <!-- Start Single Slide  -->
                                 <div class="content-block">
                                     <!-- Start Post Thumbnail  -->
@@ -276,10 +272,6 @@
                                     </div>
                                     <!-- End Post Content  -->
                                 </div>
-                                <!-- End Single Slide  -->
-
-                                <!-- Start Single Slide  -->
-
                                 <!-- End Single Slide  -->
 
                                 <!-- Start Single Slide  -->
@@ -350,6 +342,70 @@
                                     <!-- End Post Content  -->
                                 </div>
                                 <!-- End Single Slide  -->
+
+                                @foreach($featuredPosts as $featuredPost)
+                                    @if($featuredPost->featured == 1)
+                                        <div class="content-block">
+                                            <!-- Start Post Thumbnail  -->
+                                            <div class="post-thumbnail">
+                                                <a href="/blog/{{$featuredPost->slug}}">
+                                                    <img src="{{$featuredPost->getThumbnailImage()}}"
+                                                         alt="Post Images">
+                                                </a>
+                                            </div>
+                                            <!-- End Post Thumbnail  -->
+
+                                            <!-- Start Post Content  -->
+                                            <div class="post-content">
+                                                <div class="post-cat-list">
+                                                    <a class="hover-flip-item-wrapper">
+                                                <span class="hover-flip-item">
+                                                    <span data-text="{{$featuredPost->categories[0]->title}}">{{$featuredPost->categories[0]->title}}</span>
+                                                </span>
+                                                    </a>
+                                                </div>
+                                                <h2 class="title"><a href="/blog/{{$featuredPost->slug}}">{{$featuredPost->title}}</a></h2>
+                                                <!-- Post Meta  -->
+                                                <div class="post-meta-wrapper with-button">
+                                                    <div class="post-meta">
+                                                        <div class="post-author-avatar border-rounded">
+                                                            <img src="{{$featuredPost->author->profile_photo_url}}"
+                                                                 alt="Author Images">
+                                                        </div>
+                                                        <div class="content">
+                                                            <h6 class="post-author-name">
+                                                                <a class="hover-flip-item-wrapper">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="{{$featuredPost->author->name}}">{{$featuredPost->author->name}}</span>
+                                                            </span>
+                                                                </a>
+                                                            </h6>
+                                                            <ul class="post-meta-list">
+                                                                <li>{{{$featuredPost->published_at->diffForHumans()}}}</li>
+                                                                <li>{{$featuredPost->getReadingTime()}} min read</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="social-share-transparent justify-content-end">
+                                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
+                                                    </ul>
+                                                    <div class="read-more-button cerchio">
+                                                        <a class="axil-button button-rounded hover-flip-item-wrapper"
+                                                           href="/blog/{{$featuredPost->slug}}">
+                                                    <span class="hover-flip-item">
+                                                        <span data-text="Read Post">Read Post</span>
+                                                    </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Post Content  -->
+                                        </div>
+                                    @endif
+                                @endforeach
 
                             </div>
                         </div>
@@ -1337,298 +1393,47 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8 col-xl-8">
-                        <div class="content-block post-list-view axil-control is-active mt--30">
+
+                        @foreach($popularPosts as $popularPost)
+                            <div class="content-block post-list-view axil-control is-active mt--30">
                             <div class="post-thumbnail">
-                                <a href="post-format-standard.html">
-                                    <img src="assets/images/post-images/Future.jpg" alt="Post Images">
+                                <a href="/blog/{{$popularPost->slug}}">
+                                    <img src="{{$popularPost->getThumbnailImage()}}" alt="Post Images">
                                 </a>
 
                             </div>
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="The Future of Legal Tech">The Future of Legal
-                                                    Tech</span>
-                                            </span>
+                                        <a class="hover-flip-item-wrapper">
                                         </a>
                                     </div>
                                 </div>
-                                <h4 class="title"><a href="post-format-standard.html">Navigating the intersection
-                                        of law and cutting-edge technology.
-
-                                    </a></h4>
+                                <h4 class="title"><a href="/blog/{{$popularPost->slug}}">
+                                        {{$popularPost->title}}
+                                    </a>
+                                </h4>
                                 <div class="post-meta-wrapper">
                                     <div class="post-meta">
                                         <div class="content">
                                             <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                <a class="hover-flip-item-wrapper">
                                                     <span class="hover-flip-item">
-                                                        <span data-text="Jane Ara">Jane Ara</span>
+                                                        <span data-text="{{$popularPost->author->name}}">{{$popularPost->author->name}}</span>
                                                     </span>
                                                 </a>
                                             </h6>
                                             <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
+                                                <li>{{$popularPost->published_at->diffForHumans()}}</li>
+                                                <li>{{$popularPost->getReadingTime()}} min read</li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view axil-control is-active mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-format-standard.html">
-                                    <img src="assets/images/post-images/Growth.jpg" alt="Post Images">
-                                </a>
+                        @endforeach
 
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span
-                                                    data-text="Strategies for Sustainable Business Growth in the Digital Era">Strategies
-                                                    for Sustainable Business Growth in the Digital Era</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-format-standard.html">Analyzing the role of
-                                        technology in fostering business sustainability.
-
-                                    </a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Jane Ara">Jane Ara</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
-
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view axil-control mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-format-standard.html">
-                                    <img src="assets/images/post-images/Navigating.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="Navigating the Digital Moral Landscape">Navigating
-                                                    the Digital Moral Landscape</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-format-standard.html">Examining ethical
-                                        considerations in the field of computing.
-
-                                    </a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Fatima Jane">Fatima Jane</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
-
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view axil-control mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-format-standard.html">
-                                    <img src="assets/images/post-images/Comprehensive.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="A Comprehensive Overview">A Comprehensive
-                                                    Overview</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-format-standard.html">Delving into the legal
-                                        challenges posed by the rise of AI.</a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Esrat Ara">Esrat Ara</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
-
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view axil-control mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-format-standard.html">
-                                    <img src="assets/images/post-images/Innovations.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="Innovations in Business Analytics">Innovations in
-                                                    Business Analytics</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-format-standard.html">Showcasing the impact of
-                                        analytics on modern business strategies.</a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="John Doe">John Doe</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
-
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view axil-control mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-format-standard.html">
-                                    <img src="assets/images/post-images/Collaboration.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="Computing and Business Collaboration">Computing and
-                                                    Business Collaboration</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-format-standard.html">Exploring how the computing
-                                        and business faculties collaborate for holistic education.
-
-
-
-
-                                    </a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Asifa Fr">Asifa Fr</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
 
                     </div>
                     <div class="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">
@@ -1638,50 +1443,17 @@
                             <!-- Start Single Widget  -->
                             <div class="axil-single-widget widget widget_categories mb--30">
                                 <ul>
+                                    @foreach ($categories as $category)
+
                                     <li class="cat-item">
-                                        <a href="#" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-01.jpg"
-                                                     alt="">
-                                            </div>
+                                        <a href="#" class="inner" style="justify-content: center">
+
                                             <div class="content">
-                                                <h5 class="title">Kandy APIIT</h5>
+                                                <h5 class="title">{{$category->title}} ({{$category->posts->count()}})</h5>
                                             </div>
                                         </a>
                                     </li>
-                                    <li class="cat-item">
-                                        <a href="#" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-02.jpg"
-                                                     alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="title">Computing School</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="cat-item">
-                                        <a href="#" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-03.jpg"
-                                                     alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="title">Law School</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="cat-item">
-                                        <a href="#" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-04.jpg"
-                                                     alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="title">Business School</h5>
-                                            </div>
-                                        </a>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <!-- End Single Widget  -->
@@ -1699,87 +1471,7 @@
                             </div>
                             <!-- End Single Widget  -->
 
-                            <!-- Start Single Widget  -->
-                            <div class="axil-single-widget widget widget_postlist mb--30">
-                                <h5 class="widget-title">Success
-                                    Stories</h5>
-                                <!-- Start Post List  -->
-                                <div class="post-medium-block">
 
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block post-medium mb--20">
-                                        <div class="post-thumbnail">
-                                            <a href="post-format-standard.html">
-                                                <img src="assets/images/small-images/blog-sm-01.jpg"
-                                                     alt="Post Images">
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="title"><a href="post-format-standard.html">The underrated
-                                                    design book
-                                                    that transformed the way I
-                                                    work </a></h6>
-                                            <div class="post-meta">
-                                                <ul class="post-meta-list">
-                                                    <li>Feb 17, 2019</li>
-                                                    <li>300k Views</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block post-medium mb--20">
-                                        <div class="post-thumbnail">
-                                            <a href="post-format-standard.html">
-                                                <img src="assets/images/small-images/blog-sm-02.jpg"
-                                                     alt="Post Images">
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="title"><a href="post-format-standard.html">Here’s what you
-                                                    should (and
-                                                    shouldn’t) do when</a>
-                                            </h6>
-                                            <div class="post-meta">
-                                                <ul class="post-meta-list">
-                                                    <li>Feb 17, 2019</li>
-                                                    <li>300k Views</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block post-medium mb--20">
-                                        <div class="post-thumbnail">
-                                            <a href="post-format-standard.html">
-                                                <img src="assets/images/small-images/blog-sm-03.jpg"
-                                                     alt="Post Images">
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="title"><a href="post-format-standard.html">How a developer
-                                                    and designer
-                                                    duo at Deutsche Bank keep
-                                                    remote</a></h6>
-                                            <div class="post-meta">
-                                                <ul class="post-meta-list">
-                                                    <li>Feb 17, 2019</li>
-                                                    <li>300k Views</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                </div>
-                                <!-- End Post List  -->
-
-                            </div>
-                            <!-- End Single Widget  -->
 
                             <!-- Start Single Widget  -->
                             <div class="axil-single-widget widget widget_social mb--30">
@@ -1796,51 +1488,7 @@
                             </div>
                             <!-- End Single Widget  -->
 
-                            <!-- Start Single Widget  -->
-                            <div class="axil-single-widget widget widget_instagram mb--30">
-                                <h5 class="widget-title">Instagram</h5>
-                                <!-- Start Post List  -->
-                                <ul class="instagram-post-list-wrapper">
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-01.jpg"
-                                                 alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-02.jpg"
-                                                 alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-03.jpg"
-                                                 alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-04.jpg"
-                                                 alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-05.jpg"
-                                                 alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-06.jpg"
-                                                 alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                </ul>
-                                <!-- End Post List  -->
-                            </div>
-                            <!-- End Single Widget  -->
+
                         </div>
                         <!-- End Sidebar Area  -->
 
@@ -1982,8 +1630,11 @@
                                 <div class="post-cat">
                                     <div class="post-cat-list">
                                         <a class="hover-flip-item-wrapper" href="#">
+{{--                                            <span class="hover-flip-item">--}}
+{{--                                                <span data-text="Graduation ">Graduation </span>--}}
+{{--                                            </span>--}}
                                             <span class="hover-flip-item">
-                                                <span data-text="Graduation ">Graduation </span>
+                                                <span data-text=" "> </span>
                                             </span>
                                         </a>
                                     </div>
@@ -2002,16 +1653,9 @@
                                             </h6>
                                             <ul class="post-meta-list">
                                                 <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>

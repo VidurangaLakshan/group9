@@ -18,6 +18,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\CheckboxColumn;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -80,7 +81,8 @@ class PostResource extends Resource
                                 }
                             }),
 
-                        DateTimePicker::make('published_at')->nullable(),
+                        DateTimePicker::make('published_at')->nullable()
+                        ->required(),
 
                         CheckBox::make('featured')
                             ->default(false)
@@ -121,6 +123,7 @@ class PostResource extends Resource
                                     $set('approved', false);
                                 }
                             }),
+
                         Select::make('categories')
                             ->relationship('categories', 'title')
                             ->searchable()
@@ -131,6 +134,11 @@ class PostResource extends Resource
                                     $set('approved', false);
                                 }
                             }),
+
+                        //if operation is edit, then show the custom categories
+                        TextInput::make('custom_categories')
+                            ->disabled()
+
                     ]
                 ),
             ]);
@@ -141,15 +149,16 @@ class PostResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('image'),
-                TextColumn::make('title')->sortable()->searchable(),
-                TextColumn::make('slug')->sortable()->searchable(),
+                TextColumn::make('title')->sortable()->searchable()->limit(30),
+//                TextColumn::make('slug')->sortable()->searchable(),
                 TextColumn::make('author.name')->sortable()->searchable(),
                 TextColumn::make('published_at')->date('Y-m-d')->sortable()->searchable(),
                 CheckboxColumn::make('featured')->sortable()->disabled(fn ($state) => Post::where('featured', true)->count() >= 5),
-                Tables\Columns\ToggleColumn::make('approved')->sortable(),
-                TextColumn::make('categories.title')->sortable()->searchable(),
-                TextColumn::make('reading_time')->sortable(),
-                TextColumn::make('reason_for_rejection')->sortable(),
+                IconColumn::make('approved')->boolean()->sortable(),
+//                Tables\Columns\ToggleColumn::make('approved')->sortable(),
+//                TextColumn::make('categories.title')->sortable()->searchable(),
+//                TextColumn::make('reading_time')->sortable(),
+                TextColumn::make('reason_for_rejection')->sortable()->limit(20),
 
 
 

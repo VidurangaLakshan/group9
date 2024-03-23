@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
              'name' => 'Administrator',
              'email' => 'admin@admin.com',
              'password' => bcrypt('admin'),
+             'role' => 1,
          ]);
 
         \App\Models\Category::factory()->create([
