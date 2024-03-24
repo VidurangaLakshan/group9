@@ -51,599 +51,12 @@
 
                                 </li>
 
-                                <li class="menu-item-has-children"><a href="{{url('student')}}">Students</a>
-                                    {{--                                <ul class="axil-submenu">--}}
-                                    {{--                                    <li>--}}
-                                    {{--                                        <a class="hover-flip-item-wrapper" href="CounselingandMental.html">--}}
-                                    {{--                                                <span class="hover-flip-item">--}}
-                                    {{--                                                    <span data-text="Counseling and Mental Health Services">Counseling--}}
-                                    {{--                                                        and Mental Health Services</span>--}}
-                                    {{--                                                </span>--}}
-                                    {{--                                        </a>--}}
-                                    {{--                                    </li>--}}
-                                    {{--                                    <li>--}}
-                                    {{--                                        <a class="hover-flip-item-wrapper" href="CareerDevelopment.html">--}}
-                                    {{--                                                <span class="hover-flip-item">--}}
-                                    {{--                                                    <span data-text="Career Development and Placement">Career--}}
-                                    {{--                                                        Development and Placement</span>--}}
-                                    {{--                                                </span>--}}
-                                    {{--                                        </a>--}}
-                                    {{--                                    </li>--}}
-
-                                    {{--                                    <li>--}}
-                                    {{--                                        <a class="hover-flip-item-wrapper" href="StudentOrganitions.html">--}}
-                                    {{--                                                <span class="hover-flip-item">--}}
-                                    {{--                                                    <span data-text="Student Organizations and Engagement">Student--}}
-                                    {{--                                                        Organizations and Engagement</span>--}}
-                                    {{--                                                </span>--}}
-                                    {{--                                        </a>--}}
-                                    {{--                                    </li>--}}
-
-                                    {{--                                </ul>--}}
-                                    {{--                           --}}
-                                </li>
+                                <li class="menu-item-has-children"><a href="{{url('student')}}">Students</a></li>
 
 
-                                <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('staff')}}">Academics</a>
-                                    {{--                                <ul class="megamenu-sub-menu">--}}
-                                    {{--                                    <li class="megamenu-item">--}}
-
-                                    {{--                                        <!-- Start Verticle Nav  -->--}}
-                                    {{--                                        <div class="axil-vertical-nav">--}}
-                                    {{--                                            <ul class="vertical-nav-menu">--}}
-                                    {{--                                                <li class="vertical-nav-item active">--}}
-                                    {{--                                                    <a class="hover-flip-item-wrapper" href="#tab1">--}}
-                                    {{--                                                            <span class="hover-flip-item">--}}
-                                    {{--                                                                <span data-text="Colleges and Schools">Colleges and--}}
-                                    {{--                                                                    Schools</span>--}}
-                                    {{--                                                            </span>--}}
-                                    {{--                                                    </a>--}}
-                                    {{--                                                </li>--}}
-                                    {{--                                                <li class="vertical-nav-item">--}}
-                                    {{--                                                    <a class="hover-flip-item-wrapper" href="#tab2">--}}
-                                    {{--                                                            <span class="hover-flip-item">--}}
-                                    {{--                                                                <span data-text="Academics Staf">Majors and--}}
-                                    {{--                                                                    Minors</span>--}}
-                                    {{--                                                            </span>--}}
-                                    {{--                                                    </a>--}}
-                                    {{--                                                </li>--}}
-                                    {{--                                                <li class="vertical-nav-item">--}}
-                                    {{--                                                    <a class="hover-flip-item-wrapper" href="#tab3">--}}
-                                    {{--                                                            <span class="hover-flip-item">--}}
-                                    {{--                                                                <span data-text="Academic Resources">Academic--}}
-                                    {{--                                                                    Resources</span>--}}
-                                    {{--                                                            </span>--}}
-                                    {{--                                                    </a>--}}
-                                    {{--                                                </li>--}}
-                                    {{--                                                <li class="vertical-nav-item">--}}
-                                    {{--                                                    <a class="hover-flip-item-wrapper" href="#tab4">--}}
-                                    {{--                                                            <span class="hover-flip-item">--}}
-                                    {{--                                                                <span data-text="Academic Programs">Academic--}}
-                                    {{--                                                                    Programs</span>--}}
-                                    {{--                                                            </span>--}}
-                                    {{--                                                    </a>--}}
-                                    {{--                                                </li>--}}
-                                    {{--                                            </ul>--}}
-                                    {{--                                        </div>--}}
-                                    {{--                                        <!-- Start Verticle Nav  -->--}}
-
-                                    {{--                                        <!-- Start Verticle Menu  -->--}}
-                                    {{--                                        <div class="axil-vertical-nav-content">--}}
-                                    {{--                                            <!-- Start One Item  -->--}}
-                                    {{--                                            <div class="axil-vertical-inner tab-content" id="tab1"--}}
-                                    {{--                                                 style="display: block;">--}}
-                                    {{--                                                <div class="axil-vertical-single">--}}
-                                    {{--                                                    <div class="row">--}}
-
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-01.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span style="font-size: 18px;"--}}
-                                    {{--                                                                                              data-text="APIIT City Campus">APIIT--}}
-                                    {{--                                                                                            City Campus</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-02.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span style="font-size: 20px;"--}}
-                                    {{--                                                                                              data-text="APIIT Law ">APIIT--}}
-                                    {{--                                                                                            Law</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-03.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span style="font-size: 18px;"--}}
-                                    {{--                                                                                              data-text="Kandy APIIT">Kandy--}}
-                                    {{--                                                                                            APIIT</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-04.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span style="font-size: 18px;"--}}
-                                    {{--                                                                                              data-text="Staffordshire University">Staffordshire--}}
-                                    {{--                                                                                            University</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-
-                                    {{--                                                    </div>--}}
-                                    {{--                                                </div>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                            <!-- End One Item  -->--}}
-
-                                    {{--                                            <!-- Start One Item  -->--}}
-                                    {{--                                            <div class="axil-vertical-inner tab-content" id="tab2">--}}
-                                    {{--                                                <div class="axil-vertical-single">--}}
-                                    {{--                                                    <div class="row">--}}
-
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-04.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="Detailed Descriptions of Each Major">Detailed--}}
-                                    {{--                                                                                            Descriptions of Each--}}
-                                    {{--                                                                                            Major</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-03.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="Potential Career Paths for Each Major">Potential--}}
-                                    {{--                                                                                            Career Paths for Each--}}
-                                    {{--                                                                                            Major</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-02.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="List of Available Minors">List--}}
-                                    {{--                                                                                            of Available Minors</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-04.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="Information on Specialized Tracks within Majors">Information--}}
-                                    {{--                                                                                            on Specialized Tracks within--}}
-                                    {{--                                                                                            Majors</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-
-                                    {{--                                                    </div>--}}
-                                    {{--                                                </div>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                            <!-- End One Item  -->--}}
-
-                                    {{--                                            <!-- Start One Item  -->--}}
-                                    {{--                                            <div class="axil-vertical-inner tab-content" id="tab3">--}}
-                                    {{--                                                <div class="axil-vertical-single">--}}
-                                    {{--                                                    <div class="row">--}}
-
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-04.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="Library Services and Resources">Library--}}
-                                    {{--                                                                                            Services and--}}
-                                    {{--                                                                                            Resources</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-03.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="#">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="Tutoring and Academic Support Programs">Tutoring--}}
-                                    {{--                                                                                            and Academic Support--}}
-                                    {{--                                                                                            Programs</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-02.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="#">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="Study Spaces and Facilities">Study--}}
-                                    {{--                                                                                            Spaces and Facilities</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-04.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="Online Learning Resources">Online--}}
-                                    {{--                                                                                            Learning Resources</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-
-                                    {{--                                                    </div>--}}
-                                    {{--                                                </div>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                            <!-- End One Item  -->--}}
-
-                                    {{--                                            <!-- Start One Item  -->--}}
-                                    {{--                                            <div class="axil-vertical-inner tab-content" id="tab4">--}}
-                                    {{--                                                <div class="axil-vertical-single">--}}
-                                    {{--                                                    <div class="row">--}}
-
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-01.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="Overview of Colleges and Schools">Overview--}}
-                                    {{--                                                                                            of Colleges and--}}
-                                    {{--                                                                                            Schools</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-04.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="List of Undergraduate and Graduate Programs">List--}}
-                                    {{--                                                                                            of Undergraduate and--}}
-                                    {{--                                                                                            Graduate Programs</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-03.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="Certificates and Degrees Offered">Certificates--}}
-                                    {{--                                                                                            and Degrees Offered</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-
-                                    {{--                                                        <!-- Start Post List  -->--}}
-                                    {{--                                                        <div class="col-lg-3">--}}
-                                    {{--                                                            <div class="content-block image-rounded">--}}
-                                    {{--                                                                <div class="post-thumbnail mb--20">--}}
-                                    {{--                                                                    <a href="post-format-standard.html">--}}
-                                    {{--                                                                        <img class="w-100"--}}
-                                    {{--                                                                             src="assets/images/others/mega-post-04.jpg"--}}
-                                    {{--                                                                             alt="Post Images">--}}
-                                    {{--                                                                    </a>--}}
-                                    {{--                                                                </div>--}}
-                                    {{--                                                                <div class="post-content">--}}
-                                    {{--                                                                    <div class="post-cat">--}}
-                                    {{--                                                                        <div class="post-cat-list">--}}
-                                    {{--                                                                            <a class="hover-flip-item-wrapper"--}}
-                                    {{--                                                                               href="post-format-standard.html">--}}
-                                    {{--                                                                                    <span class="hover-flip-item">--}}
-                                    {{--                                                                                        <span--}}
-                                    {{--                                                                                            data-text="Internship and Experiential Learning Opportunities">Internship--}}
-                                    {{--                                                                                            and Experiential Learning--}}
-                                    {{--                                                                                            Opportunities</span>--}}
-                                    {{--                                                                                    </span>--}}
-                                    {{--                                                                            </a>--}}
-                                    {{--                                                                        </div>--}}
-                                    {{--                                                                    </div>--}}
-
-                                    {{--                                                                </div>--}}
-                                    {{--                                                            </div>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <!-- End Post List  -->--}}
-
-                                    {{--                                                    </div>--}}
-                                    {{--                                                </div>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                            <!-- End One Item  -->--}}
-
-                                    {{--                                        </div>--}}
-                                    {{--                                        <!-- End Verticle Menu  -->--}}
-                                    {{--                                    </li>--}}
-                                    {{--                                </ul>--}}
-                                    {{--                            --}}
-                                </li>
+                                <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('staff')}}">Academics</a></li>
 
                                 <li><a href="{{url('alumni')}}">Alumni</a></li>
-                                {{--                            <li><a href="research.html">Research</a></li>--}}
 
 
                                 <li class="menu-item-has-children"><a href="#">Articles</a>
@@ -655,18 +68,28 @@
                                                 </span>
                                             </a>
                                         </li>
-                                        @if (Route::has('login'))
-                                            @auth
-                                                <li>
 
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/user/profile') }}">
-                                                        <span class="hover-flip-item">
-                                                            <span data-text="Write Articles">Write Articles</span>
-                                                        </span>
-                                                    </a>
-                                                </li>
+
+                                            @auth
+                                                @if (auth()->user()->role->value == 1)
+                                                    <li>
+                                                        <a class="hover-flip-item-wrapper" href="{{ url('/admin') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                @else
+                                                    <li>
+                                                        <a class="hover-flip-item-wrapper" href="{{ url('/user') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                @endif
                                             @endauth
-                                        @endif
+
 
 
 
@@ -779,11 +202,19 @@
                                                     <li><a href="{{ route('alumni') }}">Alumni</a></li>
                                                     <li><a href="{{route('post.index')}}">All Articles</a></li>
 
-                                                    @if (Route::has('login'))
+
+
                                                         @auth
-                                                            <li><a href="{{ url('/user/profile') }}">Write Articles</a></li>
+                                                            @if (auth()->user()->role->value == 1)
+                                                                <li><a href="{{ url('/admin') }}">Write Articles</a>
+                                                                </li>
+                                                            @else
+                                                                <li><a href="{{ url('/user') }}">Write Articles</a>
+                                                                </li>
+                                                            @endif
                                                         @endauth
-                                                    @endif
+
+
                                                 </ul>
                                             </div>
                                         </div>
@@ -828,114 +259,7 @@
     {{ $slot }}
 </main>
 
-<div class="footer-mainmenu">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                <div class="footer-widget">
-                    <h2 class="title">World</h2>
-                    <div class="inner">
-                        <ul class="ft-menu-list">
-                            <li><a href="#">U.N.</a></li>
-                            <li><a href="#">Conflicts</a></li>
-                            <li><a href="#">Terrorism</a></li>
-                            <li><a href="#">Disasters</a></li>
-                            <li><a href="#">Global Economy</a></li>
-                            <li><a href="#">Environment</a></li>
-                            <li><a href="#">Religion</a></li>
-                            <li><a href="#">Scandals</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                <div class="footer-widget">
-                    <h2 class="title">Politics</h2>
-                    <div class="inner">
-                        <ul class="ft-menu-list">
-                            <li><a href="#">Executive</a></li>
-                            <li><a href="#">Senate</a></li>
-                            <li><a href="#">House</a></li>
-                            <li><a href="#">Judiciary</a></li>
-                            <li><a href="#">Global Economy</a></li>
-                            <li><a href="#">Foreign policy</a></li>
-                            <li><a href="#">Polls</a></li>
-                            <li><a href="#">Elections</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                <div class="footer-widget">
-                    <h2 class="title">Entertainment</h2>
-                    <div class="inner">
-                        <ul class="ft-menu-list">
-                            <li><a href="#">Celebrity News</a></li>
-                            <li><a href="#">Movies</a></li>
-                            <li><a href="#">TV News</a></li>
-                            <li><a href="#">Disasters</a></li>
-                            <li><a href="#">Music News</a></li>
-                            <li><a href="#">Environment</a></li>
-                            <li><a href="#">Style News</a></li>
-                            <li><a href="#">Entertainment Video</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                <div class="footer-widget">
-                    <h2 class="title">Business</h2>
-                    <div class="inner">
-                        <ul class="ft-menu-list">
-                            <li><a href="#">Environment</a></li>
-                            <li><a href="#">Conflicts</a></li>
-                            <li><a href="#">Terrorism</a></li>
-                            <li><a href="#">Disasters</a></li>
-                            <li><a href="#">Global Economy</a></li>
-                            <li><a href="#">Environment</a></li>
-                            <li><a href="#">Religion</a></li>
-                            <li><a href="#">Scandals</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                <div class="footer-widget">
-                    <h2 class="title">Health</h2>
-                    <div class="inner">
-                        <ul class="ft-menu-list">
-                            <li><a href="#">Movies</a></li>
-                            <li><a href="#">Conflicts</a></li>
-                            <li><a href="#">Terrorism</a></li>
-                            <li><a href="#">Disasters</a></li>
-                            <li><a href="#">Global Economy</a></li>
-                            <li><a href="#">Environment</a></li>
-                            <li><a href="#">Religion</a></li>
-                            <li><a href="#">Scandals</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                <div class="footer-widget">
-                    <h2 class="title">About</h2>
-                    <div class="inner">
-                        <ul class="ft-menu-list">
-                            <li><a href="#">U.N.</a></li>
-                            <li><a href="#">Conflicts</a></li>
-                            <li><a href="#">Terrorism</a></li>
-                            <li><a href="#">Disasters</a></li>
-                            <li><a href="#">Global Economy</a></li>
-                            <li><a href="#">Environment</a></li>
-                            <li><a href="#">Religion</a></li>
-                            <li><a href="#">Scandals</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- Start Footer Area  -->
 <div class="axil-footer-area axil-footer-style-1 footer-variation-2">
 
@@ -1003,21 +327,16 @@
     <!-- End Copyright Area  -->
 </div>
 
+
 <!-- JavaScript -->
 <script src="assets/js/vendor/jquery.min.js"></script>
 <script src="assets/js/vendor/popper.min.js"></script>
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 <script src="assets/js/vendor/slick.min.js"></script>
+<script src="assets/js/vendor/tweenmax.min.js"></script>
+
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
-
-
-</body>
-
-</html>
-<!DOCTYPE html>
-<html lang="en">
-
 
 
 </body>

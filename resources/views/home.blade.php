@@ -1648,7 +1648,7 @@
                                     </a></h4>
                                 <div class="post-meta">
                                     <div class="post-author-avatar border-rounded">
-                                        <img src="assets/images/post-images/author/author-image-2.png"
+                                        <img src="assets/images/post-images-old/author/author-image-2.png"
                                             alt="Author Images">
                                     </div>
                                     <div class="content">
@@ -1668,7 +1668,7 @@
                             </div>
                             <div class="post-thumbnail">
                                 <a href="post-format-standard.html">
-                                    <img src="assets/images/post-images/post-images-1.jpg" alt="Post Images">
+                                    <img src="assets/images/post-images-old/post-images-old-1.jpg" alt="Post Images">
                                 </a>
                             </div>
                         </div>
@@ -1693,7 +1693,7 @@
                                         ugly</a></h4>
                                 <div class="post-meta">
                                     <div class="post-author-avatar border-rounded">
-                                        <img src="assets/images/post-images/author/author-image-1.png"
+                                        <img src="assets/images/post-images-old/author/author-image-1.png"
                                             alt="Author Images">
                                     </div>
                                     <div class="content">
@@ -1713,7 +1713,7 @@
                             </div>
                             <div class="post-thumbnail">
                                 <a href="post-format-standard.html">
-                                    <img src="assets/images/post-images/post-images-2.jpg" alt="Post Images">
+                                    <img src="assets/images/post-images-old/post-images-old-2.jpg" alt="Post Images">
                                 </a>
                             </div>
                         </div>

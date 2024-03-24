@@ -229,83 +229,7 @@
                             </div>
 
 
-                        <!-- Start Single Widget  -->
-                        {{--                        <div class="axil-single-widget widget widget_postlist mb--30">--}}
-                        {{--                            <h5 class="widget-title">Popular on Blogar</h5>--}}
-                        {{--                            <!-- Start Post List  -->--}}
-                        {{--                            <div class="post-medium-block">--}}
 
-                        {{--                                <!-- Start Single Post  -->--}}
-                        {{--                                <div class="content-block post-medium mb--20">--}}
-                        {{--                                    <div class="post-thumbnail">--}}
-                        {{--                                        <a href="post-details.html">--}}
-                        {{--                                            <img src="assets/images/small-images/blog-sm-01.jpg"--}}
-                        {{--                                                 alt="Post Images">--}}
-                        {{--                                        </a>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <div class="post-content">--}}
-                        {{--                                        <h6 class="title"><a href="post-details.html">The underrated design book--}}
-                        {{--                                                that transformed the way I--}}
-                        {{--                                                work </a></h6>--}}
-                        {{--                                        <div class="post-meta">--}}
-                        {{--                                            <ul class="post-meta-list">--}}
-                        {{--                                                <li>Feb 17, 2019</li>--}}
-                        {{--                                                <li>300k Views</li>--}}
-                        {{--                                            </ul>--}}
-                        {{--                                        </div>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </div>--}}
-                        {{--                                <!-- End Single Post  -->--}}
-
-                        {{--                                <!-- Start Single Post  -->--}}
-                        {{--                                <div class="content-block post-medium mb--20">--}}
-                        {{--                                    <div class="post-thumbnail">--}}
-                        {{--                                        <a href="post-details.html">--}}
-                        {{--                                            <img src="assets/images/small-images/blog-sm-02.jpg"--}}
-                        {{--                                                 alt="Post Images">--}}
-                        {{--                                        </a>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <div class="post-content">--}}
-                        {{--                                        <h6 class="title"><a href="post-details.html">Here’s what you should (and--}}
-                        {{--                                                shouldn’t) do when</a>--}}
-                        {{--                                        </h6>--}}
-                        {{--                                        <div class="post-meta">--}}
-                        {{--                                            <ul class="post-meta-list">--}}
-                        {{--                                                <li>Feb 17, 2019</li>--}}
-                        {{--                                                <li>300k Views</li>--}}
-                        {{--                                            </ul>--}}
-                        {{--                                        </div>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </div>--}}
-                        {{--                                <!-- End Single Post  -->--}}
-
-                        {{--                                <!-- Start Single Post  -->--}}
-                        {{--                                <div class="content-block post-medium mb--20">--}}
-                        {{--                                    <div class="post-thumbnail">--}}
-                        {{--                                        <a href="post-details.html">--}}
-                        {{--                                            <img src="assets/images/small-images/blog-sm-03.jpg"--}}
-                        {{--                                                 alt="Post Images">--}}
-                        {{--                                        </a>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <div class="post-content">--}}
-                        {{--                                        <h6 class="title"><a href="post-details.html">How a developer and--}}
-                        {{--                                                designer duo at Deutsche Bank keep--}}
-                        {{--                                                remote</a></h6>--}}
-                        {{--                                        <div class="post-meta">--}}
-                        {{--                                            <ul class="post-meta-list">--}}
-                        {{--                                                <li>Feb 17, 2019</li>--}}
-                        {{--                                                <li>300k Views</li>--}}
-                        {{--                                            </ul>--}}
-                        {{--                                        </div>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </div>--}}
-                        {{--                                <!-- End Single Post  -->--}}
-
-                        {{--                            </div>--}}
-                        {{--                            <!-- End Post List  -->--}}
-
-                        {{--                        </div>--}}
-                        <!-- End Single Widget  -->
 
                         <!-- Start Single Widget  -->
                         <div class="axil-single-widget widget widget_social mb--30">
@@ -323,51 +247,6 @@
                         </div>
                         <!-- End Single Widget  -->
 
-                        <!-- Start Single Widget  -->
-                        {{--                        <div class="axil-single-widget widget widget_instagram mb--30">--}}
-                        {{--                            <h5 class="widget-title">Instagram</h5>--}}
-                        {{--                            <!-- Start Post List  -->--}}
-                        {{--                            <ul class="instagram-post-list-wrapper">--}}
-                        {{--                                <li class="instagram-post-list">--}}
-                        {{--                                    <a href="#">--}}
-                        {{--                                        <img src="assets/images/small-images/instagram-01.jpg"--}}
-                        {{--                                             alt="Instagram Images">--}}
-                        {{--                                    </a>--}}
-                        {{--                                </li>--}}
-                        {{--                                <li class="instagram-post-list">--}}
-                        {{--                                    <a href="#">--}}
-                        {{--                                        <img src="assets/images/small-images/instagram-02.jpg"--}}
-                        {{--                                             alt="Instagram Images">--}}
-                        {{--                                    </a>--}}
-                        {{--                                </li>--}}
-                        {{--                                <li class="instagram-post-list">--}}
-                        {{--                                    <a href="#">--}}
-                        {{--                                        <img src="assets/images/small-images/instagram-03.jpg"--}}
-                        {{--                                             alt="Instagram Images">--}}
-                        {{--                                    </a>--}}
-                        {{--                                </li>--}}
-                        {{--                                <li class="instagram-post-list">--}}
-                        {{--                                    <a href="#">--}}
-                        {{--                                        <img src="assets/images/small-images/instagram-04.jpg"--}}
-                        {{--                                             alt="Instagram Images">--}}
-                        {{--                                    </a>--}}
-                        {{--                                </li>--}}
-                        {{--                                <li class="instagram-post-list">--}}
-                        {{--                                    <a href="#">--}}
-                        {{--                                        <img src="assets/images/small-images/instagram-05.jpg"--}}
-                        {{--                                             alt="Instagram Images">--}}
-                        {{--                                    </a>--}}
-                        {{--                                </li>--}}
-                        {{--                                <li class="instagram-post-list">--}}
-                        {{--                                    <a href="#">--}}
-                        {{--                                        <img src="assets/images/small-images/instagram-06.jpg"--}}
-                        {{--                                             alt="Instagram Images">--}}
-                        {{--                                    </a>--}}
-                        {{--                                </li>--}}
-                        {{--                            </ul>--}}
-                        {{--                            <!-- End Post List  -->--}}
-                        {{--                        </div>--}}
-                        <!-- End Single Widget  -->
                     </div>
                     <!-- End Sidebar Area  -->
 
@@ -377,66 +256,12 @@
         </div>
     </div>
     <!-- End Post List Wrapper  -->
-
-    <!-- Start Instagram Area  -->
-    <div class="axil-instagram-area axil-section-gap bg-color-grey">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2 class="title">Instagram</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt--30">
-                <div class="col-lg-12">
-                    <ul class="instagram-post-list">
-                        <li class="single-post">
-                            <a href="#">
-                                <img src="assets/images/small-images/instagram-md-01.jpg" alt="Instagram Images">
-                                <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                            </a>
-                        </li>
-                        <li class="single-post">
-                            <a href="#">
-                                <img src="assets/images/small-images/instagram-md-02.jpg" alt="Instagram Images">
-                                <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                            </a>
-                        </li>
-                        <li class="single-post">
-                            <a href="#">
-                                <img src="assets/images/small-images/instagram-md-03.jpg" alt="Instagram Images">
-                                <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                            </a>
-                        </li>
-                        <li class="single-post">
-                            <a href="#">
-                                <img src="assets/images/small-images/instagram-md-04.jpg" alt="Instagram Images">
-                                <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                            </a>
-                        </li>
-                        <li class="single-post">
-                            <a href="#">
-                                <img src="assets/images/small-images/instagram-md-05.jpg" alt="Instagram Images">
-                                <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                            </a>
-                        </li>
-                        <li class="single-post">
-                            <a href="#">
-                                <img src="assets/images/small-images/instagram-md-06.jpg" alt="Instagram Images">
-                                <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </div>
-    <!-- End Instagram Area  -->
+</div>
 
 
 
-        </x-site-layout>
+</x-site-layout>
 
 
 

@@ -140,7 +140,7 @@
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-4 col-12">
                     <div class="see-all-topics text-start text-sm-end mt_mobile--20">
-                        <a class="axil-link-button" href="#">See All Topics</a>
+{{--                        <a class="axil-link-button" href="#">See All Topics</a>--}}
                     </div>
                 </div>
             </div>
@@ -289,7 +289,7 @@
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-4 col-12">
                     <div class="see-all-topics text-start text-sm-end mt_mobile--20">
-                        <a class="axil-link-button" href="#">See All</a>
+{{--                        <a class="axil-link-button" href="#">See All</a>--}}
                     </div>
                 </div>
             </div>

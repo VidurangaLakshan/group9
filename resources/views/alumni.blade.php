@@ -255,7 +255,7 @@
 {{--                                        <div class="content-block post-medium post-medium-border border-thin">--}}
 {{--                                            <div class="post-thumbnail">--}}
 {{--                                                <a href="post-details.html">--}}
-{{--                                                    <img src="assets/images/post-images/group-different-people-volunteer.jpg" alt="Post Images">--}}
+{{--                                                    <img src="assets/images/post-images-old/group-different-people-volunteer.jpg" alt="Post Images">--}}
 {{--                                                </a>--}}
 {{--                                            </div>--}}
 {{--                                            <div class="post-content">--}}

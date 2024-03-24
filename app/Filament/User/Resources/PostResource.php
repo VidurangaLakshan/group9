@@ -149,13 +149,8 @@ class PostResource extends Resource
 //                            }),
 
                             TextInput::make('custom_categories')
-                                ->name('categories - (comma seperated)')
+                                ->label('Categories (comma seperated)')
                                 ->required()
-                                ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                                    if ($operation === 'edit') {
-                                        $set('approved', false);
-                                    }
-                                }),
                         ]
                     ),
                 ]
@@ -214,6 +209,8 @@ class PostResource extends Resource
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
+
+            ->where('user_id', auth()->user()->id)
             ->withoutGlobalScopes([
                 SoftDeletingScope::class,
             ]);

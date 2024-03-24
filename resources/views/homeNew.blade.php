@@ -32,120 +32,6 @@
 
 
 
-        {{-- mobile responsive --}}
-{{--        <div class="popup-mobilemenu-area">--}}
-{{--            <div class="inner">--}}
-{{--                <div class="mobile-menu-top">--}}
-{{--                    <div class="logo">--}}
-{{--                        <a href="index.html">--}}
-{{--                            <img class="dark-logo" src="assets/images/logo/logo-black.png"--}}
-{{--                                 alt="Logo Images">--}}
-{{--                            <img class="light-logo" src="assets/images/logo/logo-white2.png"--}}
-{{--                                 alt="Logo Images">--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    <div class="mobile-close">--}}
-{{--                        <div class="icon close-menu">--}}
-{{--                            <i class="fal fa-times"></i>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!-- Main Menu -->--}}
-{{--                <ul class="mainmenu">--}}
-{{--                    <li class="menu-item-has-children"><a href="#">Home</a>--}}
-
-{{--                    </li>--}}
-{{--                    <li class="menu-item-has-children"><a href="#">--}}
-{{--                            Academics</a>--}}
-{{--                        <ul class="axil-submenu">--}}
-{{--                            <li><a href="post-format-standard.html">APIIT City Campus</a></li>--}}
-{{--                            <li><a href="post-format-video.html">APIIT--}}
-{{--                                    Law</a></li>--}}
-{{--                            <li><a href="post-format-gallery.html">Kandy--}}
-{{--                                    APIIT</a></li>--}}
-{{--                            <li><a href="post-format-text.html">Staffordshire--}}
-{{--                                    University</a></li>--}}
-{{--                            <li><a href="post-layout-1.html">Detailed--}}
-{{--                                    Descriptions of Each--}}
-{{--                                    Major</a></li>--}}
-{{--                            <li><a href="post-layout-2.html">Potential--}}
-{{--                                    Career Paths for Each--}}
-{{--                                    Major</a></li>--}}
-{{--                            <li><a href="post-layout-3.html">List--}}
-{{--                                    of Available Minors</a></li>--}}
-{{--                            <li><a href="post-layout-4.html">Information--}}
-{{--                                    on Specialized Tracks within--}}
-{{--                                    Majors</a></li>--}}
-{{--                            <li><a href="post-layout-5.html">Library--}}
-{{--                                    Services and--}}
-{{--                                    Resources</a></li>--}}
-{{--                            <li><a href="post-layout-5.html">Tutoring and Academic Support--}}
-{{--                                    Programs</a></li>--}}
-{{--                            <li><a href="post-layout-5.html">Study Spaces and Facilities</a>--}}
-{{--                            </li>--}}
-{{--                            <li><a href="post-layout-5.html">Online Learning Resources</a></li>--}}
-{{--                            <li><a href="post-layout-5.html">Overview of Colleges and--}}
-{{--                                    Schools</a></li>--}}
-{{--                            <li><a href="post-layout-5.html">List of Undergraduate and Graduate--}}
-{{--                                    Programs</a></li>--}}
-{{--                            <li><a href="post-layout-5.html">Certificates and Degrees--}}
-{{--                                    Offered</a></li>--}}
-{{--                            <li><a href="post-layout-5.html">Internship and Experiential--}}
-{{--                                    Learning Opportunities</a>--}}
-{{--                            </li>--}}
-
-{{--                        </ul>--}}
-{{--                    </li>--}}
-{{--                    </li>--}}
-{{--                    <li class="menu-item-has-children"><a href="#">Students </a>--}}
-{{--                        <ul class="axil-submenu">--}}
-{{--                            <li><a href="post-list.html">Counseling and Mental Health--}}
-{{--                                    Services</a></li>--}}
-{{--                            <li><a href="archive.html">Career Development and Placement</a>--}}
-{{--                            </li>--}}
-{{--                            <li><a href="author.html">Student Organizations and Engagement</a>--}}
-{{--                            </li>--}}
-
-{{--                        </ul>--}}
-{{--                    </li>--}}
-{{--                    <li class="menu-item-has-children"><a href="#">Campus Life</a>--}}
-{{--                        <ul class="axil-submenu">--}}
-{{--                            <li><a href="post-format-standard.html">Clubs and societies</a>--}}
-{{--                            </li>--}}
-{{--                            <li><a href="post-format-standard.html">Event Calendar</a></li>--}}
-{{--                            <li><a href="post-format-standard.html">Annual traditions</a></li>--}}
-{{--                            <li><a href="post-format-standard.html">Workshop</a></li>--}}
-{{--                            <li><a href="post-format-standard.html">Sports</a></li>--}}
-
-{{--                        </ul>--}}
-{{--                    </li>--}}
-
-{{--                    <li><a href="404.html">Alumni</a></li>--}}
-{{--                    <li><a href="contact.html">Research</a></li>--}}
-
-{{--                    <li class="menu-item-has-children"><a href="#">Articles</a>--}}
-{{--                        <ul class="axil-submenu">--}}
-{{--                            <li><a href="post-format-standard.html">All Articles</a></li>--}}
-{{--                            @if (Route::has('login'))--}}
-{{--                                @auth--}}
-{{--                                    <li><a href="post-format-standard.html">Write Articles</a></li>--}}
-{{--                                @endauth--}}
-{{--                            @endif--}}
-
-{{--                        </ul>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-{{--        <div class="hamburger-menu d-block d-xl-none">--}}
-{{--            <div class="hamburger-inner">--}}
-{{--                <div class="icon open-menu"><i class="fal fa-bars"></i></div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-
-
         <!-- Start Banner Area -->
 
         <div class="slider-area bg-color-grey" style="padding-bottom: 25px;">
@@ -1243,16 +1129,14 @@
                 <div class="row axil-section-gapBottom">
                     <div class="col-lg-12">
                         <div class="axil-social-wrapper bg-color-white radius">
-                            <ul class="social-with-text">
-                                <li class="twitter"><a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+                            <ul class="social-with-text" style="justify-content: space-around;">
+                                <li class="twitter"><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i><span>Twitter</span></a>
                                 </li>
-                                <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
-                                <li class="instagram"><a href="#"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
-                                <li class="youtube"><a href="#"><i class="fab fa-youtube"></i><span>Youtube</span></a>
+                                <li class="facebook"><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+                                <li class="instagram"><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+                                <li class="youtube"><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i class="fab fa-youtube"></i><span>Youtube</span></a>
                                 </li>
-                                <li class="pinterest"><a href="#"><i class="fab fa-pinterest"></i><span>Pinterest</span></a></li>
-                                <li class="discord"><a href="#"><i class="fab fa-discord"></i><span>Discord</span></a>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -1528,7 +1412,7 @@
 
                                         @if ($category->posts->count() > 0)
                                             <li class="cat-item">
-                                                <a href="#" class="inner" style="justify-content: center">
+                                                <a href="/blog" class="inner" style="justify-content: center">
 
                                                     <div class="content">
                                                         <h5 class="title">{{$category->title}} ({{$category->posts->count()}})</h5>
@@ -1558,8 +1442,7 @@
 
                             <!-- Start Single Widget  -->
                             <div class="axil-single-widget widget widget_postlist mb--30">
-                                <h5 class="widget-title">Success
-                                    Stories</h5>
+                                <h5 class="widget-title">Alumni Spotlights</h5>
                                 <!-- Start Post List  -->
                                 <div class="post-medium-block">
 
@@ -1567,7 +1450,7 @@
                                     <div class="content-block post-medium mb--20">
                                         <div class="post-thumbnail">
                                             <a>
-                                                <img src="assets/images/small-images/blog-sm-01.jpg"
+                                                <img src="assets/images/post-images/alumni-spotlight1.jpg"
                                                      alt="Post Images">
                                             </a>
                                         </div>
@@ -1587,19 +1470,17 @@
                                     <div class="content-block post-medium mb--20">
                                         <div class="post-thumbnail">
                                             <a >
-                                                <img src="assets/images/small-images/blog-sm-02.jpg"
+                                                <img src="assets/images/post-images/alumni-spotlight2.jpg"
                                                      alt="Post Images">
                                             </a>
                                         </div>
                                         <div class="post-content">
-                                            <h6 class="title"><a >Here’s what you
-                                                    should (and
-                                                    shouldn’t) do when</a>
+                                            <h6 class="title"><a>Road to Becoming a Renowned Business Visionary</a>
                                             </h6>
                                             <div class="post-meta">
                                                 <ul class="post-meta-list">
-                                                    <li>Feb 17, 2019</li>
-                                                    <li>300k Views</li>
+                                                    <li>Dec 15, 2020</li>
+                                                    <li>3 min read</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1610,19 +1491,16 @@
                                     <div class="content-block post-medium mb--20">
                                         <div class="post-thumbnail">
                                             <a >
-                                                <img src="assets/images/small-images/blog-sm-03.jpg"
+                                                <img src="assets/images/post-images/alumni-spotlight3.jpg"
                                                      alt="Post Images">
                                             </a>
                                         </div>
                                         <div class="post-content">
-                                            <h6 class="title"><a >How a developer
-                                                    and designer
-                                                    duo at Deutsche Bank keep
-                                                    remote</a></h6>
+                                            <h6 class="title"><a>How a Developer Managed To Run a Multi-Million Business</a></h6>
                                             <div class="post-meta">
                                                 <ul class="post-meta-list">
-                                                    <li>Feb 17, 2019</li>
-                                                    <li>300k Views</li>
+                                                    <li>May 06, 2020</li>
+                                                    <li>2 min read</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1640,11 +1518,11 @@
                                 <h5 class="widget-title">Stay In Touch</h5>
                                 <!-- Start Post List  -->
                                 <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-slack"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                                 <!-- End Post List  -->
                             </div>
@@ -1655,8 +1533,6 @@
                             <!-- End Single Widget  -->
                         </div>
                         <!-- End Sidebar Area  -->
-
-
 
                     </div>
                 </div>
