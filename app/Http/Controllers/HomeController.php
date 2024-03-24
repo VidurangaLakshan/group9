@@ -9,9 +9,25 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    public function index() {
+//    public function index() {
+//
+//        return view('home', [
+//
+//            'featuredPosts' => Post::where('featured', true)->take(3)->latest('published_at')->get(),
+//            'popularPosts' => Post::orderBy('published_at', 'desc')->take(9)->get(),
+//            'posts' => Post::where('published_at', '<=', now())
+//                ->where('approved', true)
+//                ->get(),
+//            'categories' => Category::whereHas('posts', function ($query) {
+//                $query->where('published_at', '<=', now());
+//            })->get(),
+//
+//        ]);
+//    }
 
-        return view('home', [
+    public function homeNew() {
+
+        return view('homeNew', [
 
             'featuredPosts' => Post::where('featured', true)->take(3)->latest('published_at')->get(),
             'popularPosts' => Post::orderBy('published_at', 'desc')->take(9)->get(),
@@ -29,8 +45,8 @@ class HomeController extends Controller
 
         return view('student', [
 
-            'featuredPosts' => Post::featured()->take(3)->latest('published_at')->get(),
-            'recentPosts' => Post::latest()->take(9)->get(),
+            'featuredPosts' => Post::where('featured', true)->take(3)->latest('published_at')->get(),
+            'recentPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
             'posts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
                 ->get(),
@@ -58,7 +74,7 @@ class HomeController extends Controller
 
     public function staff() {
 
-        return view('staff', [
+        return view('academics', [
             'featuredPosts' => Post::featured()->take(3)->latest('published_at')->get(),
             'recentPosts' => Post::latest()->take(9)->get(),
             'posts' => Post::where('published_at', '<=', now())

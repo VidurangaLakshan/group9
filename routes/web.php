@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'homeNew'])->name('homeNew');
+
 
 Route::get('/blog', [\App\Http\Controllers\PostController::class, 'index'])->name('post.index');
 
