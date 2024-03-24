@@ -642,7 +642,7 @@
                                     {{--                            --}}
                                 </li>
 
-                                <li><a href="{{url('alumni')}}}}">Alumni</a></li>
+                                <li><a href="{{url('alumni')}}">Alumni</a></li>
                                 {{--                            <li><a href="research.html">Research</a></li>--}}
 
 
