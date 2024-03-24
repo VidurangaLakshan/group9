@@ -681,43 +681,50 @@
 
                 <div class="col-xl-3 col-lg-8 col-md-8 col-sm-9 col-12">
                     <div class="header-search text-end d-flex align-items-center">
-                        <form class="header-search-form d-sm-block d-none">
-                            <div class="axil-search form-group">
-                                <button type="submit" class="search-button"><i
-                                        class="fal fa-search"></i></button>
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                        </form>
-                        <div class="mobile-search-wrapper d-sm-none d-block">
-                            <button class="search-button-toggle"><i class="fal fa-search"></i></button>
-                            <form class="header-search-form">
+                        <a href="{{route('post.index')}}">
+                            <form class="header-search-form d-sm-block d-none">
                                 <div class="axil-search form-group">
                                     <button type="submit" class="search-button"><i
                                             class="fal fa-search"></i></button>
                                     <input type="text" class="form-control" placeholder="Search">
                                 </div>
                             </form>
+                        </a>
+                        <div class="mobile-search-wrapper d-sm-none d-block">
+
+                                <button class="search-button-toggle"><i class="fal fa-search"></i></button>
+
+
+                                <form class="header-search-form">
+                                    <div class="axil-search form-group">
+                                        <button type="submit" class="search-button"><i
+                                                class="fal fa-search"></i></button>
+                                        <a href="{{route('post.index')}}">
+                                            <input type="text" class="form-control" placeholder="Search">
+                                        </a>
+                                    </div>
+                                </form>
                         </div>
+
                         <ul class="metabar-block">
+
                             @if (Route::has('login'))
                                 @auth
-                                    @if (auth()->user()->email == 'admin@admin.com')
+                                    @if (auth()->user()->role->value == 1)
                                         <li class="icon"><a href="{{ url('/admin') }}"><i class="fas fa-cog"></i></a>
                                         </li>
                                     @else
                                         <li class="icon"><a href="{{ url('/user') }}"><i class="fas fa-cog"></i></a>
                                         </li>
                                     @endif
-                                    <li class="icon"><a>
-
+                                    <li class="icon">
+                                        <a>
                                             <form method="post" action="{{ route('logout') }}" x-data>
                                                 @csrf
-
                                                 <button type="submit" @click.prevent="$root.submit();"
                                                         style="border: none;">
                                                     <i class="fas fa-sign-out-alt"></i>
                                                 </button>
-
                                             </form>
                                         </a>
                                     </li>
@@ -729,21 +736,19 @@
                                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                                         @auth
                                             @if (Auth::check())
-                                                <a href="{{ url('/user/profile') }}">
-                                                <img src="{{ Auth::user()->profile_photo_url }}"
-                                                     alt="{{ Auth::user()->name }}">
-                                                </a>
+                                                    <a href="{{ url('/user/profile') }}">
+                                                        <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
+                                                    </a>
                                             @endif
 
                                         @else
-                                            {{-- <a href="{{ route('login') }}"
-                                        class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
-                                        in</a> --}}
-
 
                                             @if (Route::has('login'))
-                                                <li class="icon"><a href="{{ route('login') }}"><i class="fas fa-user-circle"></i>
-                                                    </a></li>
+                                                <li class="icon">
+                                                    <a href="{{ route('login') }}">
+                                                        <i class="fas fa-user-circle"></i>
+                                                    </a>
+                                                </li>
                                             @endif
 
                                         @endauth
@@ -768,96 +773,29 @@
                                                 </div>
                                                 <!-- Main Menu -->
                                                 <ul class="mainmenu">
-                                                    <li class="menu-item-has-children"><a href="#">Home</a>
+                                                    <li><a href="/">Home</a></li>
+                                                    <li><a href="/student">Students</a></li>
+                                                    <li><a href="/staff">Academics</a></li>
+                                                    <li><a href="{{ route('alumni') }}">Alumni</a></li>
+                                                    <li><a href="{{route('post.index')}}">All Articles</a></li>
 
-                                                    </li>
-                                                    <li class="menu-item-has-children"><a href="#">Campus Life</a>
-                                                        <ul class="axil-submenu">
-                                                            <li><a href="post-format-standard.html">Clubs and societies</a>
-                                                            </li>
-                                                            <li><a href="post-format-standard.html">Event Calendar</a></li>
-                                                            <li><a href="post-format-standard.html">Annual traditions</a></li>
-                                                            <li><a href="post-format-standard.html">Workshop</a></li>
-                                                            <li><a href="post-format-standard.html">Sports</a></li>
-
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children"><a href="#">
-                                                            Academic</a>
-                                                        <ul class="axil-submenu">
-                                                            <li><a href="post-format-standard.html">APIIT City Campus</a></li>
-                                                            <li><a href="post-format-video.html">APIIT
-                                                                    Law</a></li>
-                                                            <li><a href="post-format-gallery.html">Kandy
-                                                                    APIIT</a></li>
-                                                            <li><a href="post-format-text.html">Staffordshire
-                                                                    University</a></li>
-                                                            <li><a href="post-layout-1.html">Detailed
-                                                                    Descriptions of Each
-                                                                    Major</a></li>
-                                                            <li><a href="post-layout-2.html">Potential
-                                                                    Career Paths for Each
-                                                                    Major</a></li>
-                                                            <li><a href="post-layout-3.html">List
-                                                                    of Available Minors</a></li>
-                                                            <li><a href="post-layout-4.html">Information
-                                                                    on Specialized Tracks within
-                                                                    Majors</a></li>
-                                                            <li><a href="post-layout-5.html">Library
-                                                                    Services and
-                                                                    Resources</a></li>
-                                                            <li><a href="post-layout-5.html">Tutoring and Academic Support
-                                                                    Programs</a></li>
-                                                            <li><a href="post-layout-5.html">Study Spaces and Facilities</a>
-                                                            </li>
-                                                            <li><a href="post-layout-5.html">Online Learning Resources</a></li>
-                                                            <li><a href="post-layout-5.html">Overview of Colleges and
-                                                                    Schools</a></li>
-                                                            <li><a href="post-layout-5.html">List of Undergraduate and Graduate
-                                                                    Programs</a></li>
-                                                            <li><a href="post-layout-5.html">Certificates and Degrees
-                                                                    Offered</a></li>
-                                                            <li><a href="post-layout-5.html">Internship and Experiential
-                                                                    Learning Opportunities</a>
-                                                            </li>
-
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children"><a href="#">Student Services</a>
-                                                        <ul class="axil-submenu">
-                                                            <li><a href="post-list.html">Counseling and Mental Health
-                                                                    Services</a></li>
-                                                            <li><a href="archive.html">Career Development and Placement</a>
-                                                            </li>
-                                                            <li><a href="author.html">Student Organizations and Engagement</a>
-                                                            </li>
-
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="404.html">Alumni</a></li>
-                                                    <li><a href="contact.html">Research</a></li>
-
-                                                    <li class="menu-item-has-children"><a href="#">Articles</a>
-                                                        <ul class="axil-submenu">
-                                                            <li><a href="{{route('post.index')}}">All Articles</a></li>
-                                                            @if (Route::has('login'))
-                                                                @auth
-                                                                    <li><a href="{{ url('/user/profile') }}">Write Articles</a></li>
-                                                                @endauth
-                                                            @endif
-
-                                                        </ul>
-                                                    </li>
+                                                    @if (Route::has('login'))
+                                                        @auth
+                                                            <li><a href="{{ url('/user/profile') }}">Write Articles</a></li>
+                                                        @endauth
+                                                    @endif
                                                 </ul>
                                             </div>
                                         </div>
 
-                                        <div class="hamburger-menu d-block d-xl-none">
-                                            <div class="hamburger-inner">
-                                                <div class="icon open-menu"><i class="fal fa-bars"></i></div>
-                                            </div>
-                                        </div>
 
+                                            @if (Auth::check() == false)
+                                                <div class="hamburger-menu d-block d-xl-none">
+                                                    <div class="hamburger-inner">
+                                                        <div class="icon open-menu"><i class="fal fa-bars"></i></div>
+                                                    </div>
+                                                </div>
+                                            @endif
 
 
 
@@ -869,7 +807,13 @@
                             </li>
                         </ul>
                         <!-- Start Hamburger Menu  -->
-
+                        @if (Auth::check())
+                            <div class="hamburger-menu d-block d-xl-none">
+                                <div class="hamburger-inner">
+                                    <div class="icon open-menu"><i class="fal fa-bars"></i></div>
+                                </div>
+                            </div>
+                        @endif
                         <!-- End Hamburger Menu  -->
                     </div>
                 </div>
