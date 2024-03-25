@@ -16,4 +16,12 @@ class ListPosts extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            PostResource\Widgets\PostStatsOverview::class,
+        ];
+    }
+
 }
