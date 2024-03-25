@@ -1253,6 +1253,7 @@
                             $authorPosts = DB::table('posts')
                                         ->where('user_id', $post->author->id)
                                         ->where('id', '!=', $post->id)
+                                        ->where('approved', 1)
                                         ->get();
                         @endphp
 
@@ -1280,7 +1281,7 @@
 
 
                         @php
-                            $latestPosts = DB::table('posts')->latest()->take(5)->get();
+                            $latestPosts = DB::table('posts')->latest()->where('approved', 1)->take(5)->get();
                         @endphp
 
                         @if(count($latestPosts) > 0)
