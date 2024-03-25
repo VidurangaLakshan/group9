@@ -901,31 +901,33 @@
                                 <div class="post-medium-block">
 
                                     @foreach ($oldestPosts as $oldestPost)
-                                        @if ($oldestPost->author->role->value == 6)
-                                            <!-- Start Single Post  -->
-                                            <div class="content-block post-medium mb--20">
-                                                <div class="post-thumbnail">
-                                                    <a href="/blog/{{$oldestPost->slug}}">
-                                                        @if ($oldestPost->image == null)
-                                                            <img src="assets/images/logo/no-image.jpg"
-                                                                 alt="Post Images">
-                                                        @else
-                                                            <img src="{{$oldestPost->getThumbnailImage()}}"
-                                                                 alt="Post Images">
-                                                        @endif
-                                                    </a>
-                                                </div>
-                                                <div class="post-content">
-                                                    <h6 class="title"><a href="/blog/{{$oldestPost->slug}}">{{$oldestPost->title}}</a></h6>
-                                                    <div class="post-meta">
-                                                        <ul class="post-meta-list">
-                                                            <li>{{$oldestPost->published_at->diffForHumans()}}</li>
-                                                            <li>{{$oldestPost->getReadingTime()}} min read</li>
-                                                        </ul>
+                                        @if ($oldestPost->getAttribute('approved') == 1 && $oldestPost->getAttribute('published_at') <= now())
+                                            @if ($oldestPost->author->role->value == 6)
+                                                <!-- Start Single Post  -->
+                                                <div class="content-block post-medium mb--20">
+                                                    <div class="post-thumbnail">
+                                                        <a href="/blog/{{$oldestPost->slug}}">
+                                                            @if ($oldestPost->image == null)
+                                                                <img src="assets/images/logo/no-image.jpg"
+                                                                     alt="Post Images">
+                                                            @else
+                                                                <img src="{{$oldestPost->getThumbnailImage()}}"
+                                                                     alt="Post Images">
+                                                            @endif
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-content">
+                                                        <h6 class="title"><a href="/blog/{{$oldestPost->slug}}">{{$oldestPost->title}}</a></h6>
+                                                        <div class="post-meta">
+                                                            <ul class="post-meta-list">
+                                                                <li>{{$oldestPost->published_at->diffForHumans()}}</li>
+                                                                <li>{{$oldestPost->getReadingTime()}} min read</li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- End Single Post  -->
+                                                <!-- End Single Post  -->
+                                            @endif
                                         @endif
                                     @endforeach
 

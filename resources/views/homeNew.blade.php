@@ -175,7 +175,7 @@
                                 <!-- End Single Slide  -->
 
                                 @foreach($featuredPosts as $featuredPost)
-                                    @if($featuredPost->featured == 1)
+                                    @if($featuredPost->featured == 1 && $featuredPost->getAttribute('approved') == 1 && $featuredPost->getAttribute('published_at') <= now())
                                         <div class="content-block">
                                             <!-- Start Post Thumbnail  -->
                                             <div class="post-thumbnail">
@@ -1522,30 +1522,32 @@
                                 <div class="post-medium-block">
 
                                     @foreach ($oldestPosts as $oldestPost)
-                                        <!-- Start Single Post  -->
-                                        <div class="content-block post-medium mb--20">
-                                            <div class="post-thumbnail">
-                                                <a href="/blog/{{$oldestPost->slug}}">
-                                                    @if ($oldestPost->image == null)
-                                                        <img src="assets/images/logo/no-image.jpg"
+                                        @if ($oldestPost->getAttribute('approved') == 1 && $oldestPost->getAttribute('published_at') <= now())
+                                            <!-- Start Single Post  -->
+                                            <div class="content-block post-medium mb--20">
+                                                <div class="post-thumbnail">
+                                                    <a href="/blog/{{$oldestPost->slug}}">
+                                                        @if ($oldestPost->image == null)
+                                                            <img src="assets/images/logo/no-image.jpg"
+                                                                 alt="Post Images">
+                                                        @else
+                                                        <img src="{{$oldestPost->getThumbnailImage()}}"
                                                              alt="Post Images">
-                                                    @else
-                                                    <img src="{{$oldestPost->getThumbnailImage()}}"
-                                                         alt="Post Images">
-                                                    @endif
-                                                </a>
-                                            </div>
-                                            <div class="post-content">
-                                                <h6 class="title"><a href="/blog/{{$oldestPost->slug}}">{{$oldestPost->title}}</a></h6>
-                                                <div class="post-meta">
-                                                    <ul class="post-meta-list">
-                                                        <li>{{$oldestPost->published_at->diffForHumans()}}</li>
-                                                        <li>{{$oldestPost->getReadingTime()}} min read</li>
-                                                    </ul>
+                                                        @endif
+                                                    </a>
+                                                </div>
+                                                <div class="post-content">
+                                                    <h6 class="title"><a href="/blog/{{$oldestPost->slug}}">{{$oldestPost->title}}</a></h6>
+                                                    <div class="post-meta">
+                                                        <ul class="post-meta-list">
+                                                            <li>{{$oldestPost->published_at->diffForHumans()}}</li>
+                                                            <li>{{$oldestPost->getReadingTime()}} min read</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- End Single Post  -->
+                                            <!-- End Single Post  -->
+                                        @endif
                                     @endforeach
 
                                 </div>
