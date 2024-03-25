@@ -1051,7 +1051,7 @@
                         <!-- Start Post Thumbnail  -->
 
 
-                        @if ($post->getThumbnailImage() !== "http://group-9.laravelsrilanka.com/storage/")
+                        @if ($post->getThumbnailImage() !== "https://group-9.laravelsrilanka.com/storage/")
                             <div class="post-thumbnail">
                                 <img src="{{ $post->getThumbnailImage() }}" alt="Post Images" style="width: 100%">
                                 <style>
