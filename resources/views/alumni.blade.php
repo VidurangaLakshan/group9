@@ -1,35 +1,6 @@
 
 <x-site-layout>
-    <!doctype html>
-    <html class="no-js" lang="en">
 
-
-    <!-- Mirrored from new.axilthemes.com/demo/template/blogar/home-tech-blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 11:06:07 GMT -->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Tech Blog || Blogar - Personal Blog Template</title>
-        <meta name="robots" content="noindex, follow" />
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
-
-        <!-- CSS
-        ============================================ -->
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
-        <link rel="stylesheet" href="assets/css/vendor/slick.css">
-        <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-        <link rel="stylesheet" href="assets/css/vendor/base.css">
-        <link rel="stylesheet" href="assets/css/plugins/plugins.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-
-    </head>
-
-    <body>
     <div class="main-wrapper">
         <div class="mouse-cursor cursor-outer"></div>
         <div class="mouse-cursor cursor-inner"></div>
@@ -43,7 +14,7 @@
                         <!-- Start Post Grid  -->
                         <div class="content-block post-grid post-grid-transparent">
                             <div class="post-thumbnail">
-                                <a href="post-details.html">
+                                <a href="">
                                     <img src="assets/images/post-images/8895534.jpg" alt="Post Images">
                                 </a>
                             </div>
@@ -58,7 +29,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <h3 class="title"><a href="post-details.html">Highlighting achievements and career paths of notable alumni.</a></h3>
+                                    <h3 class="title"><a href="">Highlighting achievements and career paths of notable alumni.</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +40,7 @@
                         <!-- Start Single Post  -->
                         <div class="content-block image-rounded">
                             <div class="post-thumbnail">
-                                <a href="post-details.html">
+                                <a href="">
                                     <img src="assets/images/post-images/medium-shot-happy-friends-having-dinner.jpg" alt="Post Images">
                                 </a>
                             </div>
@@ -83,14 +54,14 @@
                                         </a>
                                     </div>
                                 </div>
-                                <h5 class="title"><a href="post-details.html">Covering gatherings, networking events, and reunions organized for alumni.</a></h5>
+                                <h5 class="title"><a href="">Covering gatherings, networking events, and reunions organized for alumni.</a></h5>
                             </div>
                         </div>
                         <!-- End Single Post  -->
                         <!-- Start Single Post  -->
                         <div class="content-block image-rounded mt--30">
                             <div class="post-thumbnail">
-                                <a href="post-details.html">
+                                <a href="">
                                     <img src="assets/images/post-images/4208421.jpg" alt="Post Images">
                                 </a>
                             </div>
@@ -104,7 +75,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <h5 class="title"><a href="post-details.html">Featuring interviews or profiles of distinguished alumni and their contributions.</a></h5>
+                                <h5 class="title"><a href="">Featuring interviews or profiles of distinguished alumni and their contributions.</a></h5>
                             </div>
                         </div>
                         <!-- End Single Post  -->
@@ -114,7 +85,7 @@
                         <!-- Start Single Post  -->
                         <div class="content-block image-rounded">
                             <div class="post-thumbnail">
-                                <a href="post-details.html">
+                                <a href="">
                                     <img src="assets/images/post-images/corporate-workers-brainstorming-together (1).jpg" alt="Post Images">
                                 </a>
                             </div>
@@ -128,14 +99,14 @@
                                         </a>
                                     </div>
                                 </div>
-                                <h5 class="title"><a href="post-details.html"> Sharing news and updates from the alumni association, including initiatives and opportunities.</a></h5>
+                                <h5 class="title"><a href=""> Sharing news and updates from the alumni association, including initiatives and opportunities.</a></h5>
                             </div>
                         </div>
                         <!-- End Single Post  -->
                         <!-- Start Single Post  -->
                         <div class="content-block image-rounded mt--30">
                             <div class="post-thumbnail">
-                                <a href="post-details.html">
+                                <a href="">
                                     <img src="assets/images/post-images/team-meeting-startups.jpg" alt="Post Images">
                                 </a>
                             </div>
@@ -149,7 +120,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <h5 class="title"><a href="post-details.html">Providing resources, tips, and advice for career development targeted at alumni.</a></h5>
+                                <h5 class="title"><a href="">Providing resources, tips, and advice for career development targeted at alumni.</a></h5>
                             </div>
                         </div>
                         <!-- End Single Post  -->
@@ -188,7 +159,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/6325981.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -202,7 +173,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html"> Recent Accomplishments Across Fields</a></h4>
+                                                <h4 class="title"><a href=""> Recent Accomplishments Across Fields</a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -210,7 +181,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/content-people-with-notepads-pos.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -224,7 +195,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">Alumni Events Recap: Reunions, Networking, and Career Fairs</a></h4>
+                                                <h4 class="title"><a href="">Alumni Events Recap: Reunions, Networking, and Career Fairs</a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -232,7 +203,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/2009.i126.026.political_talk_sho.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -246,7 +217,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">Notable Alumni Interviews: Insights & Career Journeys </a></h4>
+                                                <h4 class="title"><a href="">Notable Alumni Interviews: Insights & Career Journeys </a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -254,7 +225,7 @@
 {{--                                        <!-- Start Post Medium  -->--}}
 {{--                                        <div class="content-block post-medium post-medium-border border-thin">--}}
 {{--                                            <div class="post-thumbnail">--}}
-{{--                                                <a href="post-details.html">--}}
+{{--                                                <a href="">--}}
 {{--                                                    <img src="assets/images/post-images-old/group-different-people-volunteer.jpg" alt="Post Images">--}}
 {{--                                                </a>--}}
 {{--                                            </div>--}}
@@ -268,7 +239,7 @@
 {{--                                                        </a>--}}
 {{--                                                    </div>--}}
 {{--                                                </div>--}}
-{{--                                                <h4 class="title"><a href="post-details.html">Community Support & Mentorship Initiatives</a></h4>--}}
+{{--                                                <h4 class="title"><a href="">Community Support & Mentorship Initiatives</a></h4>--}}
 {{--                                            </div>--}}
 {{--                                        </div>--}}
 {{--                                        <!-- End Post Medium  -->--}}
@@ -278,7 +249,7 @@
                                         <!-- Start Post Grid  -->
                                         <div class="content-block content-block post-grid post-grid-transparent">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/267289940_4792866957419631_4842324367389723858_n.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -293,7 +264,7 @@
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <h3 class="title"><a href="post-details.html">Overcoming Challenges & Achieving Milestones</a></h3>
+                                                    <h3 class="title"><a href="">Overcoming Challenges & Achieving Milestones</a></h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -310,7 +281,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-07.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -324,7 +295,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">OnePlus Nord hands-on: Strong features at a tempting price</a></h4>
+                                                <h4 class="title"><a href="">OnePlus Nord hands-on: Strong features at a tempting price</a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -332,7 +303,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-09.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -346,7 +317,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">The best accessories for your new iPad</a></h4>
+                                                <h4 class="title"><a href="">The best accessories for your new iPad</a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -354,7 +325,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-08.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -368,7 +339,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">Chinese EV startups Byton and Nio received paycheck </a></h4>
+                                                <h4 class="title"><a href="">Chinese EV startups Byton and Nio received paycheck </a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -376,7 +347,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-10.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -390,7 +361,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">How to personalize your Google Chrome homepage with GIF</a></h4>
+                                                <h4 class="title"><a href="">How to personalize your Google Chrome homepage with GIF</a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -400,7 +371,7 @@
                                         <!-- Start Post Grid  -->
                                         <div class="content-block content-block post-grid post-grid-transparent">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-06.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -415,7 +386,7 @@
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <h3 class="title"><a href="post-details.html">iPhone SE is discontinued, but these retailers are still selling it</a></h3>
+                                                    <h3 class="title"><a href="">iPhone SE is discontinued, but these retailers are still selling it</a></h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -432,7 +403,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-07.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -446,7 +417,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">OnePlus Nord hands-on: Strong features at a tempting price</a></h4>
+                                                <h4 class="title"><a href="">OnePlus Nord hands-on: Strong features at a tempting price</a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -454,7 +425,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-09.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -468,7 +439,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">The best accessories for your new iPad</a></h4>
+                                                <h4 class="title"><a href="">The best accessories for your new iPad</a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -476,7 +447,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-08.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -490,7 +461,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">Chinese EV startups Byton and Nio received paycheck </a></h4>
+                                                <h4 class="title"><a href="">Chinese EV startups Byton and Nio received paycheck </a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -498,7 +469,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-10.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -512,7 +483,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">How to personalize your Google Chrome homepage with GIF</a></h4>
+                                                <h4 class="title"><a href="">How to personalize your Google Chrome homepage with GIF</a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -522,7 +493,7 @@
                                         <!-- Start Post Grid  -->
                                         <div class="content-block content-block post-grid post-grid-transparent">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-06.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -537,7 +508,7 @@
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <h3 class="title"><a href="post-details.html">iPhone SE is discontinued, but these retailers are still selling it</a></h3>
+                                                    <h3 class="title"><a href="">iPhone SE is discontinued, but these retailers are still selling it</a></h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -554,7 +525,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-07.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -568,7 +539,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">OnePlus Nord hands-on: Strong features at a tempting price</a></h4>
+                                                <h4 class="title"><a href="">OnePlus Nord hands-on: Strong features at a tempting price</a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -576,7 +547,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-09.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -590,7 +561,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">The best accessories for your new iPad</a></h4>
+                                                <h4 class="title"><a href="">The best accessories for your new iPad</a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -598,7 +569,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-08.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -612,7 +583,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">Chinese EV startups Byton and Nio received paycheck </a></h4>
+                                                <h4 class="title"><a href="">Chinese EV startups Byton and Nio received paycheck </a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -620,7 +591,7 @@
                                         <!-- Start Post Medium  -->
                                         <div class="content-block post-medium post-medium-border border-thin">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-10.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -634,7 +605,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h4 class="title"><a href="post-details.html">How to personalize your Google Chrome homepage with GIF</a></h4>
+                                                <h4 class="title"><a href="">How to personalize your Google Chrome homepage with GIF</a></h4>
                                             </div>
                                         </div>
                                         <!-- End Post Medium  -->
@@ -644,7 +615,7 @@
                                         <!-- Start Post Grid  -->
                                         <div class="content-block content-block post-grid post-grid-transparent">
                                             <div class="post-thumbnail">
-                                                <a href="post-details.html">
+                                                <a href="">
                                                     <img src="assets/images/post-images/post-tech-06.jpg" alt="Post Images">
                                                 </a>
                                             </div>
@@ -659,7 +630,7 @@
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <h3 class="title"><a href="post-details.html">iPhone SE is discontinued, but these retailers are still selling it</a></h3>
+                                                    <h3 class="title"><a href="">iPhone SE is discontinued, but these retailers are still selling it</a></h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -681,242 +652,137 @@
 
         <!-- Start Post List Wrapper  -->
         <div class="axil-post-list-area post-listview-visible-color axil-section-gap bg-color-white">
-
             <div class="container">
-                <div class="col-lg-6 col-md-8 col-sm-8 col-12" style="margin-bottom: 40px">
-                    <div class="section-title">
-                        <h2 class="title">Articles</h2>
+                <div class="row" style="margin-bottom: 40px; margin-top: -50px;">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h2 class="title">Recent Alumni Articles</h2>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-8 col-xl-8">
 
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view is-active mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-details.html">
-                                    <img src="assets/images/post-images/post-test-tech-01.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="DESIGN">DESIGN</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-details.html">New: Freehand Templates, built for the whole team</a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Nusrat Ara">Nusrat Ara</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
 
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view axil-control mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-details.html">
-                                    <img src="assets/images/post-images/post-test-tech-02.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="CREATIVE">CREATIVE</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-details.html">Get Ready To Up Your Creative Game With The New DJI Mavic Air 2</a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Cameron Williamson">Cameron Williamson</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
+                        @foreach($popularPosts as $popularPost)
 
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view axil-control mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-details.html">
-                                    <img src="assets/images/post-images/post-test-tech-03.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="TRAVEL">TRAVEL</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-details.html">Traditional design won’t save us in the COVID-19 era</a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Esther Howard">Esther Howard</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
+                            {{--                        {{dd($popularPost->author->role->value == 4)}}--}}
+                            @if ($popularPost->getAttribute('approved') == 1 && $popularPost->getAttribute('published_at') <= now() && $popularPost->author->role->value == 6)
+                                @if ($popularPost->image == null)
+                                    <div class="content-block post-list-view format-quote mt--30">
+                                        <div class="post-content">
+                                            <div class="post-cat">
+                                                <div class="post-cat-list">
+                                                    <a class="hover-flip-item-wrapper">
+                                        <span class="hover-flip-item">
+                                            {{-- <span data-text="TRAVEL">TRAVEL</span> --}}
+                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
 
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view axil-control mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-details.html">
-                                    <img src="assets/images/post-images/post-test-tech-04.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="GADGET">GADGET</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-details.html">One of the most portable drones in the market.</a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Jane Cooper">Jane Cooper</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
+                                            <h4 class="title" style="font-size: 24px; font-weight: bold">
+                                                <a href="{{ route('post.show', $popularPost->slug) }}">{{$popularPost->title}}</a></h4>
 
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view axil-control mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-details.html">
-                                    <img src="assets/images/post-images/post-test-tech-05.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="LIFESTYLE">LIFESTYLE</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-details.html">The 1 tool that helps remote teams collaborate better</a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Wade Warren">Wade Warren</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
+
+                                            <div class="axil-single-widget widget widget_categories mb--30" style="margin-top: 40px;">
+                                                <ul>
+                                                    @foreach ($popularPost->categories as $category)
+                                                        <li class="cat-item">
+                                                            <a class="inner" style="width: fit-content; background-color: #4CAC; color: white; padding-left: 15px; padding-right: 15px;">
+                                                                <div class="content">
+                                                                    <h5 class="title" style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                            <div class="post-meta-wrapper">
+                                                <div class="post-meta">
+                                                    <div class="content">
+                                                        <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
+                                                            <a class="hover-flip-item-wrapper">
+                                                <span class="hover-flip-item">
+                                                    <span data-text="{{$popularPost->author->name}}">{{$popularPost->author->name}}</span>
+                                                </span>
+                                                            </a>
+                                                        </h6>
+                                                        <ul class="post-meta-list">
+                                                            <li>{{$popularPost->published_at->diffForHumans()}}</li>
+                                                            <li>{{{$popularPost->getReadingTime()}}} min read</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
+
+
+                                @else
+
+                                    <div class="content-block post-list-view mt--30">
+                                        <div class="post-thumbnail">
+                                            <a href="{{ route('post.show', $popularPost->slug) }}">
+                                                <img src="{{$popularPost->getThumbnailImage()}}" alt="Post Images">
+                                            </a>
+                                        </div>
+                                        <div class="post-content">
+                                            <div class="post-cat">
+                                                <div class="post-cat-list">
+                                                    <a class="hover-flip-item-wrapper">
+                                                        {{-- <span class="hover-flip-item">
+                                                            <span data-text="{{$post->categories()->first()->getAttributes('title')}}">{{$post->categories()->first()->getAttributes('title')}}</span>
+                                                        </span> --}}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <h4 class="title" style="font-size: 24px; font-weight: bold;"><a href="{{ route('post.show', $popularPost->slug) }}">{{$popularPost->title}}</a></h4>
+
+                                            <div class="axil-single-widget widget widget_categories mb--30" style="margin-top: 40px;">
+                                                <ul>
+                                                    @foreach ($popularPost->categories as $category)
+                                                        <li class="cat-item">
+                                                            <a class="inner" style="width: fit-content; background-color: #4CAC; color: white; padding-left: 15px; padding-right: 15px;">
+                                                                <div class="content">
+                                                                    <h5 class="title" style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                            <div class="post-meta-wrapper">
+                                                <div class="post-meta">
+                                                    <div class="content">
+                                                        <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
+                                                            <a class="hover-flip-item-wrapper">
+                                                <span class="hover-flip-item">
+                                                    <span data-text="{{$popularPost->author->name}}">{{$popularPost->author->name}}</span>
+                                                </span>
+                                                            </a>
+                                                        </h6>
+                                                        <ul class="post-meta-list">
+                                                            <li>{{$popularPost->published_at->diffForHumans()}}</li>
+                                                            <li>{{{$popularPost->getReadingTime()}}} min read</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                @endif
+
+                            @endif
+
+                        @endforeach
+
+
+
 
                     </div>
+
                     <div class="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">
                         <!-- Start Sidebar Area  -->
                         <div class="sidebar-inner">
@@ -924,46 +790,18 @@
                             <!-- Start Single Widget  -->
                             <div class="axil-single-widget widget widget_categories mb--30">
                                 <ul>
-                                    <li class="cat-item">
-                                        <a href="#" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-01.jpg" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="title">Tech</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="cat-item">
-                                        <a href="#" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-02.jpg" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="title">Style</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="cat-item">
-                                        <a href="#" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-03.jpg" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="title">Travel</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="cat-item">
-                                        <a href="#" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-04.jpg" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="title">Food</h5>
-                                            </div>
-                                        </a>
-                                    </li>
+                                    @foreach ($categories as $category)
+                                        @if ($category->posts->count() > 0)
+                                            <li class="cat-item">
+                                                <a href="/blog" class="inner" style="justify-content: center">
+
+                                                    <div class="content">
+                                                        <h5 class="title">{{$category->title}} ({{$category->posts->count()}})</h5>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        @endif
+                                    @endforeach
                                 </ul>
                             </div>
                             <!-- End Single Widget  -->
@@ -971,35 +809,38 @@
                             <!-- Start Single Widget  -->
                             <div class="axil-single-widget widget widget_search mb--30">
                                 <h5 class="widget-title">Search</h5>
-                                <form action="#">
-                                    <div class="axil-search form-group">
-                                        <button type="submit" class="search-button"><i class="fal fa-search"></i></button>
-                                        <input type="text" class="form-control" placeholder="Search">
-                                    </div>
-                                </form>
+                                <a href="/blog">
+                                    <form action="#">
+                                        <div class="axil-search form-group">
+                                            <button type="submit" class="search-button"><i
+                                                    class="fal fa-search"></i></button>
+                                            <input type="text" class="form-control" placeholder="Search">
+                                        </div>
+                                    </form>
+                                </a>
                             </div>
                             <!-- End Single Widget  -->
 
                             <!-- Start Single Widget  -->
                             <div class="axil-single-widget widget widget_postlist mb--30">
-                                <h5 class="widget-title">Popular on Blogar</h5>
+                                <h5 class="widget-title">Alumni Spotlights</h5>
                                 <!-- Start Post List  -->
                                 <div class="post-medium-block">
 
                                     <!-- Start Single Post  -->
                                     <div class="content-block post-medium mb--20">
                                         <div class="post-thumbnail">
-                                            <a href="post-details.html">
-                                                <img src="assets/images/small-images/blog-sm-01.jpg" alt="Post Images">
+                                            <a>
+                                                <img src="assets/images/post-images/alumni-spotlight1.jpg"
+                                                     alt="Post Images">
                                             </a>
                                         </div>
                                         <div class="post-content">
-                                            <h6 class="title"><a href="post-details.html">The underrated design book that transformed the way I
-                                                    work </a></h6>
+                                            <h6 class="title"><a>The Story behind a Successful Tech Innovator</a></h6>
                                             <div class="post-meta">
                                                 <ul class="post-meta-list">
-                                                    <li>Feb 17, 2019</li>
-                                                    <li>300k Views</li>
+                                                    <li>Jun 21, 2022</li>
+                                                    <li>4 min read</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1009,17 +850,18 @@
                                     <!-- Start Single Post  -->
                                     <div class="content-block post-medium mb--20">
                                         <div class="post-thumbnail">
-                                            <a href="post-details.html">
-                                                <img src="assets/images/small-images/blog-sm-02.jpg" alt="Post Images">
+                                            <a >
+                                                <img src="assets/images/post-images/alumni-spotlight2.jpg"
+                                                     alt="Post Images">
                                             </a>
                                         </div>
                                         <div class="post-content">
-                                            <h6 class="title"><a href="post-details.html">Here’s what you should (and shouldn’t) do when</a>
+                                            <h6 class="title"><a>Road to Becoming a Renowned Business Visionary</a>
                                             </h6>
                                             <div class="post-meta">
                                                 <ul class="post-meta-list">
-                                                    <li>Feb 17, 2019</li>
-                                                    <li>300k Views</li>
+                                                    <li>Dec 15, 2020</li>
+                                                    <li>3 min read</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1029,22 +871,63 @@
                                     <!-- Start Single Post  -->
                                     <div class="content-block post-medium mb--20">
                                         <div class="post-thumbnail">
-                                            <a href="post-details.html">
-                                                <img src="assets/images/small-images/blog-sm-03.jpg" alt="Post Images">
+                                            <a >
+                                                <img src="assets/images/post-images/alumni-spotlight3.jpg"
+                                                     alt="Post Images">
                                             </a>
                                         </div>
                                         <div class="post-content">
-                                            <h6 class="title"><a href="post-details.html">How a developer and designer duo at Deutsche Bank keep
-                                                    remote</a></h6>
+                                            <h6 class="title"><a>How a Developer Managed To Run a Multi-Million Business</a></h6>
                                             <div class="post-meta">
                                                 <ul class="post-meta-list">
-                                                    <li>Feb 17, 2019</li>
-                                                    <li>300k Views</li>
+                                                    <li>May 06, 2020</li>
+                                                    <li>2 min read</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- End Single Post  -->
+
+                                </div>
+                                <!-- End Post List  -->
+
+                            </div>
+                            <!-- End Single Widget  -->
+
+                            <!-- Start Single Widget  -->
+                            <div class="axil-single-widget widget widget_postlist mb--30">
+                                <h5 class="widget-title">Oldest Articles</h5>
+                                <!-- Start Post List  -->
+                                <div class="post-medium-block">
+
+                                    @foreach ($oldestPosts as $oldestPost)
+                                        @if ($oldestPost->author->role->value == 6)
+                                            <!-- Start Single Post  -->
+                                            <div class="content-block post-medium mb--20">
+                                                <div class="post-thumbnail">
+                                                    <a href="/blog/{{$oldestPost->slug}}">
+                                                        @if ($oldestPost->image == null)
+                                                            <img src="assets/images/logo/no-image.jpg"
+                                                                 alt="Post Images">
+                                                        @else
+                                                            <img src="{{$oldestPost->getThumbnailImage()}}"
+                                                                 alt="Post Images">
+                                                        @endif
+                                                    </a>
+                                                </div>
+                                                <div class="post-content">
+                                                    <h6 class="title"><a href="/blog/{{$oldestPost->slug}}">{{$oldestPost->title}}</a></h6>
+                                                    <div class="post-meta">
+                                                        <ul class="post-meta-list">
+                                                            <li>{{$oldestPost->published_at->diffForHumans()}}</li>
+                                                            <li>{{$oldestPost->getReadingTime()}} min read</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Single Post  -->
+                                        @endif
+                                    @endforeach
 
                                 </div>
                                 <!-- End Post List  -->
@@ -1057,59 +940,21 @@
                                 <h5 class="widget-title">Stay In Touch</h5>
                                 <!-- Start Post List  -->
                                 <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-slack"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                                 <!-- End Post List  -->
                             </div>
                             <!-- End Single Widget  -->
 
                             <!-- Start Single Widget  -->
-                            <div class="axil-single-widget widget widget_instagram mb--30">
-                                <h5 class="widget-title">Instagram</h5>
-                                <!-- Start Post List  -->
-                                <ul class="instagram-post-list-wrapper">
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-01.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-02.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-03.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-04.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-05.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="#">
-                                            <img src="assets/images/small-images/instagram-06.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                </ul>
-                                <!-- End Post List  -->
-                            </div>
+
                             <!-- End Single Widget  -->
                         </div>
                         <!-- End Sidebar Area  -->
-
-
 
                     </div>
                 </div>
@@ -1119,25 +964,10 @@
 
 
 
-
-
-
-
-        <!-- Start Back To Top  -->
-        <a id="backto-top"></a>
-        <!-- End Back To Top  -->
-
     </div>
 
     <!-- jQuery JS -->
     <script src="assets/js/vendor/jquery.js"></script>
 
 
-
-    <!-- Main JS -->
-
-    </body>
-
-
-    </html>
 </x-site-layout>

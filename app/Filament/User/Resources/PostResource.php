@@ -151,6 +151,7 @@ class PostResource extends Resource
                             TextInput::make('custom_categories')
                                 ->label('Categories (comma seperated)')
                                 ->required()
+
                         ]
                     ),
                 ]

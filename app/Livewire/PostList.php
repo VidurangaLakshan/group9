@@ -72,7 +72,7 @@ class PostList extends Component
                 });
             })
 
-            ->paginate(5);
+            ->paginate(10);
     }
 
     #[Computed()]

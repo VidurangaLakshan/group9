@@ -42,31 +42,31 @@ class PostResource extends Resource
                             ->live()
                             ->required()->minLength(1)->maxLength(150)
                             ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                                if ($operation === 'edit') {
-                                    $set('approved', false);
-                                    return;
-                                }
+//                                if ($operation === 'edit') {
+//                                    $set('approved', false);
+//                                    return;
+//                                }
                                 $set('slug', Str::slug($state));
                             }),
                         TextInput::make('slug')
                             ->required()
                             ->unique(ignoreRecord: true)
                             ->minLength(1)
-                            ->maxLength(150)
-                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                                if ($operation === 'edit') {
-                                    $set('approved', false);
-                                }
-                            }),
+                            ->maxLength(150),
+//                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+//                                if ($operation === 'edit') {
+//                                    $set('approved', false);
+//                                }
+//                            }),
                         RichEditor::make('body')
                             ->required()
                             ->fileAttachmentsDirectory('posts/images')
-                            ->columnSpanFull()
-                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                                if ($operation === 'edit') {
-                                    $set('approved', false);
-                                }
-                            }),
+                            ->columnSpanFull(),
+//                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+//                                if ($operation === 'edit') {
+//                                    $set('approved', false);
+//                                }
+//                            }),
 
                     ]
                 )->columns(2),
@@ -74,23 +74,23 @@ class PostResource extends Resource
                     [
                         FileUpload::make('image')
                             ->image()
-                            ->directory('posts/thumbnails')
-                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                                if ($operation === 'edit') {
-                                    $set('approved', false);
-                                }
-                            }),
+                            ->directory('posts/thumbnails'),
+//                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+//                                if ($operation === 'edit') {
+//                                    $set('approved', false);
+//                                }
+//                            }),
 
                         DateTimePicker::make('published_at')->nullable()
                         ->required(),
 
                         CheckBox::make('featured')
-                            ->default(false)
-                            ->afterStateUpdated(function ($state, Forms\Set $set) {
-                                if (Post::where('featured', true)->count() >= 5) {
-                                    $set('featured', false);
-                                }
-                            }),
+                            ->default(false),
+//                            ->afterStateUpdated(function ($state, Forms\Set $set) {
+//                                if (Post::where('featured', true)->count() >= 5) {
+//                                    $set('featured', false);
+//                                }
+//                            }),
 
 //                        CheckBox::make('approved')
 //                            ->default(false),
@@ -117,23 +117,23 @@ class PostResource extends Resource
                         Select::make('user_id')
                             ->relationship('author', 'name')
                             ->searchable()
-                            ->required()
-                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                                if ($operation === 'edit') {
-                                    $set('approved', false);
-                                }
-                            }),
+                            ->required(),
+//                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+//                                if ($operation === 'edit') {
+//                                    $set('approved', false);
+//                                }
+//                            }),
 
                         Select::make('categories')
                             ->relationship('categories', 'title')
                             ->searchable()
                             ->multiple()
-                            ->required()
-                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                                if ($operation === 'edit') {
-                                    $set('approved', false);
-                                }
-                            }),
+                            ->required(),
+//                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+//                                if ($operation === 'edit') {
+//                                    $set('approved', false);
+//                                }
+//                            }),
 
                         //if operation is edit, then show the custom categories
                         TextInput::make('custom_categories')

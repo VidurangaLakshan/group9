@@ -23,6 +23,7 @@ class Post extends Model
         'pending',
         'approved',
         'reason_for_rejection',
+        'custom_categories'
 
     ];
 

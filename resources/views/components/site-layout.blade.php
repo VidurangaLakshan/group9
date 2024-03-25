@@ -284,10 +284,11 @@
                         class="d-flex justify-content-start mt_sm--15 justify-content-md-end align-items-center flex-wrap">
                         <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
                         <ul class="social-icon color-tertiary md-size justify-content-start">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
                         </ul>
                     </div>
                     <!-- End Post List  -->
@@ -306,7 +307,7 @@
                     <div class="copyright-left">
                         <ul class="mainmenu justify-content-start">
                             <li>
-                                <a class="hover-flip-item-wrapper" href="#">
+                                <a class="hover-flip-item-wrapper" href="https://apiit.lk/">
                                         <span class="hover-flip-item">
                                             <span data-text="Contact Us">Contact Us</span>
                                         </span>
@@ -318,7 +319,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4">
                     <div class="copyright-right text-start text-md-end mt_sm--20">
-                        <p class="b3">All Rights Reserved © 2023</p>
+                        <p class="b3">All Rights Reserved © 2024</p>
                     </div>
                 </div>
             </div>

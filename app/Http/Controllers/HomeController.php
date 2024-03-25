@@ -30,7 +30,8 @@ class HomeController extends Controller
         return view('homeNew', [
 
             'featuredPosts' => Post::where('featured', true)->take(3)->latest('published_at')->get(),
-            'popularPosts' => Post::orderBy('published_at', 'desc')->take(9)->get(),
+            'oldestPosts' => Post::orderBy('published_at', 'asc')->take(5)->get(),
+            'popularPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
             'posts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
                 ->get(),
@@ -45,8 +46,10 @@ class HomeController extends Controller
 
         return view('student', [
 
-            'featuredPosts' => Post::where('featured', true)->take(3)->latest('published_at')->get(),
+            'featuredPosts' => Post::where('featured', true)->take(5)->latest('published_at')->get(),
             'recentPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
+            'oldestPosts' => Post::orderBy('published_at', 'asc')->take(5)->get(),
+            'popularPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
             'posts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
                 ->get(),
@@ -61,7 +64,9 @@ class HomeController extends Controller
 
         return view('alumni', [
             'featuredPosts' => Post::featured()->take(3)->latest('published_at')->get(),
-            'recentPosts' => Post::latest()->take(9)->get(),
+            'recentPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
+            'oldestPosts' => Post::orderBy('published_at', 'asc')->take(5)->get(),
+            'popularPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
             'posts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
                 ->get(),
@@ -76,7 +81,9 @@ class HomeController extends Controller
 
         return view('academics', [
             'featuredPosts' => Post::featured()->take(3)->latest('published_at')->get(),
-            'recentPosts' => Post::latest()->take(9)->get(),
+            'recentPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
+            'oldestPosts' => Post::orderBy('published_at', 'asc')->take(5)->get(),
+            'popularPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
             'posts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
                 ->get(),

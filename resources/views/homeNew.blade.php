@@ -44,7 +44,7 @@
                                 <div class="content-block">
                                     <!-- Start Post Thumbnail  -->
                                     <div class="post-thumbnail">
-                                        <a href="post-format-standard.html">
+                                        <a href="">
                                             <img src="assets/images/post-images/gallery-post-01.jpg"
                                                  alt="Post Images">
                                         </a>
@@ -60,7 +60,7 @@
                                                 </span>
                                             </a>
                                         </div>
-                                        <h2 class="title"><a href="computing-post-format-standard.html">APIIT:
+                                        <h2 class="title"><a href="">APIIT:
                                                 Future-ready education for impactful careers</a></h2>
                                         <!-- Post Meta  -->
                                         <div class="post-meta-wrapper with-button">
@@ -71,7 +71,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="post-author-name">
-                                                        <a class="hover-flip-item-wrapper" href="author.html">
+                                                        <a class="hover-flip-item-wrapper" href="">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Gamindu Hemachandra">Gamindu
                                                                     Hemachandra</span>
@@ -80,19 +80,20 @@
                                                     </h6>
                                                     <ul class="post-meta-list">
                                                         <li>Feb 17, 2019</li>
-                                                        <li>30k Views</li>
+                                                        <li>3 min read</li>
                                                     </ul>
                                                 </div>
                                             </div>
                                             <ul class="social-share-transparent justify-content-end">
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-link"></i></a></li>
+                                                <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i class="fab fa-youtube"></i></a></li>
+                                                <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
                                             </ul>
                                             <div class="read-more-button cerchio">
                                                 <a class="axil-button button-rounded hover-flip-item-wrapper"
-                                                   href="post-format-standard.html">
+                                                   href="">
                                                     <span class="hover-flip-item">
                                                         <span data-text="Read Post">Read Post</span>
                                                     </span>
@@ -108,7 +109,7 @@
                                 <div class="content-block">
                                     <!-- Start Post Thumbnail  -->
                                     <div class="post-thumbnail">
-                                        <a href="post-format-standard.html">
+                                        <a href="">
                                             <img src="assets/images/post-images/gallery-post-02.jpg"
                                                  alt="Post Images">
                                         </a>
@@ -127,7 +128,7 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <h2 class="title"><a href="post-format-standard.html">A Dive into
+                                        <h2 class="title"><a href="">A Dive into
                                                 Comprehensive Legal Knowledge</a></h2>
 
                                         <!-- Post Meta  -->
@@ -139,7 +140,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="post-author-name">
-                                                        <a class="hover-flip-item-wrapper" href="author.html">
+                                                        <a class="hover-flip-item-wrapper" href="">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Dr Chathura Warnasuriya">Dr Chathura
                                                                     Warnasuriya</span>
@@ -147,20 +148,21 @@
                                                         </a>
                                                     </h6>
                                                     <ul class="post-meta-list">
-                                                        <li>may 10, 2022</li>
-                                                        <li>149k Views</li>
+                                                        <li>May 10, 2022</li>
+                                                        <li>4 min read</li>
                                                     </ul>
                                                 </div>
                                             </div>
                                             <ul class="social-share-transparent justify-content-end">
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-link"></i></a></li>
+                                                <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i class="fab fa-youtube"></i></a></li>
+                                                <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
                                             </ul>
                                             <div class="read-more-button cerchio">
                                                 <a class="axil-button button-rounded hover-flip-item-wrapper"
-                                                   href="post-format-standard.html">
+                                                   href="">
                                                     <span class="hover-flip-item">
                                                         <span data-text="Read Post">Read Post</span>
                                                     </span>
@@ -216,10 +218,11 @@
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i class="fab fa-youtube"></i></a></li>
+                                                        <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
                                                     </ul>
                                                     <div class="read-more-button cerchio">
                                                         <a class="axil-button button-rounded hover-flip-item-wrapper"
@@ -271,7 +274,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <h4 class="title"><a href="post-details.html">The Future of Artificial Intelligence in Legal Practice</a></h4>
+                                <h4 class="title"><a href="">The Future of Artificial Intelligence in Legal Practice</a></h4>
                                 <div class="post-meta">
                                     <div class="post-author-avatar border-rounded">
                                         <img src="assets/images/post-images/author/author-image-2.png" alt="Author Images">
@@ -286,13 +289,13 @@
                                         </h6>
                                         <ul class="post-meta-list">
                                             <li>Feb 17, 2019</li>
-                                            <li>300k Views</li>
+                                            <li>2 min read</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="post-thumbnail">
-                                <a href="post-details.html">
+                                <a href="">
                                     <img src="assets/images/post-images/post-images-1.jpg" alt="Post Images">
                                 </a>
                             </div>
@@ -320,7 +323,7 @@
                                     </div>
                                     <div class="content">
                                         <h6 class="post-author-name">
-                                            <a class="hover-flip-item-wrapper" href=""">
+                                            <a class="hover-flip-item-wrapper" href="">
                                                 <span class="hover-flip-item">
                                                     <span data-text="Vithara Mannage">Vithara Mannage</span>
                                                 </span>
@@ -328,7 +331,7 @@
                                         </h6>
                                         <ul class="post-meta-list">
                                             <li>Feb 17, 2019</li>
-                                            <li>300k Views</li>
+                                            <li>4 min read</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1118,9 +1121,8 @@
             </div>
         </div>
         <!-- End Trending Post Area  -->
-        <!-- Start Featured Area  -->
 
-        <!-- End Featured Area  -->
+
 
 
 
@@ -1275,7 +1277,7 @@
                 <div class="row" style="margin-bottom: 40px; margin-top: -50px;">
                     <div class="col-lg-12">
                         <div class="section-title">
-                            <h2 class="title">Latest Articles</h2>
+                            <h2 class="title">Recent Articles</h2>
                         </div>
                     </div>
                 </div>
@@ -1514,6 +1516,45 @@
                             <!-- End Single Widget  -->
 
                             <!-- Start Single Widget  -->
+                            <div class="axil-single-widget widget widget_postlist mb--30">
+                                <h5 class="widget-title">Oldest Articles</h5>
+                                <!-- Start Post List  -->
+                                <div class="post-medium-block">
+
+                                    @foreach ($oldestPosts as $oldestPost)
+                                        <!-- Start Single Post  -->
+                                        <div class="content-block post-medium mb--20">
+                                            <div class="post-thumbnail">
+                                                <a href="/blog/{{$oldestPost->slug}}">
+                                                    @if ($oldestPost->image == null)
+                                                        <img src="assets/images/logo/no-image.jpg"
+                                                             alt="Post Images">
+                                                    @else
+                                                    <img src="{{$oldestPost->getThumbnailImage()}}"
+                                                         alt="Post Images">
+                                                    @endif
+                                                </a>
+                                            </div>
+                                            <div class="post-content">
+                                                <h6 class="title"><a href="/blog/{{$oldestPost->slug}}">{{$oldestPost->title}}</a></h6>
+                                                <div class="post-meta">
+                                                    <ul class="post-meta-list">
+                                                        <li>{{$oldestPost->published_at->diffForHumans()}}</li>
+                                                        <li>{{$oldestPost->getReadingTime()}} min read</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Single Post  -->
+                                    @endforeach
+
+                                </div>
+                                <!-- End Post List  -->
+
+                            </div>
+                            <!-- End Single Widget  -->
+
+                            <!-- Start Single Widget  -->
                             <div class="axil-single-widget widget widget_social mb--30">
                                 <h5 class="widget-title">Stay In Touch</h5>
                                 <!-- Start Post List  -->
@@ -1728,19 +1769,19 @@
     <!-- JS
 ============================================ -->
 
-    <!-- Modernizer JS -->
+{{--    <!-- Modernizer JS -->--}}
 
     <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/slick.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <!-- Main JS -->
+{{--    <!-- Main JS -->--}}
 
 
-    </body>
+{{--    </body>--}}
 
 
-    <!-- Mirrored from new.axilthemes.com/demo/template/blogar/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 11:05:41 GMT -->
+{{--    <!-- Mirrored from new.axilthemes.com/demo/template/blogar/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 11:05:41 GMT -->--}}
 
-    </html>
+{{--    </html>--}}
 
 </x-site-layout>

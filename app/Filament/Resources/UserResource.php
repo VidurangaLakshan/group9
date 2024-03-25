@@ -54,13 +54,12 @@ class UserResource extends Resource
 
         // if the user is not an admin, don't show the password field
 
-        if ($form->getRecord()->getAttribute('name') == 'Administrator') {
+        if ($form->getRecord()->getAttribute('name') == 'Administrator' || $form->getRecord()->getAttribute('email') == 'admin@blog.apiit.lk') {
             return $form
                 ->schema([
-                    TextInput::make('name')->required()->minLength(1)->maxLength(150),
+                    TextInput::make('name')->disabled(),
 //                    TextInput::make('password')->required()->minLength(8)->password(bcrypt('aaAA12!@'))->placeholder('aaAA12!@'),
-                    TextInput::make('email')->required()->email()->unique(ignoreRecord: true),
-                    //TODO: Add a jetstream link to change the admins password
+                    TextInput::make('email')->disabled(),
                 ]);
         } else {
             return $form

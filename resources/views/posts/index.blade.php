@@ -1,36 +1,3 @@
-{{--<!doctype html>--}}
-{{--<html class="no-js" lang="en">--}}
-
-
-{{--<!-- Mirrored from new.axilthemes.com/demo/template/blogar/post-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 11:06:24 GMT -->--}}
-
-{{--<head>--}}
-{{--    <meta charset="utf-8">--}}
-{{--    <meta http-equiv="x-ua-compatible" content="ie=edge">--}}
-{{--    <title>APIIT</title>--}}
-{{--    <meta name="robots" content="noindex, follow"/>--}}
-{{--    <meta name="description" content="">--}}
-{{--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">--}}
-{{--    <!-- Favicon -->--}}
-{{--    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">--}}
-
-{{--    <!-- CSS--}}
-{{--    ============================================ -->--}}
-{{--    <script src="https://cdn.tailwindcss.com"></script>--}}
-
-
-{{--    <!-- Bootstrap CSS -->--}}
-{{--    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">--}}
-{{--    <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">--}}
-{{--    <link rel="stylesheet" href="assets/css/vendor/slick.css">--}}
-{{--    <!-- <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">--}}
-{{--    <link rel="stylesheet" href="assets/css/vendor/base.css">--}}
-{{--    <link rel="stylesheet" href="assets/css/plugins/plugins.css"> -->--}}
-{{--    <link rel="stylesheet" href="assets/css/style.css">--}}
-
-{{--</head>--}}
-
-{{--<body>--}}
 
 <x-site-layout>
 
@@ -237,11 +204,11 @@
                                 Touch</h5>
                             <!-- Start Post List  -->
                             <ul class="social-icon md-size justify-content-center">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-slack"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
                             </ul>
                             <!-- End Post List  -->
                         </div>
