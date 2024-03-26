@@ -48,8 +48,8 @@ class HomeController extends Controller
 
             'featuredPosts' => Post::where('featured', true)->take(5)->latest('published_at')->get(),
             'recentPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
-            'oldestPosts' => Post::orderBy('published_at', 'asc')->take(5)->get(),
-            'popularPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
+            'oldestPosts' => Post::orderBy('published_at', 'asc')->get(),
+            'popularPosts' => Post::orderBy('published_at', 'desc')->get(),
             'posts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
                 ->get(),
@@ -65,8 +65,8 @@ class HomeController extends Controller
         return view('alumni', [
             'featuredPosts' => Post::featured()->take(3)->latest('published_at')->get(),
             'recentPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
-            'oldestPosts' => Post::orderBy('published_at', 'asc')->take(5)->get(),
-            'popularPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
+            'oldestPosts' => Post::orderBy('published_at', 'asc')->get(),
+            'popularPosts' => Post::orderBy('published_at', 'desc')->get(),
             'posts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
                 ->get(),
@@ -82,8 +82,8 @@ class HomeController extends Controller
         return view('academics', [
             'featuredPosts' => Post::featured()->take(3)->latest('published_at')->get(),
             'recentPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
-            'oldestPosts' => Post::orderBy('published_at', 'asc')->take(5)->get(),
-            'popularPosts' => Post::orderBy('published_at', 'desc')->take(5)->get(),
+            'oldestPosts' => Post::orderBy('published_at', 'asc')->get(),
+            'popularPosts' => Post::orderBy('published_at', 'desc')->get(),
             'posts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
                 ->get(),

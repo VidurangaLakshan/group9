@@ -663,115 +663,124 @@
                 <div class="row">
                     <div class="col-lg-8 col-xl-8">
 
+                        @php
+                            $count = 0;
+                        @endphp
 
                         @foreach($popularPosts as $popularPost)
 
                             {{--                        {{dd($popularPost->author->role->value == 4)}}--}}
                             @if ($popularPost->getAttribute('approved') == 1 && $popularPost->getAttribute('published_at') <= now() && $popularPost->author->role->value == 6)
-                                @if ($popularPost->image == null)
-                                    <div class="content-block post-list-view format-quote mt--30">
-                                        <div class="post-content">
-                                            <div class="post-cat">
-                                                <div class="post-cat-list">
-                                                    <a class="hover-flip-item-wrapper">
-                                        <span class="hover-flip-item">
-                                            {{-- <span data-text="TRAVEL">TRAVEL</span> --}}
-                                        </span>
-                                                    </a>
+                                @if ($count < 5)
+                                    @if ($popularPost->image == null)
+                                        <div class="content-block post-list-view format-quote mt--30">
+                                            <div class="post-content">
+                                                <div class="post-cat">
+                                                    <div class="post-cat-list">
+                                                        <a class="hover-flip-item-wrapper">
+                                            <span class="hover-flip-item">
+                                                {{-- <span data-text="TRAVEL">TRAVEL</span> --}}
+                                            </span>
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <h4 class="title" style="font-size: 24px; font-weight: bold">
-                                                <a href="{{ route('post.show', $popularPost->slug) }}">{{$popularPost->title}}</a></h4>
+                                                <h4 class="title" style="font-size: 24px; font-weight: bold">
+                                                    <a href="{{ route('post.show', $popularPost->slug) }}">{{$popularPost->title}}</a></h4>
 
 
-                                            <div class="axil-single-widget widget widget_categories mb--30" style="margin-top: 40px;">
-                                                <ul>
-                                                    @foreach ($popularPost->categories as $category)
-                                                        <li class="cat-item">
-                                                            <a class="inner" style="width: fit-content; background-color: #4CAC; color: white; padding-left: 15px; padding-right: 15px;">
-                                                                <div class="content">
-                                                                    <h5 class="title" style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                            <div class="post-meta-wrapper">
-                                                <div class="post-meta">
-                                                    <div class="content">
-                                                        <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
-                                                            <a class="hover-flip-item-wrapper">
-                                                <span class="hover-flip-item">
-                                                    <span data-text="{{$popularPost->author->name}}">{{$popularPost->author->name}}</span>
-                                                </span>
-                                                            </a>
-                                                        </h6>
-                                                        <ul class="post-meta-list">
-                                                            <li>{{$popularPost->published_at->diffForHumans()}}</li>
-                                                            <li>{{{$popularPost->getReadingTime()}}} min read</li>
-                                                        </ul>
+                                                <div class="axil-single-widget widget widget_categories mb--30" style="margin-top: 40px;">
+                                                    <ul>
+                                                        @foreach ($popularPost->categories as $category)
+                                                            <li class="cat-item">
+                                                                <a class="inner" style="width: fit-content; background-color: #4CAC; color: white; padding-left: 15px; padding-right: 15px;">
+                                                                    <div class="content">
+                                                                        <h5 class="title" style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                                <div class="post-meta-wrapper">
+                                                    <div class="post-meta">
+                                                        <div class="content">
+                                                            <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
+                                                                <a class="hover-flip-item-wrapper">
+                                                    <span class="hover-flip-item">
+                                                        <span data-text="{{$popularPost->author->name}}">{{$popularPost->author->name}}</span>
+                                                    </span>
+                                                                </a>
+                                                            </h6>
+                                                            <ul class="post-meta-list">
+                                                                <li>{{$popularPost->published_at->diffForHumans()}}</li>
+                                                                <li>{{{$popularPost->getReadingTime()}}} min read</li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
 
-                                @else
+                                    @else
 
-                                    <div class="content-block post-list-view mt--30">
-                                        <div class="post-thumbnail">
-                                            <a href="{{ route('post.show', $popularPost->slug) }}">
-                                                <img src="{{$popularPost->getThumbnailImage()}}" alt="Post Images">
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <div class="post-cat">
-                                                <div class="post-cat-list">
-                                                    <a class="hover-flip-item-wrapper">
-                                                        {{-- <span class="hover-flip-item">
-                                                            <span data-text="{{$post->categories()->first()->getAttributes('title')}}">{{$post->categories()->first()->getAttributes('title')}}</span>
-                                                        </span> --}}
-                                                    </a>
+                                        <div class="content-block post-list-view mt--30">
+                                            <div class="post-thumbnail">
+                                                <a href="{{ route('post.show', $popularPost->slug) }}">
+                                                    <img src="{{$popularPost->getThumbnailImage()}}" alt="Post Images">
+                                                </a>
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="post-cat">
+                                                    <div class="post-cat-list">
+                                                        <a class="hover-flip-item-wrapper">
+                                                            {{-- <span class="hover-flip-item">
+                                                                <span data-text="{{$post->categories()->first()->getAttributes('title')}}">{{$post->categories()->first()->getAttributes('title')}}</span>
+                                                            </span> --}}
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <h4 class="title" style="font-size: 24px; font-weight: bold;"><a href="{{ route('post.show', $popularPost->slug) }}">{{$popularPost->title}}</a></h4>
+                                                <h4 class="title" style="font-size: 24px; font-weight: bold;"><a href="{{ route('post.show', $popularPost->slug) }}">{{$popularPost->title}}</a></h4>
 
-                                            <div class="axil-single-widget widget widget_categories mb--30" style="margin-top: 40px;">
-                                                <ul>
-                                                    @foreach ($popularPost->categories as $category)
-                                                        <li class="cat-item">
-                                                            <a class="inner" style="width: fit-content; background-color: #4CAC; color: white; padding-left: 15px; padding-right: 15px;">
-                                                                <div class="content">
-                                                                    <h5 class="title" style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                            <div class="post-meta-wrapper">
-                                                <div class="post-meta">
-                                                    <div class="content">
-                                                        <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
-                                                            <a class="hover-flip-item-wrapper">
-                                                <span class="hover-flip-item">
-                                                    <span data-text="{{$popularPost->author->name}}">{{$popularPost->author->name}}</span>
-                                                </span>
-                                                            </a>
-                                                        </h6>
-                                                        <ul class="post-meta-list">
-                                                            <li>{{$popularPost->published_at->diffForHumans()}}</li>
-                                                            <li>{{{$popularPost->getReadingTime()}}} min read</li>
-                                                        </ul>
+                                                <div class="axil-single-widget widget widget_categories mb--30" style="margin-top: 40px;">
+                                                    <ul>
+                                                        @foreach ($popularPost->categories as $category)
+                                                            <li class="cat-item">
+                                                                <a class="inner" style="width: fit-content; background-color: #4CAC; color: white; padding-left: 15px; padding-right: 15px;">
+                                                                    <div class="content">
+                                                                        <h5 class="title" style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                                <div class="post-meta-wrapper">
+                                                    <div class="post-meta">
+                                                        <div class="content">
+                                                            <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
+                                                                <a class="hover-flip-item-wrapper">
+                                                    <span class="hover-flip-item">
+                                                        <span data-text="{{$popularPost->author->name}}">{{$popularPost->author->name}}</span>
+                                                    </span>
+                                                                </a>
+                                                            </h6>
+                                                            <ul class="post-meta-list">
+                                                                <li>{{$popularPost->published_at->diffForHumans()}}</li>
+                                                                <li>{{{$popularPost->getReadingTime()}}} min read</li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
+                                    @endif
+
+                                    @php
+                                        $count++;
+                                    @endphp
                                 @endif
 
                             @endif
@@ -900,33 +909,42 @@
                                 <!-- Start Post List  -->
                                 <div class="post-medium-block">
 
+                                    @php
+                                        $count = 0;
+                                    @endphp
+
                                     @foreach ($oldestPosts as $oldestPost)
                                         @if ($oldestPost->getAttribute('approved') == 1 && $oldestPost->getAttribute('published_at') <= now())
                                             @if ($oldestPost->author->role->value == 6)
-                                                <!-- Start Single Post  -->
-                                                <div class="content-block post-medium mb--20">
-                                                    <div class="post-thumbnail">
-                                                        <a href="/blog/{{$oldestPost->slug}}">
-                                                            @if ($oldestPost->image == null)
-                                                                <img src="assets/images/logo/no-image.jpg"
-                                                                     alt="Post Images">
-                                                            @else
-                                                                <img src="{{$oldestPost->getThumbnailImage()}}"
-                                                                     alt="Post Images">
-                                                            @endif
-                                                        </a>
-                                                    </div>
-                                                    <div class="post-content">
-                                                        <h6 class="title"><a href="/blog/{{$oldestPost->slug}}">{{$oldestPost->title}}</a></h6>
-                                                        <div class="post-meta">
-                                                            <ul class="post-meta-list">
-                                                                <li>{{$oldestPost->published_at->diffForHumans()}}</li>
-                                                                <li>{{$oldestPost->getReadingTime()}} min read</li>
-                                                            </ul>
+                                                @if ($count < 5)
+                                                    <!-- Start Single Post  -->
+                                                    <div class="content-block post-medium mb--20">
+                                                        <div class="post-thumbnail">
+                                                            <a href="/blog/{{$oldestPost->slug}}">
+                                                                @if ($oldestPost->image == null)
+                                                                    <img src="assets/images/logo/no-image.jpg"
+                                                                         alt="Post Images">
+                                                                @else
+                                                                    <img src="{{$oldestPost->getThumbnailImage()}}"
+                                                                         alt="Post Images">
+                                                                @endif
+                                                            </a>
+                                                        </div>
+                                                        <div class="post-content">
+                                                            <h6 class="title"><a href="/blog/{{$oldestPost->slug}}">{{$oldestPost->title}}</a></h6>
+                                                            <div class="post-meta">
+                                                                <ul class="post-meta-list">
+                                                                    <li>{{$oldestPost->published_at->diffForHumans()}}</li>
+                                                                    <li>{{$oldestPost->getReadingTime()}} min read</li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <!-- End Single Post  -->
+                                                    <!-- End Single Post  -->
+                                                    @php
+                                                        $count++;
+                                                    @endphp
+                                                @endif
                                             @endif
                                         @endif
                                     @endforeach

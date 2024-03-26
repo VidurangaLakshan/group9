@@ -69,7 +69,7 @@
                             <ul>
                                 @foreach ($post->categories as $category)
                                     <li class="cat-item">
-                                        <a class="inner" style="width: fit-content; background-color: #4CAC; color: white; padding-left: 15px; padding-right: 15px;">
+                                        <a class="inner" style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
                                             <div class="content">
                                                 <h5 class="title" style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
                                             </div>
@@ -122,7 +122,7 @@
                             <ul>
                                 @foreach ($post->categories as $category)
                                     <li class="cat-item">
-                                        <a class="inner" style="width: fit-content; background-color: #4CAC; color: white; padding-left: 15px; padding-right: 15px;">
+                                        <a class="inner" style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
                                             <div class="content">
                                                 <h5 class="title" style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
                                             </div>
