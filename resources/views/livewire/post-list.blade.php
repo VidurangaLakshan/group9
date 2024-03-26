@@ -48,15 +48,6 @@
         </div>
     @endif
 
-{{--    //if there are no posts that are approved and published, show this message--}}
-    @if ($this->posts->where('approved', 1)->where('published_at', '<=', now())->isEmpty())
-        <div class="content-block post-list-view format-quote mt--30">
-            <div class="post-content">
-                <h4 class="title" style="font-size: 24px; font-weight: bold">No posts found</h4>
-            </div>
-        </div>
-    @endif
-
     @foreach ($this->posts as $post)
 
         @if ($post->getAttribute('approved') == 1 && $post->getAttribute('published_at') <= now())
