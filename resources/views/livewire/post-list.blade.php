@@ -10,8 +10,12 @@
             All Posts From : "{{$this->activeCategory->title}}"
         @endif
 
-        @if((request()->get('role') == '1') || (request()->get('role') == '3') || (request()->get('role') == '4'))
+        @if((request()->get('role') == '4'))
             In : "Academics"
+        @endif
+
+        @if(request()->get('role') == '3')
+            In : "Student Support Services"
         @endif
 
         @if(request()->get('role') == '5')
@@ -32,7 +36,7 @@
 
     </div>
 
-
+{{--    {{dd($this->posts)}}--}}
 
     {{--    {{dd($this->posts[0]->author->name)}}--}}
 
@@ -44,6 +48,14 @@
         </div>
     @endif
 
+{{--    //if there are no posts that are approved and published, show this message--}}
+    @if ($this->posts->where('approved', 1)->where('published_at', '<=', now())->isEmpty())
+        <div class="content-block post-list-view format-quote mt--30">
+            <div class="post-content">
+                <h4 class="title" style="font-size: 24px; font-weight: bold">No posts found</h4>
+            </div>
+        </div>
+    @endif
 
     @foreach ($this->posts as $post)
 

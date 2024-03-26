@@ -155,7 +155,7 @@
 
                             <li>
                                 @if (Route::has('login'))
-                                    <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
+                                    <div class="">
                                         @auth
                                             @if (Auth::check())
                                                 <a href="{{ url('/user/profile') }}">
@@ -389,18 +389,38 @@
                                 <ul>
 
                                     <li class="cat-item" style="padding: 5px 5px;">
-                                        <a href="{{ route('post.index', ['role' => '1','3','4']) }}"
+                                        <a href="{{ route('post.index', ['role' => '4']) }}"
+
                                            class="inner"
                                            style="justify-content: center; background: #ffffff; justify-content: center; background: #ffffff; border: lightgray 1px solid; padding: 8px 0px; border-radius: 50px;}">
                                             <div class="content">
 
-                                                @if(request()->get('role') == '1' || request()->get('role') == '3' || request()->get('role') == '4')
+                                                @if(request()->get('role') == '4')
                                                     <h5 class="title"
                                                         style="color: #41bcb8; font-size: 18px; font-weight: bold;">
                                                         Academics</h5>
                                                 @else
                                                     <h5 class="title" style="font-size: 18px; font-weight: bold;">
                                                         Academics</h5>
+                                                @endif
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="cat-item" style="padding: 5px 5px;">
+                                        <a href="{{ route('post.index', ['role' => '3']) }}"
+
+                                           class="inner"
+                                           style="justify-content: center; background: #ffffff; justify-content: center; background: #ffffff; border: lightgray 1px solid; padding: 8px 0px; border-radius: 50px;}">
+                                            <div class="content">
+
+                                                @if(request()->get('role') == '3')
+                                                    <h5 class="title"
+                                                        style="color: #41bcb8; font-size: 18px; font-weight: bold;">
+                                                        Clubs</h5>
+                                                @else
+                                                    <h5 class="title" style="font-size: 18px; font-weight: bold;">
+                                                        Clubs</h5>
                                                 @endif
                                             </div>
                                         </a>
