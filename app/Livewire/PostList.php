@@ -71,7 +71,8 @@ class PostList extends Component
                     $q->where('role', $this->role);
                 });
             })
-
+            ->where('published_at', '<=', now())
+            ->where('approved', 1)
             ->paginate(10);
     }
 
