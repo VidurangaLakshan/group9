@@ -1516,44 +1516,44 @@
                             <!-- End Single Widget  -->
 
                             <!-- Start Single Widget  -->
-                            <div class="axil-single-widget widget widget_postlist mb--30">
-                                <h5 class="widget-title">Oldest Articles</h5>
-                                <!-- Start Post List  -->
-                                <div class="post-medium-block">
+{{--                            <div class="axil-single-widget widget widget_postlist mb--30">--}}
+{{--                                <h5 class="widget-title">Oldest Articles</h5>--}}
+{{--                                <!-- Start Post List  -->--}}
+{{--                                <div class="post-medium-block">--}}
 
-                                    @foreach ($oldestPosts as $oldestPost)
-                                        @if ($oldestPost->getAttribute('approved') == 1 && $oldestPost->getAttribute('published_at') <= now())
-                                            <!-- Start Single Post  -->
-                                            <div class="content-block post-medium mb--20">
-                                                <div class="post-thumbnail">
-                                                    <a href="/blog/{{$oldestPost->slug}}">
-                                                        @if ($oldestPost->image == null)
-                                                            <img src="assets/images/logo/no-image.jpg"
-                                                                 alt="Post Images">
-                                                        @else
-                                                        <img src="{{$oldestPost->getThumbnailImage()}}"
-                                                             alt="Post Images">
-                                                        @endif
-                                                    </a>
-                                                </div>
-                                                <div class="post-content">
-                                                    <h6 class="title"><a href="/blog/{{$oldestPost->slug}}">{{$oldestPost->title}}</a></h6>
-                                                    <div class="post-meta">
-                                                        <ul class="post-meta-list">
-                                                            <li>{{$oldestPost->published_at->diffForHumans()}}</li>
-                                                            <li>{{$oldestPost->getReadingTime()}} min read</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Single Post  -->
-                                        @endif
-                                    @endforeach
+{{--                                    @foreach ($oldestPosts as $oldestPost)--}}
+{{--                                        @if ($oldestPost->getAttribute('approved') == 1 && $oldestPost->getAttribute('published_at') <= now())--}}
+{{--                                            <!-- Start Single Post  -->--}}
+{{--                                            <div class="content-block post-medium mb--20">--}}
+{{--                                                <div class="post-thumbnail">--}}
+{{--                                                    <a href="/blog/{{$oldestPost->slug}}">--}}
+{{--                                                        @if ($oldestPost->image == null)--}}
+{{--                                                            <img src="assets/images/logo/no-image.jpg"--}}
+{{--                                                                 alt="Post Images">--}}
+{{--                                                        @else--}}
+{{--                                                        <img src="{{$oldestPost->getThumbnailImage()}}"--}}
+{{--                                                             alt="Post Images">--}}
+{{--                                                        @endif--}}
+{{--                                                    </a>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="post-content">--}}
+{{--                                                    <h6 class="title"><a href="/blog/{{$oldestPost->slug}}">{{$oldestPost->title}}</a></h6>--}}
+{{--                                                    <div class="post-meta">--}}
+{{--                                                        <ul class="post-meta-list">--}}
+{{--                                                            <li>{{$oldestPost->published_at->diffForHumans()}}</li>--}}
+{{--                                                            <li>{{$oldestPost->getReadingTime()}} min read</li>--}}
+{{--                                                        </ul>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <!-- End Single Post  -->--}}
+{{--                                        @endif--}}
+{{--                                    @endforeach--}}
 
-                                </div>
-                                <!-- End Post List  -->
+{{--                                </div>--}}
+{{--                                <!-- End Post List  -->--}}
 
-                            </div>
+{{--                            </div>--}}
                             <!-- End Single Widget  -->
 
                             <!-- Start Single Widget  -->

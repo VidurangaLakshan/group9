@@ -25,9 +25,9 @@ class CategoryResource extends Resource
     public static function form(Form $form): Form
     {
         //if there are posts for the category and if the operation is "delete", then the category should not be deleted
-        if ($form->getOperation() === 'delete') {
-            $form->getRecord()->setAttribute('deleted_at', now());
-        }
+//        if ($form->getOperation() === 'delete') {
+//            $form->getRecord()->setAttribute('deleted_at', now());
+//        }
 
         return $form
             ->schema([
@@ -40,7 +40,12 @@ class CategoryResource extends Resource
                         }
                         $set('slug', Str::slug($state));
                     }),
-                TextInput::make('slug')->required()->unique(ignoreRecord: true)->minLength(1)->maxLength(150),
+                TextInput::make('slug')
+                    ->required()
+                    ->unique(ignoreRecord: true)
+                    ->minLength(1)
+                    ->maxLength(150)
+                    ->label('URL'),
             ]);
     }
 

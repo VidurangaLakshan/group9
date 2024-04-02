@@ -49,6 +49,7 @@ class PostResource extends Resource
                                 $set('slug', Str::slug($state));
                             }),
                         TextInput::make('slug')
+                            ->label('URL')
                             ->required()
                             ->unique(ignoreRecord: true)
                             ->minLength(1)
@@ -97,6 +98,7 @@ class PostResource extends Resource
 
                         Toggle::make('approved')
                             ->default(false),
+
                         // if approved is true, then disable the reason for rejection field
 
 
@@ -114,6 +116,7 @@ class PostResource extends Resource
                             ->minLength(1)
                             ->maxLength(150),
 
+
                         Select::make('user_id')
                             ->relationship('author', 'name')
                             ->searchable()
@@ -127,8 +130,12 @@ class PostResource extends Resource
                         Select::make('categories')
                             ->relationship('categories', 'title')
                             ->searchable()
-                            ->multiple()
-                            ->required(),
+                            ->multiple(),
+//                            ->required(),
+
+// if approved is false, then disable required from the categories field
+
+
 //                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
 //                                if ($operation === 'edit') {
 //                                    $set('approved', false);
@@ -154,11 +161,11 @@ class PostResource extends Resource
                 TextColumn::make('author.name')->sortable()->searchable(),
                 TextColumn::make('published_at')->date('Y-m-d')->sortable()->searchable(),
                 CheckboxColumn::make('featured')->sortable()->disabled(fn ($state) => Post::where('featured', true)->count() >= 5),
-                IconColumn::make('approved')->boolean()->sortable(),
+                IconColumn::make('approved')->boolean()->sortable()->label('Status'),
 //                Tables\Columns\ToggleColumn::make('approved')->sortable(),
 //                TextColumn::make('categories.title')->sortable()->searchable(),
 //                TextColumn::make('reading_time')->sortable(),
-                TextColumn::make('reason_for_rejection')->sortable()->limit(20),
+                TextColumn::make('reason_for_rejection')->label('Reason For Rejection')->sortable()->limit(20),
 
 
 
