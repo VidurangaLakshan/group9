@@ -477,7 +477,7 @@
                                     <div class="row" style="display: flex; justify-content: center;">
 
 
-                                        @foreach($academicsPosts as $academicPost)
+                                        @foreach($academicsPosts as $academicsPost)
                                             <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                 <div class="row">
                                                     <div class="col-xl-12 col-lg-12 col-md-6 col-12">
@@ -486,7 +486,7 @@
                                                             <div class="post-thumbnail"
                                                                  style="align-items: center; justify-content: center; display: flex;">
                                                                 <a href="{{ route('post.show', $academicsPost->slug) }}">
-                                                                    <img src="{{ $academicPost->getThumbnailImage() }}"
+                                                                    <img src="{{ $academicsPost->getThumbnailImage() }}"
                                                                          alt="Post Images"
                                                                          style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                 </a>
@@ -498,13 +498,13 @@
                                                                             <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                data-text="{{ $academicPost->categories[0]->title }}">{{ $academicPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                             </a>
                                                                         </div>
                                                                     </div>
                                                                     <h4 class="title"><a
-                                                                            href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicPost->title }}</a>
+                                                                            href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                     </h4>
                                                                 </div>
                                                             </div>
