@@ -232,7 +232,7 @@ class PostResource extends Resource
                 ImageColumn::make('image'),
                 TextColumn::make('title')->sortable()->searchable()->limit(40),
                 TextColumn::make('published_at')->date('Y-m-d')->sortable()->searchable(),
-                IconColumn::make('approved')->boolean()->label('Status')->sortable(),
+                IconColumn::make('approved')->boolean()->label('Review Status')->sortable(),
                 IconColumn::make('reason_for_rejection')->sortable(),
             ])
             ->filters([

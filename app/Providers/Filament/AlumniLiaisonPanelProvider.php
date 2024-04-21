@@ -49,7 +49,7 @@ class AlumniLiaisonPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-//                VerifyIsAlumiLiaisonsMiddleware::class,
+                VerifyIsAlumiLiaisonsMiddleware::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

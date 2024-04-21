@@ -22,80 +22,164 @@
 
     @foreach ($this->jobs as $job)
 
-        @if ($job->getAttribute('approved') == 1)
-            <div class="content-block post-list-view format-quote mt--30">
-                <div class="post-thumbnail">
-                    @if ($job->image == null)
-                        <a href="{{ route('job.show', $job->slug) }}">
-                            <img src="{{asset('/assets/images/logo/no-image.jpg')}}" alt="Post Images">
-                        </a>
-                    @else
-                        <a href="{{ route('job.show', $job->slug) }}">
-                            <img src="{{$job->getThumbnailImage()}}" alt="Post Images">
-                        </a>
-                    @endif
-                </div>
-                <div class="post-content">
-                    <div class="post-cat">
-                        <div class="post-cat-list">
-                            <a class="hover-flip-item-wrapper">
+        @if ($job->author->role->value == 4 && (auth()->user()->degree_level == 5 || auth()->user()->degree_level == 6) || auth()->user()->role->value == 1 ||  auth()->user()->role->value == 4)
+
+            @if ($job->getAttribute('approved') == 1)
+                <div class="content-block post-list-view format-quote mt--30">
+                    <div class="post-thumbnail">
+                        @if ($job->image == null)
+                            <a href="{{ route('job.show', $job->slug) }}">
+                                <img src="{{asset('/assets/images/logo/no-image.jpg')}}" alt="Post Images">
+                            </a>
+                        @else
+                            <a href="{{ route('job.show', $job->slug) }}">
+                                <img src="{{$job->getThumbnailImage()}}" alt="Post Images">
+                            </a>
+                        @endif
+                    </div>
+                    <div class="post-content">
+                        <div class="post-cat">
+                            <div class="post-cat-list">
+                                <a class="hover-flip-item-wrapper">
                                         <span class="hover-flip-item">
                                             {{-- <span data-text="TRAVEL">TRAVEL</span> --}}
                                         </span>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
 
-                    <h4 class="title" style="font-size: 24px; font-weight: bold">
-                        <a href="{{ route('job.show', $job->slug) }}">{{$job->name}}</a></h4>
+                        <h4 class="title" style="font-size: 24px; font-weight: bold">
+                            <a href="{{ route('job.show', $job->slug) }}">{{$job->name}}</a></h4>
 
 
-                    <div class="axil-single-widget widget widget_categories mb--30" style="margin-top: 40px;">
-                        <ul>
+                        <div class="axil-single-widget widget widget_categories mb--30" style="margin-top: 40px;">
+                            <ul>
 
-                            <li class="cat-item">
-                                <a class="inner"
-                                   style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
-                                    <div class="content">
-                                        <h5 class="title"
-                                            style="color: white; font-weight: 600; font-size: 16px">{{$job->faculty}}</h5>
-                                    </div>
-                                </a>
-                            </li>
+                                <li class="cat-item">
+                                    <a class="inner"
+                                       style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
+                                        <div class="content">
+                                            <h5 class="title"
+                                                style="color: white; font-weight: 600; font-size: 16px">{{$job->faculty}}</h5>
+                                        </div>
+                                    </a>
+                                </li>
 
-                            <li class="cat-item">
-                                <a class="inner"
-                                   style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
-                                    <div class="content">
-                                        <h5 class="title"
-                                            style="color: white; font-weight: 600; font-size: 16px">{{$job->company}}</h5>
-                                    </div>
-                                </a>
-                            </li>
+                                <li class="cat-item">
+                                    <a class="inner"
+                                       style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
+                                        <div class="content">
+                                            <h5 class="title"
+                                                style="color: white; font-weight: 600; font-size: 16px">{{$job->company}}</h5>
+                                        </div>
+                                    </a>
+                                </li>
 
-                        </ul>
-                    </div>
-                    <div class="post-meta-wrapper">
-                        <div class="post-meta">
-                            <div class="content">
-                                <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
-                                    <a class="hover-flip-item-wrapper">
+                            </ul>
+                        </div>
+                        <div class="post-meta-wrapper">
+                            <div class="post-meta">
+                                <div class="content">
+                                    <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
+                                        <a class="hover-flip-item-wrapper">
                                                 <span class="hover-flip-item">
                                                     <span
-                                                        data-text="{{$job->author->name}}">{{$job->author->name}}</span>
+                                                            data-text="{{$job->author->name}}">{{$job->author->name}}</span>
                                                 </span>
-                                    </a>
-                                </h6>
-                                <ul class="post-meta-list">
-                                    <li>{{$job->updated_at->diffForHumans()}}</li>
-                                </ul>
+                                        </a>
+                                    </h6>
+                                    <ul class="post-meta-list">
+                                        <li>{{$job->updated_at->diffForHumans()}}</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
+            @endif
 
         @endif
+
+        @if ($job->author->role->value == 8)
+
+            @if ($job->getAttribute('approved') == 1)
+                <div class="content-block post-list-view format-quote mt--30">
+                    <div class="post-thumbnail">
+                        @if ($job->image == null)
+                            <a href="{{ route('job.show', $job->slug) }}">
+                                <img src="{{asset('/assets/images/logo/no-image.jpg')}}" alt="Post Images">
+                            </a>
+                        @else
+                            <a href="{{ route('job.show', $job->slug) }}">
+                                <img src="{{$job->getThumbnailImage()}}" alt="Post Images">
+                            </a>
+                        @endif
+                    </div>
+                    <div class="post-content">
+                        <div class="post-cat">
+                            <div class="post-cat-list">
+                                <a class="hover-flip-item-wrapper">
+                                        <span class="hover-flip-item">
+                                            {{-- <span data-text="TRAVEL">TRAVEL</span> --}}
+                                        </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <h4 class="title" style="font-size: 24px; font-weight: bold">
+                            <a href="{{ route('job.show', $job->slug) }}">{{$job->name}}</a></h4>
+
+
+                        <div class="axil-single-widget widget widget_categories mb--30" style="margin-top: 40px;">
+                            <ul>
+
+                                <li class="cat-item">
+                                    <a class="inner"
+                                       style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
+                                        <div class="content">
+                                            <h5 class="title"
+                                                style="color: white; font-weight: 600; font-size: 16px">{{$job->faculty}}</h5>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="cat-item">
+                                    <a class="inner"
+                                       style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
+                                        <div class="content">
+                                            <h5 class="title"
+                                                style="color: white; font-weight: 600; font-size: 16px">{{$job->company}}</h5>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="post-meta-wrapper">
+                            <div class="post-meta">
+                                <div class="content">
+                                    <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
+                                        <a class="hover-flip-item-wrapper">
+                                                <span class="hover-flip-item">
+                                                    <span
+                                                            data-text="{{$job->author->name}}">{{$job->author->name}}</span>
+                                                </span>
+                                        </a>
+                                    </h6>
+                                    <ul class="post-meta-list">
+                                        <li>{{$job->updated_at->diffForHumans()}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            @endif
+
+        @endif
+
     @endforeach
 
     <div class="my-3" id="pagination">

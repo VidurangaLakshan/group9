@@ -171,7 +171,7 @@ class PostResource extends Resource
                 TextColumn::make('author.name')->sortable()->searchable(),
                 TextColumn::make('published_at')->date('Y-m-d')->sortable()->searchable(),
                 IconColumn::make('featured')->boolean()->sortable(),
-                IconColumn::make('approved')->boolean()->sortable()->label('Status'),
+                IconColumn::make('approved')->boolean()->sortable()->label('Review Status'),
                 TextColumn::make('categories.title')->sortable()->searchable(),
                 TextColumn::make('reason_for_rejection')->label('Reason For Rejection')->sortable()->limit(20),
 

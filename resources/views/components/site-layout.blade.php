@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>APIIT</title>
-    <meta name="robots" content="noindex, follow" />
+    <meta name="robots" content="noindex, follow"/>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
@@ -47,17 +47,7 @@
                         <nav class="mainmenu-nav">
                             <!-- Start Mainmanu Nav -->
                             <ul class="mainmenu">
-                                <li class="menu-item-has-children"><a href="/">Home</a>
-
-                                </li>
-
-{{--                                <li class="menu-item-has-children"><a href="{{url('student')}}">Students</a></li>--}}
-
-
-{{--                                <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('staff')}}">Academics</a></li>--}}
-
-{{--                                <li><a href="{{url('alumni')}}">Alumni</a></li>--}}
-
+                                <li class="menu-item-has-children"><a href="/">Home</a></li>
 
                                 <li class="menu-item-has-children"><a href="#">Articles</a>
                                     <ul class="axil-submenu">
@@ -68,34 +58,84 @@
                                                 </span>
                                             </a>
                                         </li>
-
-
-                                            @auth
-                                                @if (auth()->user()->role->value == 1)
-                                                    <li>
-                                                        <a class="hover-flip-item-wrapper" href="{{ url('/admin') }}">
+                                        @auth
+                                            @if (auth()->user()->role->value == 1)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper" href="{{ url('/admin') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
-                                                        </a>
-                                                    </li>
-                                                @else
-                                                    <li>
-                                                        <a class="hover-flip-item-wrapper" href="{{ url('/user') }}">
+                                                    </a>
+                                                </li>
+                                            @elseif (auth()->user()->role->value == 2)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper" href="{{ url('/editor') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
-                                                        </a>
-                                                    </li>
-                                                @endif
-                                            @endauth
-
-
-
-
-
+                                                    </a>
+                                                </li>
+                                            @elseif (auth()->user()->role->value == 4)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/alumniLiaison') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                    </a>
+                                                </li>
+                                            @elseif (auth()->user()->role->value == 5)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper" href="{{ url('/academics') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                    </a>
+                                                </li>
+                                            @elseif (auth()->user()->role->value == 6)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/nonAcademics') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                    </a>
+                                                </li>
+                                            @elseif (auth()->user()->role->value == 7)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper" href="{{ url('/user') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                    </a>
+                                                </li>
+                                            @elseif (auth()->user()->role->value == 8)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper" href="{{ url('/alumni') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                        @endauth
                                     </ul>
                                 </li>
+
+
+                                @auth
+                                    @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
+                                        <li class="menu-item-has-children"><a href="{{url('job')}}">Vacancies</a></li>
+                                    @endif
+                                @endauth
+
+
+                                @auth
+                                    <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('likes')}}">Favourites</a>
+                                    </li>
+                                @endauth
+
+
                             </ul>
                             <!-- End Mainmanu Nav -->
                         </nav>
@@ -115,18 +155,18 @@
                         </a>
                         <div class="mobile-search-wrapper d-sm-none d-block">
 
-                                <button class="search-button-toggle"><i class="fal fa-search"></i></button>
+                            <button class="search-button-toggle"><i class="fal fa-search"></i></button>
 
 
-                                <form class="header-search-form">
-                                    <div class="axil-search form-group">
-                                        <button type="submit" class="search-button"><i
-                                                class="fal fa-search"></i></button>
-                                        <a href="{{route('post.index')}}">
-                                            <input type="text" class="form-control" placeholder="Search">
-                                        </a>
-                                    </div>
-                                </form>
+                            <form class="header-search-form">
+                                <div class="axil-search form-group">
+                                    <button type="submit" class="search-button"><i
+                                            class="fal fa-search"></i></button>
+                                    <a href="{{route('post.index')}}">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                    </a>
+                                </div>
+                            </form>
                         </div>
 
                         <ul class="metabar-block">
@@ -136,8 +176,25 @@
                                     @if (auth()->user()->role->value == 1)
                                         <li class="icon"><a href="{{ url('/admin') }}"><i class="fas fa-cog"></i></a>
                                         </li>
-                                    @else
+                                    @elseif (auth()->user()->role->value == 2)
+                                        <li class="icon"><a href="{{ url('/editor') }}"><i class="fas fa-cog"></i></a>
+                                        </li>
+                                    @elseif (auth()->user()->role->value == 4)
+                                        <li class="icon"><a href="{{ url('/alumniLiaison') }}"><i
+                                                    class="fas fa-cog"></i></a>
+                                        </li>
+                                    @elseif (auth()->user()->role->value == 5)
+                                        <li class="icon"><a href="{{ url('/academics') }}"><i
+                                                    class="fas fa-cog"></i></a>
+                                        </li>
+                                    @elseif (auth()->user()->role->value == 6)
+                                        <li class="icon"><a href="{{ url('/nonAcademics') }}"><i class="fas fa-cog"></i></a>
+                                        </li>
+                                    @elseif (auth()->user()->role->value == 7)
                                         <li class="icon"><a href="{{ url('/user') }}"><i class="fas fa-cog"></i></a>
+                                        </li>
+                                    @elseif (auth()->user()->role->value == 8)
+                                        <li class="icon"><a href="{{ url('/alumni') }}"><i class="fas fa-cog"></i></a>
                                         </li>
                                     @endif
                                     <li class="icon">
@@ -159,9 +216,10 @@
                                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                                         @auth
                                             @if (Auth::check())
-                                                    <a href="{{ url('/user/profile') }}">
-                                                        <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
-                                                    </a>
+                                                <a href="{{ url('/user/profile') }}">
+                                                    <img src="{{ Auth::user()->profile_photo_url }}"
+                                                         alt="{{ Auth::user()->name }}">
+                                                </a>
                                             @endif
 
                                         @else
@@ -182,9 +240,11 @@
                                                 <div class="mobile-menu-top">
                                                     <div class="logo">
                                                         <a href="/">
-                                                            <img class="dark-logo" src="assets/images/logo/logo-black.png"
+                                                            <img class="dark-logo"
+                                                                 src="assets/images/logo/logo-black.png"
                                                                  alt="Logo Images">
-                                                            <img class="light-logo" src="assets/images/logo/logo-white2.png"
+                                                            <img class="light-logo"
+                                                                 src="assets/images/logo/logo-white2.png"
                                                                  alt="Logo Images">
                                                         </a>
                                                     </div>
@@ -197,22 +257,45 @@
                                                 <!-- Main Menu -->
                                                 <ul class="mainmenu">
                                                     <li><a href="/">Home</a></li>
-{{--                                                    <li><a href="/student">Students</a></li>--}}
-{{--                                                    <li><a href="/staff">Academics</a></li>--}}
-{{--                                                    <li><a href="{{ route('alumni') }}">Alumni</a></li>--}}
                                                     <li><a href="{{route('post.index')}}">All Articles</a></li>
 
 
+                                                    @auth
+                                                        @if (auth()->user()->role->value == 1)
+                                                            <li><a href="{{ url('/admin') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 2)
+                                                            <li><a href="{{ url('/editor') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 4)
+                                                            <li><a href="{{ url('/alumniLiaison') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 5)
+                                                            <li><a href="{{ url('/academics') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 6)
+                                                            <li><a href="{{ url('/nonAcademics') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 7)
+                                                            <li><a href="{{ url('/user') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 8)
+                                                            <li><a href="{{ url('/alumni') }}">Write Articles</a>
+                                                            </li>
+                                                        @endif
+                                                    @endauth
 
-                                                        @auth
-                                                            @if (auth()->user()->role->value == 1)
-                                                                <li><a href="{{ url('/admin') }}">Write Articles</a>
-                                                                </li>
-                                                            @else
-                                                                <li><a href="{{ url('/user') }}">Write Articles</a>
-                                                                </li>
-                                                            @endif
-                                                        @endauth
+                                                    @auth
+                                                        @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
+                                                            <li><a href="{{url('job')}}">Vacancies</a></li>
+                                                        @endif
+                                                    @endauth
+
+
+                                                    @auth
+                                                        <li><a href="{{url('likes')}}">Favourites</a>
+                                                        </li>
+                                                    @endauth
 
 
                                                 </ul>
@@ -220,19 +303,13 @@
                                         </div>
 
 
-                                            @if (Auth::check() == false)
-                                                <div class="hamburger-menu d-block d-xl-none">
-                                                    <div class="hamburger-inner">
-                                                        <div class="icon open-menu"><i class="fal fa-bars"></i></div>
-                                                    </div>
+                                        @if (Auth::check() == false)
+                                            <div class="hamburger-menu d-block d-xl-none">
+                                                <div class="hamburger-inner">
+                                                    <div class="icon open-menu"><i class="fal fa-bars"></i></div>
                                                 </div>
-                                            @endif
-
-
-
-
-
-
+                                            </div>
+                                        @endif
                                     </div>
                                 @endif
                             </li>
@@ -284,11 +361,13 @@
                         class="d-flex justify-content-start mt_sm--15 justify-content-md-end align-items-center flex-wrap">
                         <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
                         <ul class="social-icon color-tertiary md-size justify-content-start">
-                            <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="https://www.facebook.com/APIITofficial"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li><a href="https://www.instagram.com/apiitsl"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://x.com/APIITsl"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://youtube.com/@APIITedu"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i
+                                        class="fab fa-linkedin-in"></i></a></li>
                         </ul>
                     </div>
                     <!-- End Post List  -->

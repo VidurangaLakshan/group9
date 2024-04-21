@@ -1,8 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-
-<!-- Mirrored from new.axilthemes.com/demo/template/blogar/post-format-standard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 11:06:19 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -29,36 +27,16 @@
 
 <body>
 
-
-<div class="main-wrapper">
-    <div class="mouse-cursor cursor-outer"></div>
-    <div class="mouse-cursor cursor-inner"></div>
-
-    <!-- <div id="my_switcher" class="my_switcher">
-        <ul>
-            <li>
-                <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                    <span title="Light Mode">Light</span>
-                </a>
-            </li>
-            <li>
-                <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                    <span title="Dark Mode">Dark</span>
-                </a>
-            </li>
-        </ul>
-    </div> -->
-
-
-
+<header>
+    <!-- Start Header -->
     <header class="header axil-header  header-light header-sticky ">
         <div class="header-wrap">
             <div class="row justify-content-between align-items-center">
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-3 col-12">
                     <div class="logo">
                         <a href="/">
-                            <img class="dark-logo" src="/assets/images/logo/logo-black.png" alt=" logo">
-                            <img class="light-logo" src="/assets/images/logo/logo-white2.png" alt=" logo">
+                            <img class="dark-logo" src="/assets/images/logo/logo-black.png" alt="Blogar logo">
+                            <img class="light-logo" src="/assets/images/logo/logo-white2.png" alt="Blogar logo">
                         </a>
                     </div>
                 </div>
@@ -68,17 +46,7 @@
                         <nav class="mainmenu-nav">
                             <!-- Start Mainmanu Nav -->
                             <ul class="mainmenu">
-                                <li class="menu-item-has-children"><a href="/">Home</a>
-
-                                </li>
-
-                                <li class="menu-item-has-children"><a href="{{url('student')}}">Students</a></li>
-
-
-                                <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('staff')}}">Academics</a></li>
-
-                                <li><a href="{{url('alumni')}}">Alumni</a></li>
-
+                                <li class="menu-item-has-children"><a href="/">Home</a></li>
 
                                 <li class="menu-item-has-children"><a href="#">Articles</a>
                                     <ul class="axil-submenu">
@@ -89,8 +57,6 @@
                                                 </span>
                                             </a>
                                         </li>
-
-
                                         @auth
                                             @if (auth()->user()->role->value == 1)
                                                 <li>
@@ -100,7 +66,41 @@
                                                             </span>
                                                     </a>
                                                 </li>
-                                            @else
+                                            @elseif (auth()->user()->role->value == 2)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper" href="{{ url('/editor') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                    </a>
+                                                </li>
+                                            @elseif (auth()->user()->role->value == 4)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/alumniLiaison') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                    </a>
+                                                </li>
+                                            @elseif (auth()->user()->role->value == 5)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper" href="{{ url('/academics') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                    </a>
+                                                </li>
+                                            @elseif (auth()->user()->role->value == 6)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/nonAcademics') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                    </a>
+                                                </li>
+                                            @elseif (auth()->user()->role->value == 7)
                                                 <li>
                                                     <a class="hover-flip-item-wrapper" href="{{ url('/user') }}">
                                                             <span class="hover-flip-item">
@@ -108,15 +108,33 @@
                                                             </span>
                                                     </a>
                                                 </li>
+                                            @elseif (auth()->user()->role->value == 8)
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper" href="{{ url('/alumni') }}">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="Write Articles">Write Articles</span>
+                                                            </span>
+                                                    </a>
+                                                </li>
                                             @endif
                                         @endauth
-
-
-
-
-
                                     </ul>
                                 </li>
+
+
+                                @auth
+                                    @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
+                                        <li class="menu-item-has-children"><a href="{{url('job')}}">Vacancies</a></li>
+                                    @endif
+                                @endauth
+
+
+                                @auth
+                                    <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('likes')}}">Favourites</a>
+                                    </li>
+                                @endauth
+
+
                             </ul>
                             <!-- End Mainmanu Nav -->
                         </nav>
@@ -157,8 +175,25 @@
                                     @if (auth()->user()->role->value == 1)
                                         <li class="icon"><a href="{{ url('/admin') }}"><i class="fas fa-cog"></i></a>
                                         </li>
-                                    @else
+                                    @elseif (auth()->user()->role->value == 2)
+                                        <li class="icon"><a href="{{ url('/editor') }}"><i class="fas fa-cog"></i></a>
+                                        </li>
+                                    @elseif (auth()->user()->role->value == 4)
+                                        <li class="icon"><a href="{{ url('/alumniLiaison') }}"><i
+                                                    class="fas fa-cog"></i></a>
+                                        </li>
+                                    @elseif (auth()->user()->role->value == 5)
+                                        <li class="icon"><a href="{{ url('/academics') }}"><i
+                                                    class="fas fa-cog"></i></a>
+                                        </li>
+                                    @elseif (auth()->user()->role->value == 6)
+                                        <li class="icon"><a href="{{ url('/nonAcademics') }}"><i class="fas fa-cog"></i></a>
+                                        </li>
+                                    @elseif (auth()->user()->role->value == 7)
                                         <li class="icon"><a href="{{ url('/user') }}"><i class="fas fa-cog"></i></a>
+                                        </li>
+                                    @elseif (auth()->user()->role->value == 8)
+                                        <li class="icon"><a href="{{ url('/alumni') }}"><i class="fas fa-cog"></i></a>
                                         </li>
                                     @endif
                                     <li class="icon">
@@ -181,7 +216,8 @@
                                         @auth
                                             @if (Auth::check())
                                                 <a href="{{ url('/user/profile') }}">
-                                                    <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}">
+                                                    <img src="{{ Auth::user()->profile_photo_url }}"
+                                                         alt="{{ Auth::user()->name }}">
                                                 </a>
                                             @endif
 
@@ -198,47 +234,72 @@
                                         @endauth
 
                                         {{-- mobile responsive --}}
-{{--                                        <div class="popup-mobilemenu-area">--}}
-{{--                                            <div class="inner">--}}
-{{--                                                <div class="mobile-menu-top">--}}
-{{--                                                    <div class="logo">--}}
-{{--                                                        <a href="/">--}}
-{{--                                                            <img class="dark-logo" src="assets/images/logo/logo-black.png"--}}
-{{--                                                                 alt="Logo Images">--}}
-{{--                                                            <img class="light-logo" src="assets/images/logo/logo-white2.png"--}}
-{{--                                                                 alt="Logo Images">--}}
-{{--                                                        </a>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="mobile-close">--}}
-{{--                                                        <div class="icon close-menu">--}}
-{{--                                                            <i class="fal fa-times"></i>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <!-- Main Menu -->--}}
-{{--                                                <ul class="mainmenu">--}}
-{{--                                                    <li><a href="/">Home</a></li>--}}
-{{--                                                    <li><a href="/student">Students</a></li>--}}
-{{--                                                    <li><a href="/staff">Academics</a></li>--}}
-{{--                                                    <li><a href="{{ route('alumni') }}">Alumni</a></li>--}}
-{{--                                                    <li><a href="{{route('post.index')}}">All Articles</a></li>--}}
+                                        <div class="popup-mobilemenu-area">
+                                            <div class="inner">
+                                                <div class="mobile-menu-top">
+                                                    <div class="logo">
+                                                        <a href="/">
+                                                            <img class="dark-logo"
+                                                                 src="/assets/images/logo/logo-black.png"
+                                                                 alt="Logo Images">
+                                                            <img class="light-logo"
+                                                                 src="/assets/images/logo/logo-white2.png"
+                                                                 alt="Logo Images">
+                                                        </a>
+                                                    </div>
+                                                    <div class="mobile-close">
+                                                        <div class="icon close-menu">
+                                                            <i class="fal fa-times"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Main Menu -->
+                                                <ul class="mainmenu">
+                                                    <li><a href="/">Home</a></li>
+                                                    <li><a href="{{route('post.index')}}">All Articles</a></li>
 
 
+                                                    @auth
+                                                        @if (auth()->user()->role->value == 1)
+                                                            <li><a href="{{ url('/admin') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 2)
+                                                            <li><a href="{{ url('/editor') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 4)
+                                                            <li><a href="{{ url('/alumniLiaison') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 5)
+                                                            <li><a href="{{ url('/academics') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 6)
+                                                            <li><a href="{{ url('/nonAcademics') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 7)
+                                                            <li><a href="{{ url('/user') }}">Write Articles</a>
+                                                            </li>
+                                                        @elseif (auth()->user()->role->value == 8)
+                                                            <li><a href="{{ url('/alumni') }}">Write Articles</a>
+                                                            </li>
+                                                        @endif
+                                                    @endauth
 
-{{--                                                    @auth--}}
-{{--                                                        @if (auth()->user()->role->value == 1)--}}
-{{--                                                            <li><a href="{{ url('/admin') }}">Write Articles</a>--}}
-{{--                                                            </li>--}}
-{{--                                                        @else--}}
-{{--                                                            <li><a href="{{ url('/user') }}">Write Articles</a>--}}
-{{--                                                            </li>--}}
-{{--                                                        @endif--}}
-{{--                                                    @endauth--}}
+                                                    @auth
+                                                        @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
+                                                            <li><a href="{{url('job')}}">Vacancies</a></li>
+                                                        @endif
+                                                    @endauth
 
 
-{{--                                                </ul>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+                                                    @auth
+                                                        <li><a href="{{url('likes')}}">Favourites</a>
+                                                        </li>
+                                                    @endauth
+
+
+                                                </ul>
+                                            </div>
+                                        </div>
 
 
                                         @if (Auth::check() == false)
@@ -248,12 +309,6 @@
                                                 </div>
                                             </div>
                                         @endif
-
-
-
-
-
-
                                     </div>
                                 @endif
                             </li>
@@ -272,15 +327,18 @@
             </div>
         </div>
     </header>
+    <!-- Start Header -->
+</header>
 
 
 
 
 
 
+<div class="main-wrapper">
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
 
-
-    <!-- End Mobile Menu Area  -->
 
 
 
@@ -296,8 +354,8 @@
 {{--                        @if ($post->getThumbnailImage() !== "https://group-9.laravelsrilanka.com/storage/")--}}
 {{--                        @if ($post->getThumbnailImage() == "https://127.0.0.1:8000/storage/")--}}
                         @if ($post->image != null)
-                            <div class="post-thumbnail">
-                                <img src="{{ $post->getThumbnailImage() }}" alt="Post Images" style="width: 100%">
+                            <div class="post-thumbnail" style="display: flex; justify-content: center; align-items: center;">
+                                <img src="{{ $post->getThumbnailImage() }}" alt="Post Images" style="width: auto">
                                 <style>
                                     .post-thumbnail {
                                         position: relative;
@@ -586,10 +644,10 @@
                             <h5 class="widget-title">Stay In Touch</h5>
                             <!-- Start Post List  -->
                             <ul class="social-icon md-size justify-content-center">
-                                <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="https://www.facebook.com/APIITofficial"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/apiitsl"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://x.com/APIITsl"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://youtube.com/@APIITedu"><i class="fab fa-youtube"></i></a></li>
                                 <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
                             </ul>
                             <!-- End Post List  -->
@@ -629,10 +687,10 @@
                             class="d-flex justify-content-start mt_sm--15 justify-content-md-end align-items-center flex-wrap">
                             <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
                             <ul class="social-icon color-tertiary md-size justify-content-start">
-                                <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="https://www.facebook.com/APIITofficial"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/apiitsl"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://x.com/APIITsl"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://youtube.com/@APIITedu"><i class="fab fa-youtube"></i></a></li>
                                 <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
                             </ul>
                         </div>
@@ -682,27 +740,16 @@
 <!-- JS
 ============================================ -->
 
-<!-- Modernizer JS -->
+<!-- JavaScript -->
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/popper.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+<script src="assets/js/vendor/slick.min.js"></script>
+<script src="assets/js/vendor/tweenmax.min.js"></script>
 
-<script src="/assets/js/vendor/jquery.js"></script>
-<script src="/assets/js/vendor/slick.min.js"></script>
-<script src="/assets/js/main.js"></script>
 <!-- Main JS -->
-
-
-<script>
-    $(document).ready(function () {
-        $('.nav-link').on('click', function (e) {
-            e.preventDefault();
-            var targetTabId = $(this).attr('href');
-            $('.tab-pane').removeClass('show active');
-            $(targetTabId).addClass('show active');
-        });
-    });
-</script>
+<script src="assets/js/main.js"></script>
 
 </body>
 
-
-<!-- Mirrored from new.axilthemes.com/demo/template/blogar/post-format-standard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 11:06:23 GMT -->
 </html>

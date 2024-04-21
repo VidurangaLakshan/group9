@@ -49,7 +49,7 @@ class AcademicsPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-//                VerifyIsAcademicsMiddleware::class,
+                VerifyIsAcademicsMiddleware::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

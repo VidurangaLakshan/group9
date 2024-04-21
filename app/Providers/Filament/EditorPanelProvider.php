@@ -49,7 +49,7 @@ class EditorPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-//                VerifyIsEditorMiddleware::class,
+                VerifyIsEditorMiddleware::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
