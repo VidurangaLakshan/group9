@@ -310,261 +310,298 @@
 
 
 
-        <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
-            <div class="container">
+        @if($studentPosts->isNotEmpty())
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title"
-                             style="display: flex; justify-content: space-between; align-items: baseline; font-weight: lighter">
-                            <h2 class="title">Articles By Students</h2>
-                            <a href="{{url('/blog?role=7')}}"><h5 style="color: #04B4AC">See More >></h5></a>
+            <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title"
+                                 style="display: flex; justify-content: space-between; align-items: baseline; font-weight: lighter">
+                                <h2 class="title">Articles By Students</h2>
+                                <a href="{{url('/blog?role=7')}}"><h5 style="color: #04B4AC">See More >></h5></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
+                        <div class="col-lg-12">
 
-                        <!-- Start Tab Content  -->
-                        <div class="grid-tab-content tab-content mt--10">
+                            <!-- Start Tab Content  -->
+                            <div class="grid-tab-content tab-content mt--10">
 
-                            <!-- Start Single Tab Content  -->
-                            <div class="single-post-grid tab-pane fade show active" id="gridone" role="tabpanel">
-                                <div class="row" style="display: flex; justify-content: center;">
+                                <!-- Start Single Tab Content  -->
+                                <div class="single-post-grid tab-pane fade show active" id="gridone" role="tabpanel">
+                                    <div class="row" style="display: flex; justify-content: center;">
 
 
-                                    @foreach($studentPosts as $studentPost)
-                                        <div class="col-xl-6 col-lg-5 col-md-12 col-12">
-                                            <div class="row">
-                                                <div class="col-xl-12 col-lg-12 col-md-6 col-12">
-                                                    <!-- Start Post Grid  -->
-                                                    <div class="content-block post-grid mt--30">
-                                                        <div class="post-thumbnail" style="align-items: center; justify-content: center; display: flex;">
-                                                            <a href="{{ route('post.show', $studentPost->slug) }}">
-                                                                <img src="{{ $studentPost->getThumbnailImage() }}"
-                                                                     alt="Post Images" style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
-                                                            </a>
-                                                        </div>
-                                                        <div class="post-grid-content">
-                                                            <div class="post-content">
-                                                                <div class="post-cat">
-                                                                    <div class="post-cat-list">
-                                                                        <a class="hover-flip-item-wrapper">
+                                        @foreach($studentPosts as $studentPost)
+                                            <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                        <!-- Start Post Grid  -->
+                                                        <div class="content-block post-grid mt--30">
+                                                            <div class="post-thumbnail"
+                                                                 style="align-items: center; justify-content: center; display: flex;">
+                                                                <a href="{{ route('post.show', $studentPost->slug) }}">
+                                                                    <img src="{{ $studentPost->getThumbnailImage() }}"
+                                                                         alt="Post Images"
+                                                                         style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                </a>
+                                                            </div>
+                                                            <div class="post-grid-content">
+                                                                <div class="post-content">
+                                                                    <div class="post-cat">
+                                                                        <div class="post-cat-list">
+                                                                            <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
                                                                                 data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
                                                                         </span>
-                                                                        </a>
+                                                                            </a>
+                                                                        </div>
                                                                     </div>
+                                                                    <h4 class="title"><a
+                                                                            href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
+                                                                    </h4>
                                                                 </div>
-                                                                <h4 class="title"><a href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a></h4>
                                                             </div>
                                                         </div>
+                                                        <!-- Start Post Grid  -->
                                                     </div>
-                                                    <!-- Start Post Grid  -->
                                                 </div>
                                             </div>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
 
+                                    </div>
                                 </div>
+                                <!-- End Single Tab Content  -->
+
+
                             </div>
-                            <!-- End Single Tab Content  -->
-
-
+                            <!-- End Tab Content  -->
                         </div>
-                        <!-- End Tab Content  -->
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
-            <div class="container">
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title"
-                             style="display: flex; justify-content: space-between; align-items: baseline; font-weight: lighter">
-                            <h2 class="title">Articles By Alumni</h2>
-                            <a href="{{url('/blog?role=8')}}"><h5 style="color: #04B4AC">See More >></h5></a>
+        @endif
+
+        @if($alumniPosts->isNotEmpty())
+
+            <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title"
+                                 style="display: flex; justify-content: space-between; align-items: baseline; font-weight: lighter">
+                                <h2 class="title">Articles By Alumni</h2>
+                                <a href="{{url('/blog?role=8')}}"><h5 style="color: #04B4AC">See More >></h5></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
+                        <div class="col-lg-12">
 
-                        <!-- Start Tab Content  -->
-                        <div class="grid-tab-content tab-content mt--10">
+                            <!-- Start Tab Content  -->
+                            <div class="grid-tab-content tab-content mt--10">
 
-                            <div class="single-post-grid tab-pane fade show active" id="gridone" role="tabpanel">
-                                <div class="row" style="display: flex; justify-content: center;">
+                                <div class="single-post-grid tab-pane fade show active" id="gridone" role="tabpanel">
+                                    <div class="row" style="display: flex; justify-content: center;">
 
-                                    @foreach($alumniPosts as $alumniPost)
-                                        <div class="col-xl-6 col-lg-5 col-md-12 col-12">
-                                            <div class="row">
-                                                <div class="col-xl-12 col-lg-12 col-md-6 col-12">
-                                                    <!-- Start Post Grid  -->
-                                                    <div class="content-block post-grid mt--30">
-                                                        <div class="post-thumbnail" style="align-items: center; justify-content: center; display: flex;">
-                                                            <a href="{{ route('post.show', $alumniPost->slug) }}">
-                                                                <img src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                     alt="Post Images" style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
-                                                            </a>
-                                                        </div>
-                                                        <div class="post-grid-content">
-                                                            <div class="post-content">
-                                                                <div class="post-cat">
-                                                                    <div class="post-cat-list">
-                                                                        <a class="hover-flip-item-wrapper">
+                                        @foreach($alumniPosts as $alumniPost)
+                                            <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                        <!-- Start Post Grid  -->
+                                                        <div class="content-block post-grid mt--30">
+                                                            <div class="post-thumbnail"
+                                                                 style="align-items: center; justify-content: center; display: flex;">
+                                                                <a href="{{ route('post.show', $alumniPost->slug) }}">
+                                                                    <img src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                         alt="Post Images"
+                                                                         style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                </a>
+                                                            </div>
+                                                            <div class="post-grid-content">
+                                                                <div class="post-content">
+                                                                    <div class="post-cat">
+                                                                        <div class="post-cat-list">
+                                                                            <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
                                                                                 data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
                                                                         </span>
-                                                                        </a>
+                                                                            </a>
+                                                                        </div>
                                                                     </div>
+                                                                    <h4 class="title"><a
+                                                                            href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
+                                                                    </h4>
                                                                 </div>
-                                                                <h4 class="title"><a href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a></h4>
                                                             </div>
                                                         </div>
+                                                        <!-- Start Post Grid  -->
                                                     </div>
-                                                    <!-- Start Post Grid  -->
                                                 </div>
                                             </div>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
 
+                                    </div>
                                 </div>
                             </div>
+                            <!-- End Tab Content  -->
                         </div>
-                        <!-- End Tab Content  -->
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
-            <div class="container">
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title"
-                             style="display: flex; justify-content: space-between; align-items: baseline; font-weight: lighter">
-                            <h2 class="title">Articles By Academics</h2>
-                            <a href="{{url('/blog?role=5')}}"><h5 style="color: #04B4AC">See More >></h5></a>
+        @endif
+
+        @if($academicsPosts->isNotEmpty())
+
+            <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title"
+                                 style="display: flex; justify-content: space-between; align-items: baseline; font-weight: lighter">
+                                <h2 class="title">Articles By Academics</h2>
+                                <a href="{{url('/blog?role=5')}}"><h5 style="color: #04B4AC">See More >></h5></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
+                        <div class="col-lg-12">
 
-                        <!-- Start Tab Content  -->
-                        <div class="grid-tab-content tab-content mt--10">
+                            <!-- Start Tab Content  -->
+                            <div class="grid-tab-content tab-content mt--10">
 
-                            <div class="single-post-grid tab-pane fade show active" id="gridone" role="tabpanel">
-                                <div class="row" style="display: flex; justify-content: center;">
+                                <div class="single-post-grid tab-pane fade show active" id="gridone" role="tabpanel">
+                                    <div class="row" style="display: flex; justify-content: center;">
 
 
-                                    @foreach($academicsPosts as $academicPost)
-                                        <div class="col-xl-6 col-lg-5 col-md-12 col-12">
-                                            <div class="row">
-                                                <div class="col-xl-12 col-lg-12 col-md-6 col-12">
-                                                    <!-- Start Post Grid  -->
-                                                    <div class="content-block post-grid mt--30">
-                                                        <div class="post-thumbnail" style="align-items: center; justify-content: center; display: flex;">
-                                                            <a href="{{ route('post.show', $academicsPost->slug) }}">
-                                                                <img src="{{ $academicPost->getThumbnailImage() }}"
-                                                                     alt="Post Images" style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
-                                                            </a>
-                                                        </div>
-                                                        <div class="post-grid-content">
-                                                            <div class="post-content">
-                                                                <div class="post-cat">
-                                                                    <div class="post-cat-list">
-                                                                        <a class="hover-flip-item-wrapper">
+                                        @foreach($academicsPosts as $academicPost)
+                                            <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                        <!-- Start Post Grid  -->
+                                                        <div class="content-block post-grid mt--30">
+                                                            <div class="post-thumbnail"
+                                                                 style="align-items: center; justify-content: center; display: flex;">
+                                                                <a href="{{ route('post.show', $academicsPost->slug) }}">
+                                                                    <img src="{{ $academicPost->getThumbnailImage() }}"
+                                                                         alt="Post Images"
+                                                                         style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                </a>
+                                                            </div>
+                                                            <div class="post-grid-content">
+                                                                <div class="post-content">
+                                                                    <div class="post-cat">
+                                                                        <div class="post-cat-list">
+                                                                            <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
                                                                                 data-text="{{ $academicPost->categories[0]->title }}">{{ $academicPost->categories[0]->title }}</span>
                                                                         </span>
-                                                                        </a>
+                                                                            </a>
+                                                                        </div>
                                                                     </div>
+                                                                    <h4 class="title"><a
+                                                                            href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicPost->title }}</a>
+                                                                    </h4>
                                                                 </div>
-                                                                <h4 class="title"><a href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicPost->title }}</a></h4>
                                                             </div>
                                                         </div>
+                                                        <!-- Start Post Grid  -->
                                                     </div>
-                                                    <!-- Start Post Grid  -->
                                                 </div>
                                             </div>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
 
+
+                                    </div>
                                 </div>
+
+
                             </div>
-
-
+                            <!-- End Tab Content  -->
                         </div>
-                        <!-- End Tab Content  -->
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
-            <div class="container">
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title"
-                             style="display: flex; justify-content: space-between; align-items: baseline; font-weight: lighter">
-                            <h2 class="title">Articles By Non-Academics</h2>
-                            <a href="{{url('/blog?role=6')}}"><h5 style="color: #04B4AC">See More >></h5></a>
+        @endif
+
+        @if($nonAcademicsPosts->isNotEmpty())
+
+            <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title"
+                                 style="display: flex; justify-content: space-between; align-items: baseline; font-weight: lighter">
+                                <h2 class="title">Articles By Non-Academics</h2>
+                                <a href="{{url('/blog?role=6')}}"><h5 style="color: #04B4AC">See More >></h5></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
+                        <div class="col-lg-12">
 
-                        <!-- Start Tab Content  -->
-                        <div class="grid-tab-content tab-content mt--10">
+                            <!-- Start Tab Content  -->
+                            <div class="grid-tab-content tab-content mt--10">
 
-                            <div class="single-post-grid tab-pane fade show active" id="gridone" role="tabpanel">
-                                <div class="row" style="display: flex; justify-content: center;">
+                                <div class="single-post-grid tab-pane fade show active" id="gridone" role="tabpanel">
+                                    <div class="row" style="display: flex; justify-content: center;">
 
 
-                                    @foreach($nonAcademicsPosts as $nonAcademicsPost)
-                                        <div class="col-xl-6 col-lg-5 col-md-12 col-12">
-                                            <div class="row">
-                                                <div class="col-xl-12 col-lg-12 col-md-6 col-12">
-                                                    <!-- Start Post Grid  -->
-                                                    <div class="content-block post-grid mt--30">
-                                                        <div class="post-thumbnail" style="align-items: center; justify-content: center; display: flex;">
-                                                            <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
-                                                                <img src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                     alt="Post Images" style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
-                                                            </a>
-                                                        </div>
-                                                        <div class="post-grid-content">
-                                                            <div class="post-content">
-                                                                <div class="post-cat">
-                                                                    <div class="post-cat-list">
-                                                                        <a class="hover-flip-item-wrapper">
+                                        @foreach($nonAcademicsPosts as $nonAcademicsPost)
+                                            <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                        <!-- Start Post Grid  -->
+                                                        <div class="content-block post-grid mt--30">
+                                                            <div class="post-thumbnail"
+                                                                 style="align-items: center; justify-content: center; display: flex;">
+                                                                <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
+                                                                    <img
+                                                                        src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                        alt="Post Images"
+                                                                        style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                </a>
+                                                            </div>
+                                                            <div class="post-grid-content">
+                                                                <div class="post-content">
+                                                                    <div class="post-cat">
+                                                                        <div class="post-cat-list">
+                                                                            <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
                                                                                 data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                         </span>
-                                                                        </a>
+                                                                            </a>
+                                                                        </div>
                                                                     </div>
+                                                                    <h4 class="title"><a
+                                                                            href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                    </h4>
                                                                 </div>
-                                                                <h4 class="title"><a href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a></h4>
                                                             </div>
                                                         </div>
+                                                        <!-- Start Post Grid  -->
                                                     </div>
-                                                    <!-- Start Post Grid  -->
                                                 </div>
                                             </div>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
 
+                                    </div>
                                 </div>
+
+
                             </div>
-
-
+                            <!-- End Tab Content  -->
                         </div>
-                        <!-- End Tab Content  -->
                     </div>
                 </div>
             </div>
-        </div>
+
+        @endif
 
 
         <div class="axil-post-grid-area axil-section bg-color-grey">
