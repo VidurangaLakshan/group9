@@ -49,7 +49,7 @@ class UserPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                VerifyIsUserMiddleware::class,
+//                VerifyIsUserMiddleware::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

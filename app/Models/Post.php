@@ -46,6 +46,16 @@ class Post extends Model
         return $this->belongsToMany(Category::class);
     }
 
+    public function likes()
+    {
+        return $this->belongsToMany(User::class, 'post_like')->withTimestamps();
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function scopeWithCategory($query, string $category)
     {
         $query->whereHas('categories', function($query) use ($category){
@@ -71,6 +81,26 @@ class Post extends Model
         return ($isUrl) ? $this->image : Storage::disk('public')->url($this->image);
     }
 
+//    protected static function booted()
+//    {
+//        static::saving(function ($post) {
+//            $post->user_id = auth()->id();
+//        });
+//    }
+    protected static function booted()
+    {
+        static::saving(function ($post) {
+            if ($post->isDirty('user_id')) {
+                // Check if the user_id is being explicitly set, if so, don't override it.
+                return;
+            }
+
+            if (!$post->exists) {
+                // If the post is being created or updated, set the user_id.
+                $post->user_id = auth()->id();
+            }
+        });
+    }
 }
 
 

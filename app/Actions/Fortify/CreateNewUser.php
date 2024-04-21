@@ -21,17 +21,29 @@ class CreateNewUser implements CreatesNewUsers
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
+            'fullName' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
-            'nic' => ['required', 'string', 'max:255'],
+            'nic' => ['string', 'max:12'],
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
         return User::create([
             'name' => $input['name'],
+            'fullName' => $input['fullName'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
-            'nic' => $input['nic'],
+            'nic' => isset($input['nic']) ? $input['nic'] : null,
+            'role' => $input['role'],
+            'faculty' => isset($input['faculty']) ? $input['faculty'] : null,
+            'degree_level' => isset($input['degree_level']) ? $input['degree_level'] : null,
+            'graduation_year' => isset($input['graduation_year']) ? $input['graduation_year'] : null,
+            'display_comments' => isset($input['display_comments']) ? $input['display_comments'] : 0,
+            'post_comments' => isset($input['post_comments']) ? $input['post_comments'] : 0,
+            'interest_computing' => 1,
+            'interest_business' => 1,
+            'interest_law' => 1,
+            'newUserPersonalized' => 0,
         ]);
     }
 }

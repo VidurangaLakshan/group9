@@ -51,12 +51,12 @@
 
                                 </li>
 
-                                <li class="menu-item-has-children"><a href="{{url('student')}}">Students</a></li>
+{{--                                <li class="menu-item-has-children"><a href="{{url('student')}}">Students</a></li>--}}
 
 
-                                <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('staff')}}">Academics</a></li>
+{{--                                <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('staff')}}">Academics</a></li>--}}
 
-                                <li><a href="{{url('alumni')}}">Alumni</a></li>
+{{--                                <li><a href="{{url('alumni')}}">Alumni</a></li>--}}
 
 
                                 <li class="menu-item-has-children"><a href="#">Articles</a>
@@ -197,9 +197,9 @@
                                                 <!-- Main Menu -->
                                                 <ul class="mainmenu">
                                                     <li><a href="/">Home</a></li>
-                                                    <li><a href="/student">Students</a></li>
-                                                    <li><a href="/staff">Academics</a></li>
-                                                    <li><a href="{{ route('alumni') }}">Alumni</a></li>
+{{--                                                    <li><a href="/student">Students</a></li>--}}
+{{--                                                    <li><a href="/staff">Academics</a></li>--}}
+{{--                                                    <li><a href="{{ route('alumni') }}">Alumni</a></li>--}}
                                                     <li><a href="{{route('post.index')}}">All Articles</a></li>
 
 

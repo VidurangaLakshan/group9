@@ -293,8 +293,9 @@
                     <div class="content-block">
                         <!-- Start Post Thumbnail  -->
 
-
-                        @if ($post->getThumbnailImage() !== "https://group-9.laravelsrilanka.com/storage/")
+{{--                        @if ($post->getThumbnailImage() !== "https://group-9.laravelsrilanka.com/storage/")--}}
+{{--                        @if ($post->getThumbnailImage() == "https://127.0.0.1:8000/storage/")--}}
+                        @if ($post->image != null)
                             <div class="post-thumbnail">
                                 <img src="{{ $post->getThumbnailImage() }}" alt="Post Images" style="width: 100%">
                                 <style>
@@ -362,7 +363,7 @@
                                     </div>
                                     <div class="content">
                                         <h6 class="post-author-name">
-                                            <a class="hover-flip-item-wrapper" href="author.html">
+                                            <a class="hover-flip-item-wrapper" href="{{ route('post.author', $post->user_id) }}">
                                                     <span class="hover-flip-item">
                                                         <span data-text="{{{$post->author->name}}}">{{{$post->author->name}}}</span>
                                                     </span>
@@ -374,14 +375,37 @@
                                         </ul>
                                     </div>
                                 </div>
+                                <ul class="social-share-transparent justify-content-end">
+                                    <livewire:like-button :key="$post->id" :$post/>
+
+                                    <style>
+
+                                        button {
+                                            border: none;
+                                            background: none;
+                                            cursor: pointer;
+                                            padding-top: 10px;
+                                        }
+
+                                        svg {
+                                            width: 30px;
+                                            height: 30px;
+                                            padding-bottom: 2px;
+                                            color: white;
+                                        }
+
+                                        span {
+                                            color: white;
+                                        }
+
+                                    </style>
+                                </ul>
                             </div>
                         </div>
                         <!-- End Post Content  -->
                     </div>
-
                     <!-- End Single Slide  -->
                 </div>
-
             </div>
         </div>
     </div>
@@ -414,15 +438,23 @@
                                 <div class="media-body" style="align-self: center">
                                     <div class="author-info">
                                         <h5 class="title">
-                                            <a class="hover-flip-item-wrapper">
+                                            <a class="hover-flip-item-wrapper" href="{{ route('post.author', $post->user_id) }}">
                                                     <span class="hover-flip-item">
                                                         <span style="font-size: 20px" data-text="{{$post->author->name}}">{{$post->author->name}}</span>
                                                     </span>
                                             </a>
                                         </h5>
 
-
-                                        <h5 style="padding-top: 18px; color:gray">{{$post->author->role->name}}</h5>
+                                        @if ($post->author->role->value == 4)
+                                            <span class="b3 subtitle"
+                                                  style="font-size: 20px; font-weight: bold">Alumni Liaisons and Industry Relations</span>
+                                        @elseif ($post->author->role->value == 6)
+                                            <span class="b3 subtitle"
+                                                  style="font-size: 20px; font-weight: bold">Non-Academics</span>
+                                        @else
+                                            <span class="b3 subtitle"
+                                                  style="font-size: 20px; font-weight: bold">{{ $post->author->role->name }}</span>
+                                        @endif
 
                                     </div>
 
@@ -430,8 +462,10 @@
                             </div>
                         </div>
                         <!-- End Author  -->
-
                     </div>
+
+                    <livewire:post-comments :key="'comments' . $post->id" :$post />
+
                 </div>
 
                 <div class="col-lg-4">
@@ -497,6 +531,7 @@
                                         ->where('user_id', $post->author->id)
                                         ->where('id', '!=', $post->id)
                                         ->where('approved', 1)
+                                        ->take(5)
                                         ->get();
                         @endphp
 

@@ -26,11 +26,22 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'fullName',
         'email',
         'password',
         'role',
         'nic',
-        'approved'
+        'approved',
+        'faculty',
+        'degree_level',
+        'graduation_year',
+        'display_comments',
+        'post_comments',
+        'interest_computing',
+        'interest_business',
+        'interest_law',
+        'newUserPersonalized',
+        'linkedin'
     ];
 
     /**
@@ -69,8 +80,24 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
+
     public function getPostCountAttribute()
     {
         return $this->posts()->count();
+    }
+
+    public function likes()
+    {
+        // created_at and updated_at columns will be automatically updated
+        return $this->belongsToMany(Post::class, 'post_like')->withTimestamps();
+    }
+
+    public function hasLiked(Post $post)
+    {
+        return $this->likes()->where('post_id', $post->id)->exists();
     }
 }

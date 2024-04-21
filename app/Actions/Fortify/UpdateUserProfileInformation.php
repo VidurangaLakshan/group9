@@ -34,6 +34,13 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
+                'display_comments' => isset($input['display_comments']) ? $input['display_comments'] : 0,
+                'post_comments' => isset($input['post_comments']) ? $input['post_comments'] : 0,
+                'interest_computing' => isset($input['interest_computing']) ? $input['interest_computing'] : 0,
+                'interest_business' => isset($input['interest_business']) ? $input['interest_business'] : 0,
+                'interest_law' => isset($input['interest_law']) ? $input['interest_law'] : 0,
+                'newUserPersonalized' => 1,
+//                'linkedin' => $input['linkedin'],
             ])->save();
         }
     }

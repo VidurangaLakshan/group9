@@ -81,6 +81,78 @@
                 @endif
             @endif
         </div>
+
+        <!-- LinkedIn -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="linkedin" value="{{ __('LinkedIn Profile URL') }}" />
+            <x-input id="linkedin" type="text" class="mt-1 block w-full" wire:model="state.linkedin" />
+            <x-input-error for="linkedin" class="mt-2" />
+        </div>
+
+        <!-- Personalization -->
+        <div class="border-4 rounded-xl mt-4 col-span-6 sm:col-span-4">
+
+            <div class="mt-4">
+                <x-label class="text-center" for="contact" value="{{ __('PERSONALIZE YOUR EXPERIENCE') }}"/>
+            </div>
+
+            <div class="border-2 rounded-xl mt-4 mx-4">
+                <div class="mt-4">
+                    <x-label class="text-center" for="contact" value="{{ __('Commenting Preferences') }}"/>
+                </div>
+
+                <div class="my-4 flex items-center space-x-5 ml-5">
+                    <x-label for="display_comments" value="{{ __('View Comments') }}"/>
+                    <x-checkbox name="display_comments" id="display_comments" value="1" :checked="$this->user->display_comments ? true : false" wire:model="state.display_comments"/>
+                    <x-label for="post_comments" value="{{ __('Post Comments') }}"/>
+                    <x-checkbox name="post_comments" id="post_comments" value="1" :checked="$this->user->post_comments ? true : false" wire:model="state.post_comments"/>
+                </div>
+            </div>
+
+            <div class="border-2 rounded-xl my-4 mx-4">
+                <div class="mt-4">
+                    <x-label class="text-center" for="contact"
+                             value="{{ __('Choose your Interested Faculty (s)') }}"/>
+                </div>
+
+                @php
+                    $checkCounter = 0;
+                    if($this->user->interest_computing){
+                        $checkCounter++;
+                        //append to checkboxes array
+
+                    }
+                    if($this->user->interest_business){
+                        $checkCounter++;
+                    }
+                    if($this->user->interest_law){
+                        $checkCounter++;
+                    }
+                @endphp
+
+                @php
+                    $checkboxes = [];
+                    if($this->user->interest_computing){
+                        array_push($checkboxes, 'interest_computing');
+                    }
+                    if($this->user->interest_business){
+                        array_push($checkboxes, 'interest_business');
+                    }
+                    if($this->user->interest_law){
+                        array_push($checkboxes, 'interest_law');
+                    }
+                @endphp
+
+                <div x-data="{ checkedCount: {{$checkCounter}},  checkboxes : {{ json_encode($checkboxes) }} }" class="my-4 flex items-center space-x-6 ml-5">
+                    <x-label for="interest_computing" value="{{ __('Computing') }}"/>
+                    <x-checkbox name="interest_computing" id="interest_computing" value="1" :checked="$this->user->interest_computing ? true : false" x-on:click="checkboxes.includes('interest_computing') ? checkboxes.splice(checkboxes.indexOf('interest_computing'), 1) : checkboxes.push('interest_computing'); checkedCount = checkboxes.length;" x-bind:disabled="checkedCount === 1 && checkboxes.includes('interest_computing')" wire:model="state.interest_computing"/>
+                    <x-label for="interest_business" value="{{ __('Business') }}"/>
+                    <x-checkbox name="interest_business" id="interest_business" value="1" :checked="$this->user->interest_business ? true : false" x-on:click="checkboxes.includes('interest_business') ? checkboxes.splice(checkboxes.indexOf('interest_business'), 1) : checkboxes.push('interest_business'); checkedCount = checkboxes.length;" x-bind:disabled="checkedCount === 1 && checkboxes.includes('interest_business')" wire:model="state.interest_business"/>
+                    <x-label for="interest_law" value="{{ __('Law') }}"/>
+                    <x-checkbox name="interest_law" id="interest_law" value="1" :checked="$this->user->interest_law ? true : false" x-on:click="checkboxes.includes('interest_law') ? checkboxes.splice(checkboxes.indexOf('interest_law'), 1) : checkboxes.push('interest_law'); checkedCount = checkboxes.length;" x-bind:disabled="checkedCount === 1 && checkboxes.includes('interest_law')" wire:model="state.interest_law"/>
+                </div>
+            </div>
+        </div>
     </x-slot>
 
     <x-slot name="actions">

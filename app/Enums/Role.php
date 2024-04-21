@@ -9,9 +9,12 @@ enum Role: int implements HasLabel
     case Administrator = 1;
     case Editor = 2;
     case StudentSupportServices = 3;
-    case Staff = 4;
-    case Student = 5;
-    case Alumni = 6;
+    case AlumniRelations = 4;
+    case Academics = 5;
+    case NonAcademics = 6;
+    case Student = 7;
+    case Alumni = 8;
+    case Clubs = 9;
 
     public function getLabel(): ?string
     {

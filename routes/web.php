@@ -27,12 +27,19 @@ Route::get('/blog', [\App\Http\Controllers\PostController::class, 'index'])->nam
 
 Route::get('/blog/{post:slug}', [\App\Http\Controllers\PostController::class, 'show'])->name('post.show');
 
-Route::get('/student', [\App\Http\Controllers\HomeController::class, 'student'])->name('student');
+Route::get('/author/{post:user_id}', [\App\Http\Controllers\PostController::class, 'author'])->name('post.author');
 
-Route::get('/alumni', [\App\Http\Controllers\HomeController::class, 'alumni'])->name('alumni');
+//Route::get('/student', [\App\Http\Controllers\HomeController::class, 'student'])->name('student');
 
-Route::get('/staff', [\App\Http\Controllers\HomeController::class, 'staff'])->name('staff');
+//Route::get('/alumni', [\App\Http\Controllers\HomeController::class, 'alumni'])->name('alumni');
 
+//Route::get('/staff', [\App\Http\Controllers\HomeController::class, 'staff'])->name('staff');
+
+Route::get('/job', [\App\Http\Controllers\JobController::class, 'index'])->name('job.index');
+
+Route::get('/job/{job:slug}', [\App\Http\Controllers\JobController::class, 'show'])->name('job.show');
+
+Route::get('/likes', [\App\Http\Controllers\PostController::class, 'likes'])->name('post.likes');
 
 
 

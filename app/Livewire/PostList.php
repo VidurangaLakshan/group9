@@ -15,8 +15,6 @@ class PostList extends Component
 {
     use WithPagination;
 
-
-
     #[Url()]
     public $sort = 'desc';
 
@@ -44,7 +42,6 @@ class PostList extends Component
     {
         $this->search = $search;
         $this->resetPage();
-
     }
 
     public function clearFilters() {
@@ -57,8 +54,6 @@ class PostList extends Component
     #[Computed()]
     public function posts()
     {
-
-
         return Post::orderBy('published_at',$this->sort)
             ->when($this->activeCategory(), function($query) {
                 $query->withCategory($this->category);
@@ -86,6 +81,11 @@ class PostList extends Component
     public function activeRole()
     {
         return User::where('role', $this->role)->first();
+    }
+
+    public function mount(User $user)
+    {
+        return Post::where('user_id', 'like', $user)->get();
     }
 
     public function render()

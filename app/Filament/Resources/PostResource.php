@@ -15,6 +15,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\CheckboxColumn;
@@ -34,121 +35,131 @@ class PostResource extends Resource
 
     public static function form(Form $form): Form
     {
+        // create form
+        if ($form->getOperation() === 'create') {
+            return $form
+                ->schema([
+                        Section::make('Main Content')->schema(
+                            [
+                                TextInput::make('title')
+                                    ->live()
+                                    ->required()->minLength(1)->maxLength(150)
+                                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                                        $set('slug', Str::slug($state));
+                                    }),
+
+                                TextInput::make('slug')
+                                    ->label('URL')
+                                    ->required()
+                                    ->unique(ignoreRecord: true)
+                                    ->minLength(1)
+                                    ->maxLength(150),
+
+                                RichEditor::make('body')
+                                    ->required()
+                                    ->fileAttachmentsDirectory('posts/images')
+                                    ->columnSpanFull(),
+                            ]
+                        )->columns(2),
+                        Section::make('Meta')->schema(
+                            [
+                                FileUpload::make('image')
+                                    ->image()
+                                    ->directory('posts/thumbnails'),
+
+                                DateTimePicker::make('published_at')->nullable(),
+
+                                CheckBox::make('featured')
+                                    ->default(false),
+
+                                Select::make('user_id')
+                                    ->relationship('author', 'name')
+                                    ->searchable()
+                                    ->hidden(),
+
+                                Select::make('categories')
+                                    ->label('Categories (Add the faculty first)')
+                                    ->relationship('categories', 'title')
+                                    ->multiple()
+                                    ->live(),
+
+                                Toggle::make('approved')
+                                    ->default(true)
+                                    ->hidden(fn(Get $get): bool => !$get('categories')),
+                            ]
+                        ),
+                    ]
+                );
+
+        }
+
+        // edit form
         return $form
             ->schema([
-                Section::make('Main Content')->schema(
-                    [
-                        TextInput::make('title')
-                            ->live()
-                            ->required()->minLength(1)->maxLength(150)
-                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-//                                if ($operation === 'edit') {
-//                                    $set('approved', false);
-//                                    return;
-//                                }
-                                $set('slug', Str::slug($state));
-                            }),
-                        TextInput::make('slug')
-                            ->label('URL')
-                            ->required()
-                            ->unique(ignoreRecord: true)
-                            ->minLength(1)
-                            ->maxLength(150),
-//                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-//                                if ($operation === 'edit') {
-//                                    $set('approved', false);
-//                                }
-//                            }),
-                        RichEditor::make('body')
-                            ->required()
-                            ->fileAttachmentsDirectory('posts/images')
-                            ->columnSpanFull(),
-//                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-//                                if ($operation === 'edit') {
-//                                    $set('approved', false);
-//                                }
-//                            }),
+                    Section::make('Main Content')->schema(
+                        [
+                            TextInput::make('title')
+                                ->live()
+                                ->required()->minLength(1)->maxLength(150)
+                                ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                                    $set('slug', Str::slug($state));
+                                }),
 
-                    ]
-                )->columns(2),
-                Section::make('Meta')->schema(
-                    [
-                        FileUpload::make('image')
-                            ->image()
-                            ->directory('posts/thumbnails'),
-//                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-//                                if ($operation === 'edit') {
-//                                    $set('approved', false);
-//                                }
-//                            }),
+                            TextInput::make('slug')
+                                ->label('URL')
+                                ->required()
+                                ->unique(ignoreRecord: true)
+                                ->minLength(1)
+                                ->maxLength(150),
 
-                        DateTimePicker::make('published_at')->nullable()
-                        ->required(),
+                            RichEditor::make('body')
+                                ->required()
+                                ->fileAttachmentsDirectory('posts/images')
+                                ->columnSpanFull(),
+                        ]
+                    )->columns(2),
+                    Section::make('Meta')->schema(
+                        [
+                            FileUpload::make('image')
+                                ->image()
+                                ->directory('posts/thumbnails'),
 
-                        CheckBox::make('featured')
-                            ->default(false),
-//                            ->afterStateUpdated(function ($state, Forms\Set $set) {
-//                                if (Post::where('featured', true)->count() >= 5) {
-//                                    $set('featured', false);
-//                                }
-//                            }),
+                            DateTimePicker::make('published_at')->nullable(),
 
-//                        CheckBox::make('approved')
-//                            ->default(false),
+                            CheckBox::make('featured')
+                                ->default(false),
 
-                        Toggle::make('approved')
-                            ->default(false),
+                            Select::make('user_id')
+                                ->relationship('author', 'name')
+                                ->disabled(),
 
-                        // if approved is true, then disable the reason for rejection field
+                            Select::make('categories')
+                                ->label('Categories (Add the faculty first)')
+                                ->relationship('categories', 'title')
+                                ->multiple()
+                                ->live(),
 
+                            TextInput::make('custom_categories')
+                                ->label('User Defined Categories')
+                                ->placeholder('no user defined categories found')
+                                ->live()
+                                ->disabled(),
 
-//                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-//                                if ($operation === 'edit') {
-//                                    $set('pending', true);
-//                                }
-//                            }),
-                        // if the count of posts with the featured column set to true is greater than 5, dont let the user set the featured column to true, but can set it to false
-                        // ->disabled(fn ($state) => Post::where('featured', true)->count() > 5),
+                            Toggle::make('approved')
+                                ->default(false)
+                                ->live()
+                                ->hidden(fn (Get $get): bool => ! $get('categories')),
 
-                        TextInput::make('reason_for_rejection')
-                            ->nullable()
-                            ->placeholder('Only if the post is NOT APPROVED')
-                            ->minLength(1)
-                            ->maxLength(150),
-
-
-                        Select::make('user_id')
-                            ->relationship('author', 'name')
-                            ->searchable()
-                            ->required(),
-//                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-//                                if ($operation === 'edit') {
-//                                    $set('approved', false);
-//                                }
-//                            }),
-
-                        Select::make('categories')
-                            ->relationship('categories', 'title')
-                            ->searchable()
-                            ->multiple(),
-//                            ->required(),
-
-// if approved is false, then disable required from the categories field
-
-
-//                            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-//                                if ($operation === 'edit') {
-//                                    $set('approved', false);
-//                                }
-//                            }),
-
-                        //if operation is edit, then show the custom categories
-                        TextInput::make('custom_categories')
-                            ->disabled()
-
-                    ]
-                ),
-            ]);
+                            TextInput::make('reason_for_rejection')
+                                ->nullable()
+                                ->minLength(1)
+                                ->hidden()
+                                ->maxLength(150)
+                                ->hidden(fn (Get $get): bool => $get('approved') === true),
+                        ]
+                    ),
+                ]
+            );
     }
 
     public static function table(Table $table): Table
@@ -157,16 +168,12 @@ class PostResource extends Resource
             ->columns([
                 ImageColumn::make('image'),
                 TextColumn::make('title')->sortable()->searchable()->limit(30),
-//                TextColumn::make('slug')->sortable()->searchable(),
                 TextColumn::make('author.name')->sortable()->searchable(),
                 TextColumn::make('published_at')->date('Y-m-d')->sortable()->searchable(),
-                CheckboxColumn::make('featured')->sortable()->disabled(fn ($state) => Post::where('featured', true)->count() >= 5),
+                IconColumn::make('featured')->boolean()->sortable(),
                 IconColumn::make('approved')->boolean()->sortable()->label('Status'),
-//                Tables\Columns\ToggleColumn::make('approved')->sortable(),
-//                TextColumn::make('categories.title')->sortable()->searchable(),
-//                TextColumn::make('reading_time')->sortable(),
+                TextColumn::make('categories.title')->sortable()->searchable(),
                 TextColumn::make('reason_for_rejection')->label('Reason For Rejection')->sortable()->limit(20),
-
 
 
             ])

@@ -24,11 +24,6 @@ class CategoryResource extends Resource
 
     public static function form(Form $form): Form
     {
-        //if there are posts for the category and if the operation is "delete", then the category should not be deleted
-//        if ($form->getOperation() === 'delete') {
-//            $form->getRecord()->setAttribute('deleted_at', now());
-//        }
-
         return $form
             ->schema([
                 TextInput::make('title')

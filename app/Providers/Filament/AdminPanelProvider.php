@@ -29,7 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
 //            ->login()
             ->colors([
-                'primary' => Color::hex('#04B4AC')
+                'primary' => Color::hex('#04B4AC'),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -51,7 +51,7 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                VerifyIsAdminMiddleware::class,
+//                VerifyIsAdminMiddleware::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

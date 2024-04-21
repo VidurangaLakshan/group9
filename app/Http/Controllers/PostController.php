@@ -26,5 +26,22 @@ class PostController extends Controller
         ]);
     }
 
+    public function author(Post $post)
+    {
+        return view('posts.author', [
+            'post' => $post,
+        ]);
+    }
+
+    public function likes()
+    {
+        return view('posts.likes', [
+            'allPosts' => Post::where('published_at', '<=', now())
+                ->where('approved', true)
+                ->orderBy('published_at', 'desc')
+                ->get(),
+        ]);
+    }
+
 
 }

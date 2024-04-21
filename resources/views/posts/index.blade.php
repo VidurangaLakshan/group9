@@ -199,9 +199,9 @@
                                                 <!-- Main Menu -->
                                                 <ul class="mainmenu">
                                                     <li><a href="/">Home</a></li>
-                                                    <li><a href="/student">Students</a></li>
-                                                    <li><a href="/staff">Academics</a></li>
-                                                    <li><a href="{{ route('alumni') }}">Alumni</a></li>
+{{--                                                    <li><a href="/student">Students</a></li>--}}
+{{--                                                    <li><a href="/staff">Academics</a></li>--}}
+{{--                                                    <li><a href="{{ route('alumni') }}">Alumni</a></li>--}}
                                                     <li><a href="{{route('post.index')}}">All Articles</a></li>
 
 
@@ -338,49 +338,18 @@
                                                 <div class="content">
                                                     <h5 class="title"
                                                         style="font-size: 18px; font-weight: bold;">{{$category->title}}
-                                                        ({{($category->posts->where('approved', true)->where('published_at', '<=', now())->count())}}
-                                                        )</h5>
-
-
+                                                        ({{($category->posts->where('approved', true)->where('published_at', '<=', now())->count())}})</h5>
                                                 </div>
                                             </a>
                                         </li>
-
                                     @endforeach
                                 </ul>
                             </div>
                             <!-- End Post List  -->
-
                         </div>
 
 
-                        {{--                        @if(request()->get('role') == '1')--}}
-                        {{--                            <h5 class="title"--}}
-                        {{--                                style="color: #41bcb8; font-size: 18px; font-weight: bold;">--}}
-                        {{--                                Latest</h5>--}}
-                        {{--                        @else--}}
-                        {{--                            <h5 class="title" style="font-size: 18px; font-weight: bold;">--}}
-                        {{--                                Latest</h5>--}}
-                        {{--                        @endif--}}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        {{--                        @if ($post)--}}
                         <div class="axil-single-widget widget widget_postlist mb--30">
                             <h5 class="widget-title" style="color: black; font-size: 18px; font-weight: bold;">
                                 Filters</h5>
@@ -389,45 +358,8 @@
                                 <ul>
 
                                     <li class="cat-item" style="padding: 5px 5px;">
-                                        <a href="{{ route('post.index', ['role' => '4']) }}"
-
-                                           class="inner"
-                                           style="justify-content: center; background: #ffffff; justify-content: center; background: #ffffff; border: lightgray 1px solid; padding: 8px 0px; border-radius: 50px;}">
-                                            <div class="content">
-
-                                                @if(request()->get('role') == '4')
-                                                    <h5 class="title"
-                                                        style="color: #41bcb8; font-size: 18px; font-weight: bold;">
-                                                        Academics</h5>
-                                                @else
-                                                    <h5 class="title" style="font-size: 18px; font-weight: bold;">
-                                                        Academics</h5>
-                                                @endif
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li class="cat-item" style="padding: 5px 5px;">
-                                        <a href="{{ route('post.index', ['role' => '3']) }}"
-
-                                           class="inner"
-                                           style="justify-content: center; background: #ffffff; justify-content: center; background: #ffffff; border: lightgray 1px solid; padding: 8px 0px; border-radius: 50px;}">
-                                            <div class="content">
-
-                                                @if(request()->get('role') == '3')
-                                                    <h5 class="title"
-                                                        style="color: #41bcb8; font-size: 18px; font-weight: bold;">
-                                                        Clubs</h5>
-                                                @else
-                                                    <h5 class="title" style="font-size: 18px; font-weight: bold;">
-                                                        Clubs</h5>
-                                                @endif
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li class="cat-item" style="padding: 5px 5px;">
                                         <a href="{{ route('post.index', ['role' => '5']) }}"
+
                                            class="inner"
                                            style="justify-content: center; background: #ffffff; justify-content: center; background: #ffffff; border: lightgray 1px solid; padding: 8px 0px; border-radius: 50px;}">
                                             <div class="content">
@@ -435,6 +367,43 @@
                                                 @if(request()->get('role') == '5')
                                                     <h5 class="title"
                                                         style="color: #41bcb8; font-size: 18px; font-weight: bold;">
+                                                        Academics</h5>
+                                                @else
+                                                    <h5 class="title" style="font-size: 18px; font-weight: bold;">
+                                                        Academics</h5>
+                                                @endif
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="cat-item" style="padding: 5px 5px;">
+                                        <a href="{{ route('post.index', ['role' => '6']) }}"
+
+                                           class="inner"
+                                           style="justify-content: center; background: #ffffff; justify-content: center; background: #ffffff; border: lightgray 1px solid; padding: 8px 0px; border-radius: 50px;}">
+                                            <div class="content">
+
+                                                @if(request()->get('role') == '6')
+                                                    <h5 class="title"
+                                                        style="color: #41bcb8; font-size: 18px; font-weight: bold;">
+                                                        Non-Academics</h5>
+                                                @else
+                                                    <h5 class="title" style="font-size: 18px; font-weight: bold;">
+                                                        Non-Academics</h5>
+                                                @endif
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="cat-item" style="padding: 5px 5px;">
+                                        <a href="{{ route('post.index', ['role' => '7']) }}"
+                                           class="inner"
+                                           style="justify-content: center; background: #ffffff; justify-content: center; background: #ffffff; border: lightgray 1px solid; padding: 8px 0px; border-radius: 50px;}">
+                                            <div class="content">
+
+                                                @if(request()->get('role') == '7')
+                                                    <h5 class="title"
+                                                        style="color: #41bcb8; font-size: 18px; font-weight: bold;">
                                                         Students</h5>
                                                 @else
                                                     <h5 class="title" style="font-size: 18px; font-weight: bold;">
@@ -445,12 +414,12 @@
                                     </li>
 
                                     <li class="cat-item" style="padding: 5px 5px;">
-                                        <a href="{{ route('post.index', ['role' => '6']) }}"
+                                        <a href="{{ route('post.index', ['role' => '8']) }}"
                                            class="inner"
                                            style="justify-content: center; background: #ffffff; justify-content: center; background: #ffffff; border: lightgray 1px solid; padding: 8px 0px; border-radius: 50px;}">
                                             <div class="content">
 
-                                                @if(request()->get('role') == '6')
+                                                @if(request()->get('role') == '8')
                                                     <h5 class="title"
                                                         style="color: #41bcb8; font-size: 18px; font-weight: bold;">
                                                         Alumni</h5>
@@ -461,7 +430,6 @@
                                             </div>
                                         </a>
                                     </li>
-
                                 </ul>
                             </div>
 

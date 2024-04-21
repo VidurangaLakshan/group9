@@ -10,7 +10,7 @@
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                 @livewire('profile.update-profile-information-form')
 
-                <x-section-border />
+                <x-section-border/>
             @endif
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
@@ -18,27 +18,31 @@
                     @livewire('profile.update-password-form')
                 </div>
 
-                <x-section-border />
+                <x-section-border/>
             @endif
 
-            @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.two-factor-authentication-form')
-                </div>
+            {{--            @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())--}}
+            {{--                <div class="mt-10 sm:mt-0">--}}
+            {{--                    @livewire('profile.two-factor-authentication-form')--}}
+            {{--                </div>--}}
 
-                <x-section-border />
-            @endif
+            {{--                <x-section-border />--}}
+            {{--            @endif--}}
 
-            <div class="mt-10 sm:mt-0">
-                @livewire('profile.logout-other-browser-sessions-form')
-            </div>
+            {{--            <div class="mt-10 sm:mt-0">--}}
+            {{--                @livewire('profile.logout-other-browser-sessions-form')--}}
+            {{--            </div>--}}
 
-            @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
-                <x-section-border />
 
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.delete-user-form')
-                </div>
+
+            {{-- if auth user is not admin, editor or alumni relations, then show the delete option --}}
+
+            @if (auth()->user()->role->value !== 1 && auth()->user()->role->value !== 2 && auth()->user()->role->value !== 4)
+                @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
+                    <div class="mt-10 sm:mt-0">
+                        @livewire('profile.delete-user-form')
+                    </div>
+                @endif
             @endif
         </div>
     </div>

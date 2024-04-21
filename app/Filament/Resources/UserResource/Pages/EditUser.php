@@ -12,7 +12,7 @@ class EditUser extends EditRecord
 
     protected function getHeaderActions(): array
     {
-        if ($this->record->name === 'Administrator' || $this->record->email === 'admin@blog.apiit.lk'){
+        if ($this->record->id == auth()->user()->id) {
             return [];
         }
 

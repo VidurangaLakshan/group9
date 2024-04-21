@@ -1,28 +1,27 @@
-
 <div class="col-lg-8 col-xl-8">
 
     <div style="margin-bottom: 15px; font-weight:bold;">
         @if ($this->activeCategory || $search || request()->get('role') == '1' || request()->get('role') == '3' || request()->get('role') == '4' || request()->get('role') == '5' || request()->get('role') == '6')
-{{--            <button style="width: 50px; border: none; color:rgb(92, 92, 92);" wire:click="clearFilters()">x</button>--}}
+            {{--            <button style="width: 50px; border: none; color:rgb(92, 92, 92);" wire:click="clearFilters()">x</button>--}}
             <a href="/blog?role" style="color:rgb(92, 92, 92);">x</a>
         @endif
         @if ($this->activeCategory)
             All Posts From : "{{$this->activeCategory->title}}"
         @endif
 
-        @if((request()->get('role') == '4'))
+        @if((request()->get('role') == '5'))
             In : "Academics"
         @endif
 
-        @if(request()->get('role') == '3')
-            In : "Student Support Services"
+        @if((request()->get('role') == '6'))
+            In : "Non-Academics"
         @endif
 
-        @if(request()->get('role') == '5')
+        @if(request()->get('role') == '7')
             In : "Students"
         @endif
 
-        @if(request()->get('role') == '6')
+        @if(request()->get('role') == '8')
             In : "Alumni"
         @endif
 
@@ -32,13 +31,7 @@
         @endif
 
 
-
-
     </div>
-
-{{--    {{dd($this->posts)}}--}}
-
-    {{--    {{dd($this->posts[0]->author->name)}}--}}
 
     @if ($this->posts->isEmpty())
         <div class="content-block post-list-view format-quote mt--30">
@@ -72,9 +65,11 @@
                             <ul>
                                 @foreach ($post->categories as $category)
                                     <li class="cat-item">
-                                        <a class="inner" style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
+                                        <a class="inner"
+                                           style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
                                             <div class="content">
-                                                <h5 class="title" style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
+                                                <h5 class="title"
+                                                    style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
                                             </div>
                                         </a>
                                     </li>
@@ -85,9 +80,10 @@
                             <div class="post-meta">
                                 <div class="content">
                                     <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
-                                        <a class="hover-flip-item-wrapper">
+                                        <a class="hover-flip-item-wrapper" href="{{ route('post.author', $post->user_id) }}">
                                                 <span class="hover-flip-item">
-                                                    <span data-text="{{$post->author->name}}">{{$post->author->name}}</span>
+                                                    <span
+                                                        data-text="{{$post->author->name}}">{{$post->author->name}}</span>
                                                 </span>
                                         </a>
                                     </h6>
@@ -97,6 +93,9 @@
                                     </ul>
                                 </div>
                             </div>
+                            <ul class="social-share-transparent justify-content-end">
+                                <livewire:like-button :key="$post->id" :$post/>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -119,15 +118,18 @@
                                 </a>
                             </div>
                         </div>
-                        <h4 class="title" style="font-size: 24px; font-weight: bold;"><a href="{{ route('post.show', $post->slug) }}">{{$post->title}}</a></h4>
+                        <h4 class="title" style="font-size: 24px; font-weight: bold;"><a
+                                href="{{ route('post.show', $post->slug) }}">{{$post->title}}</a></h4>
 
                         <div class="axil-single-widget widget widget_categories mb--30" style="margin-top: 40px;">
                             <ul>
                                 @foreach ($post->categories as $category)
                                     <li class="cat-item">
-                                        <a class="inner" style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
+                                        <a class="inner"
+                                           style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
                                             <div class="content">
-                                                <h5 class="title" style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
+                                                <h5 class="title"
+                                                    style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
                                             </div>
                                         </a>
                                     </li>
@@ -138,9 +140,10 @@
                             <div class="post-meta">
                                 <div class="content">
                                     <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
-                                        <a class="hover-flip-item-wrapper">
+                                        <a class="hover-flip-item-wrapper" href="{{ route('post.author', $post->user_id) }}">
                                                 <span class="hover-flip-item">
-                                                    <span data-text="{{$post->author->name}}">{{$post->author->name}}</span>
+                                                    <span
+                                                        data-text="{{$post->author->name}}">{{$post->author->name}}</span>
                                                 </span>
                                         </a>
                                     </h6>
@@ -150,6 +153,9 @@
                                     </ul>
                                 </div>
                             </div>
+                            <ul class="social-share-transparent justify-content-end">
+                                <livewire:like-button :key="$post->id" :$post/>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -160,7 +166,6 @@
     <div class="my-3" id="pagination">
         {{$this->posts->onEachSide(1)->links()}}
     </div>
-
 
 
 </div>
