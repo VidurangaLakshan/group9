@@ -72,7 +72,13 @@
                                             </h6>
                                             <div class="comment-meta">
                                                 <div
-                                                    class="time-spent">{{ $comment->created_at->diffForHumans() }}</div>
+                                                    class="time-spent">
+                                                    @if ($comment->updated_at != null)
+                                                        {{ $comment->updated_at->diffForHumans() }}
+                                                    @else
+                                                        {{ $comment->created_at->diffForHumans() }}
+                                                    @endif
+                                                </div>
                                                 <div class="reply-edit">
                                                     <div class="reply">
                                                         @auth

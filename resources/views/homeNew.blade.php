@@ -308,6 +308,32 @@
         <!-- End Banner Area -->
 
 
+        123
+        12
+        13
+        23
+        1
+        2
+        3
+
+
+        {{--        {{dd(Auth::check())}}--}}
+
+        auth()->user()->interest_computing == 1 && auth()->user()->interest_computing == 2 &&
+        auth()->user()->interest_computing == 3
+
+        auth()->user()->interest_computing == 1 && auth()->user()->interest_computing == 2
+
+
+        auth()->user()->interest_computing == 2 && auth()->user()->interest_computing == 3
+
+        auth()->user()->interest_computing == 1 && auth()->user()->interest_computing == 3
+
+        auth()->user()->interest_computing == 1
+
+        auth()->user()->interest_computing == 2
+
+        auth()->user()->interest_computing == 3
 
 
         @if($studentPosts->isNotEmpty())
@@ -552,42 +578,344 @@
 
 
                                         @foreach($nonAcademicsPosts as $nonAcademicsPost)
-                                            <div class="col-xl-6 col-lg-5 col-md-12 col-12">
-                                                <div class="row">
-                                                    <div class="col-xl-12 col-lg-12 col-md-6 col-12">
-                                                        <!-- Start Post Grid  -->
-                                                        <div class="content-block post-grid mt--30">
-                                                            <div class="post-thumbnail"
-                                                                 style="align-items: center; justify-content: center; display: flex;">
-                                                                <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
-                                                                    <img
-                                                                        src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                        alt="Post Images"
-                                                                        style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
-                                                                </a>
-                                                            </div>
-                                                            <div class="post-grid-content">
-                                                                <div class="post-content">
-                                                                    <div class="post-cat">
-                                                                        <div class="post-cat-list">
-                                                                            <a class="hover-flip-item-wrapper">
-                                                                        <span class="hover-flip-item">
-                                                                            <span
-                                                                                data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
-                                                                        </span>
-                                                                            </a>
+
+                                            @if (Auth::user() == true)
+
+                                                @php
+                                                    $categoryCount = $nonAcademicsPost->categories->count();
+                                                    $foundComputing = false;
+                                                    $foundBusiness = false;
+                                                    $foundLaw = false;
+                                                @endphp
+
+
+                                                @for($i=0; $i<$categoryCount; $i++)
+                                                    @if ($nonAcademicsPost->categories[$i]->title == 'Computing')
+                                                        @php($foundComputing = true)
+                                                    @endif
+
+                                                    @if ($nonAcademicsPost->categories[$i]->title == 'Business')
+                                                        @php($foundBusiness = true)
+                                                    @endif
+
+                                                    @if ($nonAcademicsPost->categories[$i]->title == 'Law')
+                                                        @php($foundLaw = true)
+                                                    @endif
+                                                @endfor
+
+                                                @if (auth()->user()->interest_computing == 0 && auth()->user()->interest_business == 0 && auth()->user()->interest_law == 0)
+                                                    <div class="alert alert-warning" id="alert"
+                                                         style="margin: 10px 10px; text-align: center">
+                                                        Please navigate to the profile page and enable at least one
+                                                        interested faculty to see articles.
+                                                    </div>
+                                                @elseif (auth()->user()->interest_computing == 1 && auth()->user()->interest_business == 1 && auth()->user()->interest_law == 1)
+                                                    <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                                <!-- Start Post Grid  -->
+                                                                <div class="content-block post-grid mt--30">
+                                                                    <div class="post-thumbnail"
+                                                                         style="align-items: center; justify-content: center; display: flex;">
+                                                                        <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
+                                                                            <img
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="post-grid-content">
+                                                                        <div class="post-content">
+                                                                            <div class="post-cat">
+                                                                                <div class="post-cat-list">
+                                                                                    <a class="hover-flip-item-wrapper">
+                                                                            <span class="hover-flip-item">
+                                                                                <span
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                            </span>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <h4 class="title"><a
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                            </h4>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="title"><a
-                                                                            href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
-                                                                    </h4>
                                                                 </div>
+                                                                <!-- Start Post Grid  -->
                                                             </div>
                                                         </div>
-                                                        <!-- Start Post Grid  -->
+                                                    </div>
+                                                @elseif (auth()->user()->interest_computing == 1 && auth()->user()->interest_business == 1 && $foundComputing == true && $foundBusiness == true)
+                                                    <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                                <!-- Start Post Grid  -->
+                                                                <div class="content-block post-grid mt--30">
+                                                                    <div class="post-thumbnail"
+                                                                         style="align-items: center; justify-content: center; display: flex;">
+                                                                        <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
+                                                                            <img
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="post-grid-content">
+                                                                        <div class="post-content">
+                                                                            <div class="post-cat">
+                                                                                <div class="post-cat-list">
+                                                                                    <a class="hover-flip-item-wrapper">
+                                                                            <span class="hover-flip-item">
+                                                                                <span
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                            </span>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <h4 class="title"><a
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                            </h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Start Post Grid  -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @elseif (auth()->user()->interest_computing == 1 && auth()->user()->interest_law == 1 && $foundComputing == true && $foundLaw == true)
+                                                    <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                                <!-- Start Post Grid  -->
+                                                                <div class="content-block post-grid mt--30">
+                                                                    <div class="post-thumbnail"
+                                                                         style="align-items: center; justify-content: center; display: flex;">
+                                                                        <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
+                                                                            <img
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="post-grid-content">
+                                                                        <div class="post-content">
+                                                                            <div class="post-cat">
+                                                                                <div class="post-cat-list">
+                                                                                    <a class="hover-flip-item-wrapper">
+                                                                            <span class="hover-flip-item">
+                                                                                <span
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                            </span>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <h4 class="title"><a
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                            </h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Start Post Grid  -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @elseif (auth()->user()->interest_business == 1 && auth()->user()->interest_law == 1 && $foundBusiness == true && $foundLaw == true)
+                                                    <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                                <!-- Start Post Grid  -->
+                                                                <div class="content-block post-grid mt--30">
+                                                                    <div class="post-thumbnail"
+                                                                         style="align-items: center; justify-content: center; display: flex;">
+                                                                        <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
+                                                                            <img
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="post-grid-content">
+                                                                        <div class="post-content">
+                                                                            <div class="post-cat">
+                                                                                <div class="post-cat-list">
+                                                                                    <a class="hover-flip-item-wrapper">
+                                                                            <span class="hover-flip-item">
+                                                                                <span
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                            </span>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <h4 class="title"><a
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                            </h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Start Post Grid  -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @elseif (auth()->user()->interest_computing == 1 && $foundComputing == true)
+                                                    <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                                <!-- Start Post Grid  -->
+                                                                <div class="content-block post-grid mt--30">
+                                                                    <div class="post-thumbnail"
+                                                                         style="align-items: center; justify-content: center; display: flex;">
+                                                                        <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
+                                                                            <img
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="post-grid-content">
+                                                                        <div class="post-content">
+                                                                            <div class="post-cat">
+                                                                                <div class="post-cat-list">
+                                                                                    <a class="hover-flip-item-wrapper">
+                                                                            <span class="hover-flip-item">
+                                                                                <span
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                            </span>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <h4 class="title"><a
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                            </h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Start Post Grid  -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @elseif(auth()->user()->interest_business == 1 && $foundBusiness == true)
+                                                    <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                                <!-- Start Post Grid  -->
+                                                                <div class="content-block post-grid mt--30">
+                                                                    <div class="post-thumbnail"
+                                                                         style="align-items: center; justify-content: center; display: flex;">
+                                                                        <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
+                                                                            <img
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="post-grid-content">
+                                                                        <div class="post-content">
+                                                                            <div class="post-cat">
+                                                                                <div class="post-cat-list">
+                                                                                    <a class="hover-flip-item-wrapper">
+                                                                            <span class="hover-flip-item">
+                                                                                <span
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                            </span>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <h4 class="title"><a
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                            </h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Start Post Grid  -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @elseif(auth()->user()->interest_law == 1 && $foundLaw == true)
+                                                    <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                                <!-- Start Post Grid  -->
+                                                                <div class="content-block post-grid mt--30">
+                                                                    <div class="post-thumbnail"
+                                                                         style="align-items: center; justify-content: center; display: flex;">
+                                                                        <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
+                                                                            <img
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="post-grid-content">
+                                                                        <div class="post-content">
+                                                                            <div class="post-cat">
+                                                                                <div class="post-cat-list">
+                                                                                    <a class="hover-flip-item-wrapper">
+                                                                            <span class="hover-flip-item">
+                                                                                <span
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                            </span>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <h4 class="title"><a
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                            </h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Start Post Grid  -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <div class="alert alert-warning" id="alert"
+                                                         style="margin: 10px 10px; text-align: center">
+                                                        No posts of the selected faculty is available. To view other faculty posts, enable the option in the profile page.
+                                                    </div>
+                                                @endif
+
+                                            @else
+
+                                                <div class="col-xl-6 col-lg-5 col-md-12 col-12">
+                                                    <div class="row">
+                                                        <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+                                                            <!-- Start Post Grid  -->
+                                                            <div class="content-block post-grid mt--30">
+                                                                <div class="post-thumbnail"
+                                                                     style="align-items: center; justify-content: center; display: flex;">
+                                                                    <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
+                                                                        <img
+                                                                            src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                            alt="Post Images"
+                                                                            style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="post-grid-content">
+                                                                    <div class="post-content">
+                                                                        <div class="post-cat">
+                                                                            <div class="post-cat-list">
+                                                                                <a class="hover-flip-item-wrapper">
+                                                                            <span class="hover-flip-item">
+                                                                                <span
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                            </span>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <h4 class="title"><a
+                                                                                href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Start Post Grid  -->
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+
+                                            @endif
+
                                         @endforeach
 
                                     </div>

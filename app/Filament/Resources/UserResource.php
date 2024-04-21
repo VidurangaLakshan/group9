@@ -144,7 +144,7 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\IconColumn::make('approved')->boolean()->toggleable(isToggledHiddenByDefault: false),
+                Tables\Columns\IconColumn::make('approved')->boolean()->toggleable(isToggledHiddenByDefault: false)->sortable(),
                 TextColumn::make('name')->sortable()->searchable(isIndividual: true, isGlobal: false)->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('fullName')->sortable()->searchable(isIndividual: true, isGlobal: false)->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('role')->sortable()->searchable(isIndividual: true, isGlobal: false)->toggleable(isToggledHiddenByDefault: false),
