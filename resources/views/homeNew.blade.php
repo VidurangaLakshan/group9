@@ -464,7 +464,7 @@
                                                     <!-- Start Post Grid  -->
                                                     <div class="content-block post-grid mt--30">
                                                         <div class="post-thumbnail" style="align-items: center; justify-content: center; display: flex;">
-                                                            <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
+                                                            <a href="{{ route('post.show', $academicsPost->slug) }}">
                                                                 <img src="{{ $academicPost->getThumbnailImage() }}"
                                                                      alt="Post Images" style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                             </a>
@@ -481,7 +481,7 @@
                                                                         </a>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="title"><a href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $academicPost->title }}</a></h4>
+                                                                <h4 class="title"><a href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicPost->title }}</a></h4>
                                                             </div>
                                                         </div>
                                                     </div>
