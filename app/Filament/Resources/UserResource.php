@@ -240,10 +240,46 @@ class UserResource extends Resource
                                 }
                             });
                         })
-                    ->requiresConfirmation()
-                    ->deselectRecordsAfterCompletion(),
+                        ->requiresConfirmation()
+                        ->deselectRecordsAfterCompletion(),
 
-                    
+                    Tables\Actions\BulkAction::make('Set all to Computing School')
+                        ->action(function (Collection $records) {
+                            $records->each(function ($record) {
+                                if ($record->role->value == 7 || $record->role->value == 5) {
+                                    $record->faculty = 1;
+                                    $record->save();
+                                }
+                            });
+                        })
+                        ->requiresConfirmation()
+                        ->deselectRecordsAfterCompletion(),
+
+                    Tables\Actions\BulkAction::make('Set all to Business School')
+                        ->action(function (Collection $records) {
+                            $records->each(function ($record) {
+                                if ($record->role->value == 7 || $record->role->value == 5) {
+                                    $record->faculty = 2;
+                                    $record->save();
+                                }
+                            });
+                        })
+                        ->requiresConfirmation()
+                        ->deselectRecordsAfterCompletion(),
+
+                    Tables\Actions\BulkAction::make('Set all to Law School')
+                        ->action(function (Collection $records) {
+                            $records->each(function ($record) {
+                                if ($record->role->value == 7 || $record->role->value == 5) {
+                                    $record->faculty = 3;
+                                    $record->save();
+                                }
+                            });
+                        })
+                        ->requiresConfirmation()
+                        ->deselectRecordsAfterCompletion(),
+
+
                 ]),
             ]);
     }
