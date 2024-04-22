@@ -7,7 +7,7 @@
         <div class="comment-respond">
             <h4 class="title">Discussions</h4>
             @auth
-                @if (auth()->user()->post_comments == 1 && auth()->user()->role->value != 9)
+                @if (auth()->user()->post_comments == 1 && auth()->user()->role->value != 9 && auth()->user()->approved == 1)
                     <form wire:submit.prevent="postComment">
                         <p class="comment-notes"><span id="email-notes" style="color: gray">Note:- Please refrain from using abusive or hurtful language in the comments section.</span>
                         </p>

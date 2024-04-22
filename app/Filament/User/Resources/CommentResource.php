@@ -21,6 +21,82 @@ class CommentResource extends Resource
 
     public static function form(Form $form): Form
     {
+
+        if (auth()->user()->role->value == 9 && $form->getOperation() === 'edit') {
+            if (auth()->user()->id != $form->getRecord()->user_id) {
+                return $form
+                    ->schema([
+                        Forms\Components\Select::make('user_id')
+                            ->relationship('user', 'name')
+                            ->searchable()
+                            ->disabled()
+                            ->preload()
+                            ->required(),
+                        Forms\Components\Select::make('post_id')
+                            ->relationship('post', 'title')
+                            ->searchable()
+                            ->preload()
+                            ->disabled()
+                            ->required(),
+                        Forms\Components\TextInput::make('comment')
+                            ->label('Comment')
+                            ->required()
+                            ->disabled()
+                            ->minLength(1)
+                            ->maxLength(255),
+                    ]);
+            } else {
+                return $form
+                    ->schema([
+                        Forms\Components\Select::make('user_id')
+                            ->relationship('user', 'name')
+                            ->searchable()
+                            ->disabled()
+                            ->preload()
+                            ->hidden(),
+                        Forms\Components\Select::make('post_id')
+                            ->relationship('post', 'title')
+                            ->searchable()
+                            ->preload()
+                            ->disabled()
+                            ->required(),
+                        Forms\Components\TextInput::make('comment')
+                            ->label('Comment')
+                            ->required()
+                            ->disabled()
+                            ->minLength(1)
+                            ->maxLength(255),
+                    ]);
+            }
+        }
+
+        if (auth()->user()->role->value == 9 && $form->getOperation() === 'create') {
+            return $form
+                ->schema([
+                    Forms\Components\Select::make('user_id')
+                        ->relationship('user', 'name')
+                        ->searchable()
+                        ->preload()
+                        ->hidden(),
+                    Forms\Components\Select::make('post_id')
+                        ->relationship('post', 'title')
+                        ->searchable()
+                        ->preload()
+                        ->placeholder('This field is disabled for students on semester break !!')
+                        ->disabled()
+                        ->required(),
+                    Forms\Components\TextInput::make('comment')
+                        ->label('Comment')
+                        ->required()
+                        ->disabled()
+                        ->placeholder('This field is disabled for students on semester break !!')
+                        ->minLength(1)
+                        ->maxLength(255),
+                ]);
+
+        }
+
+
         if ($form->getOperation() === 'edit') {
             if (auth()->user()->id != $form->getRecord()->user_id) {
                 return $form
@@ -67,6 +143,7 @@ class CommentResource extends Resource
                     ]);
             }
         }
+
 
         return $form
             ->schema([
@@ -128,7 +205,6 @@ class CommentResource extends Resource
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
-
             ->where('user_id', auth()->user()->id);
 
     }

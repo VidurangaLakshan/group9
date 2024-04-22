@@ -10,7 +10,7 @@ class VerifyIsUserMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user() && Auth::user()->role->value === 7) {
+        if (Auth::user() && (Auth::user()->role->value === 7 || Auth::user()->role->value === 9)) {
             return $next($request);
         }
         abort(403, "You are not authorized to access this page.");
