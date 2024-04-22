@@ -101,7 +101,7 @@ class JobResource extends Resource
                                 ->required(),
 
                             Forms\Components\Toggle::make('approved')
-                                ->label('Approved')
+                                ->label('Visibility')
                                 ->default(false)
                                 ->hidden(),
 

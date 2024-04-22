@@ -79,7 +79,7 @@ class JobResource extends Resource
 
                             Forms\Components\Select::make('faculty')
                                 ->options([
-                                    'Computing'=>'Computing',
+                                    'Computing' => 'Computing',
                                     'Business' => 'Business',
                                     'Law' => 'Law',
                                 ])
@@ -97,9 +97,11 @@ class JobResource extends Resource
                                 ->required(),
 
                             Forms\Components\Toggle::make('approved')
-                                ->label('Approved')
+                                ->label('Visibility')
                                 ->default(true)
                                 ->hidden(fn(Get $get): bool => !$get('faculty')),
+
+                            Forms\Components\TextInput::make('reason_for_rejection')
                         ]
                     )
                 ]);
@@ -152,7 +154,7 @@ class JobResource extends Resource
                         Forms\Components\Select::make('faculty')
                             ->label('Related Faculty')
                             ->options([
-                                'Computing'=>'Computing',
+                                'Computing' => 'Computing',
                                 'Business' => 'Business',
                                 'Law' => 'Law',
                             ])
@@ -193,7 +195,7 @@ class JobResource extends Resource
                 TextColumn::make('company'),
                 IconColumn::make('approved')->sortable()->label('Review Status')->boolean(),
                 SelectColumn::make('faculty')->label('Related Faculty')->options([
-                    'Computing'=>'Computing',
+                    'Computing' => 'Computing',
                     'Business' => 'Business',
                     'Law' => 'Law',
                 ])->sortable()->searchable()->disabled(),

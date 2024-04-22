@@ -98,7 +98,7 @@ class JobResource extends Resource
                                 ->required(),
 
                             Forms\Components\Toggle::make('approved')
-                                ->label('Approved')
+                                ->label('Visibility')
                                 ->default(true)
                                 ->hidden(fn(Get $get): bool => !$get('faculty')),
 
