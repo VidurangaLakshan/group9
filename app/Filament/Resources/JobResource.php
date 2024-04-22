@@ -38,7 +38,7 @@ class JobResource extends Resource
                     Forms\Components\Section::make('Main Content')->schema(
                         [
                             Forms\Components\TextInput::make('name')
-                                ->label('Name')
+                                ->label('Title')
                                 ->live()
                                 ->required()->minLength(1)->maxLength(150)
                                 ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
@@ -100,7 +100,6 @@ class JobResource extends Resource
                                 ->label('Approved')
                                 ->default(true)
                                 ->hidden(fn(Get $get): bool => !$get('faculty')),
-
                         ]
                     )
                 ]);
@@ -112,7 +111,7 @@ class JobResource extends Resource
                 Forms\Components\Section::make('Main Content')->schema(
                     [
                         Forms\Components\TextInput::make('name')
-                            ->label('Name')
+                            ->label('Title')
                             ->live()
                             ->required()->minLength(1)->maxLength(150)
                             ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
@@ -189,7 +188,7 @@ class JobResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('image'),
-                TextColumn::make('name')->sortable()->searchable()->limit(30),
+                TextColumn::make('name')->label('Title')->sortable()->searchable()->limit(30),
                 TextColumn::make('author.name')->sortable()->searchable()->limit(30),
                 TextColumn::make('company'),
                 IconColumn::make('approved')->sortable()->label('Review Status')->boolean(),

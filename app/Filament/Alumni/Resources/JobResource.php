@@ -42,7 +42,7 @@ class JobResource extends Resource
                     Forms\Components\Section::make('Main Content')->schema(
                         [
                             Forms\Components\TextInput::make('name')
-                                ->label('Name')
+                                ->label('Title')
                                 ->live()
                                 ->required()->minLength(1)->maxLength(150)
                                 ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
@@ -102,8 +102,8 @@ class JobResource extends Resource
 
                             Forms\Components\Toggle::make('approved')
                                 ->label('Approved')
-                                ->default(true)
-                                ->hidden(fn(Get $get): bool => !$get('faculty')),
+                                ->default(false)
+                                ->hidden(),
 
                         ]
                     )
@@ -117,7 +117,7 @@ class JobResource extends Resource
                     Forms\Components\Section::make('Main Content')->schema(
                         [
                             Forms\Components\TextInput::make('name')
-                                ->label('Name')
+                                ->label('Title')
                                 ->live()
                                 ->required()->minLength(1)->maxLength(150)
                                 ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
@@ -176,7 +176,7 @@ class JobResource extends Resource
                             Forms\Components\Toggle::make('approved')
                                 ->label('Approved')
                                 ->default(false)
-                                ->hidden(fn(Get $get): bool => !$get('faculty')),
+                                ->hidden(),
                         ]
                     )
                 ]);
@@ -188,7 +188,7 @@ class JobResource extends Resource
                 Forms\Components\Section::make('Main Content')->schema(
                     [
                         Forms\Components\TextInput::make('name')
-                            ->label('Name')
+                            ->label('Title')
                             ->live()
                             ->required()->minLength(1)->maxLength(150)
                             ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
@@ -244,17 +244,10 @@ class JobResource extends Resource
                             ->hidden()
                             ->required(),
 
-                        Forms\Components\Toggle::make('approved')
-                            ->label('Approved')
-                            ->default(false)
-                            ->live()
-                            ->hidden(fn(Get $get): bool => !$get('faculty')),
-
                         Forms\Components\TextInput::make('reason_for_rejection')
                             ->nullable()
                             ->minLength(1)
-                            ->maxLength(150)
-                            ->hidden(fn(Get $get): bool => $get('approved') === true),
+                            ->maxLength(150),
                     ]
                 )
             ]);
@@ -265,7 +258,7 @@ class JobResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('image'),
-                TextColumn::make('name')->sortable()->searchable()->limit(30),
+                TextColumn::make('name')->label('Title')->sortable()->searchable()->limit(30),
                 TextColumn::make('company'),
                 IconColumn::make('approved')->sortable()->label('Review Status')->boolean(),
                 SelectColumn::make('faculty')->label('Related Faculty')->options([
