@@ -63,7 +63,8 @@
                                         @auth
                                             @if (auth()->user()->role->value == 1)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/admin') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/admin/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -71,7 +72,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 2)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/editor') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/editor/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -80,7 +82,7 @@
                                             @elseif (auth()->user()->role->value == 4)
                                                 <li>
                                                     <a class="hover-flip-item-wrapper"
-                                                       href="{{ url('/alumniLiaison') }}">
+                                                       href="{{ url('/alumniLiaison/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -88,7 +90,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 5)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/academics') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/academics/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -97,7 +100,7 @@
                                             @elseif (auth()->user()->role->value == 6)
                                                 <li>
                                                     <a class="hover-flip-item-wrapper"
-                                                       href="{{ url('/nonAcademics') }}">
+                                                       href="{{ url('/nonAcademics/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -105,7 +108,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 7)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/user') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/user/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -113,7 +117,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 8)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/alumni') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/alumni/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -126,15 +131,17 @@
 
 
                                 @auth
-                                    @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
+                                    @if (auth()->user()->approved == 1 && auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
                                         <li class="menu-item-has-children"><a href="{{url('job')}}">Vacancies</a></li>
                                     @endif
                                 @endauth
 
 
                                 @auth
-                                    <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('likes')}}">Favourites</a>
-                                    </li>
+                                    @if (auth()->user()->approved == 1)
+                                        <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('likes')}}">Favourites</a>
+                                        </li>
+                                    @endif
                                 @endauth
 
 
@@ -264,39 +271,48 @@
 
                                                     @auth
                                                         @if (auth()->user()->role->value == 1)
-                                                            <li><a href="{{ url('/admin') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/admin/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 2)
-                                                            <li><a href="{{ url('/editor') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/editor/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 4)
-                                                            <li><a href="{{ url('/alumniLiaison') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/alumniLiaison/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 5)
-                                                            <li><a href="{{ url('/academics') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/academics/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 6)
-                                                            <li><a href="{{ url('/nonAcademics') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/nonAcademics/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 7)
-                                                            <li><a href="{{ url('/user') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/user/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 8)
-                                                            <li><a href="{{ url('/alumni') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/alumni/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @endif
                                                     @endauth
 
                                                     @auth
-                                                        @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
+                                                        @if (auth()->user()->approved == 1 && auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
                                                             <li><a href="{{url('job')}}">Vacancies</a></li>
                                                         @endif
                                                     @endauth
 
 
                                                     @auth
-                                                        <li><a href="{{url('likes')}}">Favourites</a>
-                                                        </li>
+                                                        @if (auth()->user()->approved == 1)
+                                                            <li><a href="{{url('likes')}}">Favourites</a>
+                                                            </li>
+                                                        @endif
                                                     @endauth
 
 
@@ -419,7 +435,8 @@
                                                 <div class="content">
                                                     <h5 class="title"
                                                         style="font-size: 18px; font-weight: bold;">{{$category->title}}
-                                                        ({{($category->posts->where('approved', true)->where('published_at', '<=', now())->count())}})</h5>
+                                                        ({{($category->posts->where('approved', true)->where('published_at', '<=', now())->count())}}
+                                                        )</h5>
                                                 </div>
                                             </a>
                                         </li>
@@ -428,7 +445,6 @@
                             </div>
                             <!-- End Post List  -->
                         </div>
-
 
 
                         <div class="axil-single-widget widget widget_postlist mb--30">

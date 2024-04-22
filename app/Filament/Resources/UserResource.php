@@ -35,7 +35,6 @@ class UserResource extends Resource
                 ->schema([
                     TextInput::make('name')->required()->minLength(1)->maxLength(150),
                     TextInput::make('email')->required()->email()->unique(ignoreRecord: true),
-                    TextInput::make('nic')->minLength(1)->maxLength(12),
                     // create a select field for the role
                     Select::make('role')
 //                        ->relationship('role', 'name')

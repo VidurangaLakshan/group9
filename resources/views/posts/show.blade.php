@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>APIIT</title>
-    <meta name="robots" content="noindex, follow" />
+    <meta name="robots" content="noindex, follow"/>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
@@ -60,7 +60,8 @@
                                         @auth
                                             @if (auth()->user()->role->value == 1)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/admin') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/admin/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -68,7 +69,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 2)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/editor') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/editor/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -77,7 +79,7 @@
                                             @elseif (auth()->user()->role->value == 4)
                                                 <li>
                                                     <a class="hover-flip-item-wrapper"
-                                                       href="{{ url('/alumniLiaison') }}">
+                                                       href="{{ url('/alumniLiaison/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -85,7 +87,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 5)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/academics') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/academics/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -94,7 +97,7 @@
                                             @elseif (auth()->user()->role->value == 6)
                                                 <li>
                                                     <a class="hover-flip-item-wrapper"
-                                                       href="{{ url('/nonAcademics') }}">
+                                                       href="{{ url('/nonAcademics/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -102,7 +105,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 7)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/user') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/user/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -110,7 +114,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 8)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/alumni') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/alumni/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -123,15 +128,17 @@
 
 
                                 @auth
-                                    @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
+                                    @if (auth()->user()->approved == 1 && auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
                                         <li class="menu-item-has-children"><a href="{{url('job')}}">Vacancies</a></li>
                                     @endif
                                 @endauth
 
 
                                 @auth
-                                    <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('likes')}}">Favourites</a>
-                                    </li>
+                                    @if (auth()->user()->approved == 1)
+                                        <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('likes')}}">Favourites</a>
+                                        </li>
+                                    @endif
                                 @endauth
 
 
@@ -261,39 +268,48 @@
 
                                                     @auth
                                                         @if (auth()->user()->role->value == 1)
-                                                            <li><a href="{{ url('/admin') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/admin/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 2)
-                                                            <li><a href="{{ url('/editor') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/editor/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 4)
-                                                            <li><a href="{{ url('/alumniLiaison') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/alumniLiaison/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 5)
-                                                            <li><a href="{{ url('/academics') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/academics/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 6)
-                                                            <li><a href="{{ url('/nonAcademics') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/nonAcademics/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 7)
-                                                            <li><a href="{{ url('/user') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/user/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 8)
-                                                            <li><a href="{{ url('/alumni') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/alumni/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @endif
                                                     @endauth
 
                                                     @auth
-                                                        @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
+                                                        @if (auth()->user()->approved == 1 && auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
                                                             <li><a href="{{url('job')}}">Vacancies</a></li>
                                                         @endif
                                                     @endauth
 
 
                                                     @auth
-                                                        <li><a href="{{url('likes')}}">Favourites</a>
-                                                        </li>
+                                                        @if (auth()->user()->approved == 1)
+                                                            <li><a href="{{url('likes')}}">Favourites</a>
+                                                            </li>
+                                                        @endif
                                                     @endauth
 
 
@@ -331,15 +347,9 @@
 </header>
 
 
-
-
-
-
 <div class="main-wrapper">
     <div class="mouse-cursor cursor-outer"></div>
     <div class="mouse-cursor cursor-inner"></div>
-
-
 
 
     <!-- Start Banner Area -->
@@ -351,10 +361,11 @@
                     <div class="content-block">
                         <!-- Start Post Thumbnail  -->
 
-{{--                        @if ($post->getThumbnailImage() !== "https://group-9.laravelsrilanka.com/storage/")--}}
-{{--                        @if ($post->getThumbnailImage() == "https://127.0.0.1:8000/storage/")--}}
+                        {{--                        @if ($post->getThumbnailImage() !== "https://group-9.laravelsrilanka.com/storage/")--}}
+                        {{--                        @if ($post->getThumbnailImage() == "https://127.0.0.1:8000/storage/")--}}
                         @if ($post->image != null)
-                            <div class="post-thumbnail" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="post-thumbnail"
+                                 style="display: flex; justify-content: center; align-items: center;">
                                 <img src="{{ $post->getThumbnailImage() }}" alt="Post Images" style="width: auto">
                                 <style>
                                     .post-thumbnail {
@@ -375,7 +386,8 @@
                             </div>
                         @else
                             <div class="post-thumbnail">
-                                <img src="/assets/images/logo/no-image.jpg" alt="Post Images" style="width: 100%; height:30%">
+                                <img src="/assets/images/logo/no-image.jpg" alt="Post Images"
+                                     style="width: 100%; height:30%">
                                 <style>
                                     .post-thumbnail {
                                         position: relative;
@@ -421,9 +433,11 @@
                                     </div>
                                     <div class="content">
                                         <h6 class="post-author-name">
-                                            <a class="hover-flip-item-wrapper" href="{{ route('post.author', $post->user_id) }}">
+                                            <a class="hover-flip-item-wrapper"
+                                               href="{{ route('post.author', $post->user_id) }}">
                                                     <span class="hover-flip-item">
-                                                        <span data-text="{{{$post->author->name}}}">{{{$post->author->name}}}</span>
+                                                        <span
+                                                            data-text="{{{$post->author->name}}}">{{{$post->author->name}}}</span>
                                                     </span>
                                             </a>
                                         </h6>
@@ -496,9 +510,11 @@
                                 <div class="media-body" style="align-self: center">
                                     <div class="author-info">
                                         <h5 class="title">
-                                            <a class="hover-flip-item-wrapper" href="{{ route('post.author', $post->user_id) }}">
+                                            <a class="hover-flip-item-wrapper"
+                                               href="{{ route('post.author', $post->user_id) }}">
                                                     <span class="hover-flip-item">
-                                                        <span style="font-size: 20px" data-text="{{$post->author->name}}">{{$post->author->name}}</span>
+                                                        <span style="font-size: 20px"
+                                                              data-text="{{$post->author->name}}">{{$post->author->name}}</span>
                                                     </span>
                                             </a>
                                         </h5>
@@ -522,7 +538,7 @@
                         <!-- End Author  -->
                     </div>
 
-                    <livewire:post-comments :key="'comments' . $post->id" :$post />
+                    <livewire:post-comments :key="'comments' . $post->id" :$post/>
 
                 </div>
 
@@ -532,28 +548,28 @@
 
                     <div class="sidebar-inner">
                         <!-- Start Single Widget  -->
-{{--                        <div class="axil-single-widget widget widget_categories mb--30">--}}
-{{--                            <ul>--}}
-{{--                                --}}{{-- @foreach ($post->categories as $category)--}}
-{{--                                    <li class="cat-item">--}}
-{{--                                        <a href="#" class="inner" style="width: fit-content; background-color: #4CAC; padding-left: 15px; padding-right: 15px;">--}}
-{{--                                            <div class="content">--}}
-{{--                                                <h5 class="title">{{$category->title}}</h5>--}}
-{{--                                            </div>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                @endforeach --}}
-{{--                                @foreach ($post->categories as $category)--}}
-{{--                                    <li class="cat-item">--}}
-{{--                                        <a class="inner" style="justify-content: center; padding: 10px 0">--}}
-{{--                                            <div class="content">--}}
-{{--                                                <h5 class="title">{{$category->title}}</h5>--}}
-{{--                                            </div>--}}
-{{--                                        </a>--}}
-{{--                                    </li>--}}
-{{--                                @endforeach--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
+                        {{--                        <div class="axil-single-widget widget widget_categories mb--30">--}}
+                        {{--                            <ul>--}}
+                        {{--                                --}}{{-- @foreach ($post->categories as $category)--}}
+                        {{--                                    <li class="cat-item">--}}
+                        {{--                                        <a href="#" class="inner" style="width: fit-content; background-color: #4CAC; padding-left: 15px; padding-right: 15px;">--}}
+                        {{--                                            <div class="content">--}}
+                        {{--                                                <h5 class="title">{{$category->title}}</h5>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </a>--}}
+                        {{--                                    </li>--}}
+                        {{--                                @endforeach --}}
+                        {{--                                @foreach ($post->categories as $category)--}}
+                        {{--                                    <li class="cat-item">--}}
+                        {{--                                        <a class="inner" style="justify-content: center; padding: 10px 0">--}}
+                        {{--                                            <div class="content">--}}
+                        {{--                                                <h5 class="title">{{$category->title}}</h5>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </a>--}}
+                        {{--                                    </li>--}}
+                        {{--                                @endforeach--}}
+                        {{--                            </ul>--}}
+                        {{--                        </div>--}}
                         <!-- End Single Widget  -->
 
 
@@ -563,7 +579,8 @@
                                 <!-- Start Post List  -->
                                 <div class="tagcloud">
                                     @foreach ($post->categories as $category)
-                                        <a href="{{ route('post.index', ['category' => $category->slug]) }}" style="font-weight: bold">{{$category->title}}</a>
+                                        <a href="{{ route('post.index', ['category' => $category->slug]) }}"
+                                           style="font-weight: bold">{{$category->title}}</a>
                                     @endforeach
                                 </div>
                                 <!-- End Post List  -->
@@ -595,19 +612,22 @@
 
                         @if(count($authorPosts) > 0)
                             <div class="axil-single-widget widget widget_postlist mb--30">
-                                <h5 class="widget-title" style="color: black; font-size: 18px; font-weight: bold;">More from {{$post->author->name}}</h5>
+                                <h5 class="widget-title" style="color: black; font-size: 18px; font-weight: bold;">More
+                                    from {{$post->author->name}}</h5>
                                 <div class="post-medium-block">
 
-                                @foreach ($authorPosts as $authorPost)
+                                    @foreach ($authorPosts as $authorPost)
                                         <div class="content-block post-medium" style="padding: 10px 0">
 
                                             <div class="post-content">
-                                                <h6 class="title"><a href="{{route('post.show', $authorPost->slug)}}">{{$authorPost->title}}</a></h6>
+                                                <h6 class="title"><a
+                                                        href="{{route('post.show', $authorPost->slug)}}">{{$authorPost->title}}</a>
+                                                </h6>
                                             </div>
                                         </div>
-                                @endforeach
-                            </div>
-                        @endif
+                                    @endforeach
+                                </div>
+                                @endif
 
                             </div>
 
@@ -616,43 +636,49 @@
 
 
 
-                        @php
-                            $latestPosts = DB::table('posts')->latest()->where('approved', 1)->take(5)->get();
-                        @endphp
+                            @php
+                                $latestPosts = DB::table('posts')->latest()->where('approved', 1)->take(5)->get();
+                            @endphp
 
-                        @if(count($latestPosts) > 0)
-                        <div class="axil-single-widget widget widget_postlist mb--30">
-                            <h5 class="widget-title" style="color: black; font-size: 18px; font-weight: bold;">Latest Posts</h5>
-                            <div class="post-medium-block">
-                                @foreach ($latestPosts as $latestPost)
-                                    <div class="content-block post-medium" style="padding: 10px 0">
-                                        <div class="post-content">
-                                            <h6 class="title"><a href="{{route('post.show', $latestPost->slug)}}">{{$latestPost->title}}</a></h6>
-                                        </div>
+                            @if(count($latestPosts) > 0)
+                                <div class="axil-single-widget widget widget_postlist mb--30">
+                                    <h5 class="widget-title" style="color: black; font-size: 18px; font-weight: bold;">
+                                        Latest Posts</h5>
+                                    <div class="post-medium-block">
+                                        @foreach ($latestPosts as $latestPost)
+                                            <div class="content-block post-medium" style="padding: 10px 0">
+                                                <div class="post-content">
+                                                    <h6 class="title"><a
+                                                            href="{{route('post.show', $latestPost->slug)}}">{{$latestPost->title}}</a>
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        @endforeach
                                     </div>
-                                @endforeach
+                                </div>
+
+                            @endif
+
+
+
+
+                            <!-- Start Single Widget  -->
+                            <div class="axil-single-widget widget widget_social mb--30">
+                                <h5 class="widget-title">Stay In Touch</h5>
+                                <!-- Start Post List  -->
+                                <ul class="social-icon md-size justify-content-center">
+                                    <li><a href="https://www.facebook.com/APIITofficial"><i
+                                                class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.instagram.com/apiitsl"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li><a href="https://x.com/APIITsl"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://youtube.com/@APIITedu"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i
+                                                class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                                <!-- End Post List  -->
                             </div>
-                        </div>
-
-                        @endif
-
-
-
-
-                        <!-- Start Single Widget  -->
-                        <div class="axil-single-widget widget widget_social mb--30">
-                            <h5 class="widget-title">Stay In Touch</h5>
-                            <!-- Start Post List  -->
-                            <ul class="social-icon md-size justify-content-center">
-                                <li><a href="https://www.facebook.com/APIITofficial"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://www.instagram.com/apiitsl"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="https://x.com/APIITsl"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://youtube.com/@APIITedu"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
-                            <!-- End Post List  -->
-                        </div>
-                        <!-- End Single Widget  -->
+                            <!-- End Single Widget  -->
                     </div>
                     <!-- End Sidebar Area  -->
                 </div>
@@ -660,7 +686,6 @@
         </div>
     </div>
     <!-- End Post Single Wrapper  -->
-
 
 
     <!-- Start Footer Area  -->
@@ -687,11 +712,14 @@
                             class="d-flex justify-content-start mt_sm--15 justify-content-md-end align-items-center flex-wrap">
                             <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
                             <ul class="social-icon color-tertiary md-size justify-content-start">
-                                <li><a href="https://www.facebook.com/APIITofficial"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://www.instagram.com/apiitsl"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.facebook.com/APIITofficial"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/apiitsl"><i class="fab fa-instagram"></i></a>
+                                </li>
                                 <li><a href="https://x.com/APIITsl"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="https://youtube.com/@APIITedu"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i
+                                            class="fab fa-linkedin-in"></i></a></li>
                             </ul>
                         </div>
                         <!-- End Post List  -->

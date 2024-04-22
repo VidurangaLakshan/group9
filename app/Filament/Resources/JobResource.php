@@ -101,7 +101,6 @@ class JobResource extends Resource
                                 ->default(true)
                                 ->hidden(fn(Get $get): bool => !$get('faculty')),
 
-                            Forms\Components\TextInput::make('reason_for_rejection')
                         ]
                     )
                 ]);

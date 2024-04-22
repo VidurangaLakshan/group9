@@ -22,21 +22,23 @@
 
     @foreach ($this->jobs as $job)
 
-        @if ($job->author->role->value == 4 && (auth()->user()->degree_level == 5 || auth()->user()->degree_level == 6) || auth()->user()->role->value == 1 ||  auth()->user()->role->value == 4)
+        @if ($job->author->role->value == 7 && (auth()->user()->degree_level == 5 || auth()->user()->degree_level == 6) || auth()->user()->role->value == 1 ||  auth()->user()->role->value == 4 || auth()->user()->role->value == 8)
 
             @if ($job->getAttribute('approved') == 1)
                 <div class="content-block post-list-view format-quote mt--30">
-                    <div class="post-thumbnail">
-                        @if ($job->image == null)
-                            <a href="{{ route('job.show', $job->slug) }}">
-                                <img src="{{asset('/assets/images/logo/no-image.jpg')}}" alt="Post Images">
-                            </a>
-                        @else
-                            <a href="{{ route('job.show', $job->slug) }}">
-                                <img src="{{$job->getThumbnailImage()}}" alt="Post Images">
-                            </a>
-                        @endif
-                    </div>
+                    @if ($job->image != null)
+                        <div class="post-thumbnail">
+                            @if ($job->image == null)
+                                <a href="{{ route('job.show', $job->slug) }}">
+                                    <img src="{{asset('/assets/images/logo/no-image.jpg')}}" alt="Post Images">
+                                </a>
+                            @else
+                                <a href="{{ route('job.show', $job->slug) }}">
+                                    <img src="{{$job->getThumbnailImage()}}" alt="Post Images">
+                                </a>
+                            @endif
+                        </div>
+                    @endif
                     <div class="post-content">
                         <div class="post-cat">
                             <div class="post-cat-list">
@@ -84,7 +86,7 @@
                                         <a class="hover-flip-item-wrapper">
                                                 <span class="hover-flip-item">
                                                     <span
-                                                            data-text="{{$job->author->name}}">{{$job->author->name}}</span>
+                                                        data-text="{{$job->author->name}}">{{$job->author->name}}</span>
                                                 </span>
                                         </a>
                                     </h6>
@@ -163,7 +165,7 @@
                                         <a class="hover-flip-item-wrapper">
                                                 <span class="hover-flip-item">
                                                     <span
-                                                            data-text="{{$job->author->name}}">{{$job->author->name}}</span>
+                                                        data-text="{{$job->author->name}}">{{$job->author->name}}</span>
                                                 </span>
                                         </a>
                                     </h6>

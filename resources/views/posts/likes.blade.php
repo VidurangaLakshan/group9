@@ -62,7 +62,8 @@
                                         @auth
                                             @if (auth()->user()->role->value == 1)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/admin') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/admin/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -70,7 +71,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 2)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/editor') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/editor/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -79,7 +81,7 @@
                                             @elseif (auth()->user()->role->value == 4)
                                                 <li>
                                                     <a class="hover-flip-item-wrapper"
-                                                       href="{{ url('/alumniLiaison') }}">
+                                                       href="{{ url('/alumniLiaison/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -87,7 +89,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 5)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/academics') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/academics/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -96,7 +99,7 @@
                                             @elseif (auth()->user()->role->value == 6)
                                                 <li>
                                                     <a class="hover-flip-item-wrapper"
-                                                       href="{{ url('/nonAcademics') }}">
+                                                       href="{{ url('/nonAcademics/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -104,7 +107,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 7)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/user') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/user/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -112,7 +116,8 @@
                                                 </li>
                                             @elseif (auth()->user()->role->value == 8)
                                                 <li>
-                                                    <a class="hover-flip-item-wrapper" href="{{ url('/alumni') }}">
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('/alumni/posts/create') }}">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="Write Articles">Write Articles</span>
                                                             </span>
@@ -125,15 +130,17 @@
 
 
                                 @auth
-                                    @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
+                                    @if (auth()->user()->approved == 1 && auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
                                         <li class="menu-item-has-children"><a href="{{url('job')}}">Vacancies</a></li>
                                     @endif
                                 @endauth
 
 
                                 @auth
-                                    <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('likes')}}">Favourites</a>
-                                    </li>
+                                    @if (auth()->user()->approved == 1)
+                                        <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('likes')}}">Favourites</a>
+                                        </li>
+                                    @endif
                                 @endauth
 
 
@@ -263,39 +270,48 @@
 
                                                     @auth
                                                         @if (auth()->user()->role->value == 1)
-                                                            <li><a href="{{ url('/admin') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/admin/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 2)
-                                                            <li><a href="{{ url('/editor') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/editor/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 4)
-                                                            <li><a href="{{ url('/alumniLiaison') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/alumniLiaison/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 5)
-                                                            <li><a href="{{ url('/academics') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/academics/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 6)
-                                                            <li><a href="{{ url('/nonAcademics') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/nonAcademics/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 7)
-                                                            <li><a href="{{ url('/user') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/user/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @elseif (auth()->user()->role->value == 8)
-                                                            <li><a href="{{ url('/alumni') }}">Write Articles</a>
+                                                            <li><a href="{{ url('/alumni/posts/create') }}">Write
+                                                                    Articles</a>
                                                             </li>
                                                         @endif
                                                     @endauth
 
                                                     @auth
-                                                        @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
+                                                        @if (auth()->user()->approved == 1 && auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8)
                                                             <li><a href="{{url('job')}}">Vacancies</a></li>
                                                         @endif
                                                     @endauth
 
 
                                                     @auth
-                                                        <li><a href="{{url('likes')}}">Favourites</a>
-                                                        </li>
+                                                        @if (auth()->user()->approved == 1)
+                                                            <li><a href="{{url('likes')}}">Favourites</a>
+                                                            </li>
+                                                        @endif
                                                     @endauth
 
                                                 </ul>
@@ -332,10 +348,7 @@
 </header>
 
 
-
-
 <div class="main-wrapper">
-
 
 
     <div class="axil-post-list-area axil-section-gap bg-color-white">
@@ -343,237 +356,245 @@
             <div class="row" style="justify-content: center;">
 
 
-
-@auth
-    @php
-        $likedPosts = DB::table('post_like')
-                    ->where('user_id', auth()->user()->id)
-                    ->get();
-    @endphp
-
+                @auth
+                    @php
+                        $likedPosts = DB::table('post_like')
+                                    ->where('user_id', auth()->user()->id)
+                                    ->get();
+                    @endphp
 
 
 
-    <div class="col-lg-8 col-xl-8">
-        @if ($likedPosts->isEmpty())
-            <div class="content-block post-list-view format-quote mt--30">
-                <div class="post-content">
-                    <h4 class="title" style="font-size: 24px; font-weight: bold">No posts found</h4>
-                </div>
-            </div>
-        @endif
 
-        @foreach ($allPosts as $post)
-            @if ($likedPosts->contains('post_id', $post->id))
-                @if ($post->getAttribute('approved') == 1 && $post->getAttribute('published_at') <= now())
-                    @if ($post->image == null)
-                        <div class="content-block post-list-view format-quote mt--30">
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper">
+                    <div class="col-lg-8 col-xl-8">
+                        @if ($likedPosts->isEmpty())
+                            <div class="content-block post-list-view format-quote mt--30">
+                                <div class="post-content">
+                                    <h4 class="title" style="font-size: 24px; font-weight: bold">No posts found</h4>
+                                </div>
+                            </div>
+                        @endif
+
+                        @foreach ($allPosts as $post)
+                            @if ($likedPosts->contains('post_id', $post->id))
+                                @if ($post->getAttribute('approved') == 1 && $post->getAttribute('published_at') <= now())
+                                    @if ($post->image == null)
+                                        <div class="content-block post-list-view format-quote mt--30">
+                                            <div class="post-content">
+                                                <div class="post-cat">
+                                                    <div class="post-cat-list">
+                                                        <a class="hover-flip-item-wrapper">
                                         <span class="hover-flip-item">
                                             {{-- <span data-text="TRAVEL">TRAVEL</span> --}}
                                         </span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <h4 class="title" style="font-size: 24px; font-weight: bold">
-                                    <a href="{{ route('post.show', $post->slug) }}">{{$post->title}}</a></h4>
-
-
-                                <div class="axil-single-widget widget widget_categories mb--30"
-                                     style="margin-top: 40px;">
-                                    <ul>
-                                        @foreach ($post->categories as $category)
-                                            <li class="cat-item">
-                                                <a class="inner"
-                                                   style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
-                                                    <div class="content">
-                                                        <h5 class="title"
-                                                            style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
+                                                        </a>
                                                     </div>
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
-                                                <a class="hover-flip-item-wrapper"
-                                                   href="{{ route('post.author', $post->user_id) }}">
+                                                </div>
+
+                                                <h4 class="title" style="font-size: 24px; font-weight: bold">
+                                                    <a href="{{ route('post.show', $post->slug) }}">{{$post->title}}</a>
+                                                </h4>
+
+
+                                                <div class="axil-single-widget widget widget_categories mb--30"
+                                                     style="margin-top: 40px;">
+                                                    <ul>
+                                                        @foreach ($post->categories as $category)
+                                                            <li class="cat-item">
+                                                                <a class="inner"
+                                                                   style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
+                                                                    <div class="content">
+                                                                        <h5 class="title"
+                                                                            style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                                <div class="post-meta-wrapper">
+                                                    <div class="post-meta">
+                                                        <div class="content">
+                                                            <h6 class="post-author-name"
+                                                                style="font-size: 16px; font-weight: 500">
+                                                                <a class="hover-flip-item-wrapper"
+                                                                   href="{{ route('post.author', $post->user_id) }}">
                                                 <span class="hover-flip-item">
                                                     <span
                                                         data-text="{{$post->author->name}}">{{$post->author->name}}</span>
                                                 </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>{{$post->published_at->diffForHumans()}}</li>
-                                                <li>{{{$post->getReadingTime()}}} min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    @else
-
-                        <div class="content-block post-list-view mt--30">
-                            <div class="post-thumbnail">
-                                <a href="{{ route('post.show', $post->slug) }}">
-                                    <img src="{{$post->getThumbnailImage()}}" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper">
-                                            {{-- <span class="hover-flip-item">
-                                                <span data-text="{{$post->categories()->first()->getAttributes('title')}}">{{$post->categories()->first()->getAttributes('title')}}</span>
-                                            </span> --}}
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title" style="font-size: 24px; font-weight: bold;"><a
-                                        href="{{ route('post.show', $post->slug) }}">{{$post->title}}</a></h4>
-
-                                <div class="axil-single-widget widget widget_categories mb--30"
-                                     style="margin-top: 40px;">
-                                    <ul>
-                                        @foreach ($post->categories as $category)
-                                            <li class="cat-item">
-                                                <a class="inner"
-                                                   style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
-                                                    <div class="content">
-                                                        <h5 class="title"
-                                                            style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
+                                                                </a>
+                                                            </h6>
+                                                            <ul class="post-meta-list">
+                                                                <li>{{$post->published_at->diffForHumans()}}</li>
+                                                                <li>{{{$post->getReadingTime()}}} min read</li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    @else
+
+                                        <div class="content-block post-list-view mt--30">
+                                            <div class="post-thumbnail">
+                                                <a href="{{ route('post.show', $post->slug) }}">
+                                                    <img src="{{$post->getThumbnailImage()}}" alt="Post Images">
                                                 </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name" style="font-size: 16px; font-weight: 500">
-                                                <a class="hover-flip-item-wrapper"
-                                                   href="{{ route('post.author', $post->user_id) }}">
+                                            </div>
+                                            <div class="post-content">
+                                                <div class="post-cat">
+                                                    <div class="post-cat-list">
+                                                        <a class="hover-flip-item-wrapper">
+                                                            {{-- <span class="hover-flip-item">
+                                                                <span data-text="{{$post->categories()->first()->getAttributes('title')}}">{{$post->categories()->first()->getAttributes('title')}}</span>
+                                                            </span> --}}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <h4 class="title" style="font-size: 24px; font-weight: bold;"><a
+                                                        href="{{ route('post.show', $post->slug) }}">{{$post->title}}</a>
+                                                </h4>
+
+                                                <div class="axil-single-widget widget widget_categories mb--30"
+                                                     style="margin-top: 40px;">
+                                                    <ul>
+                                                        @foreach ($post->categories as $category)
+                                                            <li class="cat-item">
+                                                                <a class="inner"
+                                                                   style="width: fit-content; background-color: #04B4AC; color: white; padding-left: 15px; padding-right: 15px;">
+                                                                    <div class="content">
+                                                                        <h5 class="title"
+                                                                            style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                                <div class="post-meta-wrapper">
+                                                    <div class="post-meta">
+                                                        <div class="content">
+                                                            <h6 class="post-author-name"
+                                                                style="font-size: 16px; font-weight: 500">
+                                                                <a class="hover-flip-item-wrapper"
+                                                                   href="{{ route('post.author', $post->user_id) }}">
                                                 <span class="hover-flip-item">
                                                     <span
                                                         data-text="{{$post->author->name}}">{{$post->author->name}}</span>
                                                 </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>{{$post->published_at->diffForHumans()}}</li>
-                                                <li>{{{$post->getReadingTime()}}} min read</li>
-                                            </ul>
+                                                                </a>
+                                                            </h6>
+                                                            <ul class="post-meta-list">
+                                                                <li>{{$post->published_at->diffForHumans()}}</li>
+                                                                <li>{{{$post->getReadingTime()}}} min read</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
+                                    @endif
+                                @endif
+                            @endif
+                        @endforeach
+
+
+                    </div>
+
+                @endauth
+
+                @guest
+                    <script>window.location = "/login";</script>
+                @endguest
+
+
+                <!-- Start Footer Area  -->
+                <div class="axil-footer-area axil-footer-style-1 footer-variation-2">
+
+
+                    <!-- Start Footer Top Area  -->
+                    <div class="footer-top">
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="logo">
+                                        <a href="/">
+                                            <img class="dark-logo" src="assets/images/logo/logo-black.png"
+                                                 alt="Logo Images">
+                                            <img class="white-logo" src="assets/images/logo/logo-white2.png"
+                                                 alt="Logo Images">
+                                        </a>
                                     </div>
                                 </div>
+
+                                <div class="col-lg-8 col-md-8">
+                                    <!-- Start Post List  -->
+                                    <div
+                                        class="d-flex justify-content-start mt_sm--15 justify-content-md-end align-items-center flex-wrap">
+                                        <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
+                                        <ul class="social-icon color-tertiary md-size justify-content-start">
+                                            <li><a href="https://www.facebook.com/APIITofficial"><i
+                                                        class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li><a href="https://www.instagram.com/apiitsl"><i
+                                                        class="fab fa-instagram"></i></a></li>
+                                            <li><a href="https://x.com/APIITsl"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://youtube.com/@APIITedu"><i
+                                                        class="fab fa-youtube"></i></a></li>
+                                            <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i
+                                                        class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- End Post List  -->
+                                </div>
+
                             </div>
                         </div>
-                    @endif
-                @endif
-            @endif
-        @endforeach
-
-
-    </div>
-
-@endauth
-
-@guest
-    <script>window.location = "/login";</script>
-@endguest
-
-
-    <!-- Start Footer Area  -->
-    <div class="axil-footer-area axil-footer-style-1 footer-variation-2">
-
-
-        <!-- Start Footer Top Area  -->
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-4">
-                        <div class="logo">
-                            <a href="/">
-                                <img class="dark-logo" src="assets/images/logo/logo-black.png" alt="Logo Images">
-                                <img class="white-logo" src="assets/images/logo/logo-white2.png" alt="Logo Images">
-                            </a>
-                        </div>
                     </div>
+                    <!-- End Footer Top Area  -->
 
-                    <div class="col-lg-8 col-md-8">
-                        <!-- Start Post List  -->
-                        <div
-                            class="d-flex justify-content-start mt_sm--15 justify-content-md-end align-items-center flex-wrap">
-                            <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
-                            <ul class="social-icon color-tertiary md-size justify-content-start">
-                                <li><a href="https://www.facebook.com/APIITofficial"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li><a href="https://www.instagram.com/apiitsl"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="https://x.com/APIITsl"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://youtube.com/@APIITedu"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i
-                                            class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- End Post List  -->
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- End Footer Top Area  -->
-
-        <!-- Start Copyright Area  -->
-        <div class="copyright-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-9 col-md-8">
-                        <div class="copyright-left">
-                            <ul class="mainmenu justify-content-start">
-                                <li>
-                                    <a class="hover-flip-item-wrapper" href="https://apiit.lk/">
+                    <!-- Start Copyright Area  -->
+                    <div class="copyright-area">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-9 col-md-8">
+                                    <div class="copyright-left">
+                                        <ul class="mainmenu justify-content-start">
+                                            <li>
+                                                <a class="hover-flip-item-wrapper" href="https://apiit.lk/">
                                         <span class="hover-flip-item">
                                             <span data-text="Contact Us">Contact Us</span>
                                         </span>
-                                    </a>
-                                </li>
+                                                </a>
+                                            </li>
 
-                            </ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4">
+                                    <div class="copyright-right text-start text-md-end mt_sm--20">
+                                        <p class="b3">All Rights Reserved © 2024</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4">
-                        <div class="copyright-right text-start text-md-end mt_sm--20">
-                            <p class="b3">All Rights Reserved © 2024</p>
-                        </div>
-                    </div>
+                    <!-- End Copyright Area  -->
                 </div>
-            </div>
-        </div>
-        <!-- End Copyright Area  -->
-    </div>
 
 
-    <!-- JavaScript -->
-    <script src="assets/js/vendor/jquery.min.js"></script>
-    <script src="assets/js/vendor/popper.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/tweenmax.min.js"></script>
+                <!-- JavaScript -->
+                <script src="assets/js/vendor/jquery.min.js"></script>
+                <script src="assets/js/vendor/popper.min.js"></script>
+                <script src="assets/js/vendor/bootstrap.min.js"></script>
+                <script src="assets/js/vendor/slick.min.js"></script>
+                <script src="assets/js/vendor/tweenmax.min.js"></script>
 
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+                <!-- Main JS -->
+                <script src="assets/js/main.js"></script>
 
 
 </body>

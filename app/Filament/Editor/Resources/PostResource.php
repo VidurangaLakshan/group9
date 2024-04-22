@@ -31,6 +31,8 @@ class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
+    protected static ?string $label = 'Article';
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -78,7 +80,7 @@ class PostResource extends Resource
                                     ->hidden(),
 
                                 Select::make('categories')
-                                    ->label('Categories (Add the faculty first)')
+                                    ->label('Categories (Add Parent Categories - Computing, Business, Law)')
                                     ->relationship('categories', 'title')
                                     ->multiple()
                                     ->live(),
@@ -134,7 +136,7 @@ class PostResource extends Resource
                                 ->disabled(),
 
                             Select::make('categories')
-                                ->label('Categories (Add the faculty first)')
+                                ->label('Categories (Add Parent Categories - Computing, Business, Law)')
                                 ->relationship('categories', 'title')
                                 ->multiple()
                                 ->live(),
