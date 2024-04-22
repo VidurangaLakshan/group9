@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('faculty');
             $table->string('image')->nullable();
             $table->boolean('approved')->default(false);
-            $table->string('reason_for_rejection')->nullable();
+            $table->string('reason_for_rejection')->default(null)->nullable();
             $table->timestamps();
         });
     }
