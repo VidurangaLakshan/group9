@@ -4,6 +4,7 @@ namespace App\Filament\Alumni\Resources;
 
 use App\Filament\Alumni\Resources\PostResource\Pages;
 use App\Filament\Alumni\Resources\PostResource\RelationManagers;
+use App\Filament\Editor\Resources\PostResource\RelationManagers\CommentsRelationManager;
 use App\Models\Post;
 use Filament\Forms;
 use Filament\Forms\Components\Checkbox;
@@ -31,7 +32,7 @@ class PostResource extends Resource
 
     protected static ?string $label = 'Article';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-bookmark-square';
 
     public static function form(Form $form): Form
     {
@@ -254,7 +255,7 @@ class PostResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\CommentsRelationManager::class
         ];
     }
 

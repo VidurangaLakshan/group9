@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Editor\Resources\PostResource\RelationManagers;
+namespace App\Filament\Resources\PostResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -16,7 +16,6 @@ class CommentsRelationManager extends RelationManager
 
     public function form(Form $form): Form
     {
-
         return $form
             ->schema([
                 Forms\Components\TextInput::make('comment')
