@@ -22,18 +22,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'homeNew'])->name('homeNew');
 
-
 Route::get('/blog', [\App\Http\Controllers\PostController::class, 'index'])->name('post.index');
 
 Route::get('/blog/{post:slug}', [\App\Http\Controllers\PostController::class, 'show'])->name('post.show');
 
 Route::get('/author/{post:user_id}', [\App\Http\Controllers\PostController::class, 'author'])->name('post.author');
-
-//Route::get('/student', [\App\Http\Controllers\HomeController::class, 'student'])->name('student');
-
-//Route::get('/alumni', [\App\Http\Controllers\HomeController::class, 'alumni'])->name('alumni');
-
-//Route::get('/staff', [\App\Http\Controllers\HomeController::class, 'staff'])->name('staff');
 
 Route::get('/job', [\App\Http\Controllers\JobController::class, 'index'])->name('job.index');
 

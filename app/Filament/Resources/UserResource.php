@@ -86,7 +86,7 @@ class UserResource extends Resource
 
                     // create a select field for the role
                     Select::make('role')
-                        ->required()->live()
+                        ->required()->live()->disabled()
                         ->options([
                             1 => 'Administrator',
                             2 => 'Editor',
@@ -96,6 +96,7 @@ class UserResource extends Resource
                             6 => 'Non-Academics',
                             7 => 'Student',
                             8 => 'Alumni',
+                            9 => 'Student' // On Semester Break
                         ]),
 
                     TextInput::make('nic')
@@ -222,6 +223,25 @@ class UserResource extends Resource
                         })
                         ->color('success')
                         ->requiresConfirmation(),
+                    Tables\Actions\Action::make('Enable Semester Break')
+                        ->action(function (User $record) {
+                            if ($record->role->value == 7) {
+                                $record->role = 9;
+                                $record->save();
+                            }
+                        })
+                        ->color('success')
+                        ->requiresConfirmation(),
+                    Tables\Actions\Action::make('Disable Semester Break')
+                        ->action(function (User $record) {
+                            if ($record->role->value == 9) {
+                                $record->role = 7;
+                                $record->save();
+                            }
+                        })
+                        ->color('success')
+                        ->requiresConfirmation(),
+
                 ])
             ])
             ->bulkActions([
@@ -278,8 +298,6 @@ class UserResource extends Resource
                         })
                         ->requiresConfirmation()
                         ->deselectRecordsAfterCompletion(),
-
-
                 ]),
             ]);
     }

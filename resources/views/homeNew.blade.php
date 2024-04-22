@@ -197,7 +197,7 @@
 
                                             @if ($featuredPost->image != null)
 
-                                                <div class="post-thumbnail">
+                                                <div class="post-thumbnail" style="display: flex">
                                                     <a href="/blog/{{$featuredPost->slug}}">
                                                         <img src="{{$featuredPost->getThumbnailImage()}}"
                                                              alt="Post Images">

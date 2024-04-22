@@ -384,7 +384,8 @@
                             <div class="post-meta">
                                 <div class="post-author-avatar border-rounded">
                                     {{--                                         {{dd($post->author)}} --}}
-                                    <img src="{{$job->author->profile_photo_url}}" alt="Author Images" style="width: 64px;">
+                                    <img src="{{$job->author->profile_photo_url}}" alt="Author Images"
+                                         style="width: 64px;">
                                 </div>
                                 <div class="content">
                                     <h6 class="post-author-name">
@@ -448,7 +449,8 @@
                         <div class="media">
                             <div class="thumbnail">
                                 <a>
-                                    <img src="{{$job->author->profile_photo_url}}" alt="Author Images" style="width: 64px;">
+                                    <img src="{{$job->author->profile_photo_url}}" alt="Author Images"
+                                         style="width: 64px;">
 
                                 </a>
                             </div>
@@ -464,7 +466,13 @@
                                     </h5>
 
 
-                                    <h5 style="padding-top: 18px; color:gray">{{$job->author->role->name}}</h5>
+                                    @if ($job->author->role->value == 4)
+                                        <h5 style="padding-top: 18px; color:gray">Alumni Liaisons and Industry
+                                            Relations</h5>
+                                    @else
+                                        <h5 style="padding-top: 18px; color:gray">{{ $job->author->role->name }}</h5>
+                                    @endif
+
 
                                 </div>
 

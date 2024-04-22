@@ -7,7 +7,7 @@
         <div class="comment-respond">
             <h4 class="title">Discussions</h4>
             @auth
-                @if (auth()->user()->post_comments == 1)
+                @if (auth()->user()->post_comments == 1 && auth()->user()->role->value != 9)
                     <form wire:submit.prevent="postComment">
                         <p class="comment-notes"><span id="email-notes" style="color: gray">Note:- Please refrain from using abusive or hurtful language in the comments section.</span>
                         </p>
@@ -93,11 +93,11 @@
                                                                     } elseif (auth()->user()->role->value == 2){
                                                                         $panel = 'editor';
                                                                     } elseif (auth()->user()->role->value == 4){
-                                                                        $panel = 'career';
+                                                                        $panel = 'alumniLiaison';
                                                                     } elseif (auth()->user()->role->value == 5){
-                                                                        $panel = 'academic';
+                                                                        $panel = 'academics';
                                                                     } elseif (auth()->user()->role->value == 6){
-                                                                        $panel = 'nonacademcis';
+                                                                        $panel = 'nonAcademics';
                                                                     } elseif (auth()->user()->role->value == 7){
                                                                         $panel = 'user';
                                                                     } elseif (auth()->user()->role->value == 8){
