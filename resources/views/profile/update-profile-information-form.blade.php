@@ -83,11 +83,11 @@
         </div>
 
         <!-- LinkedIn -->
-        <div class="col-span-6 sm:col-span-4">
-            <x-label for="linkedin" value="{{ __('LinkedIn Profile URL') }}" />
-            <x-input id="linkedin" type="text" class="mt-1 block w-full" wire:model="state.linkedin" />
-            <x-input-error for="linkedin" class="mt-2" />
-        </div>
+{{--        <div class="col-span-6 sm:col-span-4">--}}
+{{--            <x-label for="linkedin" value="{{ __('LinkedIn Profile URL') }}" />--}}
+{{--            <x-input id="linkedin" type="text" class="mt-1 block w-full" wire:model="state.linkedin" />--}}
+{{--            <x-input-error for="linkedin" class="mt-2" />--}}
+{{--        </div>--}}
 
         <!-- Personalization -->
         <div class="border-4 rounded-xl mt-4 col-span-6 sm:col-span-4">

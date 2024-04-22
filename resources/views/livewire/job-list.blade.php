@@ -22,7 +22,7 @@
 
     @foreach ($this->jobs as $job)
 
-        @if ($job->author->role->value == 7 && (auth()->user()->degree_level == 5 || auth()->user()->degree_level == 6) || auth()->user()->role->value == 1 ||  auth()->user()->role->value == 4 || auth()->user()->role->value == 8)
+        @if ($job->author->role->value == 7 && (auth()->user()->degree_level == 5 || auth()->user()->degree_level == 6 || auth()->user()->degree_level == 7 || auth()->user()->degree_level == 8) || auth()->user()->role->value == 1 ||  auth()->user()->role->value == 4 || auth()->user()->role->value == 8)
 
             @if ($job->getAttribute('approved') == 1)
                 <div class="content-block post-list-view format-quote mt--30">

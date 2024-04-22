@@ -60,8 +60,8 @@ class UserResource extends Resource
         if ($form->getRecord()->getAttribute('id') == auth()->user()->id) {
             return $form
                 ->schema([
-                    TextInput::make('name'),
-                    TextInput::make('email'),
+                    TextInput::make('name')->required(),
+                    TextInput::make('email')->required(),
                 ]);
         } else {
             return $form
