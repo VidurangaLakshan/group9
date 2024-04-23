@@ -9,21 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-//    public function index() {
-//
-//        return view('home', [
-//
-//            'featuredPosts' => Post::where('featured', true)->take(3)->latest('published_at')->get(),
-//            'popularPosts' => Post::orderBy('published_at', 'desc')->take(9)->get(),
-//            'posts' => Post::where('published_at', '<=', now())
-//                ->where('approved', true)
-//                ->get(),
-//            'categories' => Category::whereHas('posts', function ($query) {
-//                $query->where('published_at', '<=', now());
-//            })->get(),
-//
-//        ]);
-//    }
 
     public function homeNew() {
 

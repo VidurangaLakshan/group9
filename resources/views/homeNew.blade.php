@@ -1,5 +1,6 @@
 <x-site-layout>
 
+    {{--    FIRST TIME LOGIN MESSAGES  --}}
 
     @if (Auth::user() == true)
         @if ((Auth::user()->role->value == 5 || Auth::user()->role->value == 6 || Auth::user()->role->value == 7 || Auth::user()->role->value == 8) && Auth::user()->approved == 0)
@@ -21,21 +22,6 @@
     <div class="main-wrapper">
         <div class="mouse-cursor cursor-outer"></div>
         <div class="mouse-cursor cursor-inner"></div>
-
-        <!-- <div id="my_switcher" class="my_switcher">
-            <ul>
-                <li>
-                    <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                        <span title="Light Mode">Light</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                        <span title="Dark Mode">Dark</span>
-                    </a>
-                </li>
-            </ul>
-        </div>  -->
 
 
         <!-- Start Banner Area -->
@@ -92,15 +78,15 @@
                                             </div>
                                             <ul class="social-share-transparent justify-content-end">
                                                 <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i
-                                                                class="fab fa-facebook-f"></i></a></li>
+                                                            class="fab fa-facebook-f"></i></a></li>
                                                 <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i
-                                                                class="fab fa-instagram"></i></a></li>
+                                                            class="fab fa-instagram"></i></a></li>
                                                 <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a>
                                                 </li>
                                                 <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i
-                                                                class="fab fa-youtube"></i></a></li>
+                                                            class="fab fa-youtube"></i></a></li>
                                                 <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i
-                                                                class="fab fa-linkedin-in"></i></a></li>
+                                                            class="fab fa-linkedin-in"></i></a></li>
                                             </ul>
                                             <div class="read-more-button cerchio">
                                                 <a class="axil-button button-rounded hover-flip-item-wrapper"
@@ -133,7 +119,7 @@
                                                 <a class="hover-flip-item-wrapper" href="#">
                                                     <span class="hover-flip-item">
                                                         <span
-                                                                data-text="Unveiling the Staffordshire University LLB">Unveiling
+                                                            data-text="Unveiling the Staffordshire University LLB">Unveiling
                                                             the Staffordshire University LLB</span>
                                                     </span>
                                                 </a>
@@ -166,15 +152,15 @@
                                             </div>
                                             <ul class="social-share-transparent justify-content-end">
                                                 <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i
-                                                                class="fab fa-facebook-f"></i></a></li>
+                                                            class="fab fa-facebook-f"></i></a></li>
                                                 <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i
-                                                                class="fab fa-instagram"></i></a></li>
+                                                            class="fab fa-instagram"></i></a></li>
                                                 <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a>
                                                 </li>
                                                 <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i
-                                                                class="fab fa-youtube"></i></a></li>
+                                                            class="fab fa-youtube"></i></a></li>
                                                 <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i
-                                                                class="fab fa-linkedin-in"></i></a></li>
+                                                            class="fab fa-linkedin-in"></i></a></li>
                                             </ul>
                                             <div class="read-more-button cerchio">
                                                 <a class="axil-button button-rounded hover-flip-item-wrapper"
@@ -189,6 +175,8 @@
                                     <!-- End Post Content  -->
                                 </div>
                                 <!-- End Single Slide  -->
+
+                                {{--                            FEATURED POSTS DISPLAY SLIDER --}}
 
                                 @foreach($featuredPosts as $featuredPost)
                                     @if($featuredPost->featured == 1 && $featuredPost->getAttribute('approved') == 1 && $featuredPost->getAttribute('published_at') <= now())
@@ -240,12 +228,12 @@
                                                     <a class="hover-flip-item-wrapper">
                                                 <span class="hover-flip-item">
                                                     <span
-                                                            data-text="{{$featuredPost->categories[0]->title}}">{{$featuredPost->categories[0]->title}}</span>
+                                                        data-text="{{$featuredPost->categories[0]->title}}">{{$featuredPost->categories[0]->title}}</span>
                                                 </span>
                                                     </a>
                                                 </div>
                                                 <h2 class="title"><a
-                                                            href="/blog/{{$featuredPost->slug}}">{{$featuredPost->title}}</a>
+                                                        href="/blog/{{$featuredPost->slug}}">{{$featuredPost->title}}</a>
                                                 </h2>
                                                 <!-- Post Meta  -->
                                                 <div class="post-meta-wrapper with-button">
@@ -259,7 +247,7 @@
                                                                 <a class="hover-flip-item-wrapper">
                                                             <span class="hover-flip-item">
                                                                 <span
-                                                                        data-text="{{$featuredPost->author->name}}">{{$featuredPost->author->name}}</span>
+                                                                    data-text="{{$featuredPost->author->name}}">{{$featuredPost->author->name}}</span>
                                                             </span>
                                                                 </a>
                                                             </h6>
@@ -272,16 +260,16 @@
                                                     <ul class="social-share-transparent justify-content-end">
                                                         <li>
                                                             <a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i
-                                                                        class="fab fa-facebook-f"></i></a></li>
+                                                                    class="fab fa-facebook-f"></i></a></li>
                                                         <li>
                                                             <a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i
-                                                                        class="fab fa-instagram"></i></a></li>
+                                                                    class="fab fa-instagram"></i></a></li>
                                                         <li><a href="https://x.com/APIITsl?s=20"><i
-                                                                        class="fab fa-twitter"></i></a></li>
+                                                                    class="fab fa-twitter"></i></a></li>
                                                         <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i
-                                                                        class="fab fa-youtube"></i></a></li>
+                                                                    class="fab fa-youtube"></i></a></li>
                                                         <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i
-                                                                        class="fab fa-linkedin-in"></i></a></li>
+                                                                    class="fab fa-linkedin-in"></i></a></li>
                                                     </ul>
                                                     <div class="read-more-button cerchio">
                                                         <a class="axil-button button-rounded hover-flip-item-wrapper"
@@ -308,6 +296,7 @@
         <!-- End Banner Area -->
 
 
+        {{--        STUDENT POST AREA --}}
         @if($studentPosts->isNotEmpty())
 
             <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
@@ -332,9 +321,6 @@
 
 
                                         @foreach($studentPosts as $studentPost)
-
-
-
 
                                             @if (Auth::user() == true)
 
@@ -380,9 +366,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
-                                                                            <img src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -416,9 +403,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
-                                                                            <img src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -452,9 +440,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
-                                                                            <img src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -488,9 +477,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
-                                                                            <img src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -524,9 +514,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
-                                                                            <img src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -560,9 +551,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
-                                                                            <img src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -596,9 +588,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
-                                                                            <img src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -641,9 +634,10 @@
                                                                 <div class="post-thumbnail"
                                                                      style="align-items: center; justify-content: center; display: flex;">
                                                                     <a href="{{ route('post.show', $studentPost->slug) }}">
-                                                                        <img src="{{ $studentPost->getThumbnailImage() }}"
-                                                                             alt="Post Images"
-                                                                             style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                        <img
+                                                                            src="{{ $studentPost->getThumbnailImage() }}"
+                                                                            alt="Post Images"
+                                                                            style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                     </a>
                                                                 </div>
                                                                 <div class="post-grid-content">
@@ -669,9 +663,7 @@
                                                     </div>
                                                 </div>
 
-
                                             @endif
-
 
                                         @endforeach
 
@@ -689,6 +681,7 @@
 
         @endif
 
+        {{--        ALUMNI POST AREA --}}
         @if($alumniPosts->isNotEmpty())
 
             <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
@@ -711,7 +704,6 @@
                                     <div class="row" style="display: flex; justify-content: center;">
 
                                         @foreach($alumniPosts as $alumniPost)
-
 
                                             @if (Auth::user() == true)
 
@@ -757,9 +749,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
-                                                                            <img src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -793,9 +786,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
-                                                                            <img src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -829,9 +823,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
-                                                                            <img src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -865,9 +860,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
-                                                                            <img src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -901,9 +897,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
-                                                                            <img src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -937,9 +934,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
-                                                                            <img src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -973,9 +971,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
-                                                                            <img src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1018,9 +1017,10 @@
                                                                 <div class="post-thumbnail"
                                                                      style="align-items: center; justify-content: center; display: flex;">
                                                                     <a href="{{ route('post.show', $alumniPost->slug) }}">
-                                                                        <img src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                             alt="Post Images"
-                                                                             style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                        <img
+                                                                            src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                            alt="Post Images"
+                                                                            style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                     </a>
                                                                 </div>
                                                                 <div class="post-grid-content">
@@ -1048,7 +1048,6 @@
 
                                             @endif
 
-
                                         @endforeach
 
                                     </div>
@@ -1062,6 +1061,7 @@
 
         @endif
 
+            {{--        ACADEMICS POST AREA --}}
         @if($academicsPosts->isNotEmpty())
 
             <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
@@ -1127,9 +1127,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
-                                                                            <img src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1139,13 +1140,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1163,9 +1164,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
-                                                                            <img src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1175,13 +1177,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1199,9 +1201,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
-                                                                            <img src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1211,13 +1214,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1235,9 +1238,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
-                                                                            <img src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1247,13 +1251,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1271,9 +1275,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
-                                                                            <img src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1283,13 +1288,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1307,9 +1312,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
-                                                                            <img src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1319,13 +1325,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1343,9 +1349,10 @@
                                                                     <div class="post-thumbnail"
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
-                                                                            <img src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                 alt="Post Images"
-                                                                                 style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            <img
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1355,13 +1362,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1388,9 +1395,10 @@
                                                                 <div class="post-thumbnail"
                                                                      style="align-items: center; justify-content: center; display: flex;">
                                                                     <a href="{{ route('post.show', $academicsPost->slug) }}">
-                                                                        <img src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                             alt="Post Images"
-                                                                             style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                        <img
+                                                                            src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                            alt="Post Images"
+                                                                            style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                     </a>
                                                                 </div>
                                                                 <div class="post-grid-content">
@@ -1400,13 +1408,13 @@
                                                                                 <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                 </a>
                                                                             </div>
                                                                         </div>
                                                                         <h4 class="title"><a
-                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                         </h4>
                                                                     </div>
                                                                 </div>
@@ -1434,6 +1442,7 @@
 
         @endif
 
+        {{--        NON-ACADEMICS POST AREA --}}
         @if($nonAcademicsPosts->isNotEmpty())
 
             <div class="axil-post-grid-area axil-section-gapTop bg-color-grey">
@@ -1503,9 +1512,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1515,13 +1524,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1540,9 +1549,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1552,13 +1561,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1577,9 +1586,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1589,13 +1598,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1614,9 +1623,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1626,13 +1635,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1651,9 +1660,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1663,13 +1672,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1688,9 +1697,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1700,13 +1709,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1725,9 +1734,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1737,13 +1746,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1771,9 +1780,9 @@
                                                                      style="align-items: center; justify-content: center; display: flex;">
                                                                     <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                         <img
-                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                alt="Post Images"
-                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                            alt="Post Images"
+                                                                            style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                     </a>
                                                                 </div>
                                                                 <div class="post-grid-content">
@@ -1783,13 +1792,13 @@
                                                                                 <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                 </a>
                                                                             </div>
                                                                         </div>
                                                                         <h4 class="title"><a
-                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                         </h4>
                                                                     </div>
                                                                 </div>
@@ -1840,370 +1849,17 @@
                 </div>
             </div>
         </div>
-
-
-        <!-- Start Post List Wrapper  -->
-        {{--        <div class="axil-post-list-area post-listview-visible-color axil-section-gap bg-color-white">--}}
-        {{--            <div class="container">--}}
-        {{--                <div class="row" style="margin-bottom: 40px; margin-top: -50px;">--}}
-        {{--                    <div class="col-lg-12">--}}
-        {{--                        <div class="section-title">--}}
-        {{--                            <h2 class="title">Recent Articles</h2>--}}
-        {{--                        </div>--}}
-        {{--                    </div>--}}
-        {{--                </div>--}}
-        {{--                <div class="row">--}}
-        {{--                    <div class="col-lg-8 col-xl-8">--}}
-
-
-        {{--                        @foreach($popularPosts as $popularPost)--}}
-
-        {{--                            @if ($popularPost->getAttribute('approved') == 1 && $popularPost->getAttribute('published_at') <= now() && $popularPost->image != null)--}}
-        {{--                                @if ($popularPost->image == null)--}}
-        {{--                                    <div class="content-block post-list-view format-quote mt--30">--}}
-        {{--                                        <div class="post-content">--}}
-        {{--                                            <div class="post-cat">--}}
-        {{--                                                <div class="post-cat-list">--}}
-        {{--                                                    <a class="hover-flip-item-wrapper">--}}
-        {{--                                        <span class="hover-flip-item">--}}
-        {{--                                            --}}{{-- <span data-text="TRAVEL">TRAVEL</span> --}}
-        {{--                                        </span>--}}
-        {{--                                                    </a>--}}
-        {{--                                                </div>--}}
-        {{--                                            </div>--}}
-
-        {{--                                            <h4 class="title" style="font-size: 24px; font-weight: bold">--}}
-        {{--                                                <a href="{{ route('post.show', $popularPost->slug) }}">{{$popularPost->title}}</a>--}}
-        {{--                                            </h4>--}}
-
-
-        {{--                                            <div class="axil-single-widget widget widget_categories mb--30"--}}
-        {{--                                                 style="margin-top: 40px;">--}}
-        {{--                                                <ul>--}}
-        {{--                                                    @foreach ($popularPost->categories as $category)--}}
-        {{--                                                        <li class="cat-item">--}}
-        {{--                                                            <a class="inner"--}}
-        {{--                                                               style="width: fit-content; background-color: #4CAC; color: white; padding-left: 15px; padding-right: 15px;">--}}
-        {{--                                                                <div class="content">--}}
-        {{--                                                                    <h5 class="title"--}}
-        {{--                                                                        style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>--}}
-        {{--                                                                </div>--}}
-        {{--                                                            </a>--}}
-        {{--                                                        </li>--}}
-        {{--                                                    @endforeach--}}
-        {{--                                                </ul>--}}
-        {{--                                            </div>--}}
-        {{--                                            <div class="post-meta-wrapper">--}}
-        {{--                                                <div class="post-meta">--}}
-        {{--                                                    <div class="content">--}}
-        {{--                                                        <h6 class="post-author-name"--}}
-        {{--                                                            style="font-size: 16px; font-weight: 500">--}}
-        {{--                                                            <a class="hover-flip-item-wrapper">--}}
-        {{--                                                <span class="hover-flip-item">--}}
-        {{--                                                    <span--}}
-        {{--                                                        data-text="{{$popularPost->author->name}}">{{$popularPost->author->name}}</span>--}}
-        {{--                                                </span>--}}
-        {{--                                                            </a>--}}
-        {{--                                                        </h6>--}}
-        {{--                                                        <ul class="post-meta-list">--}}
-        {{--                                                            <li>{{$popularPost->published_at->diffForHumans()}}</li>--}}
-        {{--                                                            <li>{{{$popularPost->getReadingTime()}}} min read</li>--}}
-        {{--                                                        </ul>--}}
-        {{--                                                    </div>--}}
-        {{--                                                </div>--}}
-        {{--                                            </div>--}}
-        {{--                                        </div>--}}
-        {{--                                    </div>--}}
-
-        {{--                                @else--}}
-
-        {{--                                    <div class="content-block post-list-view mt--30">--}}
-        {{--                                        <div class="post-thumbnail">--}}
-        {{--                                            <a href="{{ route('post.show', $popularPost->slug) }}">--}}
-        {{--                                                <img src="{{$popularPost->getThumbnailImage()}}" alt="Post Images">--}}
-        {{--                                            </a>--}}
-        {{--                                        </div>--}}
-        {{--                                        <div class="post-content">--}}
-        {{--                                            <div class="post-cat">--}}
-        {{--                                                <div class="post-cat-list">--}}
-        {{--                                                    <a class="hover-flip-item-wrapper">--}}
-        {{--                                                        --}}{{-- <span class="hover-flip-item">--}}
-        {{--                                                            <span data-text="{{$post->categories()->first()->getAttributes('title')}}">{{$post->categories()->first()->getAttributes('title')}}</span>--}}
-        {{--                                                        </span> --}}
-        {{--                                                    </a>--}}
-        {{--                                                </div>--}}
-        {{--                                            </div>--}}
-        {{--                                            <h4 class="title" style="font-size: 24px; font-weight: bold;"><a--}}
-        {{--                                                    href="{{ route('post.show', $popularPost->slug) }}">{{$popularPost->title}}</a>--}}
-        {{--                                            </h4>--}}
-
-        {{--                                            <div class="axil-single-widget widget widget_categories mb--30"--}}
-        {{--                                                 style="margin-top: 40px;">--}}
-        {{--                                                <ul>--}}
-        {{--                                                    @foreach ($popularPost->categories as $category)--}}
-        {{--                                                        <li class="cat-item">--}}
-        {{--                                                            <a class="inner"--}}
-        {{--                                                               style="width: fit-content; background-color: #4CAC; color: white; padding-left: 15px; padding-right: 15px;">--}}
-        {{--                                                                <div class="content">--}}
-        {{--                                                                    <h5 class="title"--}}
-        {{--                                                                        style="color: white; font-weight: 600; font-size: 16px">{{$category->title}}</h5>--}}
-        {{--                                                                </div>--}}
-        {{--                                                            </a>--}}
-        {{--                                                        </li>--}}
-        {{--                                                    @endforeach--}}
-        {{--                                                </ul>--}}
-        {{--                                            </div>--}}
-        {{--                                            <div class="post-meta-wrapper">--}}
-        {{--                                                <div class="post-meta">--}}
-        {{--                                                    <div class="content">--}}
-        {{--                                                        <h6 class="post-author-name"--}}
-        {{--                                                            style="font-size: 16px; font-weight: 500">--}}
-        {{--                                                            <a class="hover-flip-item-wrapper">--}}
-        {{--                                                <span class="hover-flip-item">--}}
-        {{--                                                    <span--}}
-        {{--                                                        data-text="{{$popularPost->author->name}}">{{$popularPost->author->name}}</span>--}}
-        {{--                                                </span>--}}
-        {{--                                                            </a>--}}
-        {{--                                                        </h6>--}}
-        {{--                                                        <ul class="post-meta-list">--}}
-        {{--                                                            <li>{{$popularPost->published_at->diffForHumans()}}</li>--}}
-        {{--                                                            <li>{{{$popularPost->getReadingTime()}}} min read</li>--}}
-        {{--                                                        </ul>--}}
-        {{--                                                    </div>--}}
-        {{--                                                </div>--}}
-        {{--                                            </div>--}}
-        {{--                                        </div>--}}
-        {{--                                    </div>--}}
-
-        {{--                                @endif--}}
-
-        {{--                            @endif--}}
-
-        {{--                        @endforeach--}}
-
-
-        {{--                    </div>--}}
-
-        {{--                    <div class="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">--}}
-        {{--                        <!-- Start Sidebar Area  -->--}}
-        {{--                        <div class="sidebar-inner">--}}
-
-        {{--                            <!-- Start Single Widget  -->--}}
-        {{--                            <div class="axil-single-widget widget widget_postlist mb--30">--}}
-        {{--                                <h5 class="widget-title" style="color: black; font-size: 18px; font-weight: bold;">--}}
-        {{--                                    Categories</h5>--}}
-        {{--                                <!-- Start Post List  -->--}}
-        {{--                                <div class="axil-single-widget widget widget_categories mb--30">--}}
-        {{--                                    <ul>--}}
-        {{--                                        @foreach ($categories as $category)--}}
-        {{--                                            <li class="cat-item" style="padding: 5px 5px;">--}}
-        {{--                                                <a href="{{ route('post.index', ['category' => $category->slug]) }}"--}}
-        {{--                                                   class="inner"--}}
-        {{--                                                   style="justify-content: center; background: #ffffff; justify-content: center; background: #ffffff; border: lightgray 1px solid; padding: 8px 0px; border-radius: 50px;}">--}}
-        {{--                                                    <div class="content">--}}
-        {{--                                                        <h5 class="title"--}}
-        {{--                                                            style="font-size: 18px; font-weight: bold;">{{$category->title}}--}}
-        {{--                                                            ({{($category->posts->where('approved', true)->where('published_at', '<=', now())->count())}})</h5>--}}
-        {{--                                                    </div>--}}
-        {{--                                                </a>--}}
-        {{--                                            </li>--}}
-        {{--                                        @endforeach--}}
-        {{--                                    </ul>--}}
-        {{--                                </div>--}}
-        {{--                                <!-- End Post List  -->--}}
-        {{--                            </div>--}}
-        {{--                            <!-- End Single Widget  -->--}}
-
-        {{--                            <!-- Start Single Widget  -->--}}
-        {{--                            <div class="axil-single-widget widget widget_search mb--30">--}}
-        {{--                                <h5 class="widget-title">Search</h5>--}}
-        {{--                                <a href="/blog">--}}
-        {{--                                    <form action="#">--}}
-        {{--                                        <div class="axil-search form-group">--}}
-        {{--                                            <button type="submit" class="search-button"><i--}}
-        {{--                                                    class="fal fa-search"></i></button>--}}
-        {{--                                            <input type="text" class="form-control" placeholder="Search">--}}
-        {{--                                        </div>--}}
-        {{--                                    </form>--}}
-        {{--                                </a>--}}
-        {{--                            </div>--}}
-        {{--                            <!-- End Single Widget  -->--}}
-
-        {{--                            <!-- Start Single Widget  -->--}}
-        {{--                            <div class="axil-single-widget widget widget_postlist mb--30">--}}
-        {{--                                <h5 class="widget-title">Alumni Spotlights</h5>--}}
-        {{--                                <!-- Start Post List  -->--}}
-        {{--                                <div class="post-medium-block">--}}
-
-        {{--                                    <!-- Start Single Post  -->--}}
-        {{--                                    <div class="content-block post-medium mb--20">--}}
-        {{--                                        <div class="post-thumbnail">--}}
-        {{--                                            <a>--}}
-        {{--                                                <img src="assets/images/post-images/alumni-spotlight1.jpg"--}}
-        {{--                                                     alt="Post Images">--}}
-        {{--                                            </a>--}}
-        {{--                                        </div>--}}
-        {{--                                        <div class="post-content">--}}
-        {{--                                            <h6 class="title"><a>The Story behind a Successful Tech Innovator</a></h6>--}}
-        {{--                                            <div class="post-meta">--}}
-        {{--                                                <ul class="post-meta-list">--}}
-        {{--                                                    <li>Jun 21, 2022</li>--}}
-        {{--                                                    <li>4 min read</li>--}}
-        {{--                                                </ul>--}}
-        {{--                                            </div>--}}
-        {{--                                        </div>--}}
-        {{--                                    </div>--}}
-        {{--                                    <!-- End Single Post  -->--}}
-
-        {{--                                    <!-- Start Single Post  -->--}}
-        {{--                                    <div class="content-block post-medium mb--20">--}}
-        {{--                                        <div class="post-thumbnail">--}}
-        {{--                                            <a>--}}
-        {{--                                                <img src="assets/images/post-images/alumni-spotlight2.jpg"--}}
-        {{--                                                     alt="Post Images">--}}
-        {{--                                            </a>--}}
-        {{--                                        </div>--}}
-        {{--                                        <div class="post-content">--}}
-        {{--                                            <h6 class="title"><a>Road to Becoming a Renowned Business Visionary</a>--}}
-        {{--                                            </h6>--}}
-        {{--                                            <div class="post-meta">--}}
-        {{--                                                <ul class="post-meta-list">--}}
-        {{--                                                    <li>Dec 15, 2020</li>--}}
-        {{--                                                    <li>3 min read</li>--}}
-        {{--                                                </ul>--}}
-        {{--                                            </div>--}}
-        {{--                                        </div>--}}
-        {{--                                    </div>--}}
-        {{--                                    <!-- End Single Post  -->--}}
-
-        {{--                                    <!-- Start Single Post  -->--}}
-        {{--                                    <div class="content-block post-medium mb--20">--}}
-        {{--                                        <div class="post-thumbnail">--}}
-        {{--                                            <a>--}}
-        {{--                                                <img src="assets/images/post-images/alumni-spotlight3.jpg"--}}
-        {{--                                                     alt="Post Images">--}}
-        {{--                                            </a>--}}
-        {{--                                        </div>--}}
-        {{--                                        <div class="post-content">--}}
-        {{--                                            <h6 class="title"><a>How a Developer Managed To Run a Multi-Million--}}
-        {{--                                                    Business</a></h6>--}}
-        {{--                                            <div class="post-meta">--}}
-        {{--                                                <ul class="post-meta-list">--}}
-        {{--                                                    <li>May 06, 2020</li>--}}
-        {{--                                                    <li>2 min read</li>--}}
-        {{--                                                </ul>--}}
-        {{--                                            </div>--}}
-        {{--                                        </div>--}}
-        {{--                                    </div>--}}
-        {{--                                    <!-- End Single Post  -->--}}
-
-        {{--                                </div>--}}
-        {{--                                <!-- End Post List  -->--}}
-
-        {{--                            </div>--}}
-        {{--                            <!-- End Single Widget  -->--}}
-
-        {{--                            <!-- Start Single Widget  -->--}}
-        {{--                            --}}{{--                            <div class="axil-single-widget widget widget_postlist mb--30">--}}
-        {{--                            --}}{{--                                <h5 class="widget-title">Oldest Articles</h5>--}}
-        {{--                            --}}{{--                                <!-- Start Post List  -->--}}
-        {{--                            --}}{{--                                <div class="post-medium-block">--}}
-
-        {{--                            --}}{{--                                    @foreach ($oldestPosts as $oldestPost)--}}
-        {{--                            --}}{{--                                        @if ($oldestPost->getAttribute('approved') == 1 && $oldestPost->getAttribute('published_at') <= now())--}}
-        {{--                            --}}{{--                                            <!-- Start Single Post  -->--}}
-        {{--                            --}}{{--                                            <div class="content-block post-medium mb--20">--}}
-        {{--                            --}}{{--                                                <div class="post-thumbnail">--}}
-        {{--                            --}}{{--                                                    <a href="/blog/{{$oldestPost->slug}}">--}}
-        {{--                            --}}{{--                                                        @if ($oldestPost->image == null)--}}
-        {{--                            --}}{{--                                                            <img src="assets/images/logo/no-image.jpg"--}}
-        {{--                            --}}{{--                                                                 alt="Post Images">--}}
-        {{--                            --}}{{--                                                        @else--}}
-        {{--                            --}}{{--                                                        <img src="{{$oldestPost->getThumbnailImage()}}"--}}
-        {{--                            --}}{{--                                                             alt="Post Images">--}}
-        {{--                            --}}{{--                                                        @endif--}}
-        {{--                            --}}{{--                                                    </a>--}}
-        {{--                            --}}{{--                                                </div>--}}
-        {{--                            --}}{{--                                                <div class="post-content">--}}
-        {{--                            --}}{{--                                                    <h6 class="title"><a href="/blog/{{$oldestPost->slug}}">{{$oldestPost->title}}</a></h6>--}}
-        {{--                            --}}{{--                                                    <div class="post-meta">--}}
-        {{--                            --}}{{--                                                        <ul class="post-meta-list">--}}
-        {{--                            --}}{{--                                                            <li>{{$oldestPost->published_at->diffForHumans()}}</li>--}}
-        {{--                            --}}{{--                                                            <li>{{$oldestPost->getReadingTime()}} min read</li>--}}
-        {{--                            --}}{{--                                                        </ul>--}}
-        {{--                            --}}{{--                                                    </div>--}}
-        {{--                            --}}{{--                                                </div>--}}
-        {{--                            --}}{{--                                            </div>--}}
-        {{--                            --}}{{--                                            <!-- End Single Post  -->--}}
-        {{--                            --}}{{--                                        @endif--}}
-        {{--                            --}}{{--                                    @endforeach--}}
-
-        {{--                            --}}{{--                                </div>--}}
-        {{--                            --}}{{--                                <!-- End Post List  -->--}}
-
-        {{--                            --}}{{--                            </div>--}}
-        {{--                            <!-- End Single Widget  -->--}}
-
-        {{--                            <!-- Start Single Widget  -->--}}
-        {{--                            <div class="axil-single-widget widget widget_social mb--30">--}}
-        {{--                                <h5 class="widget-title">Stay In Touch</h5>--}}
-        {{--                                <!-- Start Post List  -->--}}
-        {{--                                <ul class="social-icon md-size justify-content-center">--}}
-        {{--                                    <li><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i--}}
-        {{--                                                class="fab fa-facebook-f"></i></a></li>--}}
-        {{--                                    <li><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i--}}
-        {{--                                                class="fab fa-instagram"></i></a></li>--}}
-        {{--                                    <li><a href="https://x.com/APIITsl?s=20"><i class="fab fa-twitter"></i></a></li>--}}
-        {{--                                    <li><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i--}}
-        {{--                                                class="fab fa-youtube"></i></a></li>--}}
-        {{--                                    <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i--}}
-        {{--                                                class="fab fa-linkedin-in"></i></a></li>--}}
-        {{--                                </ul>--}}
-        {{--                                <!-- End Post List  -->--}}
-        {{--                            </div>--}}
-        {{--                            <!-- End Single Widget  -->--}}
-
-        {{--                            <!-- Start Single Widget  -->--}}
-
-        {{--                            <!-- End Single Widget  -->--}}
-        {{--                        </div>--}}
-        {{--                        <!-- End Sidebar Area  -->--}}
-
-        {{--                    </div>--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--        </div>--}}
-
-
-        <!-- End Video Area  -->
-
-
-        <!-- End Instagram Area  -->
-
-        <!-- End Footer Area  -->
-
+        
         <!-- Start Back To Top  -->
         <a id="backto-top"></a>
         <!-- End Back To Top  -->
 
     </div>
 
-    <!-- JS
-============================================ -->
-
-    {{--    <!-- Modernizer JS -->--}}
 
     <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/slick.min.js"></script>
     <script src="assets/js/main.js"></script>
-    {{--    <!-- Main JS -->--}}
 
-
-    {{--    </body>--}}
-
-
-    {{--    <!-- Mirrored from new.axilthemes.com/demo/template/blogar/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Feb 2024 11:05:41 GMT -->--}}
-
-    {{--    </html>--}}
 
 </x-site-layout>

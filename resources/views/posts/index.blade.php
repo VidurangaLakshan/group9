@@ -21,9 +21,6 @@
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
     <link rel="stylesheet" href="assets/css/vendor/slick.css">
-    <!-- <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/vendor/base.css">
-    <link rel="stylesheet" href="assets/css/plugins/plugins.css"> -->
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -50,84 +47,6 @@
                             <!-- Start Mainmanu Nav -->
                             <ul class="mainmenu">
                                 <li class="menu-item-has-children"><a href="/">Home</a></li>
-
-{{--                                <li class="menu-item-has-children"><a href="#">Articles</a>--}}
-{{--                                    <ul class="axil-submenu">--}}
-{{--                                        <li>--}}
-{{--                                            <a class="hover-flip-item-wrapper" href="{{route('post.index')}}">--}}
-{{--                                                <span class="hover-flip-item">--}}
-{{--                                                    <span data-text="All Articles">All Articles</span>--}}
-{{--                                                </span>--}}
-{{--                                            </a>--}}
-{{--                                        </li>--}}
-{{--                                        @auth--}}
-{{--                                            @if (auth()->user()->role->value == 1)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/admin/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 2)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/editor/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 4)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/alumniLiaison/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 5)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/academics/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 6)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/nonAcademics/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 7)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/user/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 8)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/alumni/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @endif--}}
-{{--                                        @endauth--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
 
                                 <li class="menu-item-has-children"><a href="{{route('post.index')}}">Articles</a>
 
@@ -354,22 +273,6 @@
 <div class="main-wrapper">
     <div class="mouse-cursor cursor-outer"></div>
     <div class="mouse-cursor cursor-inner"></div>
-
-    <!-- <div id="my_switcher" class="my_switcher">
-        <ul>
-            <li>
-                <a href="javascript: void(0);" data-theme="light" class="setColor light">
-                    <span title="Light Mode">Light</span>
-                </a>
-            </li>
-            <li>
-                <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
-                    <span title="Dark Mode">Dark</span>
-                </a>
-            </li>
-        </ul>
-    </div> -->
-
 
     <h1 class="d-none">Home Tech Blog</h1>
     <!-- Start Post List Wrapper  -->
