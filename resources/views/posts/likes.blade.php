@@ -52,84 +52,6 @@
 
                                 <li class="menu-item-has-children"><a href="{{route('post.index')}}">Articles</a></li>
 
-{{--                                <li class="menu-item-has-children"><a href="#">Articles</a>--}}
-{{--                                    <ul class="axil-submenu">--}}
-{{--                                        <li>--}}
-{{--                                            <a class="hover-flip-item-wrapper" href="{{route('post.index')}}">--}}
-{{--                                                <span class="hover-flip-item">--}}
-{{--                                                    <span data-text="All Articles">All Articles</span>--}}
-{{--                                                </span>--}}
-{{--                                            </a>--}}
-{{--                                        </li>--}}
-{{--                                        @auth--}}
-{{--                                            @if (auth()->user()->role->value == 1)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/admin/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 2)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/editor/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 4)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/alumniLiaison/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 5)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/academics/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 6)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/nonAcademics/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 7)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/user/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @elseif (auth()->user()->role->value == 8)--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="hover-flip-item-wrapper"--}}
-{{--                                                       href="{{ url('/alumni/posts/create') }}">--}}
-{{--                                                            <span class="hover-flip-item">--}}
-{{--                                                                <span data-text="Write Articles">Write Articles</span>--}}
-{{--                                                            </span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            @endif--}}
-{{--                                        @endauth--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
-
 
                                 @auth
                                     @if (auth()->user()->approved == 1 && (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8))
@@ -183,29 +105,35 @@
 
                             @if (Route::has('login'))
                                 @auth
-                                    @if (auth()->user()->role->value == 1)
-                                        <li class="icon"><a href="{{ url('/admin') }}"><i class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 2)
-                                        <li class="icon"><a href="{{ url('/editor') }}"><i class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 4)
-                                        <li class="icon"><a href="{{ url('/alumniLiaison') }}"><i
-                                                    class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 5)
-                                        <li class="icon"><a href="{{ url('/academics') }}"><i
-                                                    class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 6)
-                                        <li class="icon"><a href="{{ url('/nonAcademics') }}"><i class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 7)
-                                        <li class="icon"><a href="{{ url('/user') }}"><i class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 8)
-                                        <li class="icon"><a href="{{ url('/alumni') }}"><i class="fas fa-cog"></i></a>
-                                        </li>
+                                    @if (auth()->user()->approved == 1)
+                                        @if (auth()->user()->role->value == 1)
+                                            <li class="icon"><a href="{{ url('/admin') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 2)
+                                            <li class="icon"><a href="{{ url('/editor') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 4)
+                                            <li class="icon"><a href="{{ url('/alumniLiaison') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 5)
+                                            <li class="icon"><a href="{{ url('/academics') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 6)
+                                            <li class="icon"><a href="{{ url('/nonAcademics') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 7)
+                                            <li class="icon"><a href="{{ url('/user') }}"><i class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 8)
+                                            <li class="icon"><a href="{{ url('/alumni') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @endif
                                     @endif
                                     <li class="icon">
                                         <a>

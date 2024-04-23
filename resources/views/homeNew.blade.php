@@ -185,7 +185,7 @@
 
                                             @if ($featuredPost->image != null)
 
-                                                <div class="post-thumbnail" style="display: flex">
+                                                <div class="post-thumbnail" style="display: flex; justify-content: center">
                                                     <a href="/blog/{{$featuredPost->slug}}">
                                                         <img src="{{$featuredPost->getThumbnailImage()}}"
                                                              alt="Post Images">
@@ -1849,7 +1849,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Start Back To Top  -->
         <a id="backto-top"></a>
         <!-- End Back To Top  -->

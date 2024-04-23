@@ -103,29 +103,35 @@
 
                             @if (Route::has('login'))
                                 @auth
-                                    @if (auth()->user()->role->value == 1)
-                                        <li class="icon"><a href="{{ url('/admin') }}"><i class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 2)
-                                        <li class="icon"><a href="{{ url('/editor') }}"><i class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 4)
-                                        <li class="icon"><a href="{{ url('/alumniLiaison') }}"><i
-                                                    class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 5)
-                                        <li class="icon"><a href="{{ url('/academics') }}"><i
-                                                    class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 6)
-                                        <li class="icon"><a href="{{ url('/nonAcademics') }}"><i class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 7)
-                                        <li class="icon"><a href="{{ url('/user') }}"><i class="fas fa-cog"></i></a>
-                                        </li>
-                                    @elseif (auth()->user()->role->value == 8)
-                                        <li class="icon"><a href="{{ url('/alumni') }}"><i class="fas fa-cog"></i></a>
-                                        </li>
+                                    @if (auth()->user()->approved == 1)
+                                        @if (auth()->user()->role->value == 1)
+                                            <li class="icon"><a href="{{ url('/admin') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 2)
+                                            <li class="icon"><a href="{{ url('/editor') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 4)
+                                            <li class="icon"><a href="{{ url('/alumniLiaison') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 5)
+                                            <li class="icon"><a href="{{ url('/academics') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 6)
+                                            <li class="icon"><a href="{{ url('/nonAcademics') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 7)
+                                            <li class="icon"><a href="{{ url('/user') }}"><i class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 8)
+                                            <li class="icon"><a href="{{ url('/alumni') }}"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @endif
                                     @endif
                                     <li class="icon">
                                         <a>
