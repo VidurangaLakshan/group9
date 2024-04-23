@@ -49,7 +49,7 @@
                             <ul class="mainmenu">
                                 <li class="menu-item-has-children"><a href="/">Home</a></li>
 
-                                <li class="menu-item-has-children"><a href="#">Articles</a>
+                                <li class="menu-item-has-children"><a>Articles</a>
                                     <ul class="axil-submenu">
                                         <li>
                                             <a class="hover-flip-item-wrapper" href="{{route('post.index')}}">
