@@ -224,7 +224,7 @@
 
                             <li>
                                 @if (Route::has('login'))
-                                    <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
+                                    <div class="">
                                         @auth
                                             @if (Auth::check())
                                                 <a href="{{ url('/user/profile') }}">
