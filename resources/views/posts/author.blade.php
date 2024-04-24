@@ -555,30 +555,30 @@
                                 @auth
                                     @if (auth()->user()->approved == 1)
                                         @if (auth()->user()->role->value == 1)
-                                            <li class="icon"><a href="{{ url('/admin') }}"><i
+                                            <li class="icon"><a href="{{ url('/admin') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 2)
-                                            <li class="icon"><a href="{{ url('/editor') }}"><i
+                                            <li class="icon"><a href="{{ url('/editor') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 4)
-                                            <li class="icon"><a href="{{ url('/alumniLiaison') }}"><i
+                                            <li class="icon"><a href="{{ url('/alumniLiaison') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 5)
-                                            <li class="icon"><a href="{{ url('/academics') }}"><i
+                                            <li class="icon"><a href="{{ url('/academics') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 6)
-                                            <li class="icon"><a href="{{ url('/nonAcademics') }}"><i
+                                            <li class="icon"><a href="{{ url('/nonAcademics') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 7)
-                                            <li class="icon"><a href="{{ url('/user') }}"><i class="fas fa-cog"></i></a>
+                                            <li class="icon"><a href="{{ url('/user') }}" target="_blank"><i class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 8)
-                                            <li class="icon"><a href="{{ url('/alumni') }}"><i
+                                            <li class="icon"><a href="{{ url('/alumni') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
                                             </li>
                                         @endif
