@@ -29,4 +29,19 @@ class Resume extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    protected static function booted()
+    {
+        static::saving(function ($resume) {
+            if ($resume->isDirty('user_id')) {
+                // Check if the user_id is being explicitly set, if so, don't override it.
+                return;
+            }
+
+            if (!$resume->exists) {
+                // If the post is being created or updated, set the user_id.
+                $resume->user_id = auth()->id();
+            }
+        });
+    }
 }

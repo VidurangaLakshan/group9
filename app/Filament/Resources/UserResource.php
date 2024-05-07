@@ -194,6 +194,27 @@ class UserResource extends Resource
                         })
                         ->color('danger')
                         ->requiresConfirmation(),
+                    Tables\Actions\Action::make('Set Alumni')
+                        ->action(function (User $record) {
+                            if ($record->role->value == 7 || $record->degree_level == 8) {
+                                $record->role = 8;
+                                $record->save();
+                            }
+                        })
+                        ->color('danger')
+                        ->requiresConfirmation(),
+
+                    Tables\Actions\Action::make('Set Postgraduate')
+                        ->action(function (User $record) {
+                            if ($record->role->value == 8) {
+                                $record->role = 7;
+                                $record->degree_level = 9;
+                                $record->save();
+                            }
+                        })
+                        ->color('danger')
+                        ->requiresConfirmation(),
+
                     Tables\Actions\Action::make('Set to Computing Faculty')
                         ->action(function (User $record) {
                             if ($record->role->value == 7 || $record->role->value == 5) {
@@ -253,6 +274,30 @@ class UserResource extends Resource
                         })
                         ->requiresConfirmation()
                         ->deselectRecordsAfterCompletion(),
+
+                    Tables\Actions\Action::make('Set all as Alumni')
+                        ->action(function (Collection $records) {
+                            $records->each(function ($record) {
+                                if ($record->role->value == 7 || $record->degree_level == 8) {
+                                    $record->role = 8;
+                                    $record->save();
+                                }
+                            });
+                        })
+                        ->requiresConfirmation(),
+
+                    Tables\Actions\Action::make('Set all as Postgraduate')
+                        ->action(function (Collection $records) {
+                            $records->each(function ($record) {
+                                if ($record->role->value == 8) {
+                                    $record->role = 7;
+                                    $record->degree_level = 9;
+                                    $record->save();
+                                }
+                            });
+                        })
+                        ->requiresConfirmation(),
+
 
                     Tables\Actions\BulkAction::make('Set all to Business School')
                         ->action(function (Collection $records) {

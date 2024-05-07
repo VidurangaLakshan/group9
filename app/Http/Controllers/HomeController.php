@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Event;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -58,6 +59,20 @@ class HomeController extends Controller
                 ->whereHas('author', function ($query) {
                     $query->where('role', 6)->where('image', '!=', null);
                 })
+                ->take(4)
+                ->get(),
+
+            'upcomingEvents' => Event::where('status', true)
+                ->where('start_date', '>', now()->format('Y-m-d'))
+                ->take(4)
+                ->get(),
+
+            'pastEvents' => Event::where('status', true)
+                ->where(function ($query) {
+                    $query->where('start_date', '<', now()->format('Y-m-d'))
+                        ->where('end_date', '<', now()->format('Y-m-d'));
+                })
+                ->orderBy('start_date', 'desc')
                 ->take(4)
                 ->get(),
 

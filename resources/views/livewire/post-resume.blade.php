@@ -35,7 +35,7 @@
                         <div class="col-lg-12">
                             <div class="form-submit cerchio">
                                 <input name="submit" type="submit" id="submit" class="axil-button button-rounded"
-                                       value="Upload CV">
+                                        value="Upload CV">
                             </div>
                         </div>
                     </div>

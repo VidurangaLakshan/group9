@@ -329,6 +329,9 @@
                                                             </ul>
                                                         </div>
                                                     </div>
+                                                    <ul class="social-share-transparent justify-content-end">
+                                                        <livewire:like-button :key="$post->id" :$post/>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -390,6 +393,9 @@
                                                             </ul>
                                                         </div>
                                                     </div>
+                                                    <ul class="social-share-transparent justify-content-end">
+                                                        <livewire:like-button :key="$post->id" :$post/>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>

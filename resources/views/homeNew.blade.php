@@ -114,20 +114,7 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li>
-                                                            <a href="https://www.facebook.com/APIITofficial"><i
-                                                                    class="fab fa-facebook-f"></i></a></li>
-                                                        <li>
-                                                            <a href="https://www.instagram.com/apiitsl"><i
-                                                                    class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="https://x.com/APIITsl?s=20"><i
-                                                                    class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="https://youtube.com/@APIITedu"><i
-                                                                    class="fab fa-youtube"></i></a></li>
-                                                        <li><a href="https://www.linkedin.com/company/apiit-sri-lanka/"><i
-                                                                    class="fab fa-linkedin-in"></i></a></li>
-                                                    </ul>
+
                                                     <div class="read-more-button cerchio">
                                                         <a class="axil-button button-rounded hover-flip-item-wrapper"
                                                            href="/blog/{{$featuredPost->slug}}">
@@ -151,6 +138,207 @@
             </div>
         </div>
         <!-- End Banner Area -->
+
+
+
+        <div class="axil-trending-post-area axil-section-gap bg-color-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h2 class="title">Events @ APIIT</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Start Axil Tab Button  -->
+                        <ul class="axil-tab-button nav nav-tabs mt--20" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" id="trend-one" data-bs-toggle="tab" href="#trendone"
+                                   role="tab"
+                                   aria-controls="trend-one" aria-selected="true">Upcoming</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="trend-two" data-bs-toggle="tab" href="#trendtwo" role="tab"
+                                   aria-controls="trend-two" aria-selected="false">Previous</a>
+                            </li>
+                        </ul>
+                        <!-- End Axil Tab Button  -->
+
+                        <!-- Start Axil Tab Content  -->
+                        <div class="tab-content">
+
+
+                            <?php
+
+                            $ongoingEventsCount = 0;
+                            $upcomingEventsCount = 0;
+                            $pastEventsCount = $pastEvents->count();
+                            ?>
+
+
+                                <!-- Single Tab Content  -->
+
+                            <!-- Single Tab Content  -->
+                            <div class="row trend-tab-content tab-pane fade show active" id="trendone" role="tabpanel"
+                                 aria-labelledby="trend-two">
+                                <div class="col-lg-8">
+
+                                    <!-- Start Single Post  -->
+                                    @foreach($upcomingEvents as $upcomingEvent)
+                                            <?php
+                                            $upcomingEventsCount++;
+                                            ?>
+                                        <div class="content-block trend-post post-order-list is-active">
+                                            <div class="post-inner">
+
+                                                <div class="post-content">
+                                                    <div class="post-cat">
+                                                        <div class="post-cat-list">
+                                                            <a class="hover-flip-item-wrapper" href="">
+                                                            <span class="hover-flip-item">
+                                                                @if ($upcomingEvent->start_date != null)
+                                                                    <span
+                                                                        data-text="{{$upcomingEvent->start_date}}">{{$upcomingEvent->start_date}}</span>
+                                                                @endif
+                                                            </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <h3 class="title"><a
+                                                            href="{{ route('event.show', $upcomingEvent->slug) }}">{{$upcomingEvent->title}}</a>
+                                                    </h3>
+                                                    <div class="post-meta-wrapper">
+                                                        <div class="post-meta">
+                                                            <div class="content">
+                                                                <h6 class="post-author-name">
+                                                                    <a class="hover-flip-item-wrapper"
+                                                                       href="{{ route('event.club', $upcomingEvent->user_id) }}">
+                                                                    <span class="hover-flip-item">
+                                                                        <span
+                                                                            data-text="{{$upcomingEvent->author->name}}">{{$upcomingEvent->author->name}}</span>
+                                                                    </span>
+                                                                    </a>
+                                                                </h6>
+                                                                <ul class="post-meta-list">
+                                                                    <li>{{$upcomingEvent->getReadingTime()}} min read
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="social-share-transparent justify-content-end">
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-thumbnail">
+                                                <a href="{{ route('event.show', $upcomingEvent->slug) }}">
+                                                    <img src="{{$upcomingEvent->getThumbnailImage()}}"
+                                                         alt="Post Images">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    @endforeach
+
+                                    @if ($upcomingEvents->count() == 1)
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                    @endif
+                                    <!-- End Single Post  -->
+
+
+                                </div>
+                            </div>
+                            <!-- Single Tab Content  -->
+
+                            <!-- Single Tab Content  -->
+                            <div class="row trend-tab-content tab-pane fade" id="trendtwo" role="tabpanel"
+                                 aria-labelledby="trend-two">
+                                <div class="col-lg-8">
+
+
+                                    <!-- Start Single Post  -->
+                                    @foreach($pastEvents as $pastEvent)
+
+                                            <?php
+                                            $pastEventsCount--;
+                                            ?>
+                                        <div class="content-block trend-post post-order-list is-active">
+                                            <div class="post-inner">
+
+                                                <div class="post-content">
+                                                    <div class="post-cat">
+                                                        <div class="post-cat-list">
+                                                            <a class="hover-flip-item-wrapper" href="">
+                                                            <span class="hover-flip-item">
+                                                                @if ($pastEvent->start_date != null)
+                                                                    <span
+                                                                        data-text="{{$pastEvent->start_date}}">{{$pastEvent->start_date}}</span>
+                                                                @endif
+                                                            </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <h3 class="title"><a
+                                                            href="{{ route('event.show', $pastEvent->slug) }}">{{$pastEvent->title}}</a>
+                                                    </h3>
+                                                    <div class="post-meta-wrapper">
+                                                        <div class="post-meta">
+                                                            <div class="content">
+                                                                <h6 class="post-author-name">
+                                                                    <a class="hover-flip-item-wrapper"
+                                                                       href="{{ route('event.club', $pastEvent->user_id) }}">
+                                                                    <span class="hover-flip-item">
+                                                                        <span
+                                                                            data-text="{{$pastEvent->author->name}}">{{$pastEvent->author->name}}</span>
+                                                                    </span>
+                                                                    </a>
+                                                                </h6>
+                                                                <ul class="post-meta-list">
+                                                                    <li>{{$pastEvent->getReadingTime()}} min read</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="social-share-transparent justify-content-end">
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="post-thumbnail">
+                                                <a href="{{ route('event.show', $pastEvent->slug) }}">
+                                                    <img src="{{$pastEvent->getThumbnailImage()}}"
+                                                         alt="Post Images">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
+
+                                    @if ($pastEvents->count() == 1)
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                    @endif
+                                    <!-- End Single Post  -->
+
+                                </div>
+                            </div>
+                            <!-- Single Tab Content  -->
+                        </div>
+                        <!-- End Axil Tab Content  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 
         {{--        STUDENT POST AREA --}}

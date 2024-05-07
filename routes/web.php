@@ -29,6 +29,12 @@ Route::get('/job/{job:slug}', [\App\Http\Controllers\JobController::class, 'show
 
 Route::get('/likes', [\App\Http\Controllers\PostController::class, 'likes'])->name('post.likes');
 
+Route::get('/event', [\App\Http\Controllers\EventController::class, 'index'])->name('event.index');
+
+Route::get('/event/{event:slug}', [\App\Http\Controllers\EventController::class, 'show'])->name('event.show');
+
+Route::get('/club/{event:user_id}', [\App\Http\Controllers\EventController::class, 'club'])->name('event.club');
+
 
 
 

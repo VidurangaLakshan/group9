@@ -10945,7 +10945,7 @@ blockquote p {
 }
 .axil-slide.slider-style-1 .content-block .post-meta-wrapper.with-button .read-more-button {
   position: absolute;
-  right: -40px;
+  right: 70px;
   display: inline-block;
 }
 @media only screen and (max-width: 767px) {
