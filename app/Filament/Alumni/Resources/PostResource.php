@@ -73,7 +73,7 @@ class PostResource extends Resource
                                     ->image()
                                     ->directory('posts/thumbnails'),
 
-                                DateTimePicker::make('published_at')->nullable(),
+                                DateTimePicker::make('published_at')->nullable()->native(false),
 
                                 CheckBox::make('featured')
                                     ->default(false)
@@ -127,7 +127,7 @@ class PostResource extends Resource
                                     ->image()
                                     ->directory('posts/thumbnails'),
 
-                                DateTimePicker::make('published_at')->nullable(),
+                                DateTimePicker::make('published_at')->nullable()->native(false),
 
                                 CheckBox::make('featured')
                                     ->default(false)
@@ -191,7 +191,7 @@ class PostResource extends Resource
                                 ->image()
                                 ->directory('posts/thumbnails'),
 
-                            DateTimePicker::make('published_at')->nullable(),
+                            DateTimePicker::make('published_at')->nullable()->native(false),
 
                             CheckBox::make('featured')
                                 ->default(false)

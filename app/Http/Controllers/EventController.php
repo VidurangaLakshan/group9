@@ -13,16 +13,16 @@ class EventController extends Controller
                 ->where(function ($query) {
                     $query->where('start_date', '<=', now()->format('Y-m-d'))
                         ->where('end_date', '>=', now()->format('Y-m-d'));
-                })
+                })->where('status', true)
                 ->get(),
             'upcomingEvents' => Event::where('status', true)
-                ->where('start_date', '>', now()->format('Y-m-d'))
+                ->where('start_date', '>', now()->format('Y-m-d'))->where('status', true)
                 ->get(),
             'pastEvents' => Event::where('status', true)
                 ->where(function ($query) {
                     $query->where('start_date', '<', now()->format('Y-m-d'))
                         ->where('end_date', '<', now()->format('Y-m-d'));
-                })
+                })->where('status', true)
                 ->orderBy('start_date', 'desc')
                 ->get(),
         ]);

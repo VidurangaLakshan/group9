@@ -139,8 +139,6 @@
         </div>
         <!-- End Banner Area -->
 
-
-
         <div class="axil-trending-post-area axil-section-gap bg-color-white">
             <div class="container">
                 <div class="row">
@@ -1877,14 +1875,14 @@
                     <div class="col-lg-12">
                         <div class="axil-social-wrapper bg-color-white radius">
                             <ul class="social-with-text" style="justify-content: space-around;">
-                                <li class="twitter"><a href="https://x.com/APIITsl?s=20"><i
+                                <li class="twitter"><a href="https://x.com/APIITsl"><i
                                             class="fab fa-twitter"></i><span>Twitter</span></a>
                                 </li>
-                                <li class="facebook"><a href="https://www.facebook.com/APIITofficial?mibextid=kFxxJD"><i
+                                <li class="facebook"><a href="https://www.facebook.com/APIITofficial"><i
                                             class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
-                                <li class="instagram"><a href="https://www.instagram.com/apiitsl?igsh=cjI0aHczMmthaDR2"><i
+                                <li class="instagram"><a href="https://www.instagram.com/apiitsl"><i
                                             class="fab fa-instagram"></i><span>Instagram</span></a></li>
-                                <li class="youtube"><a href="https://youtube.com/@APIITedu?si=asVIXIdV5i59rdDF"><i
+                                <li class="youtube"><a href="https://youtube.com/@APIITedu"><i
                                             class="fab fa-youtube"></i><span>Youtube</span></a>
                                 </li>
 

@@ -99,6 +99,8 @@
                             <option value="6">L5 (Semester 2)</option>
                             <option value="7">L6 (Semester 1)</option>
                             <option value="8">L6 (Semester 2)</option>
+                            <option value="9">L7 (Semester 1)</option>
+                            <option value="10">L7 (Semester 2)</option>
                         </select>
                     </div>
                 </template>

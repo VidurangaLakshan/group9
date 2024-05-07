@@ -95,6 +95,23 @@ class User extends Authenticatable
         return $this->belongsToMany(Post::class, 'post_like')->withTimestamps();
     }
 
+    public function followings()
+    {
+        return $this->belongsToMany(User::class, 'club_follow', 'follower_id', 'user_id')->withTimestamps();
+    }
+    // follower_id = our_id
+    // user_id = followed user id
+
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'club_follow', 'user_id', 'follower_id')->withTimestamps();
+    }
+
+    public function hasFollowed(User $user)
+    {
+        return $this->followings()->where('user_id', $user->id)->exists();
+    }
+
     public function hasLiked(Post $post)
     {
         return $this->likes()->where('post_id', $post->id)->exists();

@@ -337,7 +337,7 @@
                                 <div class="post-meta">
                                     <div class="post-author-avatar border-rounded">
                                         {{-- {{dd($event->author)}} --}}
-                                        <img src="{{$event->author->profile_photo_url}}" alt="Author Images">
+                                        <img src="{{$event->author->profile_photo_url}}" alt="Author Images" style="width: 64px;">
                                     </div>
                                     <div class="content">
                                         <h6 class="post-author-name">
@@ -379,7 +379,7 @@
 
                         <h4 style="margin: 30px 0;">Venue : <span
                                 style="font-weight: normal;">{{$event->location}}</span></h4>
-                        @if ($event->same_day == 0)
+                        @if ($event->same_day == true)
                             <h4 style="margin: 30px 0;">Date : <span
                                     style="font-weight: normal;">{{$event->start_date}}</span></h4>
                         @else
@@ -388,7 +388,7 @@
                             <h4 style="margin: 30px 0;">End Date : <span
                                     style="font-weight: normal;">{{$event->end_date}}</span></h4>
                         @endif
-                        @if ($event->same_time == 0)
+                        @if ($event->same_time == true)
                             <h4 style="margin: 30px 0;">Time : <span
                                     style="font-weight: normal;">{{$event->start_time}}</span></h4>
                         @else
@@ -415,7 +415,7 @@
                             <div class="media">
                                 <div class="thumbnail">
                                     <a>
-                                        <img src="{{$event->author->profile_photo_url}}" alt="Author Images">
+                                        <img src="{{$event->author->profile_photo_url}}" alt="Author Images" style="width: 64px; margin-bottom: 0px">
 
                                     </a>
                                 </div>
@@ -423,7 +423,7 @@
                                     <div class="author-info">
                                         <h5 class="title">
                                             <a class="hover-flip-item-wrapper"
-                                               href="{{ route('post.author', $event->user_id) }}">
+                                               href="{{ route('event.club', $event->user_id) }}">
                                                     <span class="hover-flip-item">
                                                         <span style="font-size: 20px"
                                                               data-text="{{$event->author->name}}">{{$event->author->name}}</span>

@@ -35,8 +35,14 @@ Route::get('/event/{event:slug}', [\App\Http\Controllers\EventController::class,
 
 Route::get('/club/{event:user_id}', [\App\Http\Controllers\EventController::class, 'club'])->name('event.club');
 
+Route::get('/appointments', function () {
+    return view('schedule');
+});
 
-
+Route::get('/calendar', function () {
+    $appointments = \App\Models\Appointment::all();
+    return view('calendar', compact('appointments'));
+});
 
 Route::middleware([
     'auth:sanctum',

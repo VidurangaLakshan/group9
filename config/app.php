@@ -200,6 +200,8 @@ return [
         App\Providers\Filament\NonAcademicsPanelProvider::class,
         App\Providers\Filament\EditorPanelProvider::class,
         App\Providers\Filament\AlumniLiaisonPanelProvider::class,
+        App\Providers\Filament\ClubPanelProvider::class,
+        App\Providers\Filament\SssPanelProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,

@@ -63,7 +63,7 @@ class HomeController extends Controller
                 ->get(),
 
             'upcomingEvents' => Event::where('status', true)
-                ->where('start_date', '>', now()->format('Y-m-d'))
+                ->where('start_date', '>', now()->format('Y-m-d'))->where('status', true)
                 ->take(4)
                 ->get(),
 
@@ -72,6 +72,7 @@ class HomeController extends Controller
                     $query->where('start_date', '<', now()->format('Y-m-d'))
                         ->where('end_date', '<', now()->format('Y-m-d'));
                 })
+                ->where('status', true)
                 ->orderBy('start_date', 'desc')
                 ->take(4)
                 ->get(),
