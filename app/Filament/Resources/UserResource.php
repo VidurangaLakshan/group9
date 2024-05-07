@@ -34,20 +34,17 @@ class UserResource extends Resource
             return $form
                 ->schema([
                     TextInput::make('name')->required()->minLength(1)->maxLength(150),
+                    TextInput::make('fullName')->required()->minLength(1)->maxLength(150),
                     TextInput::make('email')->required()->email()->unique(ignoreRecord: true),
                     // create a select field for the role
                     Select::make('role')
-//                        ->relationship('role', 'name')
-//                        ->required()
-                        // dont allow the user to change the role of the admin
                         ->placeholder('Select a role')
                         ->options([
                             1 => 'Administrator',
                             2 => 'Editor',
-//                        3 => 'Student Support Services',
-                            4 => 'Head of Alumni Liaison & Industry Relations',
-//                        5 => 'Student',
-//                        6 => 'Alumni',
+                            3 => 'Head of Student Support Services',
+                            4 => 'Head of Industry Liaisons & Alumni Relations',
+                            9 => 'Club'
                         ]),
                     Forms\Components\Toggle::make('approved')->label('Approved')->default(true),
 
@@ -55,8 +52,6 @@ class UserResource extends Resource
         }
 
         // if the user is not an admin, don't show the password field
-
-//        dd($form->getRecord()->getAttribute('role')->value);
         if ($form->getRecord()->getAttribute('id') == auth()->user()->id) {
             return $form
                 ->schema([
@@ -89,30 +84,30 @@ class UserResource extends Resource
                         ->options([
                             1 => 'Administrator',
                             2 => 'Editor',
-//                            3 => 'Student Support Services',
-                            4 => 'Head of Alumni Liaison & Industry Relations',
+                            3 => 'Head of Student Support Services',
+                            4 => 'Head of Industry Liaisons & Alumni Relations',
                             5 => 'Academics',
                             6 => 'Non-Academics',
                             7 => 'Student',
                             8 => 'Alumni',
-                            9 => 'Student' // On Semester Break
+                            9 => 'Club'
                         ]),
 
                     TextInput::make('nic')
                         ->minLength(1)
                         ->maxLength(12)
                         ->disabled()
-                        ->hidden(fn(Get $get): bool => $get('role') == 1 || $get('role') == 2 || $get('role') == 4 || $get('role') == 7),
+                        ->hidden(fn(Get $get): bool => $get('role') == 1 || $get('role') == 2 || $get('role') == 3 || $get('role') == 4 || $get('role') == 7 || $get('role') == 9),
 
                     Select::make('graduation_year')
                         ->required()
-                        ->hidden(fn(Get $get): bool => $get('role') == 1 || $get('role') == 2 || $get('role') == 4 || $get('role') == 5 || $get('role') == 6 || $get('role') == 7)
+                        ->hidden(fn(Get $get): bool => $get('role') == 1 || $get('role') == 2 || $get('role') == 3 || $get('role') == 4 || $get('role') == 5 || $get('role') == 6 || $get('role') == 7 || $get('role') == 9)
                         ->options(array_combine(range(date("Y"), 2002), range(date("Y"), 2002))),
 
                     Select::make('degree_level')
                         ->required()
                         ->live()
-                        ->hidden(fn(Get $get): bool => $get('role') == 1 || $get('role') == 2 || $get('role') == 4 || $get('role') == 5 || $get('role') == 6 || $get('role') == 8)
+                        ->hidden(fn(Get $get): bool => $get('role') == 1 || $get('role') == 2 || $get('role') == 3 || $get('role') == 4 || $get('role') == 5 || $get('role') == 6 || $get('role') == 8 || $get('role') == 9)
                         ->options([
                             1 => 'Foundation (Semester 1)',
                             2 => 'Foundation (Semester 2)',
@@ -122,11 +117,13 @@ class UserResource extends Resource
                             6 => 'L5 (Semester 2)',
                             7 => 'L6 (Semester 1)',
                             8 => 'L6 (Semester 2)',
+                            9 => 'L7 (Semester 1)',
+                            10 => 'L7 (Semester 2)'
                         ]),
 
                     Select::make('faculty')
                         ->required()
-                        ->hidden(fn(Get $get): bool => $get('role') == 1 || $get('role') == 2 || $get('role') == 4 || $get('role') == 6 || $get('role') == 8 || $get('degree_level') == 1 || $get('degree_level') == 2)
+                        ->hidden(fn(Get $get): bool => $get('role') == 1 || $get('role') == 2 || $get('role') == 3 || $get('role') == 4 || $get('role') == 6 || $get('role') == 8 || $get('degree_level') == 1 || $get('degree_level') == 2 || $get('role') == 9)
                         ->options([
                             1 => 'School of Computing',
                             2 => 'School of Business',
@@ -158,6 +155,8 @@ class UserResource extends Resource
                     6 => 'L5 (Semester 2)',
                     7 => 'L6 (Semester 1)',
                     8 => 'L6 (Semester 2)',
+                    9 => 'L7 (Semester 1)',
+                    10 => 'L7 (Semester 2)'
                 ])->sortable()->disabled()->searchable(isIndividual: true, isGlobal: false)->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\SelectColumn::make('faculty')->options([
                     1 => 'School of Computing',
@@ -175,7 +174,7 @@ class UserResource extends Resource
                         ->action(function (User $record) {
                             if ($record->role->value == 7) {
 
-                                if ($record->degree_level == 8) {
+                                if ($record->degree_level == 10) {
                                     $record->role = 8;
                                 }
                                 $record->degree_level = $record->degree_level + 1;
@@ -222,25 +221,6 @@ class UserResource extends Resource
                         })
                         ->color('success')
                         ->requiresConfirmation(),
-                    Tables\Actions\Action::make('Enable Semester Break')
-                        ->action(function (User $record) {
-                            if ($record->role->value == 7) {
-                                $record->role = 9;
-                                $record->save();
-                            }
-                        })
-                        ->color('success')
-                        ->requiresConfirmation(),
-                    Tables\Actions\Action::make('Disable Semester Break')
-                        ->action(function (User $record) {
-                            if ($record->role->value == 9) {
-                                $record->role = 7;
-                                $record->save();
-                            }
-                        })
-                        ->color('success')
-                        ->requiresConfirmation(),
-
                 ])
             ])
             ->bulkActions([
@@ -251,7 +231,7 @@ class UserResource extends Resource
                             $records->each(function ($record) {
                                 if ($record->role->value == 7) {
 
-                                    if ($record->degree_level == 8) {
+                                    if ($record->degree_level == 10) {
                                         $record->role = 8;
                                     }
                                     $record->degree_level = $record->degree_level + 1;
