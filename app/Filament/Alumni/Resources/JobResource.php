@@ -59,12 +59,6 @@ class JobResource extends Resource
                             Forms\Components\TextInput::make('company')
                                 ->label('Company')
                                 ->required(),
-
-                            Forms\Components\TextInput::make('apply_link')
-                                ->label('Link to Apply')
-                                ->nullable()
-                                ->url(),
-
                         ]
                     )->columns(2),
                     Forms\Components\Section::make('Details')->schema(
@@ -134,11 +128,6 @@ class JobResource extends Resource
                             Forms\Components\TextInput::make('company')
                                 ->label('Company')
                                 ->required(),
-
-                            Forms\Components\TextInput::make('apply_link')
-                                ->label('Link to Apply')
-                                ->nullable()
-                                ->url(),
                         ]
                     )->columns(2),
                     Forms\Components\Section::make('Details')->schema(
@@ -205,11 +194,6 @@ class JobResource extends Resource
                         Forms\Components\TextInput::make('company')
                             ->label('Company')
                             ->required(),
-
-                        Forms\Components\TextInput::make('apply_link')
-                            ->label('Link to Apply')
-                            ->nullable()
-                            ->url(),
                     ]
                 )->columns(2),
                 Forms\Components\Section::make('Details')->schema(

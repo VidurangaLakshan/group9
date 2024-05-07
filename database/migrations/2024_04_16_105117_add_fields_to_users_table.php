@@ -18,7 +18,6 @@ return new class extends Migration {
             $table->boolean('interest_business')->nullable();
             $table->boolean('interest_law')->nullable();
             $table->boolean('newUserPersonalized')->default(0);
-            $table->string('linkedin')->nullable();
         });
     }
 

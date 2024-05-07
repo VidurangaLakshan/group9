@@ -5,13 +5,13 @@
     @if (Auth::user() == true)
         @if ((Auth::user()->role->value == 5 || Auth::user()->role->value == 6 || Auth::user()->role->value == 7 || Auth::user()->role->value == 8) && Auth::user()->approved == 0)
             <div class="alert alert-warning" id="alert" style="margin: 10px 10px; text-align: center">
-                Your account is not verified yet. Please wait for 24-48 hours until the admin approves your account.
+                Your account is not verified yet. Please wait for 24-48 hours until the administrator approves your account.
                 Till
-                then, you can't write articles.
+                then, you can only view articles.
             </div>
         @endif
 
-        @if (Auth::user()->newUserPersonalized == 0)
+        @if (Auth::user()->approved == 1 && Auth::user()->newUserPersonalized == 0)
             <div class="alert alert-warning" id="alert" style="margin: 10px 10px; text-align: center">
                 Please complete your profile settings to personalize your experience.
             </div>

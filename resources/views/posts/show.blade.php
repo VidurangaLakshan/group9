@@ -450,9 +450,12 @@
                                             </a>
                                         </h5>
 
-                                        @if ($post->author->role->value == 4)
+                                        @if ($post->author->role->value == 3)
                                             <span class="b3 subtitle"
-                                                  style="font-size: 20px; font-weight: bold">Alumni Liaisons and Industry Relations</span>
+                                                  style="font-size: 20px; font-weight: bold">Head of Student Support Services</span>
+                                        @elseif ($post->author->role->value == 4)
+                                            <span class="b3 subtitle"
+                                                  style="font-size: 20px; font-weight: bold">Head of Industry Liaisons and Alumni Relations</span>
                                         @elseif ($post->author->role->value == 6)
                                             <span class="b3 subtitle"
                                                   style="font-size: 20px; font-weight: bold">Non-Academics</span>

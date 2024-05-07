@@ -48,4 +48,9 @@ class Job extends Model
 
         return ($isUrl) ? $this->image : Storage::disk('public')->url($this->image);
     }
+
+    public function resumes()
+    {
+        return $this->hasMany(Resume::class);
+    }
 }

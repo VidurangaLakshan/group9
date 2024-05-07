@@ -41,7 +41,6 @@ class User extends Authenticatable
         'interest_business',
         'interest_law',
         'newUserPersonalized',
-        'linkedin'
     ];
 
     /**

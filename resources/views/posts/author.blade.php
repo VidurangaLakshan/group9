@@ -750,9 +750,13 @@
                                 <div class="author-info">
 
                                     <h1 class="title"><a style="font-weight: bold;">{{ $post->author->name }}</a></h1>
-                                    @if ($post->author->role->value == 4)
+
+                                    @if ($post->author->role->value == 3)
                                         <span class="b3 subtitle"
-                                              style="font-size: 20px; font-weight: bold">Alumni Liaisons and Industry Relations</span>
+                                              style="font-size: 20px; font-weight: bold">Head of Student Support Services</span>
+                                    @elseif ($post->author->role->value == 4)
+                                        <span class="b3 subtitle"
+                                              style="font-size: 20px; font-weight: bold">Head of Industry Liaisons and Alumni Relations</span>
                                     @elseif ($post->author->role->value == 6)
                                         <span class="b3 subtitle"
                                               style="font-size: 20px; font-weight: bold">Non-Academics</span>
@@ -797,13 +801,6 @@
                                  style="height: 100px; width: 100px; border-radius: 100px;">
                             <br>
                             <h5 style="color: black; font-size: 18px;">{{ $post->author->name }}</h5>
-                            <br>
-                            @if ($post->author->linkedin != null)
-                                <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="{{ $post->author->linkedin }}"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            @endif
                         </div>
                     @endif
 
@@ -817,13 +814,18 @@
                                  style="height: 100px; width: 100px; border-radius: 100px;">
                             <br>
                             <h5 style="color: black; font-size: 18px;">{{ $post->author->name }}</h5>
+                        </div>
+                    @endif
+
+                    {{--                    Student Support Services View --}}
+                    @if ( $post->author->role->value == 3)
+                        <div class="axil-single-widget widget widget_postlist mb--30"
+                             style="justify-content: center; align-items: center; display: flex; flex-direction: column">
+
+                            <img src="{{ $post->author->profile_photo_url }}" alt="Author Images"
+                                 style="height: 100px; width: 100px; border-radius: 100px;">
                             <br>
-                            @if ($post->author->linkedin != null)
-                                <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="{{ $post->author->linkedin }}"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            @endif
+                            <h5 style="color: black; font-size: 18px;">{{ $post->author->name }}</h5>
                         </div>
                     @endif
 
@@ -837,13 +839,6 @@
                                  style="height: 100px; width: 100px; border-radius: 100px;">
                             <br>
                             <h5 style="color: black; font-size: 18px;">{{ $post->author->name }}</h5>
-                            <br>
-                            @if ($post->author->linkedin != null)
-                                <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="{{ $post->author->linkedin }}"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            @endif
                         </div>
                     @endif
 
@@ -865,13 +860,6 @@
                             @elseif($post->author->faculty == '3')
                                 <h5 style="color: black; font-size: 16px;">Law School</h5>
                             @endif
-                            <br>
-                            @if ($post->author->linkedin != null)
-                                <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="{{ $post->author->linkedin }}"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            @endif
                         </div>
                     @endif
 
@@ -884,18 +872,11 @@
                                  style="height: 100px; width: 100px; border-radius: 100px;">
                             <br>
                             <h5 style="color: black; font-size: 18px;">{{ $post->author->name }}</h5>
-                            <br>
-                            @if ($post->author->linkedin != null)
-                                <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="{{ $post->author->linkedin }}"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            @endif
                         </div>
                     @endif
 
                     {{--                    Student View - Foundation --}}
-                    @if ( $post->author->role->value == 7 && $post->author->degree_level == '1')
+                    @if ( $post->author->role->value == 7 && ($post->author->degree_level == '1' || $post->author->degree_level == '2'))
                         <div class="axil-single-widget widget widget_postlist mb--30"
                              style="justify-content: center; align-items: center; display: flex; flex-direction: column">
 
@@ -904,21 +885,12 @@
                             <br>
                             <h5 style="color: black; font-size: 18px;">{{ $post->author->name }}</h5>
                             <br>
-                            @if($post->author->degree_level == '1' || $post->author->degree_level == '2')
-                                <h5 style="color: black; font-size: 16px;">Foundation</h5>
-                            @endif
-                            <br>
-                            @if ($post->author->linkedin != null)
-                                <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="{{ $post->author->linkedin }}"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            @endif
+                            <h5 style="color: black; font-size: 16px;">Foundation</h5>
                         </div>
                     @endif
 
                     {{--                    Student View - NOT Foundation --}}
-                    @if ( $post->author->role->value == 7 && $post->author->degree_level != '1')
+                    @if ($post->author->role->value == 7 && ($post->author->degree_level != '1' || $post->author->degree_level != '2'))
                         <div class="axil-single-widget widget widget_postlist mb--30"
                              style="justify-content: center; align-items: center; display: flex; flex-direction: column">
 
@@ -941,13 +913,8 @@
                                 <h5 style="color: black; font-size: 16px;">Level 5</h5>
                                 @elseif($post->author->degree_level == '7' || $post->author->degree_level == '8')
                                 <h5 style="color: black; font-size: 16px;">Level 6</h5>
-                            @endif
-                            <br>
-                            @if ($post->author->linkedin != null)
-                                <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="{{ $post->author->linkedin }}"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
+                            @elseif($post->author->degree_level == '9' || $post->author->degree_level == '10')
+                                <h5 style="color: black; font-size: 16px;">Level 7</h5>
                             @endif
                         </div>
                     @endif
@@ -963,14 +930,20 @@
                             <h5 style="color: black; font-size: 18px;">{{ $post->author->name }}</h5>
                             <br>
                             <h5 style="color: black; font-size: 16px;">Graduation Year : {{ $post->author->graduation_year }}</h5>
-                            <br>
+                        </div>
+                    @endif
 
-                            @if ($post->author->linkedin != null)
-                                <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="{{ $post->author->linkedin }}"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            @endif
+                    {{--                    Club View --}}
+                    @if ( $post->author->role->value == 8)
+                        <div class="axil-single-widget widget widget_postlist mb--30"
+                             style="justify-content: center; align-items: center; display: flex; flex-direction: column">
+
+                            <img src="{{ $post->author->profile_photo_url }}" alt="Author Images"
+                                 style="height: 100px; width: 100px; border-radius: 100px;">
+                            <br>
+                            <h5 style="color: black; font-size: 18px;">{{ $post->author->name }}</h5>
+                            <br>
+                            <h5 style="color: black; font-size: 16px;">Graduation Year : {{ $post->author->graduation_year }}</h5>
                         </div>
                     @endif
 

@@ -40,7 +40,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'interest_business' => isset($input['interest_business']) ? $input['interest_business'] : 0,
                 'interest_law' => isset($input['interest_law']) ? $input['interest_law'] : 0,
                 'newUserPersonalized' => 1,
-//                'linkedin' => $input['linkedin'],
             ])->save();
         }
     }

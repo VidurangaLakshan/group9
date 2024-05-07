@@ -123,7 +123,8 @@
                                                         class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 7)
-                                            <li class="icon"><a href="{{ url('/user') }}" target="_blank"><i class="fas fa-cog"></i></a>
+                                            <li class="icon"><a href="{{ url('/user') }}" target="_blank"><i
+                                                        class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 8)
                                             <li class="icon"><a href="{{ url('/alumni') }}" target="_blank"><i
@@ -326,7 +327,6 @@
                         <div class="post-meta-wrapper">
                             <div class="post-meta">
                                 <div class="post-author-avatar border-rounded">
-                                    {{--                                         {{dd($post->author)}} --}}
                                     <img src="{{$job->author->profile_photo_url}}" alt="Author Images"
                                          style="width: 64px;">
                                 </div>
@@ -381,13 +381,6 @@
                         <p style="font-size: 20px; font-weight: bold;">Company: {{$job->company}}</p>
                     </div>
 
-                    @if ($job->apply_link != null)
-                        <div style="margin: 10px 0;">
-                            <a href="{{$job->apply_link}}" style="font-size: 20px; font-weight: bold;">Apply Now</a>
-                        </div>
-                    @endif
-
-
                     <div class="social-share-block">
 
                     </div>
@@ -416,7 +409,7 @@
 
 
                                     @if ($job->author->role->value == 4)
-                                        <h5 style="padding-top: 18px; color:gray">Alumni Liaisons and Industry
+                                        <h5 style="padding-top: 18px; color:gray">Head of Industry Liaisons and Alumni
                                             Relations</h5>
                                     @else
                                         <h5 style="padding-top: 18px; color:gray">{{ $job->author->role->name }}</h5>
@@ -431,6 +424,8 @@
                     <!-- End Author  -->
 
                 </div>
+
+                <livewire:post-resume :key="'resumes' . $job->id" :$job/>
 
 
             </div>
