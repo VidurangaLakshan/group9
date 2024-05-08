@@ -8,13 +8,13 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class StatsOverview extends BaseWidget
 {
-    protected function getStats(): array
-    {
-        return [
-            Stat::make('Total Users', User::count()),
-            Stat::make('Total Academics', User::whereIn('role', [1, 2, 3, 4])->count()),
-            Stat::make('Total Students', User::where('role', '5')->count()),
-            Stat::make('Total Alumni', User::where('role', '6')->count()),
-        ];
-    }
+//    protected function getStats(): array
+//    {
+//        return [
+//            Stat::make('All Users', User::count()),
+//            Stat::make('Faculty Members', User::whereIn('role', [1,2,3,4,5,6])->count()),
+//            Stat::make('Students', User::where('role', '7')->count()),
+//            Stat::make('Alumni', User::where('role', '8')->count()),
+//        ];
+//    }
 }

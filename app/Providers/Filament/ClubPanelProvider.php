@@ -49,7 +49,7 @@ class ClubPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-//                VerifyIsClubMiddleware::class,
+                VerifyIsClubMiddleware::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

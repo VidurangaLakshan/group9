@@ -10,14 +10,14 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class CategoryStatsOverview extends BaseWidget
 {
-    protected function getStats(): array
-    {
-        return [
-            Stat::make('Total Categories', Category::count()),
-            Stat::make('Total Active Posts', Post::where('approved', 1)->count()),
-            Stat::make('Total Users', User::count()),
-
-        ];
-
-    }
+//    protected function getStats(): array
+//    {
+//        return [
+//            Stat::make('Total Categories', Category::count()),
+//            Stat::make('Total Active Posts', Post::where('approved', 1)->count()),
+//            Stat::make('Total Users', User::count()),
+//
+//        ];
+//
+//    }
 }

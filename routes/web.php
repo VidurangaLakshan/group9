@@ -23,9 +23,9 @@ Route::get('/blog/{post:slug}', [\App\Http\Controllers\PostController::class, 's
 
 Route::get('/author/{post:user_id}', [\App\Http\Controllers\PostController::class, 'author'])->name('post.author');
 
-Route::get('/job', [\App\Http\Controllers\JobController::class, 'index'])->name('job.index');
+Route::get('/job', [\App\Http\Controllers\JobController::class, 'index'])->name('job.index')->middleware('job');
 
-Route::get('/job/{job:slug}', [\App\Http\Controllers\JobController::class, 'show'])->name('job.show');
+Route::get('/job/{job:slug}', [\App\Http\Controllers\JobController::class, 'show'])->name('job.show')->middleware('job');
 
 Route::get('/likes', [\App\Http\Controllers\PostController::class, 'likes'])->name('post.likes');
 
@@ -37,12 +37,12 @@ Route::get('/club/{event:user_id}', [\App\Http\Controllers\EventController::clas
 
 Route::get('/appointments', function () {
     return view('schedule');
-});
+})->middleware('appointment');
 
 Route::get('/calendar', function () {
     $appointments = \App\Models\Appointment::all();
     return view('calendar', compact('appointments'));
-});
+})->middleware('appointment');
 
 Route::middleware([
     'auth:sanctum',

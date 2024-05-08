@@ -49,7 +49,7 @@ class SssPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-//                VerifyIsSSS::class,
+                VerifyIsSSS::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
