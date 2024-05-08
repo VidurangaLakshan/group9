@@ -89,16 +89,6 @@ class AppointmentResource extends Resource
                         return $options;
                     })
 
-//                    ->options([
-//                        '1' => '10:00 AM - 10:30 AM',
-//                        '2' => '10:30 AM - 11:00 AM',
-//                        '3' => '11:00 AM - 11:30 AM',
-//                        '4' => '11:30 AM - 12:00 PM',
-//                        '5' => '12:00 PM - 12:30 PM',
-//                        '6' => '12:30 PM - 01:00 PM',
-//                        '7' => '01:00 PM - 01:30 PM',
-//                        '8' => '01:30 PM - 02:00 PM',
-//                    ])
                     ->live()
                     ->hidden(fn (Forms\Get $get) => !$get('date'))
 
@@ -113,34 +103,45 @@ class AppointmentResource extends Resource
 
                         return $exists;
                     })
-
-//                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set, Forms\Get $get) {
-//                        $date = Str::slug($get('date'));
-//                        $state = $date . '-' . $state;
-//                        $set('slot_token', Str::slug($state));
-//                    })
                     ->required(),
 
-//                Forms\Components\TextInput::make('slot_token')
-//                    ->readOnly()
-//                    ->unique()
-//                    ->required(),
 
-                Forms\Components\Select::make('contact')
+                Forms\Components\Select::make('location')
                     ->options([
-                        'email' => 'Email',
-                        'phone' => 'Phone',
+                        1 => 'APIIT City Campus',
+                        2 => 'APIIT Law School',
+                        3 => 'APIIT Kandy Campus',
                     ])
                     ->live()
                     ->required(),
+
 
                 Forms\Components\Select::make('mode')
-                    ->options([
-                        'online' => 'Online',
-                        'offline' => 'Offline',
-                    ])
+                    ->options(function (Forms\Get $get) {
+                        $location = $get('location');
+
+                        if ($location == 3) { // Assuming 3 is the value for 'APIIT Kandy Campus'
+                            return [
+                                2 => 'MS Teams Chat',
+                                3 => 'MS Teams Call',
+                            ];
+                        }
+
+                        return [
+                            1 => 'Physical Meeting',
+                            2 => 'MS Teams Chat',
+                            3 => 'MS Teams Call',
+                        ];
+                    })
+
                     ->live()
                     ->required(),
+
+
+                Forms\Components\TextInput::make('contact')
+                    ->label('Contact (Email or Phone) for Reaching Out')
+                    ->required(),
+
 
                 Forms\Components\Select::make('category')
                     ->options([
@@ -150,13 +151,7 @@ class AppointmentResource extends Resource
                     ->live()
                     ->required(),
 
-                Forms\Components\Select::make('location')
-                    ->options([
-                        'office' => 'Office',
-                        'home' => 'Home',
-                    ])
-                    ->live()
-                    ->required(),
+
 
             ]);
     }
