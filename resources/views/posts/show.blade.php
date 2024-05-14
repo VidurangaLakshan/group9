@@ -66,6 +66,17 @@
                                     @endif
                                 @endauth
 
+                                <li class="menu-item-has-children megamenu-wrapper"><a
+                                        href="{{url('event')}}">Events</a>
+                                </li>
+
+                                @auth
+                                    @if (auth()->user()->role->value == 3)
+                                        <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('appointments')}}">Schedule</a>
+                                        </li>
+                                    @endif
+                                @endauth
+
 
                             </ul>
                             <!-- End Mainmanu Nav -->
@@ -113,6 +124,10 @@
                                             <li class="icon"><a href="{{ url('/editor') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
                                             </li>
+                                        @elseif (auth()->user()->role->value == 3)
+                                            <li class="icon"><a href="{{ url('/sss') }}" target="_blank"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
                                         @elseif (auth()->user()->role->value == 4)
                                             <li class="icon"><a href="{{ url('/alumniLiaison') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
@@ -126,10 +141,15 @@
                                                         class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 7)
-                                            <li class="icon"><a href="{{ url('/user') }}" target="_blank"><i class="fas fa-cog"></i></a>
+                                            <li class="icon"><a href="{{ url('/user') }}" target="_blank"><i
+                                                        class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 8)
                                             <li class="icon"><a href="{{ url('/alumni') }}" target="_blank"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 9)
+                                            <li class="icon"><a href="{{ url('/club') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
                                             </li>
                                         @endif
@@ -194,40 +214,8 @@
                                                 <!-- Main Menu -->
                                                 <ul class="mainmenu">
                                                     <li><a href="/">Home</a></li>
-                                                    <li><a href="{{route('post.index')}}">All Articles</a></li>
 
-
-                                                    @auth
-                                                        @if (auth()->user()->role->value == 1)
-                                                            <li><a href="{{ url('/admin/posts/create') }}">Write
-                                                                    Articles</a>
-                                                            </li>
-                                                        @elseif (auth()->user()->role->value == 2)
-                                                            <li><a href="{{ url('/editor/posts/create') }}">Write
-                                                                    Articles</a>
-                                                            </li>
-                                                        @elseif (auth()->user()->role->value == 4)
-                                                            <li><a href="{{ url('/alumniLiaison/posts/create') }}">Write
-                                                                    Articles</a>
-                                                            </li>
-                                                        @elseif (auth()->user()->role->value == 5)
-                                                            <li><a href="{{ url('/academics/posts/create') }}">Write
-                                                                    Articles</a>
-                                                            </li>
-                                                        @elseif (auth()->user()->role->value == 6)
-                                                            <li><a href="{{ url('/nonAcademics/posts/create') }}">Write
-                                                                    Articles</a>
-                                                            </li>
-                                                        @elseif (auth()->user()->role->value == 7)
-                                                            <li><a href="{{ url('/user/posts/create') }}">Write
-                                                                    Articles</a>
-                                                            </li>
-                                                        @elseif (auth()->user()->role->value == 8)
-                                                            <li><a href="{{ url('/alumni/posts/create') }}">Write
-                                                                    Articles</a>
-                                                            </li>
-                                                        @endif
-                                                    @endauth
+                                                    <li><a href="{{route('post.index')}}">Articles</a></li>
 
                                                     @auth
                                                         @if (auth()->user()->approved == 1 && (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8))
@@ -235,11 +223,18 @@
                                                         @endif
                                                     @endauth
 
-
                                                     @auth
                                                         @if (auth()->user()->approved == 1)
                                                             <li><a href="{{url('likes')}}">Favourites</a>
                                                             </li>
+                                                        @endif
+                                                    @endauth
+
+                                                    <li><a href="{{url('event')}}">Events</a></li>
+
+                                                    @auth
+                                                        @if (auth()->user()->role->value == 3)
+                                                            <li><a href="{{url('appointments')}}">Schedule</a></li>
                                                         @endif
                                                     @endauth
 
@@ -360,7 +355,7 @@
                                 <div class="post-meta">
                                     <div class="post-author-avatar border-rounded">
                                         {{-- {{dd($post->author)}} --}}
-                                        <img src="{{$post->author->profile_photo_url}}" alt="Author Images">
+                                        <img src="{{$post->author->profile_photo_url}}" alt="Author Images" style="width: 64px; height: auto;">
                                     </div>
                                     <div class="content">
                                         <h6 class="post-author-name">
@@ -434,7 +429,7 @@
                             <div class="media">
                                 <div class="thumbnail">
                                     <a>
-                                        <img src="{{$post->author->profile_photo_url}}" alt="Author Images">
+                                        <img src="{{$post->author->profile_photo_url}}" alt="Author Images" style="width: 64px; height: auto;">
 
                                     </a>
                                 </div>
@@ -708,6 +703,10 @@
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 <script src="assets/js/vendor/slick.min.js"></script>
 <script src="assets/js/vendor/tweenmax.min.js"></script>
+
+<script src="assets/js/vendor/jquery.js"></script>
+<script src="assets/js/vendor/slick.min.js"></script>
+<script src="assets/js/main.js"></script>
 
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>

@@ -14,7 +14,7 @@
                     <ul class="axil-tab-button nav nav-tabs mt--20" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="trend-one" data-bs-toggle="tab" href="#trendone" role="tab"
-                               aria-controls="trend-one" aria-selected="true">Ongoing</a>
+                               aria-controls="trend-one" aria-selected="true">Today</a>
                         </li>
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" id="trend-two" data-bs-toggle="tab" href="#trendtwo" role="tab"
@@ -46,8 +46,7 @@
                                 @if ($ongoingEvents->isEmpty())
                                     <div class="content-block post-list-view format-quote mt--30">
                                         <div class="post-content" style="margin-top: 30px;">
-                                            <h4 class="title" style="font-size: 24px; font-weight: bold">No ongoing
-                                                events</h4>
+                                            <h4 class="title" style="font-size: 24px; font-weight: bold">No events today</h4>
                                         </div>
                                     </div>
                                 @endif

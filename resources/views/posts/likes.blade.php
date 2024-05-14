@@ -35,7 +35,7 @@
         <div class="header-wrap">
             <div class="row justify-content-between align-items-center">
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-3 col-12">
-                    <div class="logo">
+                    <div class="logo" style="display: flex; justify-content: center;">
                         <a href="/">
                             <img class="dark-logo" src="/assets/images/logo/logo-black.png" alt="Blogar logo">
                             <img class="light-logo" src="/assets/images/logo/logo-white2.png" alt="Blogar logo">
@@ -63,6 +63,17 @@
                                 @auth
                                     @if (auth()->user()->approved == 1)
                                         <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('likes')}}">Favourites</a>
+                                        </li>
+                                    @endif
+                                @endauth
+
+                                <li class="menu-item-has-children megamenu-wrapper"><a
+                                        href="{{url('event')}}">Events</a>
+                                </li>
+
+                                @auth
+                                    @if (auth()->user()->role->value == 3)
+                                        <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('appointments')}}">Schedule</a>
                                         </li>
                                     @endif
                                 @endauth
@@ -114,6 +125,10 @@
                                             <li class="icon"><a href="{{ url('/editor') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
                                             </li>
+                                        @elseif (auth()->user()->role->value == 3)
+                                            <li class="icon"><a href="{{ url('/sss') }}" target="_blank"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
                                         @elseif (auth()->user()->role->value == 4)
                                             <li class="icon"><a href="{{ url('/alumniLiaison') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
@@ -127,10 +142,15 @@
                                                         class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 7)
-                                            <li class="icon"><a href="{{ url('/user') }}" target="_blank"><i class="fas fa-cog"></i></a>
+                                            <li class="icon"><a href="{{ url('/user') }}" target="_blank"><i
+                                                        class="fas fa-cog"></i></a>
                                             </li>
                                         @elseif (auth()->user()->role->value == 8)
                                             <li class="icon"><a href="{{ url('/alumni') }}" target="_blank"><i
+                                                        class="fas fa-cog"></i></a>
+                                            </li>
+                                        @elseif (auth()->user()->role->value == 9)
+                                            <li class="icon"><a href="{{ url('/club') }}" target="_blank"><i
                                                         class="fas fa-cog"></i></a>
                                             </li>
                                         @endif
@@ -178,7 +198,7 @@
                                                 <div class="mobile-menu-top">
                                                     <div class="logo">
                                                         <a href="/">
-                                                            <img class="dark-logo"
+                                                            <img class="dark-logo" style="border-radius: 0;"
                                                                  src="/assets/images/logo/logo-black.png"
                                                                  alt="Logo Images">
                                                             <img class="light-logo"
@@ -196,14 +216,13 @@
                                                 <ul class="mainmenu">
                                                     <li><a href="/">Home</a></li>
 
-                                                    <li class="menu-item-has-children"><a href="{{route('post.index')}}">Articles</a></li>
+                                                    <li><a href="{{route('post.index')}}">Articles</a></li>
 
-                                                @auth
+                                                    @auth
                                                         @if (auth()->user()->approved == 1 && (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8))
                                                             <li><a href="{{url('job')}}">Vacancies</a></li>
                                                         @endif
                                                     @endauth
-
 
                                                     @auth
                                                         @if (auth()->user()->approved == 1)
@@ -211,6 +230,15 @@
                                                             </li>
                                                         @endif
                                                     @endauth
+
+                                                    <li><a href="{{url('event')}}">Events</a></li>
+
+                                                    @auth
+                                                        @if (auth()->user()->role->value == 3)
+                                                            <li><a href="{{url('appointments')}}">Schedule</a></li>
+                                                        @endif
+                                                    @endauth
+
 
                                                 </ul>
                                             </div>
@@ -496,6 +524,10 @@
                 <script src="assets/js/vendor/bootstrap.min.js"></script>
                 <script src="assets/js/vendor/slick.min.js"></script>
                 <script src="assets/js/vendor/tweenmax.min.js"></script>
+
+                <script src="assets/js/vendor/jquery.js"></script>
+                <script src="assets/js/vendor/slick.min.js"></script>
+                <script src="assets/js/main.js"></script>
 
                 <!-- Main JS -->
                 <script src="assets/js/main.js"></script>

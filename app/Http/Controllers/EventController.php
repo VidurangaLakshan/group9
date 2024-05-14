@@ -11,8 +11,7 @@ class EventController extends Controller
         return view('events.index', [
             'ongoingEvents' => Event::where('status', true)
                 ->where(function ($query) {
-                    $query->where('start_date', '<=', now()->format('Y-m-d'))
-                        ->where('end_date', '>=', now()->format('Y-m-d'));
+                    $query->where('start_date', '=', now()->format('Y-m-d'));
                 })->where('status', true)
                 ->get(),
             'upcomingEvents' => Event::where('status', true)
@@ -21,7 +20,7 @@ class EventController extends Controller
             'pastEvents' => Event::where('status', true)
                 ->where(function ($query) {
                     $query->where('start_date', '<', now()->format('Y-m-d'))
-                        ->where('end_date', '<', now()->format('Y-m-d'));
+                        ->orWhere('end_date', '<', now()->format('Y-m-d'));
                 })->where('status', true)
                 ->orderBy('start_date', 'desc')
                 ->get(),

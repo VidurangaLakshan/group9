@@ -37,7 +37,7 @@
         <div class="header-wrap">
             <div class="row justify-content-between align-items-center">
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-3 col-12">
-                    <div class="logo">
+                    <div class="logo" style="display: flex; justify-content: center;">
                         <a href="/">
                             <img class="dark-logo" src="/assets/images/logo/logo-black.png" alt="Blogar logo">
                             <img class="light-logo" src="/assets/images/logo/logo-white2.png" alt="Blogar logo">
@@ -183,7 +183,7 @@
                                                 <div class="mobile-menu-top">
                                                     <div class="logo">
                                                         <a href="/">
-                                                            <img class="dark-logo"
+                                                            <img class="dark-logo" style="border-radius: 0;"
                                                                  src="/assets/images/logo/logo-black.png"
                                                                  alt="Logo Images">
                                                             <img class="light-logo"
@@ -441,6 +441,10 @@
 <script src="/assets/js/vendor/bootstrap.min.js"></script>
 <script src="/assets/js/vendor/slick.min.js"></script>
 <script src="/assets/js/vendor/tweenmax.min.js"></script>
+
+<script src="/assets/js/vendor/jquery.js"></script>
+<script src="/assets/js/vendor/slick.min.js"></script>
+<script src="/assets/js/main.js"></script>
 
 <!-- Main JS -->
 <script src="/assets/js/main.js"></script>
