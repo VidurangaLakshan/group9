@@ -28,37 +28,37 @@ class HomeController extends Controller
 
             'studentPosts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
-                ->orderBy('published_at', 'desc')
                 ->whereHas('author', function ($query) {
                     $query->where('role', 7)->where('image', '!=', null);
                 })
+                ->orderBy('published_at', 'desc')
                 ->take(4)
                 ->get(),
 
             'alumniPosts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
-                ->orderBy('published_at', 'desc')
                 ->whereHas('author', function ($query) {
                     $query->where('role', 8)->where('image', '!=', null);
                 })
+                ->orderBy('published_at', 'desc')
                 ->take(4)
                 ->get(),
 
             'academicsPosts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
-                ->orderBy('published_at', 'desc')
                 ->whereHas('author', function ($query) {
                     $query->where('role', 5)->where('image', '!=', null);
                 })
+                ->orderBy('published_at', 'desc')
                 ->take(4)
                 ->get(),
 
             'nonAcademicsPosts' => Post::where('published_at', '<=', now())
                 ->where('approved', true)
-                ->orderBy('published_at', 'desc')
                 ->whereHas('author', function ($query) {
                     $query->where('role', 6)->where('image', '!=', null);
                 })
+                ->orderBy('published_at', 'desc')
                 ->take(4)
                 ->get(),
 
