@@ -22,44 +22,59 @@
                                             ->where('job_id', $job->id);
             @endphp
 
-            @if($resume->count() == 0)
+            {{--            @if($resume->count() == 0)--}}
 
-                <form action="/{{$role}}/resumes/create" target="_blank">
-                    <p class="comment-notes"><span id="email-notes" style="color: gray">Note:- Include Your Name, Contact No. and Email.</span>
-                    </p>
-                    <div class="row row--10">
-                        <div class="col-12">
-                            <div class="form-group">
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="form-submit cerchio">
-                                <input name="submit" type="submit" id="submit" class="axil-button button-rounded"
-                                        value="Upload CV">
-                            </div>
-                        </div>
+            {{--                <form action="/{{$role}}/resumes/create" target="_blank">--}}
+            {{--                    <p class="comment-notes"><span id="email-notes" style="color: gray">Note:- Include Your Name, Contact No. and Email.</span>--}}
+            {{--                    </p>--}}
+            {{--                    <div class="row row--10">--}}
+            {{--                        <div class="col-12">--}}
+            {{--                            <div class="form-group">--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                        <div class="col-lg-12">--}}
+            {{--                            <div class="form-submit cerchio">--}}
+            {{--                                <input name="submit" type="submit" id="submit" class="axil-button button-rounded"--}}
+            {{--                                        value="Upload CV">--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </form>--}}
+
+            {{--            @else--}}
+
+            {{--                <form action="/{{$role}}/resumes/{{$job->id}}/edit" target="_blank">--}}
+            {{--                    <p class="comment-notes"><span id="email-notes" style="color: gray">Note:- Include Your Name, Contact No. and Email.</span>--}}
+            {{--                    </p>--}}
+            {{--                    <div class="row row--10">--}}
+            {{--                        <div class="col-12">--}}
+            {{--                            <div class="form-group">--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                        <div class="col-lg-12">--}}
+            {{--                            <div class="form-submit cerchio">--}}
+            {{--                                <input name="submit" type="submit" id="submit" class="axil-button button-rounded"--}}
+            {{--                                       value="Re-Upload CV">--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </form>--}}
+            {{--            @endif--}}
+
+            <form action="mailto:{{$job->author->email}}">
+            <div class="row row--10">
+                <div class="col-12">
+                    <div class="form-group">
                     </div>
-                </form>
-
-            @else
-
-                <form action="/{{$role}}/resumes/{{$job->id}}/edit" target="_blank">
-                    <p class="comment-notes"><span id="email-notes" style="color: gray">Note:- Include Your Name, Contact No. and Email.</span>
-                    </p>
-                    <div class="row row--10">
-                        <div class="col-12">
-                            <div class="form-group">
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="form-submit cerchio">
-                                <input name="submit" type="submit" id="submit" class="axil-button button-rounded"
-                                       value="Re-Upload CV">
-                            </div>
-                        </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-submit cerchio">
+                        <input name="submit" type="submit" id="submit" class="axil-button button-rounded"
+                               value="Email CV">
                     </div>
-                </form>
-            @endif
+                </div>
+            </div>
+            </form>
         </div>
 
         <!-- End Comment Respond  -->
