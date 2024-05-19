@@ -362,7 +362,7 @@
                                     <div class="row" style="display: flex; justify-content: center;">
 
 
-                                        @php
+                                        <?php
                                             $counter1 = 0;
                                             $counter2 = 0;
                                             $counter3 = 0;
@@ -370,13 +370,14 @@
                                             $counter5 = 0;
                                             $counter6 = 0;
                                             $counter7 = 0;
-                                        @endphp
+                                            $counter8 = 0;
+                                        ?>
 
                                         @foreach($studentPosts as $studentPost)
 
                                             @if (Auth::user() == true)
 
-                                                @php
+                                                <?php
                                                     $categoryCountStudent = $studentPost->categories->count();
                                                     $foundComputingStudent = false;
                                                     $foundBusinessStudent = false;
@@ -401,7 +402,7 @@
 
                                                 }
 
-                                                @endphp
+                                                ?>
 
                                                 @if (auth()->user()->interest_computing == 0 && auth()->user()->interest_business == 0 && auth()->user()->interest_law == 0)
                                                     <div class="alert alert-warning" id="alert"
@@ -447,9 +448,9 @@
                                                         </div>
                                                     </div>
 
-                                                    @php
+                                                    <?php
                                                         $counter1++;
-                                                    @endphp
+                                                    ?>
 
                                                     @if ($counter1 >= 4)
                                                         @break
@@ -493,9 +494,9 @@
                                                         </div>
                                                     </div>
 
-                                                    @php
+                                                    <?php
                                                         $counter2++;
-                                                    @endphp
+                                                    ?>
 
                                                     @if ($counter2 >= 4)
                                                         @break
@@ -539,9 +540,9 @@
                                                         </div>
                                                     </div>
 
-                                                    @php
+                                                    <?php
                                                         $counter3++;
-                                                    @endphp
+                                                    ?>
 
                                                     @if ($counter3 >= 4)
                                                         @break
@@ -585,9 +586,9 @@
                                                         </div>
                                                     </div>
 
-                                                    @php
+                                                    <?php
                                                         $counter4++;
-                                                    @endphp
+                                                    ?>
 
                                                     @if ($counter4 >= 4)
                                                         @break
@@ -631,9 +632,9 @@
                                                         </div>
                                                     </div>
 
-                                                    @php
+                                                    <?php
                                                         $counter5++;
-                                                    @endphp
+                                                    ?>
 
                                                     @if ($counter5 >= 4)
                                                         @break
@@ -677,9 +678,9 @@
                                                         </div>
                                                     </div>
 
-                                                    @php
+                                                    <?php
                                                         $counter6++;
-                                                    @endphp
+                                                    ?>
 
                                                     @if ($counter6 >= 4)
                                                         @break
@@ -723,9 +724,9 @@
                                                         </div>
                                                     </div>
 
-                                                    @php
+                                                    <?php
                                                         $counter7++;
-                                                    @endphp
+                                                    ?>
 
                                                     @if ($counter7 >= 4)
                                                         @break
@@ -777,6 +778,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <?php
+                                                    $counter8++;
+                                                ?>
 
                                             @endif
 
