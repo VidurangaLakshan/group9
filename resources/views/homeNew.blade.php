@@ -85,12 +85,12 @@
                                                     <a class="hover-flip-item-wrapper">
                                                 <span class="hover-flip-item">
                                                     <span
-                                                            data-text="{{$featuredPost->categories[0]->title}}">{{$featuredPost->categories[0]->title}}</span>
+                                                        data-text="{{$featuredPost->categories[0]->title}}">{{$featuredPost->categories[0]->title}}</span>
                                                 </span>
                                                     </a>
                                                 </div>
                                                 <h2 class="title"><a
-                                                            href="/blog/{{$featuredPost->slug}}">{{$featuredPost->title}}</a>
+                                                        href="/blog/{{$featuredPost->slug}}">{{$featuredPost->title}}</a>
                                                 </h2>
                                                 <!-- Post Meta  -->
                                                 <div class="post-meta-wrapper with-button">
@@ -104,7 +104,7 @@
                                                                 <a class="hover-flip-item-wrapper">
                                                             <span class="hover-flip-item">
                                                                 <span
-                                                                        data-text="{{$featuredPost->author->name}}">{{$featuredPost->author->name}}</span>
+                                                                    data-text="{{$featuredPost->author->name}}">{{$featuredPost->author->name}}</span>
                                                             </span>
                                                                 </a>
                                                             </h6>
@@ -176,7 +176,7 @@
                             ?>
 
 
-                                    <!-- Single Tab Content  -->
+                                <!-- Single Tab Content  -->
 
                             <!-- Single Tab Content  -->
                             <div class="row trend-tab-content tab-pane fade show active" id="trendone" role="tabpanel"
@@ -198,14 +198,14 @@
                                                             <span class="hover-flip-item">
                                                                 @if ($upcomingEvent->start_date != null)
                                                                     <span
-                                                                            data-text="{{$upcomingEvent->start_date}}">{{$upcomingEvent->start_date}}</span>
+                                                                        data-text="{{$upcomingEvent->start_date}}">{{$upcomingEvent->start_date}}</span>
                                                                 @endif
                                                             </span>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <h3 class="title"><a
-                                                                href="{{ route('event.show', $upcomingEvent->slug) }}">{{$upcomingEvent->title}}</a>
+                                                            href="{{ route('event.show', $upcomingEvent->slug) }}">{{$upcomingEvent->title}}</a>
                                                     </h3>
                                                     <div class="post-meta-wrapper">
                                                         <div class="post-meta">
@@ -215,7 +215,7 @@
                                                                        href="{{ route('event.club', $upcomingEvent->user_id) }}">
                                                                     <span class="hover-flip-item">
                                                                         <span
-                                                                                data-text="{{$upcomingEvent->author->name}}">{{$upcomingEvent->author->name}}</span>
+                                                                            data-text="{{$upcomingEvent->author->name}}">{{$upcomingEvent->author->name}}</span>
                                                                     </span>
                                                                     </a>
                                                                 </h6>
@@ -276,14 +276,14 @@
                                                             <span class="hover-flip-item">
                                                                 @if ($pastEvent->start_date != null)
                                                                     <span
-                                                                            data-text="{{$pastEvent->start_date}}">{{$pastEvent->start_date}}</span>
+                                                                        data-text="{{$pastEvent->start_date}}">{{$pastEvent->start_date}}</span>
                                                                 @endif
                                                             </span>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <h3 class="title"><a
-                                                                href="{{ route('event.show', $pastEvent->slug) }}">{{$pastEvent->title}}</a>
+                                                            href="{{ route('event.show', $pastEvent->slug) }}">{{$pastEvent->title}}</a>
                                                     </h3>
                                                     <div class="post-meta-wrapper">
                                                         <div class="post-meta">
@@ -293,7 +293,7 @@
                                                                        href="{{ route('event.club', $pastEvent->user_id) }}">
                                                                     <span class="hover-flip-item">
                                                                         <span
-                                                                                data-text="{{$pastEvent->author->name}}">{{$pastEvent->author->name}}</span>
+                                                                            data-text="{{$pastEvent->author->name}}">{{$pastEvent->author->name}}</span>
                                                                     </span>
                                                                     </a>
                                                                 </h6>
@@ -362,7 +362,7 @@
                                     <div class="row" style="display: flex; justify-content: center;">
 
 
-                                        <?php
+                                            <?php
                                             $counter1 = 0;
                                             $counter2 = 0;
                                             $counter3 = 0;
@@ -371,13 +371,16 @@
                                             $counter6 = 0;
                                             $counter7 = 0;
                                             $counter8 = 0;
-                                        ?>
+                                            ?>
+
 
                                         @foreach($studentPosts as $studentPost)
 
                                             @if (Auth::user() == true)
 
-                                                <?php
+                                                    <?php
+
+
                                                     $categoryCountStudent = $studentPost->categories->count();
                                                     $foundComputingStudent = false;
                                                     $foundBusinessStudent = false;
@@ -385,24 +388,24 @@
 
 
 
-                                                for($i=0; $i<$categoryCountStudent; $i++) {
-                                                    if ($studentPost->categories[$i]->title == 'Computing'){
-                                                        $foundComputingStudent = true;
+                                                    for ($i = 0; $i < $categoryCountStudent; $i++) {
+                                                        if ($studentPost->categories[$i]->title == 'Computing') {
+                                                            $foundComputingStudent = true;
                                                         }
 
 
-                                                    if ($studentPost->categories[$i]->title == 'Business'){
-                                                        $foundBusinessStudent = true;
+                                                        if ($studentPost->categories[$i]->title == 'Business') {
+                                                            $foundBusinessStudent = true;
+                                                        }
+
+
+                                                        if ($studentPost->categories[$i]->title == 'Law') {
+                                                            $foundLawStudent = true;
+                                                        }
+
                                                     }
 
-
-                                                    if ($studentPost->categories[$i]->title == 'Law'){
-                                                        $foundLawStudent = true;
-                                                    }
-
-                                                }
-
-                                                ?>
+                                                    ?>
 
                                                 @if (auth()->user()->interest_computing == 0 && auth()->user()->interest_business == 0 && auth()->user()->interest_law == 0)
                                                     <div class="alert alert-warning" id="alert"
@@ -420,9 +423,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -432,13 +435,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
+                                                                                    href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -448,9 +451,9 @@
                                                         </div>
                                                     </div>
 
-                                                    <?php
+                                                        <?php
                                                         $counter1++;
-                                                    ?>
+                                                        ?>
 
                                                     @if ($counter1 >= 4)
                                                         @break
@@ -466,9 +469,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -478,13 +481,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
+                                                                                    href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -494,9 +497,9 @@
                                                         </div>
                                                     </div>
 
-                                                    <?php
+                                                        <?php
                                                         $counter2++;
-                                                    ?>
+                                                        ?>
 
                                                     @if ($counter2 >= 4)
                                                         @break
@@ -512,9 +515,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -524,13 +527,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
+                                                                                    href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -540,9 +543,9 @@
                                                         </div>
                                                     </div>
 
-                                                    <?php
+                                                        <?php
                                                         $counter3++;
-                                                    ?>
+                                                        ?>
 
                                                     @if ($counter3 >= 4)
                                                         @break
@@ -558,9 +561,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -570,13 +573,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
+                                                                                    href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -586,9 +589,9 @@
                                                         </div>
                                                     </div>
 
-                                                    <?php
+                                                        <?php
                                                         $counter4++;
-                                                    ?>
+                                                        ?>
 
                                                     @if ($counter4 >= 4)
                                                         @break
@@ -604,9 +607,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -616,13 +619,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
+                                                                                    href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -632,9 +635,9 @@
                                                         </div>
                                                     </div>
 
-                                                    <?php
+                                                        <?php
                                                         $counter5++;
-                                                    ?>
+                                                        ?>
 
                                                     @if ($counter5 >= 4)
                                                         @break
@@ -650,9 +653,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -662,13 +665,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
+                                                                                    href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -678,9 +681,9 @@
                                                         </div>
                                                     </div>
 
-                                                    <?php
+                                                        <?php
                                                         $counter6++;
-                                                    ?>
+                                                        ?>
 
                                                     @if ($counter6 >= 4)
                                                         @break
@@ -696,9 +699,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $studentPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $studentPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -708,13 +711,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
+                                                                                    href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -724,20 +727,14 @@
                                                         </div>
                                                     </div>
 
-                                                    <?php
+                                                        <?php
                                                         $counter7++;
-                                                    ?>
 
+                                                        ?>
                                                     @if ($counter7 >= 4)
                                                         @break
                                                     @endif
 
-                                                @else
-                                                    <div class="alert alert-warning" id="alert"
-                                                         style="margin: 10px 10px; text-align: center">
-                                                        No posts of the selected faculty is available. To view other
-                                                        faculty posts, enable the option in the profile page.
-                                                    </div>
                                                 @endif
 
                                             @else
@@ -751,9 +748,9 @@
                                                                      style="align-items: center; justify-content: center; display: flex;">
                                                                     <a href="{{ route('post.show', $studentPost->slug) }}">
                                                                         <img
-                                                                                src="{{ $studentPost->getThumbnailImage() }}"
-                                                                                alt="Post Images"
-                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            src="{{ $studentPost->getThumbnailImage() }}"
+                                                                            alt="Post Images"
+                                                                            style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                     </a>
                                                                 </div>
                                                                 <div class="post-grid-content">
@@ -763,13 +760,13 @@
                                                                                 <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $studentPost->categories[0]->title }}">{{ $studentPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                 </a>
                                                                             </div>
                                                                         </div>
                                                                         <h4 class="title"><a
-                                                                                    href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
+                                                                                href="{{ route('post.show', $studentPost->slug) }}">{{ $studentPost->title }}</a>
                                                                         </h4>
                                                                     </div>
                                                                 </div>
@@ -779,9 +776,9 @@
                                                     </div>
                                                 </div>
 
-                                                <?php
+                                                    <?php
                                                     $counter8++;
-                                                ?>
+                                                    ?>
 
                                             @endif
 
@@ -822,6 +819,17 @@
 
                                 <div class="single-post-grid tab-pane fade show active" id="gridone" role="tabpanel">
                                     <div class="row" style="display: flex; justify-content: center;">
+
+                                            <?php
+                                            $counter1 = 0;
+                                            $counter2 = 0;
+                                            $counter3 = 0;
+                                            $counter4 = 0;
+                                            $counter5 = 0;
+                                            $counter6 = 0;
+                                            $counter7 = 0;
+                                            $counter8 = 0;
+                                            ?>
 
                                         @foreach($alumniPosts as $alumniPost)
 
@@ -870,9 +878,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -882,13 +890,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
+                                                                                    href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -897,6 +905,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter1++;
+                                                        ?>
+
+                                                    @if ($counter1 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_computing == 1 && auth()->user()->interest_business == 1 && $foundComputingAlumni == true && $foundBusinessAlumni == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -907,9 +924,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -919,13 +936,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
+                                                                                    href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -934,6 +951,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter2++;
+                                                        ?>
+
+                                                    @if ($counter2 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_computing == 1 && auth()->user()->interest_law == 1 && $foundComputingAlumni == true && $foundLawAlumni == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -944,9 +970,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -956,13 +982,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
+                                                                                    href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -971,6 +997,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter3++;
+                                                        ?>
+
+                                                    @if ($counter3 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_business == 1 && auth()->user()->interest_law == 1 && $foundBusinessAlumni == true && $foundLawAlumni == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -981,9 +1016,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -993,13 +1028,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
+                                                                                    href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1008,6 +1043,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter4++;
+                                                        ?>
+
+                                                    @if ($counter4 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_computing == 1 && $foundComputingAlumni == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1018,9 +1062,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1030,13 +1074,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
+                                                                                    href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1045,6 +1089,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter5++;
+                                                        ?>
+
+                                                    @if ($counter5 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif(auth()->user()->interest_business == 1 && $foundBusinessAlumni == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1055,9 +1108,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1067,13 +1120,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
+                                                                                    href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1082,6 +1135,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter6++;
+                                                        ?>
+
+                                                    @if ($counter6 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif(auth()->user()->interest_law == 1 && $foundLawAlumni == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1092,9 +1154,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $alumniPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1104,13 +1166,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
+                                                                                    href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1119,12 +1181,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                @else
-                                                    <div class="alert alert-warning" id="alert"
-                                                         style="margin: 10px 10px; text-align: center">
-                                                        No posts of the selected faculty is available. To view other
-                                                        faculty posts, enable the option in the profile page.
-                                                    </div>
+
+                                                        <?php
+                                                        $counter7++;
+                                                        ?>
+
+                                                    @if ($counter7 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @endif
 
                                             @else
@@ -1138,9 +1203,9 @@
                                                                      style="align-items: center; justify-content: center; display: flex;">
                                                                     <a href="{{ route('post.show', $alumniPost->slug) }}">
                                                                         <img
-                                                                                src="{{ $alumniPost->getThumbnailImage() }}"
-                                                                                alt="Post Images"
-                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            src="{{ $alumniPost->getThumbnailImage() }}"
+                                                                            alt="Post Images"
+                                                                            style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                     </a>
                                                                 </div>
                                                                 <div class="post-grid-content">
@@ -1150,13 +1215,13 @@
                                                                                 <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $alumniPost->categories[0]->title }}">{{ $alumniPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                 </a>
                                                                             </div>
                                                                         </div>
                                                                         <h4 class="title"><a
-                                                                                    href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
+                                                                                href="{{ route('post.show', $alumniPost->slug) }}">{{ $alumniPost->title }}</a>
                                                                         </h4>
                                                                     </div>
                                                                 </div>
@@ -1165,6 +1230,15 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+
+                                                    <?php
+                                                    $counter8++;
+                                                    ?>
+
+                                                @if ($counter8 >= 4)
+                                                    @break
+                                                @endif
 
                                             @endif
 
@@ -1203,6 +1277,16 @@
                                 <div class="single-post-grid tab-pane fade show active" id="gridone" role="tabpanel">
                                     <div class="row" style="display: flex; justify-content: center;">
 
+                                            <?php
+                                            $counter1 = 0;
+                                            $counter2 = 0;
+                                            $counter3 = 0;
+                                            $counter4 = 0;
+                                            $counter5 = 0;
+                                            $counter6 = 0;
+                                            $counter7 = 0;
+                                            $counter8 = 0;
+                                            ?>
 
                                         @foreach($academicsPosts as $academicsPost)
 
@@ -1248,9 +1332,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1260,13 +1344,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1275,6 +1359,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter1++;
+                                                        ?>
+
+                                                    @if ($counter1 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_computing == 1 && auth()->user()->interest_business == 1 && $foundComputingAcademics == true && $foundBusinessAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1285,9 +1378,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1297,13 +1390,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1312,6 +1405,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter2++;
+                                                        ?>
+
+                                                    @if ($counter2 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_computing == 1 && auth()->user()->interest_law == 1 && $foundComputingAcademics == true && $foundLawAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1322,9 +1424,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1334,13 +1436,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1349,6 +1451,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter3++;
+                                                        ?>
+
+                                                    @if ($counter3 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_business == 1 && auth()->user()->interest_law == 1 && $foundBusinessAcademics == true && $foundLawAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1359,9 +1470,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1371,13 +1482,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1386,6 +1497,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter4++;
+                                                        ?>
+
+                                                    @if ($counter4 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_computing == 1 && $foundComputingAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1396,9 +1516,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1408,13 +1528,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1423,6 +1543,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter5++;
+                                                        ?>
+
+                                                    @if ($counter5 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif(auth()->user()->interest_business == 1 && $foundBusinessAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1433,9 +1562,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1445,13 +1574,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1460,6 +1589,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter6++;
+                                                        ?>
+
+                                                    @if ($counter6 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif(auth()->user()->interest_law == 1 && $foundLawAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1470,9 +1608,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $academicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1482,13 +1620,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1497,12 +1635,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                @else
-                                                    <div class="alert alert-warning" id="alert"
-                                                         style="margin: 10px 10px; text-align: center">
-                                                        No posts of the selected faculty is available. To view other
-                                                        faculty posts, enable the option in the profile page.
-                                                    </div>
+
+                                                        <?php
+                                                        $counter7++;
+                                                        ?>
+
+                                                    @if ($counter7 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @endif
 
                                             @else
@@ -1516,9 +1657,9 @@
                                                                      style="align-items: center; justify-content: center; display: flex;">
                                                                     <a href="{{ route('post.show', $academicsPost->slug) }}">
                                                                         <img
-                                                                                src="{{ $academicsPost->getThumbnailImage() }}"
-                                                                                alt="Post Images"
-                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            src="{{ $academicsPost->getThumbnailImage() }}"
+                                                                            alt="Post Images"
+                                                                            style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                     </a>
                                                                 </div>
                                                                 <div class="post-grid-content">
@@ -1528,13 +1669,13 @@
                                                                                 <a class="hover-flip-item-wrapper">
                                                                         <span class="hover-flip-item">
                                                                             <span
-                                                                                    data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
+                                                                                data-text="{{ $academicsPost->categories[0]->title }}">{{ $academicsPost->categories[0]->title }}</span>
                                                                         </span>
                                                                                 </a>
                                                                             </div>
                                                                         </div>
                                                                         <h4 class="title"><a
-                                                                                    href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
+                                                                                href="{{ route('post.show', $academicsPost->slug) }}">{{ $academicsPost->title }}</a>
                                                                         </h4>
                                                                     </div>
                                                                 </div>
@@ -1543,6 +1684,14 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                    <?php
+                                                    $counter8++;
+                                                    ?>
+
+                                                @if ($counter8 >= 4)
+                                                    @break
+                                                @endif
 
                                             @endif
 
@@ -1584,6 +1733,17 @@
                                 <div class="single-post-grid tab-pane fade show active" id="gridone" role="tabpanel">
                                     <div class="row" style="display: flex; justify-content: center;">
 
+
+                                            <?php
+                                            $counter1 = 0;
+                                            $counter2 = 0;
+                                            $counter3 = 0;
+                                            $counter4 = 0;
+                                            $counter5 = 0;
+                                            $counter6 = 0;
+                                            $counter7 = 0;
+                                            $counter8 = 0;
+                                            ?>
 
                                         @foreach($nonAcademicsPosts as $nonAcademicsPost)
 
@@ -1632,9 +1792,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1644,13 +1804,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1659,6 +1819,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter1++;
+                                                        ?>
+
+                                                    @if ($counter1 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_computing == 1 && auth()->user()->interest_business == 1 && $foundComputingNonAcademics == true && $foundBusinessNonAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1669,9 +1838,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1681,13 +1850,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1696,6 +1865,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter2++;
+                                                        ?>
+
+                                                    @if ($counter2 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_computing == 1 && auth()->user()->interest_law == 1 && $foundComputingNonAcademics == true && $foundLawNonAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1706,9 +1884,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1718,13 +1896,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1733,6 +1911,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter3++;
+                                                        ?>
+
+                                                    @if ($counter3 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_business == 1 && auth()->user()->interest_law == 1 && $foundBusinessNonAcademics == true && $foundLawNonAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1743,9 +1930,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1755,13 +1942,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1770,6 +1957,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter4++;
+                                                        ?>
+
+                                                    @if ($counter4 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif (auth()->user()->interest_computing == 1 && $foundComputingNonAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1780,9 +1976,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1792,13 +1988,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1807,6 +2003,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter5++;
+                                                        ?>
+
+                                                    @if ($counter5 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif(auth()->user()->interest_business == 1 && $foundBusinessNonAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1817,9 +2022,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1829,13 +2034,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1844,6 +2049,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        <?php
+                                                        $counter6++;
+                                                        ?>
+
+                                                    @if ($counter6 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @elseif(auth()->user()->interest_law == 1 && $foundLawNonAcademics == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -1854,9 +2068,9 @@
                                                                          style="align-items: center; justify-content: center; display: flex;">
                                                                         <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                             <img
-                                                                                    src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                    alt="Post Images"
-                                                                                    style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                                alt="Post Images"
+                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                         </a>
                                                                     </div>
                                                                     <div class="post-grid-content">
@@ -1866,13 +2080,13 @@
                                                                                     <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
                                                                             <h4 class="title"><a
-                                                                                        href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -1881,12 +2095,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                @else
-                                                    <div class="alert alert-warning" id="alert"
-                                                         style="margin: 10px 10px; text-align: center">
-                                                        No posts of the selected faculty is available. To view other
-                                                        faculty posts, enable the option in the profile page.
-                                                    </div>
+
+                                                        <?php
+                                                        $counter7++;
+                                                        ?>
+
+                                                    @if ($counter7 >= 4)
+                                                        @break
+                                                    @endif
+
                                                 @endif
 
                                             @else
@@ -1900,9 +2117,9 @@
                                                                      style="align-items: center; justify-content: center; display: flex;">
                                                                     <a href="{{ route('post.show', $nonAcademicsPost->slug) }}">
                                                                         <img
-                                                                                src="{{ $nonAcademicsPost->getThumbnailImage() }}"
-                                                                                alt="Post Images"
-                                                                                style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
+                                                                            src="{{ $nonAcademicsPost->getThumbnailImage() }}"
+                                                                            alt="Post Images"
+                                                                            style="max-height: 360px; max-width: 600px; height: 100%; width: auto;">
                                                                     </a>
                                                                 </div>
                                                                 <div class="post-grid-content">
@@ -1912,13 +2129,13 @@
                                                                                 <a class="hover-flip-item-wrapper">
                                                                             <span class="hover-flip-item">
                                                                                 <span
-                                                                                        data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
+                                                                                    data-text="{{ $nonAcademicsPost->categories[0]->title }}">{{ $nonAcademicsPost->categories[0]->title }}</span>
                                                                             </span>
                                                                                 </a>
                                                                             </div>
                                                                         </div>
                                                                         <h4 class="title"><a
-                                                                                    href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
+                                                                                href="{{ route('post.show', $nonAcademicsPost->slug) }}">{{ $nonAcademicsPost->title }}</a>
                                                                         </h4>
                                                                     </div>
                                                                 </div>
@@ -1927,6 +2144,14 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                    <?php
+                                                    $counter8++;
+                                                    ?>
+
+                                                @if ($counter8 >= 4)
+                                                    @break
+                                                @endif
 
                                             @endif
 
