@@ -24,7 +24,7 @@
 
 <div>
     @if (Auth::user()?->hasFollowed($user))
-        <button wire:click="toggleFollow()" class="flex items-center text-gray-600 ml-2"
+        <button wire:click="toggleFollow()" class="flex items-center text-red-600 ml-2"
                 style="border-style: none; padding-right: 30px; padding-bottom: 8px; border-radius: 20px;">
 
             {{--        <svg wire:loading.delay.remove xmlns="http://www.w3.org/2000/svg" fill="{{ (Auth::user()?->hasFollowed($user)) ? '#dc2626' : 'none'}}" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 {{ (Auth::user()?->hasFollowed($user)) ? 'text-red-600' : 'text-gray-600'}} hover:text-gray-900">--}}
