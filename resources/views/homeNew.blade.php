@@ -361,6 +361,7 @@
                                     <div class="row" style="display: flex; justify-content: center;">
 
 
+
                                         @foreach($studentPosts as $studentPost)
 
                                             @if (Auth::user() == true)
@@ -389,6 +390,14 @@
                                                     }
 
                                                 }
+
+                                                $counter1 = 0;
+                                                $counter2 = 0;
+                                                $counter3 = 0;
+                                                $counter4 = 0;
+                                                $counter5 = 0;
+                                                $counter6 = 0;
+                                                $counter7 = 0;
 
                                                 @endphp
 
@@ -435,6 +444,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    @php
+                                                        $counter1++;
+                                                    @endphp
+
+                                                    @if ($counter1 >= 4)
+                                                        @break
+                                                    @endif
+
+
                                                 @elseif (auth()->user()->interest_computing == 1 && auth()->user()->interest_business == 1 && $foundComputingStudent == true && $foundBusinessStudent == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -472,6 +491,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    @php
+                                                        $counter2++;
+                                                    @endphp
+
+                                                    @if ($counter2 >= 4)
+                                                        @break
+                                                    @endif
+
+
                                                 @elseif (auth()->user()->interest_computing == 1 && auth()->user()->interest_law == 1 && $foundComputingStudent == true && $foundLawStudent == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -509,6 +538,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    @php
+                                                        $counter3++;
+                                                    @endphp
+
+                                                    @if ($counter3 >= 4)
+                                                        @break
+                                                    @endif
+
+
                                                 @elseif (auth()->user()->interest_business == 1 && auth()->user()->interest_law == 1 && $foundBusinessStudent == true && $foundLawStudent == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -546,6 +585,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    @php
+                                                        $counter4++;
+                                                    @endphp
+
+                                                    @if ($counter4 >= 4)
+                                                        @break
+                                                    @endif
+
+
                                                 @elseif (auth()->user()->interest_computing == 1 && $foundComputingStudent == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -583,6 +632,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    @php
+                                                        $counter5++;
+                                                    @endphp
+
+                                                    @if ($counter5 >= 4)
+                                                        @break
+                                                    @endif
+
+
                                                 @elseif(auth()->user()->interest_business == 1 && $foundBusinessStudent == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -620,6 +679,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    @php
+                                                        $counter6++;
+                                                    @endphp
+
+                                                    @if ($counter6 >= 4)
+                                                        @break
+                                                    @endif
+
+
                                                 @elseif(auth()->user()->interest_law == 1 && $foundLawStudent == true)
                                                     <div class="col-xl-6 col-lg-5 col-md-12 col-12">
                                                         <div class="row">
@@ -657,6 +726,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    @php
+                                                        $counter7++;
+                                                    @endphp
+
+                                                    @if ($counter7 >= 4)
+                                                        @break
+                                                    @endif
+
+
                                                 @else
                                                     <div class="alert alert-warning" id="alert"
                                                          style="margin: 10px 10px; text-align: center">

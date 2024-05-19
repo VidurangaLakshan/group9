@@ -32,7 +32,6 @@ class HomeController extends Controller
                     $query->where('role', 7)->where('image', '!=', null);
                 })
                 ->orderBy('published_at', 'desc')
-                ->take(4)
                 ->get(),
 
             'alumniPosts' => Post::where('published_at', '<=', now())
@@ -41,7 +40,6 @@ class HomeController extends Controller
                     $query->where('role', 8)->where('image', '!=', null);
                 })
                 ->orderBy('published_at', 'desc')
-                ->take(4)
                 ->get(),
 
             'academicsPosts' => Post::where('published_at', '<=', now())
@@ -50,7 +48,6 @@ class HomeController extends Controller
                     $query->where('role', 5)->where('image', '!=', null);
                 })
                 ->orderBy('published_at', 'desc')
-                ->take(4)
                 ->get(),
 
             'nonAcademicsPosts' => Post::where('published_at', '<=', now())
@@ -59,7 +56,6 @@ class HomeController extends Controller
                     $query->where('role', 6)->where('image', '!=', null);
                 })
                 ->orderBy('published_at', 'desc')
-                ->take(4)
                 ->get(),
 
             'upcomingEvents' => Event::where('status', true)
