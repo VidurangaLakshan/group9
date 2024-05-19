@@ -61,7 +61,6 @@
             {{--                </form>--}}
             {{--            @endif--}}
 
-            <form action="mailto:{{$job->author->email}}">
             <div class="row row--10">
                 <div class="col-12">
                     <div class="form-group">
@@ -69,12 +68,10 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="form-submit cerchio">
-                        <input name="submit" type="submit" id="submit" class="axil-button button-rounded"
-                               value="Email CV">
+                        <a href="mailto:{{ $job->author->email }}" id="submit" class="axil-button button-rounded">Email CV</a>
                     </div>
                 </div>
             </div>
-            </form>
         </div>
 
         <!-- End Comment Respond  -->
