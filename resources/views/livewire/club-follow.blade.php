@@ -23,15 +23,28 @@
 {{--</div>--}}
 
 <div>
-    <button wire:click="toggleFollow()" class="flex items-center"
-            style="border-style: none; padding-right: 30px; padding-bottom: 8px; background-color: {{ (Auth::user()?->hasFollowed($user)) ? '#dc2626' : 'none'}}; color: {{ (Auth::user()?->hasFollowed($user)) ? 'text-red-600' : 'text-gray-600'}}; border-radius: 20px;">
+    @if (Auth::user()?->hasFollowed($user))
+        <button wire:click="toggleFollow()" class="flex items-center text-gray-600 ml-2"
+                style="border-style: none; padding-right: 30px; padding-bottom: 8px; border-radius: 20px;">
 
-{{--        <svg wire:loading.delay.remove xmlns="http://www.w3.org/2000/svg" fill="{{ (Auth::user()?->hasFollowed($user)) ? '#dc2626' : 'none'}}" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 {{ (Auth::user()?->hasFollowed($user)) ? 'text-red-600' : 'text-gray-600'}} hover:text-gray-900">--}}
-{{--            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />--}}
-{{--        </svg>--}}
+            {{--        <svg wire:loading.delay.remove xmlns="http://www.w3.org/2000/svg" fill="{{ (Auth::user()?->hasFollowed($user)) ? '#dc2626' : 'none'}}" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 {{ (Auth::user()?->hasFollowed($user)) ? 'text-red-600' : 'text-gray-600'}} hover:text-gray-900">--}}
+            {{--            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />--}}
+            {{--        </svg>--}}
 
-        Follow
+            Followed ({{ $user->followers()->count() }})
 
-    </button>
-    <span class="text-gray-600 ml-2">Follow {{ $user->followers()->count() }}</span>
+        </button>
+    @else
+        <button wire:click="toggleFollow()" class="flex items-center text-gray-600 ml-2"
+                style="border-style: none; padding-right: 30px; padding-bottom: 8px; border-radius: 20px;">
+
+            {{--        <svg wire:loading.delay.remove xmlns="http://www.w3.org/2000/svg" fill="{{ (Auth::user()?->hasFollowed($user)) ? '#dc2626' : 'none'}}" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 {{ (Auth::user()?->hasFollowed($user)) ? 'text-red-600' : 'text-gray-600'}} hover:text-gray-900">--}}
+            {{--            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />--}}
+            {{--        </svg>--}}
+
+            Follow ({{ $user->followers()->count() }})
+
+        </button>
+    @endif
+    {{--    <span class="text-gray-600 ml-2"></span>--}}
 </div>
