@@ -802,6 +802,12 @@
         timeString = '1:30 PM - 2:00PM'
     }
 
+    if ({{$appointment->mode}} == 1) {
+        modeString = ' Physical Meeting'
+    } else if ({{$appointment->mode}} == 3) {
+        modeString = ' MS Teams Call'
+    }
+
 
     eventsArr.push({
         year: parseInt('{{ $appointment->slot_token}}'.substring(0, 4)),
@@ -813,6 +819,8 @@
             {
                 title: '{{ $appointment->user->name }}',
                 time: timeString,
+                mode: modeString,
+                reason: '{{ $appointment->category }}',
             },
         ],
         // Add more fields as needed
@@ -1020,12 +1028,18 @@
             ) {
                 event.events.forEach((event) => {
                     events += `<div class="event">
-            <div class="title">
+            <div class="title" style="margin-top: 10px;">
               <i class="fas fa-circle"></i>
               <h3 class="event-title">${event.title}</h3>
             </div>
             <div class="event-time">
               <span class="event-time">${event.time}</span>
+            </div>
+            <div class="event-time">
+              <span class="event-time">${event.mode}</span>
+            </div>
+            <div class="event-time" style="margin-bottom: 10px;">
+              <span class="event-time">${event.reason}</span>
             </div>
         </div>`;
                 });

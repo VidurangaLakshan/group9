@@ -90,7 +90,7 @@ class AppointmentResource extends Resource
                         })
 
                         // disable all days before today
-                        ->minDate(today())
+                        ->minDate(today()->addDay())
                         ->live()
                         ->required(),
 
@@ -247,6 +247,7 @@ class AppointmentResource extends Resource
                         2 => 'MS Teams Chat',
                         3 => 'MS Teams Call',
                     ])
+                    ->disabled()
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('category')
@@ -301,7 +302,6 @@ class AppointmentResource extends Resource
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
-
             ->where('mode', '!=', 2);
     }
 }

@@ -57,7 +57,6 @@ class AppointmentResource extends Resource
                         ->required(),
 
 
-
                     Forms\Components\DatePicker::make('date')
 
                         //hidden until mode is selected is 2
@@ -90,7 +89,7 @@ class AppointmentResource extends Resource
                         })
 
                         // disable all days before today
-                        ->minDate(today())
+                        ->minDate(today()->addDay())
                         ->live()
                         ->required(),
 
@@ -138,11 +137,9 @@ class AppointmentResource extends Resource
                 ]),
 
                 Forms\Components\Section::make('Additional Details')
-
                     ->hidden(function (Forms\Get $get) {
                         return $get('mode') == 2; // Assuming 2 is the value for 'MS Teams Chat'
                     })
-
                     ->schema([
 
 
@@ -167,11 +164,9 @@ class AppointmentResource extends Resource
                     ]),
 
                 Forms\Components\Section::make('How To Chat on MS Teams')
-
                     ->hidden(function (Forms\Get $get) {
                         return $get('mode') != 2; // Assuming 2 is the value for 'MS Teams Chat'
                     })
-
                     ->schema([
 
                         Forms\Components\TextInput::make('step1')->readOnly()->label('Step 1')
@@ -206,11 +201,9 @@ class AppointmentResource extends Resource
 
 
                 Forms\Components\Section::make('How To Call on MS Teams')
-
                     ->hidden(function (Forms\Get $get) {
                         return $get('mode') != 3; // Assuming 2 is the value for 'MS Teams Chat'
                     })
-
                     ->schema([
 
                         Forms\Components\TextInput::make('step1')->readOnly()->label('Step 1')
@@ -237,7 +230,38 @@ class AppointmentResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\SelectColumn::make('mode')
+                    ->options([
+                        1 => 'Physical Meeting (At APIIT City Campus)',
+                        2 => 'MS Teams Chat',
+                        3 => 'MS Teams Call',
+                    ])
+                    ->searchable()
+                    ->disabled()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('date')
+                    ->searchable()
+                    ->sortable(),
+
+                Tables\Columns\SelectColumn::make('time_slot')
+                    ->options([
+                        '1' => '10:00 AM - 10:30 AM',
+                        '2' => '10:30 AM - 11:00 AM',
+                        '3' => '11:00 AM - 11:30 AM',
+                        '4' => '11:30 AM - 12:00 PM',
+                        '5' => '12:00 PM - 12:30 PM',
+                        '6' => '12:30 PM - 01:00 PM',
+                        '7' => '01:00 PM - 01:30 PM',
+                        '8' => '01:30 PM - 02:00 PM',
+                    ])
+                    ->disabled()
+                    ->searchable()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('category')
+                    ->searchable()
+                    ->sortable(),
             ])
             ->filters([
                 //
@@ -266,5 +290,12 @@ class AppointmentResource extends Resource
             'create' => Pages\CreateAppointment::route('/create'),
             'edit' => Pages\EditAppointment::route('/{record}/edit'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->where('mode', '!=', 2)
+            ->where('user_id', auth()->id());
     }
 }
