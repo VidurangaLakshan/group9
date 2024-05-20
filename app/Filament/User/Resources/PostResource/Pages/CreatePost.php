@@ -22,7 +22,7 @@ class CreatePost extends CreateRecord
         $post = $this->record;
 
         // if event is set to not visible, send a notification to the event's author
-        if ($post->status === false) {
+        if ($post->approved === false) {
             Notification::make()
                 ->title('Post needs approval')
                 ->body("'{$post->title}' has been created but is not visible.")
