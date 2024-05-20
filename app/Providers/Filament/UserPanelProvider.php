@@ -26,6 +26,8 @@ class UserPanelProvider extends PanelProvider
         return $panel
             ->id('user')
             ->path('user')
+            ->databaseNotifications()
+
             ->colors([
                 'primary' => Color::hex('#04B4AC'),
             ])

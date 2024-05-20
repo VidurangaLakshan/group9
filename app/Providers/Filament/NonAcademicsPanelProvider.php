@@ -26,6 +26,8 @@ class NonAcademicsPanelProvider extends PanelProvider
         return $panel
             ->id('nonAcademics')
             ->path('nonAcademics')
+            ->databaseNotifications()
+
             ->colors([
                 'primary' => Color::hex('#04B4AC'),
             ])

@@ -26,6 +26,8 @@ class EditorPanelProvider extends PanelProvider
         return $panel
             ->id('editor')
             ->path('editor')
+            ->databaseNotifications()
+
             ->colors([
                 'primary' => Color::hex('#04B4AC'),
             ])

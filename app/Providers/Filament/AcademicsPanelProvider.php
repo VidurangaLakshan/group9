@@ -26,6 +26,8 @@ class AcademicsPanelProvider extends PanelProvider
         return $panel
             ->id('academics')
             ->path('academics')
+            ->databaseNotifications()
+
             ->colors([
                 'primary' => Color::hex('#04B4AC'),
             ])

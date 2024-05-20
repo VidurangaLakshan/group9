@@ -26,6 +26,8 @@ class ClubPanelProvider extends PanelProvider
         return $panel
             ->id('club')
             ->path('club')
+            ->databaseNotifications()
+
             ->colors([
                 'primary' => Color::hex('#04B4AC'),
             ])

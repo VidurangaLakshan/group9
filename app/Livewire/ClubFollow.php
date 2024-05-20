@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Filament\Notifications\Notification;
 use Livewire\Component;
 
 class ClubFollow extends Component
@@ -17,8 +18,6 @@ class ClubFollow extends Component
 
         $userAuth = auth()->user();
 
-//        $hasLiked = $user->likes()->where('post_id', $this->post->id)->exists();
-
         if ($userAuth->hasFollowed($this->user)) {
             $userAuth->followings()->detach($this->user->id);
             return;
@@ -26,6 +25,10 @@ class ClubFollow extends Component
 
         $userAuth->followings()->attach($this->user->id);
 
+        Notification::make()
+            ->title('New Follower')
+            ->body("{$userAuth->name} has followed you.")
+            ->sendToDatabase($this->user);
     }
 
     public function render()

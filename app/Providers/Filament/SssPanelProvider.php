@@ -26,6 +26,8 @@ class SssPanelProvider extends PanelProvider
         return $panel
             ->id('sss')
             ->path('sss')
+            ->databaseNotifications()
+
             ->colors([
                 'primary' => Color::hex('#04B4AC'),
             ])

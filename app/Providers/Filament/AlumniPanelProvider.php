@@ -26,6 +26,8 @@ class AlumniPanelProvider extends PanelProvider
         return $panel
             ->id('alumni')
             ->path('alumni')
+            ->databaseNotifications()
+
             ->colors([
                 'primary' => Color::hex('#04B4AC'),
             ])

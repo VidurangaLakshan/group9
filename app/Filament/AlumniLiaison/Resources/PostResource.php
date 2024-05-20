@@ -71,7 +71,7 @@ class PostResource extends Resource
                                     ->image()
                                     ->directory('posts/thumbnails'),
 
-                                DateTimePicker::make('published_at')->nullable()->native(false),
+                                DateTimePicker::make('published_at')->nullable()->native(false)->hidden(true),
 
                                 CheckBox::make('featured')
                                     ->default(false)

@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Post;
+use Filament\Notifications\Notification;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
@@ -21,6 +22,12 @@ class PostComments extends Component
             'comment' => $this->comment,
             'user_id' => auth()->id(),
         ]);
+
+        Notification::make()
+            ->title('New Comment')
+            ->body("{$this->comment}")
+            ->sendToDatabase($this->post->author);
+
         $this->reset('comment');
     }
 

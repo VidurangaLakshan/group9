@@ -3,6 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
+use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -28,7 +29,7 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'fullName' => $input['fullName'],
             'email' => $input['email'],
@@ -45,5 +46,14 @@ class CreateNewUser implements CreatesNewUsers
             'interest_law' => 1,
             'newUserPersonalized' => 0,
         ]);
+
+        $notification = Notification::make()
+            ->title('New User Registered')
+            ->body("A new user with the email {$user->email} has registered.");
+
+        // Send the notification to the database
+        $notification->sendToDatabase(User::where('role', 1)->get());
+
+        return $user;
     }
 }
