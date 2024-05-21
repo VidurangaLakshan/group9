@@ -3,7 +3,9 @@
 namespace App\Filament\NonAcademics\Resources\PostResource\Pages;
 
 use App\Filament\NonAcademics\Resources\PostResource;
+use App\Models\User;
 use Filament\Actions;
+use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
 
 class EditPost extends EditRecord
@@ -22,5 +24,16 @@ class EditPost extends EditRecord
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
+    }
+
+    public function afterSave(): void
+    {
+        $post = $this->record;
+
+        Notification::make()
+            ->title('Post needs approval')
+            ->body("'{$post->title}' has been created but is not visible.")
+            ->sendToDatabase(User::where('role', 2)->get());
+
     }
 }
