@@ -419,7 +419,7 @@
                 @endif
             @endif
 
-            @if ($job->faculty == 'Law' && auth()->user()->interest_law == 1)
+            @if ($job->faculty == 'Business' && auth()->user()->interest_business == 1)
                 @if ($job->getAttribute('approved') == 1)
                     <div class="content-block post-list-view format-quote mt--30">
                         <div class="post-thumbnail">
