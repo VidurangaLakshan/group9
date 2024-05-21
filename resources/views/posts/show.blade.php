@@ -23,6 +23,23 @@
     <link rel="stylesheet" href="/assets/css/plugins/plugins.css"> -->
     <link rel="stylesheet" href="/assets/css/style.css">
 
+    <style>
+        .icon {
+            position: relative;
+        }
+
+        .notification-dot::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: red;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -72,7 +89,8 @@
 
                                 @auth
                                     @if (auth()->user()->role->value == 3)
-                                        <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('appointments')}}">Schedule</a>
+                                        <li class="menu-item-has-children megamenu-wrapper"><a
+                                                href="{{url('appointments')}}">Schedule</a>
                                         </li>
                                     @endif
                                 @endauth
@@ -117,41 +135,105 @@
                                 @auth
                                     @if (auth()->user()->approved == 1)
                                         @if (auth()->user()->role->value == 1)
-                                            <li class="icon"><a href="{{ url('/admin') }}" target="_blank"><i
-                                                        class="fas fa-cog"></i></a>
-                                            </li>
+                                            @if (auth()->user()->unreadNotifications->count() > 0)
+                                                <li class="icon notification-dot"><a href="{{ url('/admin') }}"
+                                                                                     target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                                </li>
+                                            @else
+                                                <li class="icon"><a href="{{ url('/admin') }}" target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                            @endif
+
                                         @elseif (auth()->user()->role->value == 2)
-                                            <li class="icon"><a href="{{ url('/editor') }}" target="_blank"><i
-                                                        class="fas fa-cog"></i></a>
-                                            </li>
+                                            @if (auth()->user()->unreadNotifications->count() > 0)
+                                                <li class="icon notification-dot"><a href="{{ url('/editor') }}"
+                                                                                     target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                                </li>
+                                            @else
+                                                <li class="icon"><a href="{{ url('/editor') }}" target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                            @endif
+
                                         @elseif (auth()->user()->role->value == 3)
-                                            <li class="icon"><a href="{{ url('/sss') }}" target="_blank"><i
-                                                        class="fas fa-cog"></i></a>
-                                            </li>
+                                            @if (auth()->user()->unreadNotifications->count() > 0)
+                                                <li class="icon notification-dot"><a href="{{ url('/sss') }}"
+                                                                                     target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                                </li>
+                                            @else
+                                                <li class="icon"><a href="{{ url('/sss') }}" target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                            @endif
+
                                         @elseif (auth()->user()->role->value == 4)
-                                            <li class="icon"><a href="{{ url('/alumniLiaison') }}" target="_blank"><i
-                                                        class="fas fa-cog"></i></a>
-                                            </li>
+                                            @if (auth()->user()->unreadNotifications->count() > 0)
+                                                <li class="icon notification-dot"><a href="{{ url('/alumniLiaison') }}"
+                                                                                     target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                                </li>
+                                            @else
+                                                <li class="icon"><a href="{{ url('/alumniLiaison') }}"
+                                                                    target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                            @endif
+
                                         @elseif (auth()->user()->role->value == 5)
-                                            <li class="icon"><a href="{{ url('/academics') }}" target="_blank"><i
-                                                        class="fas fa-cog"></i></a>
-                                            </li>
+                                            @if (auth()->user()->unreadNotifications->count() > 0)
+                                                <li class="icon notification-dot"><a href="{{ url('/academics') }}"
+                                                                                     target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                                </li>
+                                            @else
+                                                <li class="icon"><a href="{{ url('/academics') }}" target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                            @endif
+
                                         @elseif (auth()->user()->role->value == 6)
-                                            <li class="icon"><a href="{{ url('/nonAcademics') }}" target="_blank"><i
-                                                        class="fas fa-cog"></i></a>
-                                            </li>
+                                            @if (auth()->user()->unreadNotifications->count() > 0)
+                                                <li class="icon notification-dot"><a href="{{ url('/nonAcademics') }}"
+                                                                                     target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                                </li>
+                                            @else
+                                                <li class="icon"><a href="{{ url('/nonAcademics') }}" target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                            @endif
+
                                         @elseif (auth()->user()->role->value == 7)
-                                            <li class="icon"><a href="{{ url('/user') }}" target="_blank"><i
-                                                        class="fas fa-cog"></i></a>
-                                            </li>
+                                            @if (auth()->user()->unreadNotifications->count() > 0)
+                                                <li class="icon notification-dot"><a href="{{ url('/user') }}"
+                                                                                     target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                                </li>
+                                            @else
+                                                <li class="icon"><a href="{{ url('/user') }}" target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                            @endif
+
                                         @elseif (auth()->user()->role->value == 8)
-                                            <li class="icon"><a href="{{ url('/alumni') }}" target="_blank"><i
-                                                        class="fas fa-cog"></i></a>
-                                            </li>
+                                            @if (auth()->user()->unreadNotifications->count() > 0)
+                                                <li class="icon notification-dot"><a href="{{ url('/alumni') }}"
+                                                                                     target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                                </li>
+                                            @else
+                                                <li class="icon"><a href="{{ url('/alumni') }}" target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                            @endif
+
                                         @elseif (auth()->user()->role->value == 9)
-                                            <li class="icon"><a href="{{ url('/club') }}" target="_blank"><i
-                                                        class="fas fa-cog"></i></a>
-                                            </li>
+                                            @if (auth()->user()->unreadNotifications->count() > 0)
+                                                <li class="icon notification-dot"><a href="{{ url('/club') }}"
+                                                                                     target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                                </li>
+                                            @else
+                                                <li class="icon"><a href="{{ url('/club') }}" target="_blank"><i
+                                                            class="fas fa-cog"></i></a>
+                                            @endif
+
                                         @endif
                                     @endif
                                     <li class="icon">
@@ -355,7 +437,8 @@
                                 <div class="post-meta">
                                     <div class="post-author-avatar border-rounded">
                                         {{-- {{dd($post->author)}} --}}
-                                        <img src="{{$post->author->profile_photo_url}}" alt="Author Images" style="width: 64px; height: auto;">
+                                        <img src="{{$post->author->profile_photo_url}}" alt="Author Images"
+                                             style="width: 64px; height: auto;">
                                     </div>
                                     <div class="content">
                                         <h6 class="post-author-name">
@@ -429,7 +512,8 @@
                             <div class="media">
                                 <div class="thumbnail">
                                     <a>
-                                        <img src="{{$post->author->profile_photo_url}}" alt="Author Images" style="width: 64px; height: auto;">
+                                        <img src="{{$post->author->profile_photo_url}}" alt="Author Images"
+                                             style="width: 64px; height: auto;">
 
                                     </a>
                                 </div>
