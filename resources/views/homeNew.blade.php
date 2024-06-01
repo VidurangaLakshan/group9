@@ -1,5 +1,142 @@
 <x-site-layout>
 
+    @auth
+        @if (auth()->user()->approved == 1 && auth()->user()->newUserPersonalized == 0)
+            <div class="overlay">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center"
+                     class="overlay-div">
+                    <h1 class="overlay-h1" style="margin: 10px 0 30px 0">How to Use the APIIT Blog</h1>
+                    <iframe style="border: #04B4AC 7px solid; border-radius: 5px" width="560" height="315"
+                            src="https://www.youtube.com/embed/xopvkx6CpNs?si=BQ7zpViwHY63uf7h"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div style="display: flex; margin-top: 20px; justify-content: space-around; width: 100%;">
+                        {{--                <form style="">--}}
+                        {{--                    <button style="border: #04B4AC 1px solid;  background-color: white; border-radius: 40px; padding: 10px 20px">--}}
+                        {{--                        Remind Me Later--}}
+                        {{--                    </button>--}}
+                        {{--                </form>--}}
+                        <form class="completeTutorial" action="{{ route('overlay') }}">
+                            <button type="submit"
+                                    style="color: white; background-color: #04B4AC; border-radius: 40px; padding: 10px 20px">
+                                Complete Tutorial
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        @endif
+    @endauth
+
+
+    <style>
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+            z-index: 9999; /* Ensure the overlay is on top of other elements */
+        }
+
+        .overlay-div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            width: 50%;
+            /*height: 50%;*/
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        @media screen and (min-width: 1000px) and (max-width: 1200px) {
+            .overlay-div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #f1f1f1;
+                width: 60%;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+            }
+        }
+
+        @media screen and (min-width: 720px) and (max-width: 1000px) {
+            .overlay-div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #f1f1f1;
+                width: 80%;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 720px) {
+            .overlay-div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #f1f1f1;
+                width: 90%;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+            }
+        }
+
+        @media screen and (min-width: 585px) and (max-width: 720px) {
+            iframe {
+                width: 500px;
+                height: 281px;
+            }
+        }
+
+        @media screen and (min-width: 470px) and (max-width: 585px) {
+            iframe {
+                width: 400px;
+                height: 225px;
+            }
+        }
+
+        @media screen and (min-width: 356px) and (max-width: 470px) {
+            iframe {
+                width: 300px;
+                height: 168px;
+            }
+        }
+
+        @media screen and (min-width: 200px) and (max-width: 356px) {
+            iframe {
+                width: 250px;
+                height: 130px;
+            }
+
+            .overlay-h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .completeTutorial {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0 15px 0;
+        }
+    </style>
+
+
     {{--    FIRST TIME LOGIN MESSAGES  --}}
 
     @if (Auth::user() == true)
@@ -12,11 +149,11 @@
             </div>
         @endif
 
-        @if (Auth::user()->approved == 1 && Auth::user()->newUserPersonalized == 0)
-            <div class="alert alert-warning" id="alert" style="margin: 10px 10px; text-align: center">
-                Please complete your profile settings to personalize your experience.
-            </div>
-        @endif
+{{--        @if (Auth::user()->approved == 1 && Auth::user()->newUserPersonalized == 0)--}}
+{{--            <div class="alert alert-warning" id="alert" style="margin: 10px 10px; text-align: center">--}}
+{{--                Please complete your profile settings to personalize your experience.--}}
+{{--            </div>--}}
+{{--        @endif--}}
     @endif
 
 
@@ -783,7 +920,6 @@
                                                 @if ($counter8 >= 4)
                                                     @break
                                                 @endif
-
 
                                             @endif
 

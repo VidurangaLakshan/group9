@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/overlay', [\App\Http\Controllers\HomeController::class, 'overlay'])->name('overlay');
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'homeNew'])->name('homeNew');
 

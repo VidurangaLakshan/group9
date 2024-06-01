@@ -10,8 +10,17 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    public function overlay()
+    {
+        $user = auth()->user();
+        $user->newUserPersonalized = 1;
+        $user->update();
 
-    public function homeNew() {
+        return redirect()->route('homeNew');
+    }
+
+    public function homeNew()
+    {
 
         return view('homeNew', [
 
@@ -76,7 +85,8 @@ class HomeController extends Controller
         ]);
     }
 
-    public function student() {
+    public function student()
+    {
 
         return view('student', [
 
@@ -94,7 +104,8 @@ class HomeController extends Controller
         ]);
     }
 
-    public function alumni() {
+    public function alumni()
+    {
 
         return view('alumni', [
             'featuredPosts' => Post::featured()->take(3)->latest('published_at')->get(),
@@ -111,7 +122,8 @@ class HomeController extends Controller
         ]);
     }
 
-    public function staff() {
+    public function staff()
+    {
 
         return view('academics', [
             'featuredPosts' => Post::featured()->take(3)->latest('published_at')->get(),

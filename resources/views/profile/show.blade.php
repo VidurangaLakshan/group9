@@ -37,7 +37,7 @@
 
             {{-- if auth user is not admin, editor or alumni relations, then show the delete option --}}
 
-            @if (auth()->user()->role->value !== 1 && auth()->user()->role->value !== 2 && auth()->user()->role->value !== 4)
+            @if (auth()->user()->role->value !== 1 && auth()->user()->role->value !== 2 && auth()->user()->role->value !== 4 && auth()->user()->role->value !== 9)
                 @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
                     <div class="mt-10 sm:mt-0">
                         @livewire('profile.delete-user-form')

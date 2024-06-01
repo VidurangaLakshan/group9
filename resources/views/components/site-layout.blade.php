@@ -56,6 +56,31 @@
                     </div>
                 </div>
 
+                @php
+                    if (\Illuminate\Support\Facades\Auth::check()) {
+                        if (auth()->user()->role->value == 1)
+                        $userType = 'admin';
+                        else if (auth()->user()->role->value == 2) {
+                            $userType = 'editor';
+                        } else if (auth()->user()->role->value == 3) {
+                            $userType = 'sss';
+                        } else if (auth()->user()->role->value == 4) {
+                            $userType = 'alumniLiaison';
+                        } else if (auth()->user()->role->value == 5) {
+                            $userType = 'academics';
+                        } else if (auth()->user()->role->value == 6) {
+                            $userType = 'nonAcademics';
+                        } else if (auth()->user()->role->value == 7) {
+                            $userType = 'user';
+                        } else if (auth()->user()->role->value == 8) {
+                            $userType = 'alumni';
+                        } else if (auth()->user()->role->value == 9) {
+                            $userType = 'club';
+                        }
+                    }
+                @endphp
+
+
                 <div class="col-xl-6 d-none d-xl-block">
                     <div class="mainmenu-wrapper">
                         <nav class="mainmenu-nav">
@@ -64,12 +89,56 @@
                                 <li class="menu-item-has-children"><a href="/">Home</a></li>
 
                                 <li class="menu-item-has-children"><a href="{{route('post.index')}}">Articles</a>
+                                    @if (\Illuminate\Support\Facades\Auth::check() && auth()->user()->approved == 1)
+
+                                        <ul class="axil-submenu">
+                                            <li>
+                                                <a class="hover-flip-item-wrapper" href="{{route('post.index')}}">
+                                                    <span class="hover-flip-item">
+                                                        <span data-text="All Articles">All Articles</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="hover-flip-item-wrapper" href="/{{ $userType }}/posts/create"
+                                                   target="_blank">
+                                                    <span class="hover-flip-item">
+                                                        <span data-text="Write Articles">Write Articles</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    @endif
+
                                 </li>
 
 
                                 @auth
                                     @if (auth()->user()->approved == 1 && (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8))
-                                        <li class="menu-item-has-children"><a href="{{url('job')}}">Vacancies</a></li>
+                                        <li class="menu-item-has-children"><a href="{{url('job')}}">Vacancies</a>
+                                            @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || auth()->user()->role->value == 8)
+
+                                                <ul class="axil-submenu">
+                                                    <li>
+                                                        <a class="hover-flip-item-wrapper"
+                                                           href="{{ url('job') }}">
+                                                    <span class="hover-flip-item">
+                                                        <span data-text="View Vacancies">View Vacancies</span>
+                                                    </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="hover-flip-item-wrapper"
+                                                           href="/{{ $userType }}/jobs/create" target="_blank">
+                                                    <span class="hover-flip-item">
+                                                        <span data-text="Create Vacancies">Create Vacancies</span>
+                                                    </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            @endif
+
+                                        </li>
                                     @endif
                                 @endauth
 
@@ -81,13 +150,49 @@
                                     @endif
                                 @endauth
 
-                                <li class="menu-item-has-children megamenu-wrapper"><a
-                                        href="{{url('event')}}">Events</a>
+                                <li class="menu-item-has-children"><a>Events</a>
+                                    <ul class="axil-submenu">
+
+                                        <li>
+                                            <a class="hover-flip-item-wrapper" href="{{url('event')}}">
+                                                <span class="hover-flip-item">
+                                                    <span data-text="View Events">View Events</span>
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="hover-flip-item-wrapper"
+                                               href="/club/events/create" target="_blank">
+                                                    <span class="hover-flip-item">
+                                                        <span
+                                                            data-text="Add Events">Add Events</span>
+                                                    </span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
                                 </li>
+
 
                                 @auth
                                     @if (auth()->user()->role->value == 3)
-                                        <li class="menu-item-has-children megamenu-wrapper"><a href="{{url('appointments')}}">Schedule</a>
+                                        <li class="menu-item-has-children"><a
+                                                href="{{url('appointments')}}">Schedule</a>
+                                        </li>
+                                    @elseif (auth()->user()->role->value == 7)
+                                        <li class="menu-item-has-children"><a>Support</a>
+                                            <ul class="axil-submenu">
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="/user/appointments/create" target="_blank">
+                                                    <span class="hover-flip-item">
+                                                        <span
+                                                            data-text="Book an Appointment with Student Support Services (SSS)">Book an Appointment with Student Support Services (SSS)</span>
+                                                    </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </li>
                                     @endif
                                 @endauth
@@ -132,7 +237,8 @@
                                     @if (auth()->user()->approved == 1)
                                         @if (auth()->user()->role->value == 1)
                                             @if (auth()->user()->unreadNotifications->count() > 0)
-                                                <li class="icon notification-dot"><a href="{{ url('/admin') }}" target="_blank"><i
+                                                <li class="icon notification-dot"><a href="{{ url('/admin') }}"
+                                                                                     target="_blank"><i
                                                             class="fas fa-cog"></i></a>
                                                 </li>
                                             @else
@@ -142,7 +248,8 @@
 
                                         @elseif (auth()->user()->role->value == 2)
                                             @if (auth()->user()->unreadNotifications->count() > 0)
-                                                <li class="icon notification-dot"><a href="{{ url('/editor') }}" target="_blank"><i
+                                                <li class="icon notification-dot"><a href="{{ url('/editor') }}"
+                                                                                     target="_blank"><i
                                                             class="fas fa-cog"></i></a>
                                                 </li>
                                             @else
@@ -152,7 +259,8 @@
 
                                         @elseif (auth()->user()->role->value == 3)
                                             @if (auth()->user()->unreadNotifications->count() > 0)
-                                                <li class="icon notification-dot"><a href="{{ url('/sss') }}" target="_blank"><i
+                                                <li class="icon notification-dot"><a href="{{ url('/sss') }}"
+                                                                                     target="_blank"><i
                                                             class="fas fa-cog"></i></a>
                                                 </li>
                                             @else
@@ -162,17 +270,20 @@
 
                                         @elseif (auth()->user()->role->value == 4)
                                             @if (auth()->user()->unreadNotifications->count() > 0)
-                                                <li class="icon notification-dot"><a href="{{ url('/alumniLiaison') }}" target="_blank"><i
+                                                <li class="icon notification-dot"><a href="{{ url('/alumniLiaison') }}"
+                                                                                     target="_blank"><i
                                                             class="fas fa-cog"></i></a>
                                                 </li>
                                             @else
-                                                <li class="icon"><a href="{{ url('/alumniLiaison') }}" target="_blank"><i
+                                                <li class="icon"><a href="{{ url('/alumniLiaison') }}"
+                                                                    target="_blank"><i
                                                             class="fas fa-cog"></i></a>
                                             @endif
 
                                         @elseif (auth()->user()->role->value == 5)
                                             @if (auth()->user()->unreadNotifications->count() > 0)
-                                                <li class="icon notification-dot"><a href="{{ url('/academics') }}" target="_blank"><i
+                                                <li class="icon notification-dot"><a href="{{ url('/academics') }}"
+                                                                                     target="_blank"><i
                                                             class="fas fa-cog"></i></a>
                                                 </li>
                                             @else
@@ -182,7 +293,8 @@
 
                                         @elseif (auth()->user()->role->value == 6)
                                             @if (auth()->user()->unreadNotifications->count() > 0)
-                                                <li class="icon notification-dot"><a href="{{ url('/nonAcademics') }}" target="_blank"><i
+                                                <li class="icon notification-dot"><a href="{{ url('/nonAcademics') }}"
+                                                                                     target="_blank"><i
                                                             class="fas fa-cog"></i></a>
                                                 </li>
                                             @else
@@ -192,7 +304,8 @@
 
                                         @elseif (auth()->user()->role->value == 7)
                                             @if (auth()->user()->unreadNotifications->count() > 0)
-                                                <li class="icon notification-dot"><a href="{{ url('/user') }}" target="_blank"><i
+                                                <li class="icon notification-dot"><a href="{{ url('/user') }}"
+                                                                                     target="_blank"><i
                                                             class="fas fa-cog"></i></a>
                                                 </li>
                                             @else
@@ -202,7 +315,8 @@
 
                                         @elseif (auth()->user()->role->value == 8)
                                             @if (auth()->user()->unreadNotifications->count() > 0)
-                                                <li class="icon notification-dot"><a href="{{ url('/alumni') }}" target="_blank"><i
+                                                <li class="icon notification-dot"><a href="{{ url('/alumni') }}"
+                                                                                     target="_blank"><i
                                                             class="fas fa-cog"></i></a>
                                                 </li>
                                             @else
@@ -212,7 +326,8 @@
 
                                         @elseif (auth()->user()->role->value == 9)
                                             @if (auth()->user()->unreadNotifications->count() > 0)
-                                                <li class="icon notification-dot"><a href="{{ url('/club') }}" target="_blank"><i
+                                                <li class="icon notification-dot"><a href="{{ url('/club') }}"
+                                                                                     target="_blank"><i
                                                             class="fas fa-cog"></i></a>
                                                 </li>
                                             @else
@@ -283,11 +398,21 @@
                                                 <ul class="mainmenu">
                                                     <li><a href="/">Home</a></li>
 
-                                                    <li><a href="{{route('post.index')}}">Articles</a></li>
+                                                    <li><a href="{{route('post.index')}}">All Articles</a></li>
+                                                    <li><a href="/{{ $userType }}/posts/create" target="_blank">Write
+                                                            Articles</a></li>
 
                                                     @auth
                                                         @if (auth()->user()->approved == 1 && (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8))
-                                                            <li><a href="{{url('job')}}">Vacancies</a></li>
+                                                            <li><a href="{{url('job')}}">View Vacancies</a></li>
+                                                        @endif
+
+                                                        @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || auth()->user()->role->value == 8)
+                                                            <li>
+                                                                <a href="/{{ $userType }}/jobs/create" target="_blank">Create
+                                                                    Vacancies
+                                                                </a>
+                                                            </li>
                                                         @endif
                                                     @endauth
 
@@ -298,11 +423,26 @@
                                                         @endif
                                                     @endauth
 
-                                                    <li><a href="{{url('event')}}">Events</a></li>
+                                                    <li><a href="{{url('event')}}">View Events</a></li>
+
+                                                    @auth
+                                                        @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 9)
+                                                            <li><a href="/club/events/create" target="_blank">Add
+                                                                    Events</a></li>
+                                                        @endif
+                                                    @endauth
 
                                                     @auth
                                                         @if (auth()->user()->role->value == 3)
                                                             <li><a href="{{url('appointments')}}">Schedule</a></li>
+
+                                                        @elseif (auth()->user()->role->value == 7)
+
+                                                            <li><a href="/user/appointments/create" target="_blank">Book an
+                                                                    Appointment with Student Support Services (SSS)</a>
+                                                                </a>
+                                                            </li>
+
                                                         @endif
                                                     @endauth
 
