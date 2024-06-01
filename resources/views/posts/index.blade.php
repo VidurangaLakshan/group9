@@ -63,6 +63,7 @@
                     <div class="mainmenu-wrapper">
                         <nav class="mainmenu-nav">
                             @php
+                                $userType = '';
                                 if (\Illuminate\Support\Facades\Auth::check()) {
                                     if (auth()->user()->role->value == 1)
                                     $userType = 'admin';
@@ -91,26 +92,29 @@
                                 <li class="menu-item-has-children"><a href="/">Home</a></li>
 
                                 <li class="menu-item-has-children"><a href="{{route('post.index')}}">Articles</a>
-                                    @if (\Illuminate\Support\Facades\Auth::check() && auth()->user()->approved == 1)
+                                    @auth
+                                        @if (\Illuminate\Support\Facades\Auth::check() && auth()->user()->approved == 1)
 
-                                        <ul class="axil-submenu">
-                                            <li>
-                                                <a class="hover-flip-item-wrapper" href="{{route('post.index')}}">
+                                            <ul class="axil-submenu">
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper" href="{{route('post.index')}}">
                                                     <span class="hover-flip-item">
                                                         <span data-text="All Articles">All Articles</span>
                                                     </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="hover-flip-item-wrapper" href="/{{ $userType }}/posts/create"
-                                                   target="_blank">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="/{{ $userType }}/posts/create"
+                                                       target="_blank">
                                                     <span class="hover-flip-item">
                                                         <span data-text="Write Articles">Write Articles</span>
                                                     </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    @endif
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        @endif
+                                    @endauth
 
                                 </li>
 
@@ -118,27 +122,29 @@
                                 @auth
                                     @if (auth()->user()->approved == 1 && (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8))
                                         <li class="menu-item-has-children"><a href="{{url('job')}}">Vacancies</a>
-                                            @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || auth()->user()->role->value == 8)
+                                            @auth
+                                                @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || auth()->user()->role->value == 8)
 
-                                                <ul class="axil-submenu">
-                                                    <li>
-                                                        <a class="hover-flip-item-wrapper"
-                                                           href="{{ url('job') }}">
+                                                    <ul class="axil-submenu">
+                                                        <li>
+                                                            <a class="hover-flip-item-wrapper"
+                                                               href="{{ url('job') }}">
                                                     <span class="hover-flip-item">
                                                         <span data-text="View Vacancies">View Vacancies</span>
                                                     </span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="hover-flip-item-wrapper"
-                                                           href="/{{ $userType }}/jobs/create" target="_blank">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="hover-flip-item-wrapper"
+                                                               href="/{{ $userType }}/jobs/create" target="_blank">
                                                     <span class="hover-flip-item">
                                                         <span data-text="Create Vacancies">Create Vacancies</span>
                                                     </span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            @endif
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                @endif
+                                            @endauth
 
                                         </li>
                                     @endif
@@ -152,28 +158,30 @@
                                     @endif
                                 @endauth
 
-                                <li class="menu-item-has-children"><a>Events</a>
-                                    <ul class="axil-submenu">
+                                <li class="menu-item-has-children"><a href="{{url('event')}}">Events</a>
+                                    @auth
 
-                                        <li>
-                                            <a class="hover-flip-item-wrapper" href="{{url('event')}}">
+                                        @if (auth()->user()->role->value == 1 || auth()->user()->role->value == 9)
+                                            <ul class="axil-submenu">
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper" href="{{url('event')}}">
                                                 <span class="hover-flip-item">
                                                     <span data-text="View Events">View Events</span>
                                                 </span>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a class="hover-flip-item-wrapper"
-                                               href="/club/events/create" target="_blank">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="/club/events/create" target="_blank">
                                                     <span class="hover-flip-item">
                                                         <span
                                                             data-text="Add Events">Add Events</span>
                                                     </span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        @endif
+                                    @endauth
                                 </li>
 
 
@@ -391,8 +399,10 @@
                                                     <li><a href="/">Home</a></li>
 
                                                     <li><a href="{{route('post.index')}}">All Articles</a></li>
-                                                    <li><a href="/{{ $userType }}/posts/create" target="_blank">Write
-                                                            Articles</a></li>
+                                                    @auth
+                                                        <li><a href="/{{ $userType }}/posts/create" target="_blank">Write
+                                                                Articles</a></li>
+                                                    @endauth
 
                                                     @auth
                                                         @if (auth()->user()->approved == 1 && (auth()->user()->role->value == 1 || auth()->user()->role->value == 4 || (auth()->user()->role->value == 7 && auth()->user()->degree_level != 1 && auth()->user()->degree_level != 2 && auth()->user()->degree_level != 3 && auth()->user()->degree_level != 4) || auth()->user()->role->value == 8))
@@ -430,7 +440,8 @@
 
                                                         @elseif (auth()->user()->role->value == 7)
 
-                                                            <li><a href="/user/appointments/create" target="_blank">Book an
+                                                            <li><a href="/user/appointments/create" target="_blank">Book
+                                                                    an
                                                                     Appointment with Student Support Services (SSS)</a>
                                                                 </a>
                                                             </li>
