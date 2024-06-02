@@ -188,8 +188,27 @@
 
                                 @auth
                                     @if (auth()->user()->role->value == 3)
-                                        <li class="menu-item-has-children"><a
-                                                href="{{url('appointments')}}">Schedule</a>
+                                        <li class="menu-item-has-children"><a>Appointments</a>
+                                            <ul class="axil-submenu">
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="{{ url('appointments') }}" target="_blank">
+                                                    <span class="hover-flip-item">
+                                                        <span
+                                                            data-text="View Schedule">View Schedule</span>
+                                                    </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="hover-flip-item-wrapper"
+                                                       href="/sss/holidays" target="_blank">
+                                                    <span class="hover-flip-item">
+                                                        <span
+                                                            data-text="Manage Off Days">Manage Off Days</span>
+                                                    </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </li>
                                     @elseif (auth()->user()->role->value == 7)
                                         <li class="menu-item-has-children"><a>Support</a>
@@ -447,7 +466,9 @@
 
                                                     @auth
                                                         @if (auth()->user()->role->value == 3)
-                                                            <li><a href="{{url('appointments')}}">Schedule</a></li>
+                                                            <li><a href="{{url('appointments')}}">Appointment Schedule</a></li>
+
+                                                            <li><a href="/sss/holidays">Manage Off Days</a></li>
 
                                                         @elseif (auth()->user()->role->value == 7)
 
