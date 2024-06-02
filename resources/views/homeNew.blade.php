@@ -1,16 +1,35 @@
 <x-site-layout>
 
     @auth
-        @if (auth()->user()->approved == 1 && auth()->user()->newUserPersonalized == 0)
+        @if (auth()->user()->approved == 1 && auth()->user()->newUserPersonalized == 0 && (auth()->user()->role->value == 5 || auth()->user()->role->value == 6 || auth()->user()->role->value == 7 || auth()->user()->role->value == 8))
             <div class="overlay">
                 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center"
                      class="overlay-div">
                     <h1 class="overlay-h1" style="margin: 10px 0 30px 0">How to Use the APIIT Blog</h1>
-                    <iframe style="border: #04B4AC 7px solid; border-radius: 5px" width="560" height="315"
-                            src="https://www.youtube.com/embed/xopvkx6CpNs?si=BQ7zpViwHY63uf7h"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    @if (auth()->user()->role->value == 5 || auth()->user()->role->value == 6)
+                        <iframe style="border: #04B4AC 7px solid; border-radius: 5px" width="560" height="315"
+                                src="https://www.youtube.com/embed/xopvkx6CpNs?si=BQ7zpViwHY63uf7h"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    @elseif (auth()->user()->role->value == 7)
+                        <iframe style="border: #04B4AC 7px solid; border-radius: 5px" width="560" height="315"
+                                src="https://www.youtube.com/embed/xopvkx6CpNs?si=BQ7zpViwHY63uf7h"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    @elseif (auth()->user()->role->value == 8)
+                        <iframe style="border: #04B4AC 7px solid; border-radius: 5px" width="560" height="315"
+                                src="https://www.youtube.com/embed/xopvkx6CpNs?si=BQ7zpViwHY63uf7h"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    @endif
+{{--                    <iframe style="border: #04B4AC 7px solid; border-radius: 5px" width="560" height="315"--}}
+{{--                            src="https://www.youtube.com/embed/xopvkx6CpNs?si=BQ7zpViwHY63uf7h"--}}
+{{--                            title="YouTube video player" frameborder="0"--}}
+{{--                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"--}}
+{{--                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>--}}
                     <div style="display: flex; margin-top: 20px; justify-content: space-around; width: 100%;">
                         {{--                <form style="">--}}
                         {{--                    <button style="border: #04B4AC 1px solid;  background-color: white; border-radius: 40px; padding: 10px 20px">--}}
