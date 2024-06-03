@@ -8,19 +8,19 @@
                     <h1 class="overlay-h1" style="margin: 10px 0 30px 0">How to Use the APIIT Blog</h1>
                     @if (auth()->user()->role->value == 5 || auth()->user()->role->value == 6)
                         <iframe style="border: #04B4AC 7px solid; border-radius: 5px" width="560" height="315"
-                                src="https://youtu.be/Kl1V1D6Mps8?si=HjVSPGnKpnIwr4SG"
+                                src="https://www.youtube.com/embed/Kl1V1D6Mps8?si=VROhS4Ja89SXN-Bx"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     @elseif (auth()->user()->role->value == 7)
                         <iframe style="border: #04B4AC 7px solid; border-radius: 5px" width="560" height="315"
-                                src="https://www.youtube.com/embed/Kl1V1D6Mps8?si=H_JCYcfcSDONjB3o"
+                                src="https://www.youtube.com/embed/O-q5lnCpCEE?si=GYuWHO3OBMyPxcN9"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     @elseif (auth()->user()->role->value == 8)
                         <iframe style="border: #04B4AC 7px solid; border-radius: 5px" width="560" height="315"
-                                src="https://youtu.be/KZiOaW83kqY?si=F4g7lNaGKuhEect3"
+                                src="https://www.youtube.com/embed/KZiOaW83kqY?si=1CfoD30kN3FDhnFp"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
