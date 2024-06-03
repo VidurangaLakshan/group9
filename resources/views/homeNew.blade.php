@@ -14,7 +14,7 @@
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     @elseif (auth()->user()->role->value == 7)
                         <iframe style="border: #04B4AC 7px solid; border-radius: 5px" width="560" height="315"
-                                src="https://youtu.be/O-q5lnCpCEE?si=BUo1YvRZ5fXBvTgA"
+                                src="https://www.youtube.com/embed/Kl1V1D6Mps8?si=H_JCYcfcSDONjB3o"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
