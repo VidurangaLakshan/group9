@@ -17,3 +17,24 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/articles', function () {
+    $articles = \App\Models\Post::all();
+    return response()->json([
+        'articles' => $articles
+    ]);
+});
+
+Route::get('/events', function () {
+    $events = \App\Models\Event::all();
+    return response()->json([
+        'events' => $events
+    ]);
+});
+
+Route::get('/jobs', function () {
+    $jobs = \App\Models\Job::all();
+    return response()->json([
+        'jobs' => $jobs
+    ]);
+});
